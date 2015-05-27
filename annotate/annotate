@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Usage: ./annotate <compiler output> <source files>
+#        ./annotate log *.c | less -r
+
+log=$1
+shift
+sources=$*
+
+sedfile=$(mktemp)
+awkfile=$(mktemp)
+trap "rm -f $sedfile $awkfile" EXIT
+
+for f in ${sources}; do
+
+	# Sed command that transforms compiler output line into
+	# awk 'pattern { action }' pair
+
+	cat > $sedfile <<-EOF
+	  s/(${f}:)([0-9]+)(:[0-9]+: *)(.*)/FNR==\2{print red(\2\" \4\")}/p
+	EOF
+
+	# Awk script that inserts compiler output into source code,
+	# i.e. annotates source with compiler comments.
+
+	cat > $awkfile <<-EOF
+	  function red(s) {printf "\033[1;31m" s "\033[0m "}
+	  function ls() {z=0;while (z++ < cols) printf "#"}
+	  FNR==1{print ls();print "# "FILENAME;print ls()}
+	  $(sed -nrf $sedfile $log | sort -u)
+	  {print "  ",FNR,\$0}
+	EOF
+
+	awk -f $awkfile -v cols=$(tput cols) $f
+
+done

@@ -1,0 +1,560 @@
+gcc -Ofast -fopt-info-vec-missed -c -o pngwriter.o pngwriter.c 
+pngwriter.c:174:45: note: not vectorized: control flow in loop.
+pngwriter.c:174:45: note: bad loop form.
+pngwriter.c:136:25: note: not vectorized: multiple nested loops.
+pngwriter.c:136:25: note: bad loop form.
+pngwriter.c:142:13: note: not vectorized: control flow in loop.
+pngwriter.c:142:13: note: bad loop form.
+pngwriter.c:153:13: note: not vectorized: control flow in loop.
+pngwriter.c:153:13: note: bad loop form.
+pngwriter.c:99:17: note: not consecutive access pngstruct_ptr = 0B;
+
+pngwriter.c:99:17: note: not consecutive access pnginfo_ptr = 0B;
+
+pngwriter.c:99:17: note: Failed to SLP the basic block.
+pngwriter.c:99:17: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:110:8: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:115:9: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:114:19: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:120:19: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:120:17: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:125:9: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:125:9: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:128:5: note: not consecutive access pngstruct_ptr.1_56 = pngstruct_ptr;
+
+pngwriter.c:128:5: note: not consecutive access pnginfo_ptr.3_55 = pnginfo_ptr;
+
+pngwriter.c:128:5: note: Failed to SLP the basic block.
+pngwriter.c:128:5: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:133:20: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:135:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:166:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:141:33: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:136:25: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:138:21: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:153:13: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:135:30: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:142:13: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:147:29: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:200:15: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Failed to SLP the basic block.
+pngwriter.c:205:39: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:148:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:148:24: note: Unknown alignment for access: *row_65
+pngwriter.c:148:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:148:24: note: Unknown alignment for access: *row_65
+pngwriter.c:148:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:148:24: note: Unknown alignment for access: *row_65
+pngwriter.c:148:24: note: Build SLP failed: unrolling required in basic block SLP
+pngwriter.c:148:24: note: Failed to SLP the basic block.
+pngwriter.c:148:24: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:158:33: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:200:15: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Failed to SLP the basic block.
+pngwriter.c:205:39: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:159:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:159:24: note: Unknown alignment for access: *row_65
+pngwriter.c:159:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:159:24: note: Unknown alignment for access: *row_65
+pngwriter.c:159:24: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:159:24: note: Unknown alignment for access: *row_65
+pngwriter.c:159:24: note: Build SLP failed: unrolling required in basic block SLP
+pngwriter.c:159:24: note: Failed to SLP the basic block.
+pngwriter.c:159:24: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:167:5: note: not consecutive access pngstruct_ptr.1_105 = pngstruct_ptr;
+
+pngwriter.c:167:5: note: not consecutive access pnginfo_ptr.3_104 = pnginfo_ptr;
+
+pngwriter.c:167:5: note: Failed to SLP the basic block.
+pngwriter.c:167:5: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:168:5: note: not consecutive access pngstruct_ptr.1_108 = pngstruct_ptr;
+
+pngwriter.c:168:5: note: not consecutive access pnginfo_ptr.3_107 = pnginfo_ptr;
+
+pngwriter.c:168:5: note: Failed to SLP the basic block.
+pngwriter.c:168:5: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:171:12: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:176:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:174:45: note: not consecutive access pngstruct_ptr.1_116 = pngstruct_ptr;
+
+pngwriter.c:174:45: note: SLP: step doesn't divide the vector-size.
+pngwriter.c:174:45: note: Unknown alignment for access: *row_pointers_61
+pngwriter.c:174:45: note: Failed to SLP the basic block.
+pngwriter.c:174:45: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:173:30: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:95:5: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:195:25: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:197:18: note: Build SLP failed: unrolling required in basic block SLP
+pngwriter.c:197:18: note: Failed to SLP the basic block.
+pngwriter.c:197:18: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:200:15: note: not vectorized: not enough data-refs in basic block.
+pngwriter.c:201:18: note: Build SLP failed: unrolling required in basic block SLP
+pngwriter.c:201:18: note: Failed to SLP the basic block.
+pngwriter.c:201:18: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Unknown alignment for access: heat_colormap
+pngwriter.c:205:39: note: Build SLP failed: unrolling required in basic block SLP
+pngwriter.c:205:39: note: Failed to SLP the basic block.
+pngwriter.c:205:39: note: not vectorized: failed to find SLP opportunities in basic block.
+pngwriter.c:209:1: note: not vectorized: not enough data-refs in basic block.
+gcc -Ofast -fopt-info-vec-missed -c -o ex7_heat.o ex7_heat.c 
+ex7_heat.c: In function ‘read_input’:
+ex7_heat.c:172:5: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+     fscanf(fp, "# %d %d \n", &nx, &ny);
+     ^
+ex7_heat.c:184:13: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+             fscanf(fp, "%lf", &temperature1->data[i][j]);
+             ^
+ex7_heat.c:66:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:33:25: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:40:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:28:10: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:28:10: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:47:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:55:21: note: Build SLP failed: unrolling required in basic block SLP
+ex7_heat.c:55:21: note: not vectorized: vectorization is not profitable.
+ex7_heat.c:66:5: note: not consecutive access temperature1_4(D)->nx = _3;
+
+ex7_heat.c:66:5: note: not consecutive access _3 = temperature2_2(D)->nx;
+
+ex7_heat.c:66:5: note: Failed to SLP the basic block.
+ex7_heat.c:66:5: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:64:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:67:5: note: not consecutive access temperature1_4(D)->ny = _6;
+
+ex7_heat.c:67:5: note: not consecutive access _6 = temperature2_2(D)->ny;
+
+ex7_heat.c:67:5: note: Failed to SLP the basic block.
+ex7_heat.c:67:5: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:67:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:69:30: note: not consecutive access _14 = *_13;
+
+ex7_heat.c:69:30: note: not consecutive access _16 = *_15;
+
+ex7_heat.c:69:30: note: not consecutive access _13 = temperature1_4(D)->data;
+
+ex7_heat.c:69:30: note: not consecutive access _15 = temperature2_2(D)->data;
+
+ex7_heat.c:69:30: note: Failed to SLP the basic block.
+ex7_heat.c:69:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:77:9: note: not consecutive access tmp_3 = temperature1_2(D)->data;
+
+ex7_heat.c:77:9: note: not consecutive access temperature1_2(D)->data = _5;
+
+ex7_heat.c:77:9: note: not consecutive access _5 = temperature2_4(D)->data;
+
+ex7_heat.c:77:9: note: not consecutive access temperature2_4(D)->data = tmp_3;
+
+ex7_heat.c:77:9: note: Failed to SLP the basic block.
+ex7_heat.c:77:9: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:102:5: note: versioning for alias required: can't determine dependence between *_60 and *_69
+ex7_heat.c:102:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:102:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:102:5: note: virtual phi. skip.
+ex7_heat.c:102:5: note: virtual phi. skip.
+ex7_heat.c:102:5: note: virtual phi. skip.
+ex7_heat.c:97:5: note: not vectorized: data ref analysis failed *_44 = 3.0e+1;
+
+ex7_heat.c:97:5: note: bad data references.
+ex7_heat.c:93:5: note: not vectorized: control flow in loop.
+ex7_heat.c:93:5: note: bad loop form.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:88:53: note: Failed to SLP the basic block.
+ex7_heat.c:88:53: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:87:24: note: not consecutive access temperature1_10(D)->data = array_75;
+
+ex7_heat.c:87:24: note: Failed to SLP the basic block.
+ex7_heat.c:87:24: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:89:24: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:93:44: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:94:9: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:95:38: note: not consecutive access pretmp_178 = *pretmp_177;
+
+ex7_heat.c:95:38: note: not consecutive access pretmp_173 = temperature1_10(D)->data;
+
+ex7_heat.c:95:38: note: Failed to SLP the basic block.
+ex7_heat.c:95:38: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:97:19: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:102:19: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:98:27: note: not consecutive access *_50 = -1.0e+1;
+
+ex7_heat.c:98:27: note: not consecutive access *_44 = 3.0e+1;
+
+ex7_heat.c:98:27: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:98:27: note: Unknown alignment for access: *pretmp_160
+ex7_heat.c:98:27: note: Failed to SLP the basic block.
+ex7_heat.c:98:27: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:66:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not consecutive access pretmp_156 = *pretmp_155;
+
+ex7_heat.c:82:6: note: not consecutive access pretmp_148 = *pretmp_46;
+
+ex7_heat.c:82:6: note: not consecutive access pretmp_46 = temperature1_10(D)->data;
+
+ex7_heat.c:82:6: note: Failed to SLP the basic block.
+ex7_heat.c:82:6: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:103:30: note: not consecutive access *_107 = 1.5e+1;
+
+ex7_heat.c:103:30: note: not consecutive access *_96 = -2.5e+1;
+
+ex7_heat.c:103:30: note: Failed to SLP the basic block.
+ex7_heat.c:103:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:103:34: note: not vectorized: no vectype for stmt: MEM[(double *)vectp_pretmp.56_179] = vect_cst_.55_149;
+ scalar_type: vector(2) double
+ex7_heat.c:103:34: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:103:30: note: not consecutive access *_192 = 1.5e+1;
+
+ex7_heat.c:103:30: note: not consecutive access *_185 = -2.5e+1;
+
+ex7_heat.c:103:30: note: Failed to SLP the basic block.
+ex7_heat.c:103:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:103:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:103:30: note: Unknown alignment for access: *pretmp_148
+ex7_heat.c:103:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:103:30: note: Unknown alignment for access: *pretmp_156
+ex7_heat.c:103:30: note: Failed to SLP the basic block.
+ex7_heat.c:103:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:82:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:67:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:67:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:68:47: note: not consecutive access _113 = *_112;
+
+ex7_heat.c:68:47: note: not consecutive access _115 = *array_91;
+
+ex7_heat.c:68:47: note: not consecutive access _112 = temperature1_10(D)->data;
+
+ex7_heat.c:68:47: note: Failed to SLP the basic block.
+ex7_heat.c:68:47: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:119:5: note: not vectorized: control flow in loop.
+ex7_heat.c:119:5: note: bad loop form.
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between *_27 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between *_31 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between *_38 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between prev_17(D)->dx2 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between *_45 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between *_49 and *_16
+ex7_heat.c:120:9: note: versioning for alias required: can't determine dependence between prev_17(D)->dy2 and *_16
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:120:9: note: virtual phi. skip.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: not ssa-name.
+ex7_heat.c:120:9: note: use not simple.
+ex7_heat.c:120:9: note: virtual phi. skip.
+ex7_heat.c:120:9: note: virtual phi. skip.
+ex7_heat.c:119:25: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_160
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_163
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_167
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_163
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_163
+ex7_heat.c:121:26: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:121:26: note: Unknown alignment for access: *pretmp_150
+ex7_heat.c:121:26: note: Failed to SLP the basic block.
+ex7_heat.c:121:26: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:121:26: note: not consecutive access *_78 = _161;
+
+ex7_heat.c:121:26: note: not consecutive access _76 = *_77;
+
+ex7_heat.c:121:26: note: not consecutive access _65 = *_72;
+
+ex7_heat.c:121:26: note: not consecutive access _170 = *_171;
+
+ex7_heat.c:121:26: note: Failed to SLP the basic block.
+ex7_heat.c:121:26: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: Failed to SLP the basic block.
+ex7_heat.c:111:6: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:122:42: note: not vectorized: no vectype for stmt: vect__28.134_235 = MEM[(double *)vectp_pretmp.132_233];
+ scalar_type: vector(2) double
+ex7_heat.c:122:42: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:121:26: note: not consecutive access *_192 = _217;
+
+ex7_heat.c:121:26: note: not consecutive access _194 = *_193;
+
+ex7_heat.c:121:26: note: not consecutive access _199 = *_198;
+
+ex7_heat.c:121:26: note: Failed to SLP the basic block.
+ex7_heat.c:121:26: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:119:36: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:120:9: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:111:6: note: not consecutive access pretmp_150 = *pretmp_149;
+
+ex7_heat.c:111:6: note: not consecutive access pretmp_145 = curr_6(D)->data;
+
+ex7_heat.c:111:6: note: not consecutive access pretmp_155 = prev_17(D)->data;
+
+ex7_heat.c:111:6: note: Failed to SLP the basic block.
+ex7_heat.c:111:6: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:131:1: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:135:5: note: not consecutive access _8 = *_3;
+
+ex7_heat.c:135:5: note: not consecutive access _3 = temperature1_2(D)->data;
+
+ex7_heat.c:135:5: note: Failed to SLP the basic block.
+ex7_heat.c:135:5: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:155:5: note: not vectorized: loop contains function calls or data references that cannot be analyzed
+ex7_heat.c:155:5: note: bad data references.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:150:12: note: Failed to SLP the basic block.
+ex7_heat.c:150:12: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:139:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:139:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:139:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:155:5: note: not vectorized: not enough data-refs in basic block.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:33:3: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:139:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:156:48: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:156:48: note: Unknown alignment for access: *pretmp_76
+ex7_heat.c:156:48: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:156:48: note: Unknown alignment for access: *full_data_34
+ex7_heat.c:156:48: note: Failed to SLP the basic block.
+ex7_heat.c:156:48: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:139:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:193:5: note: versioning for alias required: can't determine dependence between *_72 and *_68
+ex7_heat.c:193:5: note: versioning for alias required: can't determine dependence between *_72 and *_81
+ex7_heat.c:193:5: note: versioning for alias required: can't determine dependence between *_68 and *_85
+ex7_heat.c:193:5: note: versioning for alias required: can't determine dependence between *_68 and *_81
+ex7_heat.c:193:5: note: versioning for alias required: can't determine dependence between *_85 and *_81
+ex7_heat.c:193:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:193:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:193:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:193:5: note: Unknown misalignment, is_packed = 0
+ex7_heat.c:193:5: note: virtual phi. skip.
+ex7_heat.c:193:5: note: not ssa-name.
+ex7_heat.c:193:5: note: use not simple.
+ex7_heat.c:193:5: note: not ssa-name.
+ex7_heat.c:193:5: note: use not simple.
+ex7_heat.c:193:5: note: not ssa-name.
+ex7_heat.c:193:5: note: use not simple.
+ex7_heat.c:193:5: note: not ssa-name.
+ex7_heat.c:193:5: note: use not simple.
+ex7_heat.c:193:5: note: virtual phi. skip.
+ex7_heat.c:193:5: note: virtual phi. skip.
+ex7_heat.c:189:5: note: not vectorized: not suitable for gather load _50 = MEM[(double *)_49 + 8B];
+
+ex7_heat.c:189:5: note: bad data references.
+ex7_heat.c:182:5: note: not vectorized: number of iterations cannot be computed.
+ex7_heat.c:182:5: note: bad inner-loop form.
+ex7_heat.c:182:5: note: not vectorized: Bad inner loop.
+ex7_heat.c:182:5: note: bad loop form.
+ex7_heat.c:183:9: note: not vectorized: number of iterations cannot be computed.
+ex7_heat.c:183:9: note: bad loop form.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:36:5: note: not vectorized: latch block not empty.
+ex7_heat.c:36:5: note: bad loop form.
+ex7_heat.c:170:8: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:37:14: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:179:24: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:184:44: note: not consecutive access _38 = *_37;
+
+ex7_heat.c:184:44: note: not consecutive access _34 = temperature1_16(D)->data;
+
+ex7_heat.c:184:44: note: Failed to SLP the basic block.
+ex7_heat.c:184:44: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:182:30: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:183:9: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:189:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:190:54: note: not consecutive access _59 = *_58;
+
+ex7_heat.c:190:54: note: not consecutive access *_56 = _59;
+
+ex7_heat.c:190:54: note: not consecutive access _50 = MEM[(double *)_49 + 8B];
+
+ex7_heat.c:190:54: note: not consecutive access *_49 = _50;
+
+ex7_heat.c:190:54: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:190:54: note: Unknown alignment for access: *pretmp_253
+ex7_heat.c:190:54: note: Failed to SLP the basic block.
+ex7_heat.c:190:54: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:193:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:66:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not consecutive access pretmp_216 = temperature1_16(D)->data;
+
+ex7_heat.c:165:6: note: Failed to SLP the basic block.
+ex7_heat.c:165:6: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:194:30: note: not consecutive access *_192 = _190;
+
+ex7_heat.c:194:30: note: not consecutive access _190 = *_191;
+
+ex7_heat.c:194:30: note: not consecutive access *_188 = _186;
+
+ex7_heat.c:194:30: note: not consecutive access _186 = *_187;
+
+ex7_heat.c:194:30: note: Failed to SLP the basic block.
+ex7_heat.c:194:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:194:57: note: not vectorized: no vectype for stmt: vect__73.247_233 = MEM[(double *)vectp_pretmp.245_221];
+ scalar_type: vector(2) double
+ex7_heat.c:194:57: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:194:30: note: not consecutive access *_6 = _4;
+
+ex7_heat.c:194:30: note: not consecutive access _4 = *_5;
+
+ex7_heat.c:194:30: note: not consecutive access *_2 = _279;
+
+ex7_heat.c:194:30: note: not consecutive access _279 = *_280;
+
+ex7_heat.c:194:30: note: Failed to SLP the basic block.
+ex7_heat.c:194:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:194:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:194:30: note: Unknown alignment for access: *pretmp_222
+ex7_heat.c:194:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:194:30: note: Unknown alignment for access: *pretmp_218
+ex7_heat.c:194:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:194:30: note: Unknown alignment for access: *pretmp_232
+ex7_heat.c:194:30: note: SLP: step doesn't divide the vector-size.
+ex7_heat.c:194:30: note: Unknown alignment for access: *pretmp_228
+ex7_heat.c:194:30: note: Failed to SLP the basic block.
+ex7_heat.c:194:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:165:6: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:67:5: note: not consecutive access temperature1_16(D)->ny = _136;
+
+ex7_heat.c:67:5: note: not consecutive access _136 = temperature2_18(D)->ny;
+
+ex7_heat.c:67:5: note: Failed to SLP the basic block.
+ex7_heat.c:67:5: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:67:5: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:69:30: note: not consecutive access _143 = *_142;
+
+ex7_heat.c:69:30: note: not consecutive access _145 = *_144;
+
+ex7_heat.c:69:30: note: not consecutive access _142 = temperature1_16(D)->data;
+
+ex7_heat.c:69:30: note: not consecutive access _144 = temperature2_18(D)->data;
+
+ex7_heat.c:69:30: note: Failed to SLP the basic block.
+ex7_heat.c:69:30: note: not vectorized: failed to find SLP opportunities in basic block.
+ex7_heat.c:178:24: note: not vectorized: not enough data-refs in basic block.
+ex7_heat.c:178:24: note: not vectorized: not enough data-refs in basic block.
+gcc -Ofast -fopt-info-vec-missed -c -o ex7_main.o ex7_main.c 
+ex7_main.c:92:5: note: not vectorized: control flow in loop.
+ex7_main.c:92:5: note: bad loop form.
+ex7_main.c:50:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:104:3: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:85:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:101:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:93:9: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:93:9: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:96:13: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:98:9: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:26:5: note: not vectorized: not enough data-refs in basic block.
+ex7_main.c:85:5: note: not vectorized: not enough data-refs in basic block.
+gcc -Ofast -fopt-info-vec-missed -o heat pngwriter.o ex7_heat.o ex7_main.o -lpng

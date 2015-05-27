@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# Usage: ./wasted
+
+# juha.lento@csc.fi, 2015-05-27
+
+
+# Run verbose apstat-command and parse output
+#   - data for each APID is output on one line
+#       field 1: "apstat" tag
+#       field 2: SLURM Job ID
+#       field 3: used nodes
+#       field 4: program name and opts
+#  
+apstat_stream () {
+  apstat -av | awk '
+    # APID field begin
+    /Ap\[[0-9]+\]/ {
+        apid  = "Interact"
+        nodes = "Undef"
+        mem   = "Undef"
+        prog  = "Undef" }
+    /Batch System ID = / {
+        apid  = $5 }
+    match($0, /Cmd\[[0-9]+\]: ([^,]+), ([0-9]+[kMG]B), [^,]*, nodes ([0-9]+),/, n) {
+        nodes = n[3]
+        mem   = n[2]
+        prog  = n[1] }
+    # APID field end
+    /Placement list entries:/ {
+        print "apstat", apid, nodes, prog }'
+}
+
+# Run verbose squeue-command and parse output
+#   - data for each SLURM Job ID is on one line
+#       field 1: "squeue" tag
+#       field 2: JOBID
+#       field 3: PARTITION
+#       field 4: NAME
+#       field 5: USER
+#       field 6: TIME
+#       field 7: TIMELIMIT
+#       field 8: RES_NODES
+#
+squeue_stream () {
+  squeue -t R -j -l -h | awk '
+    {
+        print "squeue", $1, $2, $3, $4, $6, $7, $8 }'
+}
+
+# Merge the streams from apstat_stream and squeue_stream
+#   - streams need to be in order apstat first squeue second
+#   - data for each SLURM Job ID is output on one line
+#
+merge_streams () {
+  sort -n -k 2 | awk '
+    BEGIN {
+        fmt = "%-8s%-11s%-10s%-10s%-12s%-12s%-11s%-12s%s"
+        printf fmt "\n",
+            "JOBID", "PARTITION", "NAME", "USER", "TIME",
+            "TIMELIMIT", "RES_NODES", "USED_NODES", "COMMAND"
+        used_nodes = 0
+        command = ""
+    }
+    /^apstat +Interact/ {
+        j = $2
+        n = $3
+        $1=$2=$3=""
+        printf fmt "\n",
+            "", j, "", "", "", "", "", n, substr($0,4)
+        next
+    }
+    /^apstat/ {
+        used_nodes += $3
+        $1=$2=$3=""
+        command = command ": " substr($0,4)
+    }
+    /^squeue/ {
+        if ( $8 != used_nodes )
+            fmt2 = "\033[1;31m" fmt "\033[0m \n"
+        else
+            fmt2 = fmt "\n"
+        printf fmt2, $2, $3, $4, $5, $6, $7, $8, used_nodes, substr(command,3)
+        used_nodes = 0
+        command = "" }'
+}
+
+# "Main"
+#
+cat <(apstat_stream) <(squeue_stream) | merge_streams
