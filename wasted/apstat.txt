@@ -1,0 +1,1384 @@
+Total placed applications: 115
+   Apid   ResId     User  PEs Nodes    Age State       Command
+2702856 1325440 karilain  240    10 54h09m   run     mdrun_mpi
+2703222 1325686 ohaapane  576    24 52h55m   run         namd2
+2703876 1326123 tparviai  192     8 50h45m   run   gpaw-python
+2704094 1326265 mikkolai  576    24 47h38m   run     mdrun_mpi
+2704239 1326343 ohaapane  576    24 40h18m   run         namd2
+2706645 1326919 llahtine  576    24 21h13m   run     mdrun_mpi
+2706646 1326920 llahtine  576    24 21h13m   run     mdrun_mpi
+2707711 1327051  honkala  480    20 12h54m   run   gpaw-python
+2707722 1327056     caro  240    10 11h07m   run vasp-MPI-NGZh
+2707741 1327067 jkoivula   72     3  8h17m   run   gpaw-python
+2707745 1327069 jkoivula   72     3  7h58m   run   gpaw-python
+2707753 1327074 jkoivula   72     3  7h43m   run   gpaw-python
+2707755 1327075 jkoivula   72     3  7h36m   run   gpaw-python
+2707757 1327076 tparviai  192     8  7h35m   run   gpaw-python
+2707802 1327081 jkoivula   72     3  7h22m   run   gpaw-python
+2707822 1327082  zwinger   64     6  7h21m   run ElmerSolver_m
+2707849 1327087  lipasti  576    24  7h17m   run   gpaw-python
+2707851 1327088  lipasti  576    24  7h16m   run   gpaw-python
+2707895 1327092  lipasti  192     8  7h09m   run   gpaw-python
+2707897 1327093  lipasti  192     8  7h09m   run   gpaw-python
+2707926 1327097  lipasti  192     8  7h01m   run   gpaw-python
+2707928 1327098  lipasti  192     8  7h01m   run   gpaw-python
+2707930 1327099  lipasti  192     8  7h01m   run   gpaw-python
+2707932 1327100  lipasti  192     8  7h01m   run   gpaw-python
+2707934 1327101  lipasti  192     8  7h00m   run   gpaw-python
+2707936 1327102  lipasti  192     8  7h00m   run   gpaw-python
+2707938 1327103  lipasti  192     8  7h00m   run   gpaw-python
+2707940 1327104  lipasti  192     8  7h00m   run   gpaw-python
+2707942 1327105  lipasti  192     8  7h00m   run   gpaw-python
+2707944 1327106  lipasti  192     8  7h00m   run   gpaw-python
+2707946 1327107  lipasti  192     8  7h00m   run   gpaw-python
+2707948 1327108 tparviai   96     4  6h55m   run   gpaw-python
+2707953 1327109 tparviai  192     8  6h52m   run   gpaw-python
+2707968 1327118 mjavanai  480    20  6h46m   run     mdrun_mpi
+2708351 1327136  pkapyla  576    24  6h17m   run         run.x
+2708372 1327145  pkapyla  576    24  6h07m   run         run.x
+2708374 1327146  pkapyla  576    24  6h07m   run         run.x
+2708376 1327147  pkapyla  576    24  6h07m   run         run.x
+2708378 1327148  pkapyla  144     6  6h07m   run         run.x
+2708397 1327156 akarpenk  240    10  5h52m   run   cpmd-qmmm.x
+2708406 1327161   astrom 1400    59  5h44m   run             r
+2708409 1327163   malola 1152    48  5h41m   run       gipaw.x
+2708411 1327164 loukonen  576    24  5h41m   run     cp2k.popt
+2708419 1327168 chandhur  240    10  5h37m   run     ABLSolver
+2708421 1327169 flolicat  288    12  5h37m   run     mdrun_mpi
+2708427 1327173 mjavanai  480    20  5h22m   run     mdrun_mpi
+2708456 1327190 pulkkine  288    12  5h02m   run      vasp-MPI
+2708474 1327199 mmmeland   96     4  4h57m   run   gpaw-python
+2708476 1327200 jkoivula   72     3  4h57m   run   gpaw-python
+2708480 1327202 jkoivula   72     3  4h52m   run   gpaw-python
+2708486 1327205 tarnurmi  144     6  4h45m   run     cp2k.popt
+2708512 1327222 loukonen  288    12  4h31m   run     cp2k.popt
+2708521 1327228 poojaric  480    20  4h25m   run     mdrun_mpi
+2708523 1327229 poojaric  480    20  4h24m   run     mdrun_mpi
+2708540 1327237  weckman   96     4  4h13m   run   gpaw-python
+2708542 1327238  honkala   72     3  4h12m   run   gpaw-python
+2708567 1327249  weckman   96     4  3h50m   run   gpaw-python
+2708591 1327262 klaasone  240    10  3h25m   run     cp2k.popt
+2708606 1327270 dmorozov  288     6  3h16m   run   gamess.00.x
+2708608 1327271     caro  240    10  3h13m   run vasp-MPI-NGZh
+2708619 1327276    regan  288    12  3h09m   run enzo_sisu.exe
+2708620 1327277 jkoivula   72     3  3h09m   run   gpaw-python
+2708622 1327278    regan  288    12  3h09m   run enzo_sisu.exe
+2708626 1327280 jkoivula   72     3  3h08m   run   gpaw-python
+2708628 1327281    regan  288    12  3h07m   run enzo_sisu.exe
+2708630 1327282    regan  288    12  3h07m   run enzo_sisu.exe
+2708639 1327287   skulju  384    16  2h57m   run     cp2k.popt
+2708641 1327288    fnick  130     6  2h56m   run             r
+2708643 1327289    fnick  130     6  2h54m   run             r
+2708658 1327297    fnick  130     6  2h39m   run             r
+2708660 1327298    fnick  130     6  2h38m   run             r
+2708662 1327299 jkoivula   72     3  2h37m   run   gpaw-python
+2708666 1327301 jkoivula   72     3  2h34m   run   gpaw-python
+2708670 1327303 jkoivula   72     3  2h33m   run   gpaw-python
+2708684 1327312 rissanes   72     3  2h27m   run     mdrun_mpi
+2708686 1327313 rissanes   72     3  2h27m   run     mdrun_mpi
+2708688 1327314 rissanes   72     3  2h26m   run     mdrun_mpi
+2708690 1327315 rissanes   72     3  2h26m   run     mdrun_mpi
+2708692 1327316 rissanes   72     3  2h25m   run     mdrun_mpi
+2708694 1327317 rissanes   72     3  2h25m   run     mdrun_mpi
+2708696 1327318 rissanes   72     3  2h24m   run     mdrun_mpi
+2708698 1327319 rissanes   72     3  2h24m   run     mdrun_mpi
+2708712 1327328 dmorozov  288     6  2h21m   run   gamess.00.x
+2708716 1327330 jkoivula   72     3  2h20m   run   gpaw-python
+2708718 1327331 mervasti  480    20  2h18m   run aims.071914_7
+2708742 1327344 jkoivula   72     3  2h11m   run   gpaw-python
+2708750 1327348 loukonen  576    24  2h08m   run     cp2k.popt
+2708792 1327365 pr1ucfew  480    20  1h47m   run ramses_ch_23d
+2708816 1327377 loukonen  288    12  1h35m   run     cp2k.popt
+2708818 1327378    sahoo   96     4  1h35m   run   gpaw-python
+2708820 1327379 loukonen  288    12  1h34m   run     cp2k.popt
+2708822 1327380  mustafa  240    10  1h34m   run      vasp-MPI
+2708831 1327385 juusaaks   72     3  1h25m   run   gpaw-python
+2708833 1327386 posysaev  288    12  1h24m   run   gpaw-python
+2708854 1327396 mmmeland  288    12  1h05m   run   gpaw-python
+2708862 1327400 pr1ucfew  480    20  0h51m   run ramses_ch_23d
+2708866 1327402 pr1ucfew  480    20  0h51m   run ramses_ch_23d
+2708868 1327403   malola  576    24  0h47m   run   gpaw-python
+2708872 1327405  mustafa  600    25  0h46m   run      vasp-MPI
+2708884 1327412 mreinhar  288    12  0h25m   run         run.x
+2709510 1327417     caro  240    10  0h04m   run vasp-MPI-NGZh
+2708892 1327418  mustafa  600    25  0h19m   run      vasp-MPI
+2708904 1327424  mustafa  600    25  0h13m   run      vasp-MPI
+2708906 1327425 flolicat  288    12  0h13m   run         namd2
+2709270 1327427 loukonen  576    24  0h12m   run     cp2k.popt
+2709418 1327429   enkavi   72     3  0h11m   run     mdrun_mpi
+2709459 1327431 loukonen  576    24  0h08m   run     cp2k.popt
+2709505 1327438 kalimeri  960    40  0h06m   run     mdrun_mpi
+2709507 1327439 flolicat  288    12  0h04m   run         namd2
+2709512 1327441      aoj  512    22  0h03m   run   gpaw-python
+2709516 1327443   enkavi   72     3  0h02m   run     mdrun_mpi
+2709518 1327444 murdacha  192     8  0h02m   run     cp2k.popt
+2709520 1327445   enkavi   72     3  0h02m   run     mdrun_mpi
+2709522 1327446      aoj  512    22  0h01m   run   gpaw-python
+2709524 1327447      aoj  512    22  0h00m   run   gpaw-python
+
+Application detail
+Ap[1]: apid 2702856, pagg 0x24600000f1f, resId 1325440, user karilain,
+       gid 3973, account 0, time 0, normal
+  Batch System ID = 287909
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Sun Jun 14 10:08:22 2015
+  Originator: aprun on NID 582, pid 8150
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x61a00000/0x61a10000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 240 -N 24, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[3]: apid 2703222, pagg 0x24600000f28, resId 1325686, user ohaapane,
+       gid 3993, account 0, time 0, normal
+  Batch System ID = 288093
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Sun Jun 14 11:22:32 2015
+  Originator: aprun on NID 582, pid 14827
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x630e0000/0x630f0000, NTTgran/entries 0/0
+  Cmd[0]: namd2 -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[5]: apid 2703876, pagg 0x24600000f72, resId 1326123, user tparviai,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 288419
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Sun Jun 14 13:32:15 2015
+  Originator: aprun on NID 582, pid 28307
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x659e0000/0x659f0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192 -N 24 --p-state 2600000, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[7]: apid 2704094, pagg 0x18600000dfc, resId 1326265, user mikkolai,
+       gid 3995, account 0, time 0, normal
+  Batch System ID = 288527
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Sun Jun 14 16:38:46 2015
+  Originator: aprun on NID 390, pid 28754
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x667a0000/0x667b0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[9]: apid 2704239, pagg 0x18600000e30, resId 1326343, user ohaapane,
+       gid 3993, account 0, time 0, normal
+  Batch System ID = 288595
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Sun Jun 14 23:59:12 2015
+  Originator: aprun on NID 390, pid 32520
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x67160000/0x67170000, NTTgran/entries 0/0
+  Cmd[0]: namd2 -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[11]: apid 2706645, pagg 0xc6000011a2, resId 1326919, user llahtine,
+       gid 8086, account 0, time 0, normal
+  Batch System ID = 288963
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Mon Jun 15 19:04:30 2015
+  Originator: aprun on NID 198, pid 23215
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x75ee0000/0x75ef0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[13]: apid 2706646, pagg 0x18600000f29, resId 1326920, user llahtine,
+       gid 8086, account 0, time 0, normal
+  Batch System ID = 288965
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Mon Jun 15 19:04:31 2015
+  Originator: aprun on NID 390, pid 3377
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x75f00000/0x75f10000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[15]: apid 2707711, pagg 0x24600001178, resId 1327051, user honkala,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 288810
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 03:23:13 2015
+  Originator: aprun on NID 582, pid 23541
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7d6e0000/0x7d6f0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[17]: apid 2707722, pagg 0xc600001202, resId 1327056, user caro,
+       gid 5389, account 0, time 0, normal
+  Batch System ID = 289151
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 05:10:19 2015
+  Originator: aprun on NID 198, pid 23076
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7d7c0000/0x7d7d0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI-NGZhalf -n 240, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[19]: apid 2707741, pagg 0x18600000f83, resId 1327067, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289240
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:00:22 2015
+  Originator: aprun on NID 390, pid 22289
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7d920000/0x7d930000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[21]: apid 2707745, pagg 0x18600000f86, resId 1327069, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289242
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:18:56 2015
+  Originator: aprun on NID 390, pid 22958
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7d960000/0x7d970000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[23]: apid 2707753, pagg 0xc60000121a, resId 1327074, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289246
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:34:04 2015
+  Originator: aprun on NID 198, pid 27879
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7d9e0000/0x7d9f0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[25]: apid 2707755, pagg 0x2460000119e, resId 1327075, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289247
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:41:07 2015
+  Originator: aprun on NID 582, pid 25666
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7da00000/0x7da10000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[27]: apid 2707757, pagg 0xc60000121d, resId 1327076, user tparviai,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 289248
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:42:35 2015
+  Originator: aprun on NID 198, pid 28643
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7da20000/0x7da30000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192 -N 24, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[29]: apid 2707802, pagg 0xc600001221, resId 1327081, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289253
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 08:55:31 2015
+  Originator: aprun on NID 198, pid 29370
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7df20000/0x7df30000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[31]: apid 2707822, pagg 0x18600000f8b, resId 1327082, user zwinger,
+       gid 101, account 0, time 0, normal
+  Batch System ID = 289254
+  Reservation flags = 0x940000
+  Application flags = 0x902801
+  Created at Tue Jun 16 08:56:39 2015
+  Originator: aprun on NID 390, pid 23721
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7e180000/0x7e190000, NTTgran/entries 0/0
+  Cmd[0]: ElmerSolver_mpi -n 64 -N 12 -m 2300 -ss, 2300MB, XT, nodes 6, exclusive
+  Placement list entries: 64
+Ap[33]: apid 2707849, pagg 0x18600000f8d, resId 1327087, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289257
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:00:36 2015
+  Originator: aprun on NID 390, pid 24134
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7e480000/0x7e490000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[35]: apid 2707851, pagg 0x246000011ac, resId 1327088, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289258
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:00:44 2015
+  Originator: aprun on NID 582, pid 5971
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7e4a0000/0x7e4b0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[37]: apid 2707895, pagg 0xc600001226, resId 1327092, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289262
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:08:00 2015
+  Originator: aprun on NID 198, pid 30283
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7e9a0000/0x7e9b0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[39]: apid 2707897, pagg 0x18600000f8e, resId 1327093, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289263
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:08:05 2015
+  Originator: aprun on NID 390, pid 24271
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7e9c0000/0x7e9d0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[41]: apid 2707926, pagg 0x246000011b2, resId 1327097, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289267
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:28 2015
+  Originator: aprun on NID 582, pid 10540
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ece0000/0x7ecf0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[43]: apid 2707928, pagg 0xc600001229, resId 1327098, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289268
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:33 2015
+  Originator: aprun on NID 198, pid 30774
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ed00000/0x7ed10000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[45]: apid 2707930, pagg 0x18600000f90, resId 1327099, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289269
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:36 2015
+  Originator: aprun on NID 390, pid 24561
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ed20000/0x7ed30000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[47]: apid 2707932, pagg 0x246000011b3, resId 1327100, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289270
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:40 2015
+  Originator: aprun on NID 582, pid 10672
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ed40000/0x7ed50000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[49]: apid 2707934, pagg 0xc60000122a, resId 1327101, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289271
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:45 2015
+  Originator: aprun on NID 198, pid 30909
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ed60000/0x7ed70000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[51]: apid 2707936, pagg 0x18600000f91, resId 1327102, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289272
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:48 2015
+  Originator: aprun on NID 390, pid 24693
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ed80000/0x7ed90000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[53]: apid 2707938, pagg 0x246000011b4, resId 1327103, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289273
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:52 2015
+  Originator: aprun on NID 582, pid 10810
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7eda0000/0x7edb0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[55]: apid 2707940, pagg 0xc60000122b, resId 1327104, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289274
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:56 2015
+  Originator: aprun on NID 198, pid 31042
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7edc0000/0x7edd0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[57]: apid 2707942, pagg 0x18600000f92, resId 1327105, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289275
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:16:59 2015
+  Originator: aprun on NID 390, pid 24825
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ede0000/0x7edf0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[59]: apid 2707944, pagg 0x246000011b5, resId 1327106, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289276
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:17:03 2015
+  Originator: aprun on NID 582, pid 10946
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ee00000/0x7ee10000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[61]: apid 2707946, pagg 0xc60000122c, resId 1327107, user lipasti,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289277
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:17:06 2015
+  Originator: aprun on NID 198, pid 31174
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ee20000/0x7ee30000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[63]: apid 2707948, pagg 0x18600000f93, resId 1327108, user tparviai,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 289278
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:21:45 2015
+  Originator: aprun on NID 390, pid 24962
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7ee40000/0x7ee50000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 96 -N 24 --p-state 2600000, 1365MB, XT, nodes 4, exclusive
+  Placement list entries: 96
+Ap[65]: apid 2707953, pagg 0x246000011b6, resId 1327109, user tparviai,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 289279
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:25:29 2015
+  Originator: aprun on NID 582, pid 11266
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7eec0000/0x7eed0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 192 -N 24 --p-state 2600000, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[67]: apid 2707968, pagg 0x18600000f96, resId 1327118, user mjavanai,
+       gid 3979, account 0, time 0, normal
+  Batch System ID = 289287
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 09:31:33 2015
+  Originator: aprun on NID 390, pid 25445
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x7efa0000/0x7efb0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 480 -N 24, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[69]: apid 2708351, pagg 0x246000011c2, resId 1327136, user pkapyla,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289302
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:00:38 2015
+  Originator: aprun on NID 582, pid 27756
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x81da0000/0x81db0000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 576 -j 1, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[71]: apid 2708372, pagg 0x18600000fa1, resId 1327145, user pkapyla,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289311
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:09:51 2015
+  Originator: aprun on NID 390, pid 29968
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x81f20000/0x81f30000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 576 -j 1, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[73]: apid 2708374, pagg 0x246000011c6, resId 1327146, user pkapyla,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289312
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:10:03 2015
+  Originator: aprun on NID 582, pid 28689
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x81f40000/0x81f50000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 576 -j 1, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[75]: apid 2708376, pagg 0xc60000123f, resId 1327147, user pkapyla,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289313
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:10:12 2015
+  Originator: aprun on NID 198, pid 3771
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x81f60000/0x81f70000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 576 -j 1, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[77]: apid 2708378, pagg 0x18600000fa2, resId 1327148, user pkapyla,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289314
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:10:30 2015
+  Originator: aprun on NID 390, pid 30172
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x81f80000/0x81f90000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 144 -j 1, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 144
+Ap[79]: apid 2708397, pagg 0xc600001244, resId 1327156, user akarpenk,
+       gid 5389, account 0, time 0, normal
+  Batch System ID = 289320
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 10:25:35 2015
+  Originator: aprun on NID 198, pid 10592
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82120000/0x82130000, NTTgran/entries 0/0
+  Cmd[0]: cpmd-qmmm.x -n 240, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[81]: apid 2708406, pagg 0x246000011cc, resId 1327161, user astrom,
+       gid 101, account 0, time 0, normal
+  Batch System ID = 289324
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:33:11 2015
+  Originator: aprun on NID 582, pid 30623
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x821c0000/0x821d0000, NTTgran/entries 0/0
+  Cmd[0]: r -n 1400 -j 1, 1365MB, XT, nodes 59, exclusive
+  Placement list entries: 1400
+Ap[83]: apid 2708409, pagg 0xc600001248, resId 1327163, user malola,
+       gid 1713, account 0, time 0, normal
+  Batch System ID = 289325
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 10:36:00 2015
+  Originator: aprun on NID 198, pid 11181
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82200000/0x82210000, NTTgran/entries 0/0
+  Cmd[0]: gipaw.x -n 1152, 1365MB, XT, nodes 48, exclusive
+  Placement list entries: 1152
+Ap[85]: apid 2708411, pagg 0x18600000fa9, resId 1327164, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289326
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 10:36:16 2015
+  Originator: aprun on NID 390, pid 31528
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82220000/0x82230000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[87]: apid 2708419, pagg 0xc60000124a, resId 1327168, user chandhur,
+       gid 2308, account 0, time 0, normal
+  Batch System ID = 289330
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 10:39:46 2015
+  Originator: aprun on NID 198, pid 11743
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x822a0000/0x822b0000, NTTgran/entries 0/0
+  Cmd[0]: ABLSolver -n 240 -N 24 -j 1, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[89]: apid 2708421, pagg 0x18600000fab, resId 1327169, user flolicat,
+       gid 8080, account 0, time 0, normal
+  Batch System ID = 289331
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 10:40:27 2015
+  Originator: aprun on NID 390, pid 31694
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x822c0000/0x822d0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[91]: apid 2708427, pagg 0x246000011d1, resId 1327173, user mjavanai,
+       gid 3979, account 0, time 0, normal
+  Batch System ID = 289333
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 10:55:00 2015
+  Originator: aprun on NID 582, pid 32187
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82340000/0x82350000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 480 -N 24, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[93]: apid 2708456, pagg 0x246000011e0, resId 1327190, user pulkkine,
+       gid 2312, account 0, time 0, normal
+  Batch System ID = 289346
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:15:42 2015
+  Originator: aprun on NID 582, pid 2820
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82540000/0x82550000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[95]: apid 2708474, pagg 0xc600001257, resId 1327199, user mmmeland,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289355
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:20:13 2015
+  Originator: aprun on NID 198, pid 19837
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82660000/0x82670000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 96, 1365MB, XT, nodes 4, exclusive
+  Placement list entries: 96
+Ap[97]: apid 2708476, pagg 0x18600000fb2, resId 1327200, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289356
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:20:34 2015
+  Originator: aprun on NID 390, pid 512
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82680000/0x82690000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[99]: apid 2708480, pagg 0x246000011e8, resId 1327202, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289360
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:24:55 2015
+  Originator: aprun on NID 582, pid 9707
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x826c0000/0x826d0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[101]: apid 2708486, pagg 0xc600001259, resId 1327205, user tarnurmi,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289363
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:32:19 2015
+  Originator: aprun on NID 198, pid 20274
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82720000/0x82730000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 144, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 144
+Ap[103]: apid 2708512, pagg 0x246000011f4, resId 1327222, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289379
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:46:11 2015
+  Originator: aprun on NID 582, pid 11919
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82860000/0x82870000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[105]: apid 2708521, pagg 0x18600000fc3, resId 1327228, user poojaric,
+       gid 8035, account 0, time 0, normal
+  Batch System ID = 289385
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:51:44 2015
+  Originator: aprun on NID 390, pid 15228
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x828c0000/0x828d0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[107]: apid 2708523, pagg 0x246000011f5, resId 1327229, user poojaric,
+       gid 8035, account 0, time 0, normal
+  Batch System ID = 289386
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 11:53:02 2015
+  Originator: aprun on NID 582, pid 12238
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x828e0000/0x828f0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[109]: apid 2708540, pagg 0xc600001268, resId 1327237, user weckman,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289394
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 12:04:30 2015
+  Originator: aprun on NID 198, pid 29057
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82a00000/0x82a10000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 96, 1365MB, XT, nodes 4, exclusive
+  Placement list entries: 96
+Ap[111]: apid 2708542, pagg 0xc600001269, resId 1327238, user honkala,
+       gid 2630, account 0, time 0, normal
+  Batch System ID = 289395
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 12:05:12 2015
+  Originator: aprun on NID 198, pid 29168
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82a20000/0x82a30000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[113]: apid 2708567, pagg 0x246000011fd, resId 1327249, user weckman,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289406
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 12:26:51 2015
+  Originator: aprun on NID 582, pid 13649
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82be0000/0x82bf0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 96, 1365MB, XT, nodes 4, exclusive
+  Placement list entries: 96
+Ap[115]: apid 2708591, pagg 0xc60000127a, resId 1327262, user klaasone,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289415
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 12:51:47 2015
+  Originator: aprun on NID 198, pid 10900
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82dc0000/0x82dd0000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 240 -N 24, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[117]: apid 2708606, pagg 0x18600000fd7, resId 1327270, user dmorozov,
+       gid 1714, account 0, time 0, normal
+  Batch System ID = 289422
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:00:48 2015
+  Originator: aprun on NID 390, pid 32537
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82ec0000/0x82ed0000, NTTgran/entries 0/0
+  Cmd[0]: gamess.00.x -n 288, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 288
+Ap[119]: apid 2708608, pagg 0x24600001212, resId 1327271, user caro,
+       gid 5389, account 0, time 0, normal
+  Batch System ID = 289423
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:03:43 2015
+  Originator: aprun on NID 582, pid 19806
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82ee0000/0x82ef0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI-NGZhalf -n 240, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[121]: apid 2708619, pagg 0x18600000fd9, resId 1327276, user regan,
+       gid 5562, account 0, time 0, normal
+  Batch System ID = 289428
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:08:28 2015
+  Originator: aprun on NID 390, pid 637
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82f80000/0x82f90000, NTTgran/entries 0/0
+  Cmd[0]: enzo_sisu.exe -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[123]: apid 2708620, pagg 0x18600000fda, resId 1327277, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289429
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:08:29 2015
+  Originator: aprun on NID 390, pid 653
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82fa0000/0x82fb0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[125]: apid 2708622, pagg 0x24600001219, resId 1327278, user regan,
+       gid 5562, account 0, time 0, normal
+  Batch System ID = 289430
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:08:36 2015
+  Originator: aprun on NID 582, pid 21173
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x82fc0000/0x82fd0000, NTTgran/entries 0/0
+  Cmd[0]: enzo_sisu.exe -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[127]: apid 2708626, pagg 0x18600000fdb, resId 1327280, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289432
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:09:15 2015
+  Originator: aprun on NID 390, pid 802
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83000000/0x83010000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[129]: apid 2708628, pagg 0x2460000121a, resId 1327281, user regan,
+       gid 5562, account 0, time 0, normal
+  Batch System ID = 289433
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:10:14 2015
+  Originator: aprun on NID 582, pid 21306
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83020000/0x83030000, NTTgran/entries 0/0
+  Cmd[0]: enzo_sisu.exe -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[131]: apid 2708630, pagg 0xc600001283, resId 1327282, user regan,
+       gid 5562, account 0, time 0, normal
+  Batch System ID = 289434
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:10:35 2015
+  Originator: aprun on NID 198, pid 18263
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83040000/0x83050000, NTTgran/entries 0/0
+  Cmd[0]: enzo_sisu.exe -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[133]: apid 2708639, pagg 0xc600001288, resId 1327287, user skulju,
+       gid 3976, account 0, time 0, normal
+  Batch System ID = 289439
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 13:19:45 2015
+  Originator: aprun on NID 198, pid 19203
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x830c0000/0x830d0000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 384 -j 1, 1365MB, XT, nodes 16, exclusive
+  Placement list entries: 384
+Ap[135]: apid 2708641, pagg 0x18600000fde, resId 1327288, user fnick,
+       gid 7284, account 0, time 0, normal
+  Batch System ID = 289440
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 13:21:01 2015
+  Originator: aprun on NID 390, pid 1294
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x830e0000/0x830f0000, NTTgran/entries 0/0
+  Cmd[0]: r -n 130 -j 1, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 130
+Ap[137]: apid 2708643, pagg 0x18600000fdf, resId 1327289, user fnick,
+       gid 7284, account 0, time 0, normal
+  Batch System ID = 289441
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 13:23:03 2015
+  Originator: aprun on NID 390, pid 1502
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83100000/0x83110000, NTTgran/entries 0/0
+  Cmd[0]: r -n 130 -j 1, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 130
+Ap[139]: apid 2708658, pagg 0x18600000fe3, resId 1327297, user fnick,
+       gid 7284, account 0, time 0, normal
+  Batch System ID = 289449
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 13:37:57 2015
+  Originator: aprun on NID 390, pid 2223
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x831e0000/0x831f0000, NTTgran/entries 0/0
+  Cmd[0]: r -n 130 -j 1, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 130
+Ap[141]: apid 2708660, pagg 0xc60000128f, resId 1327298, user fnick,
+       gid 7284, account 0, time 0, normal
+  Batch System ID = 289450
+  Reservation flags = 0x940000
+  Application flags = 0x142001
+  Created at Tue Jun 16 13:39:18 2015
+  Originator: aprun on NID 198, pid 25851
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83200000/0x83210000, NTTgran/entries 0/0
+  Cmd[0]: r -n 130 -j 1, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 130
+Ap[143]: apid 2708662, pagg 0x2460000123f, resId 1327299, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289451
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:40:03 2015
+  Originator: aprun on NID 582, pid 28618
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83220000/0x83230000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[145]: apid 2708666, pagg 0xc600001291, resId 1327301, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289453
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:42:56 2015
+  Originator: aprun on NID 198, pid 26251
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83260000/0x83270000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[147]: apid 2708670, pagg 0xc600001296, resId 1327303, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289456
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:44:36 2015
+  Originator: aprun on NID 198, pid 27800
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x832a0000/0x832b0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[149]: apid 2708684, pagg 0xc60000129d, resId 1327312, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289464
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:49:51 2015
+  Originator: aprun on NID 198, pid 29421
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83380000/0x83390000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[151]: apid 2708686, pagg 0x2460000124a, resId 1327313, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289466
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:50:04 2015
+  Originator: aprun on NID 582, pid 30949
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x833a0000/0x833b0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[153]: apid 2708688, pagg 0x2460000124d, resId 1327314, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289468
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:50:50 2015
+  Originator: aprun on NID 582, pid 31464
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x833c0000/0x833d0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[155]: apid 2708690, pagg 0xc6000012a2, resId 1327315, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289470
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:51:06 2015
+  Originator: aprun on NID 198, pid 30420
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x833e0000/0x833f0000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[157]: apid 2708692, pagg 0x18600000fe7, resId 1327316, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289472
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:52:13 2015
+  Originator: aprun on NID 390, pid 2996
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83400000/0x83410000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[159]: apid 2708694, pagg 0x2460000124e, resId 1327317, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289474
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:52:24 2015
+  Originator: aprun on NID 582, pid 31575
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83420000/0x83430000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[161]: apid 2708696, pagg 0xc6000012a3, resId 1327318, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289476
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:52:49 2015
+  Originator: aprun on NID 198, pid 30605
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83440000/0x83450000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[163]: apid 2708698, pagg 0xc6000012a4, resId 1327319, user rissanes,
+       gid 8025, account 0, time 0, normal
+  Batch System ID = 289478
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:53:06 2015
+  Originator: aprun on NID 198, pid 30722
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83460000/0x83470000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[165]: apid 2708712, pagg 0x24600001252, resId 1327328, user dmorozov,
+       gid 1714, account 0, time 0, normal
+  Batch System ID = 289485
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:56:33 2015
+  Originator: aprun on NID 582, pid 32288
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83560000/0x83570000, NTTgran/entries 0/0
+  Cmd[0]: gamess.00.x -n 288, 1365MB, XT, nodes 6, exclusive
+  Placement list entries: 288
+Ap[167]: apid 2708716, pagg 0x24600001253, resId 1327330, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289487
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:57:13 2015
+  Originator: aprun on NID 582, pid 32420
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x835a0000/0x835b0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[169]: apid 2708718, pagg 0xc6000012a8, resId 1327331, user mervasti,
+       gid 5359, account 0, time 0, normal
+  Batch System ID = 289488
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 13:59:16 2015
+  Originator: aprun on NID 198, pid 31501
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x835c0000/0x835d0000, NTTgran/entries 0/0
+  Cmd[0]: aims.071914_7.scalapack.mpi.x -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[171]: apid 2708742, pagg 0x18600000ff0, resId 1327344, user jkoivula,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289500
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:06:30 2015
+  Originator: aprun on NID 390, pid 4730
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83740000/0x83750000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[173]: apid 2708750, pagg 0xc6000012b4, resId 1327348, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289504
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:08:58 2015
+  Originator: aprun on NID 198, pid 7049
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x837c0000/0x837d0000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[175]: apid 2708792, pagg 0xc6000012bc, resId 1327365, user pr1ucfew,
+       gid 630060, account 0, time 0, normal
+  Batch System ID = 289521
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:29:59 2015
+  Originator: aprun on NID 198, pid 9005
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83ae0000/0x83af0000, NTTgran/entries 0/0
+  Cmd[0]: ramses_ch_23d -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[177]: apid 2708816, pagg 0x24600001262, resId 1327377, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289534
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:41:53 2015
+  Originator: aprun on NID 582, pid 3095
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83c60000/0x83c70000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[179]: apid 2708818, pagg 0xc6000012c5, resId 1327378, user sahoo,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289535
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:42:41 2015
+  Originator: aprun on NID 198, pid 10740
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83c80000/0x83c90000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 96, 1365MB, XT, nodes 4, exclusive
+  Placement list entries: 96
+Ap[181]: apid 2708820, pagg 0x24600001263, resId 1327379, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289536
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:42:43 2015
+  Originator: aprun on NID 582, pid 3205
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83ca0000/0x83cb0000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[183]: apid 2708822, pagg 0xc6000012c6, resId 1327380, user mustafa,
+       gid 6250, account 0, time 0, normal
+  Batch System ID = 289537
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:43:08 2015
+  Originator: aprun on NID 198, pid 10855
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83cc0000/0x83cd0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI -n 240, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[185]: apid 2708831, pagg 0x24600001265, resId 1327385, user juusaaks,
+       gid 2501, account 0, time 0, normal
+  Batch System ID = 289542
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:52:16 2015
+  Originator: aprun on NID 582, pid 3508
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83d40000/0x83d50000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[187]: apid 2708833, pagg 0xc6000012ca, resId 1327386, user posysaev,
+       gid 2279, account 0, time 0, normal
+  Batch System ID = 289544
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 14:53:26 2015
+  Originator: aprun on NID 198, pid 11638
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83d60000/0x83d70000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[189]: apid 2708854, pagg 0x18600001003, resId 1327396, user mmmeland,
+       gid 1370, account 0, time 0, normal
+  Batch System ID = 289554
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:12:02 2015
+  Originator: aprun on NID 390, pid 13912
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83ec0000/0x83ed0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[191]: apid 2708862, pagg 0x2460000126e, resId 1327400, user pr1ucfew,
+       gid 630060, account 0, time 0, normal
+  Batch System ID = 289558
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:25:49 2015
+  Originator: aprun on NID 582, pid 5329
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83f40000/0x83f50000, NTTgran/entries 0/0
+  Cmd[0]: ramses_ch_23d -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[193]: apid 2708866, pagg 0x18600001006, resId 1327402, user pr1ucfew,
+       gid 630060, account 0, time 0, normal
+  Batch System ID = 289560
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:26:23 2015
+  Originator: aprun on NID 390, pid 14486
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83f80000/0x83f90000, NTTgran/entries 0/0
+  Cmd[0]: ramses_ch_23d -n 480, 1365MB, XT, nodes 20, exclusive
+  Placement list entries: 480
+Ap[195]: apid 2708868, pagg 0x2460000126f, resId 1327403, user malola,
+       gid 1713, account 0, time 0, normal
+  Batch System ID = 289562
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:29:50 2015
+  Originator: aprun on NID 582, pid 5591
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83fa0000/0x83fb0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[197]: apid 2708872, pagg 0xc6000012d4, resId 1327405, user mustafa,
+       gid 6250, account 0, time 0, normal
+  Batch System ID = 289564
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:31:20 2015
+  Originator: aprun on NID 198, pid 24151
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x83fe0000/0x83ff0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI -n 600, 1365MB, XT, nodes 25, exclusive
+  Placement list entries: 600
+Ap[199]: apid 2708884, pagg 0x24600001277, resId 1327412, user mreinhar,
+       gid 4928, account 0, time 0, normal
+  Batch System ID = 289570
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:52:06 2015
+  Originator: aprun on NID 582, pid 12441
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x840a0000/0x840b0000, NTTgran/entries 0/0
+  Cmd[0]: run.x -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[201]: apid 2709510, pagg 0x1860000100e, resId 1327417, user caro,
+       gid 5389, account 0, time 0, normal
+  Batch System ID = 289522
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:54:27 2015
+  Originator: aprun on NID 390, pid 29245
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88be0000/0x88bf0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI-NGZhalf -n 240, 1365MB, XT, nodes 10, exclusive
+  Placement list entries: 240
+Ap[203]: apid 2708892, pagg 0x1860000100f, resId 1327418, user mustafa,
+       gid 6250, account 0, time 0, normal
+  Batch System ID = 289572
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 15:57:44 2015
+  Originator: aprun on NID 390, pid 21813
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x84120000/0x84130000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI -n 600, 1365MB, XT, nodes 25, exclusive
+  Placement list entries: 600
+Ap[205]: apid 2708904, pagg 0xc6000012d9, resId 1327424, user mustafa,
+       gid 6250, account 0, time 0, normal
+  Batch System ID = 289578
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:03:53 2015
+  Originator: aprun on NID 198, pid 25160
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x841e0000/0x841f0000, NTTgran/entries 0/0
+  Cmd[0]: vasp-MPI -n 600, 1365MB, XT, nodes 25, exclusive
+  Placement list entries: 600
+Ap[207]: apid 2708906, pagg 0x18600001012, resId 1327425, user flolicat,
+       gid 8019, account 0, time 0, normal
+  Batch System ID = 289579
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:04:13 2015
+  Originator: aprun on NID 390, pid 22313
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x84200000/0x84210000, NTTgran/entries 0/0
+  Cmd[0]: namd2 -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[209]: apid 2709270, pagg 0xc6000012da, resId 1327427, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289582
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:05:31 2015
+  Originator: aprun on NID 198, pid 25270
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x86f40000/0x86f50000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[211]: apid 2709418, pagg 0x18600001013, resId 1327429, user enkavi,
+       gid 8031, account 0, time 0, normal
+  Batch System ID = 289584
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:06:22 2015
+  Originator: aprun on NID 390, pid 22506
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88180000/0x88190000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[213]: apid 2709459, pagg 0x2460000127f, resId 1327431, user loukonen,
+       gid 6306, account 0, time 0, normal
+  Batch System ID = 289586
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:08:45 2015
+  Originator: aprun on NID 582, pid 8984
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88660000/0x88670000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 576, 1365MB, XT, nodes 24, exclusive
+  Placement list entries: 576
+Ap[215]: apid 2709505, pagg 0x24600001283, resId 1327438, user kalimeri,
+       gid 8033, account 0, time 0, normal
+  Batch System ID = 289591
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:11:32 2015
+  Originator: aprun on NID 582, pid 9756
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88b80000/0x88b90000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 960, 1365MB, XT, nodes 40, exclusive
+  Placement list entries: 960
+Ap[217]: apid 2709507, pagg 0x18600001016, resId 1327439, user flolicat,
+       gid 8019, account 0, time 0, normal
+  Batch System ID = 289592
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:12:48 2015
+  Originator: aprun on NID 390, pid 29005
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88ba0000/0x88bb0000, NTTgran/entries 0/0
+  Cmd[0]: namd2 -n 288, 1365MB, XT, nodes 12, exclusive
+  Placement list entries: 288
+Ap[219]: apid 2709512, pagg 0x24600001284, resId 1327441, user aoj,
+       gid 2003, account 0, time 0, normal
+  Batch System ID = 289594
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:13:55 2015
+  Originator: aprun on NID 582, pid 9890
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88c00000/0x88c10000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 512, 1365MB, XT, nodes 22, exclusive
+  Placement list entries: 512
+Ap[221]: apid 2709516, pagg 0xc6000012dc, resId 1327443, user enkavi,
+       gid 8031, account 0, time 0, normal
+  Batch System ID = 289596
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:14:43 2015
+  Originator: aprun on NID 198, pid 25664
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88c40000/0x88c50000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[223]: apid 2709518, pagg 0x18600001019, resId 1327444, user murdacha,
+       gid 5776, account 0, time 0, normal
+  Batch System ID = 289601
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:15:21 2015
+  Originator: aprun on NID 390, pid 29806
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88c60000/0x88c70000, NTTgran/entries 0/0
+  Cmd[0]: cp2k.popt -n 192, 1365MB, XT, nodes 8, exclusive
+  Placement list entries: 192
+Ap[225]: apid 2709520, pagg 0xc6000012de, resId 1327445, user enkavi,
+       gid 8031, account 0, time 0, normal
+  Batch System ID = 289602
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:15:28 2015
+  Originator: aprun on NID 198, pid 25951
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88c80000/0x88c90000, NTTgran/entries 0/0
+  Cmd[0]: mdrun_mpi -n 72, 1365MB, XT, nodes 3, exclusive
+  Placement list entries: 72
+Ap[227]: apid 2709522, pagg 0x1860000101a, resId 1327446, user aoj,
+       gid 2003, account 0, time 0, normal
+  Batch System ID = 289607
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:15:43 2015
+  Originator: aprun on NID 390, pid 30057
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88ca0000/0x88cb0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 512, 1365MB, XT, nodes 22, exclusive
+  Placement list entries: 512
+Ap[229]: apid 2709524, pagg 0x1860000101b, resId 1327447, user aoj,
+       gid 2003, account 0, time 0, normal
+  Batch System ID = 289608
+  Reservation flags = 0x940000
+  Application flags = 0x102001
+  Created at Tue Jun 16 16:16:44 2015
+  Originator: aprun on NID 390, pid 30276
+  Number of commands 1, control network fanout 32
+  Network: cookies 0x88cc0000/0x88cd0000, NTTgran/entries 0/0
+  Cmd[0]: gpaw-python -n 512, 1365MB, XT, nodes 22, exclusive
+  Placement list entries: 512
