@@ -12,12 +12,12 @@
 # of resources.
 #
 # This implementation is written for demonstration and testing purposes.
-# The attention is paid on the data structures, code refactoring and
+# The attention is paid on data structures, code refactoring and
 # making the functions general.
 #
 #
-# General notes about the implementation and data structures
-# ----------------------------------------------------------
+# General notes about the implementation and the data structures
+# --------------------------------------------------------------
 #
 # Linux command line has excellent small programs to work with streams
 # of newline separated lines of text. The usefulness of these small
@@ -29,15 +29,15 @@
 # Here we work with two flavors of tables. Tables which have sorted and
 # unique key columns,
 # [*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm),
-# and simple *tabs*-tables, without the key-column restrictions. Both
+# and simple *tabs*-tables, without the key-column restriction. Both
 # table formats have a header row as the first row. Columns are
 # separated by tabs, and each column header begins with a non-printing
 # start-of-header character (ascii `\x01`). Fields cannot contain newline,
 # tab or start-of-header characters.
 #
 # Some operations, such as merging tables, are easier to define on the
-# more constricted nosql-format tables. On the other hand, many of the
-# of operations do not require uniquely keyed
+# more constrained nosql-format tables. On the other hand, many of the
+# operations do not require uniquely keyed
 # columns, and can be made more general.
 #
 # Functions that operate on the nosql-tables have `nosql` in their name,
@@ -88,26 +88,27 @@ squeue_nosql () {
 #
 # ~~~ {.bash}
 apstat_nosql () {
-  if [ -n "$OFFLINE" ]; then
-      cat apstat.txt
-  else
-      apstat -av
-  fi | awk -f tabs.awk --source '
-    /Batch System ID = / {
-        jobid  = gensub( /[^0-9]/, "", "g", $NF )
-    }
-    match( $0, /Cmd\[[0-9]+\]: ([^,]+),.*, nodes ([0-9]+),/, n ) {
-        if( jobid ) {
-            nodes[jobid] = nodes[jobid] + n[2]
-            prog[jobid]  = ( prog[jobid] ) ? prog[jobid] " : " n[1] : n[1]
+    if [ -n "$OFFLINE" ]; then
+        cat apstat.txt
+    else
+        apstat -av
+    fi | awk -f tabs.awk --source '
+        /Batch System ID = / {
+            jobid  = gensub( /[^0-9]/, "", "g", $NF )
         }
-    }
-    END {
-        split( "JOBID  USED_NODES COMMAND", a )
-        nosql_print_header( a )
-        for( i in nodes )
+        match( $0, /Cmd\[[0-9]+\]: ([^,]+),.*, nodes ([0-9]+),/, n ) {
+            if( jobid ) {
+                nodes[jobid] = nodes[jobid] + n[2]
+                prog[jobid]  = ( prog[jobid] ) ? prog[jobid] " : " n[1] : n[1]
+            }
+        }
+        END {
+            split( "JOBID  USED_NODES COMMAND", a )
+            nosql_print_header( a )
+            for( i in nodes )
             printf( "%s\t%s\t%s\n", i, nodes[i], prog[i] )
-    }' | sort -n
+        }
+    ' | sort -n
 }
 # ~~~
 #

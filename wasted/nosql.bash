@@ -1,5 +1,28 @@
 #!/bin/bash
-
+#
+# % Wasted
+# % juha.lento@csc.fi
+# % 2015-06-16
+#
+# NoSQL 
+# =====
+#
+# Library of functions that work with NoSQL-formatted tables,
+# [*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm).
+#
+#
+# Constructing a NoSQL-formatted table
+# ------------------------------------
+#
+# NoSQL-format is really simple to write with practically any programming
+# language. The helper function here, `column_table_nosql`, converts a
+# text table with fixed column widths to nosql-format. The first column is
+# implicitly assumed to be a valid and unique key for the row (record). This
+# function is generally useful when the format of the source table is
+# known. See function `squeue_nosql` in `wasted.bash`, for
+# example.
+#
+# ~~~ {.bash}
 column_table_nosql () {
     awk -f tabs.awk --source '
         BEGIN{FIELDWIDTHS="'"${1}"'"}
@@ -15,7 +38,18 @@ column_table_nosql () {
             nosql_print_fields( a )
         }' | sort -n
 }
-
+# ~~~
+#
+#
+# Merging two tables
+# ------------------
+#
+# A unique way to merge the rows of two tables is simple to define when
+# both tables have a row keys as in nosql-format. Also, reading one of
+# the tables to memory can be avoided, and the function can be written
+# more "stream-like", when the keys (rows) are ordered.
+#
+# ~~~ {.bash}
 nosql_paste () {
   awk -f tabs.awk --source '
     BEGIN {
@@ -69,3 +103,4 @@ nosql_paste () {
         } while( e1 || e2 )
     }'  "$1" "$2"
 }
+# ~~~

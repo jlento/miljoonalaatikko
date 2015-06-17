@@ -1,5 +1,24 @@
 #!/bin/bash
-
+#
+# % Wasted
+# % juha.lento@csc.fi
+# % 2015-06-16
+#
+# Tab separated columns
+# =====================
+#
+# The functions here take tabs-formatted (including nosql-tables)
+# as input, and produce tabs-formatted tables.
+#
+#
+# Pretty printing a table
+# -----------------------
+#
+# Pretty printing a table needs to read through the whole table to
+# set the column widths. The non-printing control characters need
+# to be filtered out from the calculation of the column widths.
+#
+# ~~~ {.bash}
 tabs_print() {
     LC_ALL=C awk -f tabs.awk --source '
         function drop_nonprinting( s ) {
@@ -33,7 +52,24 @@ tabs_print() {
                 print_row( rows[j], w )
         }'
 } 
-
+# ~~~
+#
+#
+# Selecting records and fields
+# ----------------------------
+#
+# The `tabs_paint` function here is an example of a function that
+# select records (rows) from the table and then performs actions on
+# that record. Here the conditon that is used to select a record
+# is given as a first argument to the function, and should be a valid
+# awk expression where the fields are referenced as `a["FIELD_NAME"]`.
+# The second argument lists the fields that should be painted. See
+# the `tabs_paint` call in `wasted.bash`, for example.
+#
+# This function can be easily modified, to drop the selected lines, for 
+# example.
+#
+# ~~~ {.bash}
 tabs_paint () {
     awk -f tabs.awk --source '
         function red ( s ) {
@@ -63,7 +99,21 @@ tabs_paint () {
             nosql_print_fields( b )
         }'
 }
-
+# ~~~
+#
+#
+# Sorting the tables
+# ------------------
+#
+# The table formats tabs and nosql can easily be (re)sorted using the
+# standard unix `sort` command.
+#
+# This convenience function, `tabs_sort`, accepts the name of the column
+# that should be used as a sorting key as the first argument, and sets
+# tab-character as the field separator. The remaining
+# arguments are passed to sort command.
+#
+# ~~~ {.bash}
 tabs_sort () {
     key=$1
     shift
@@ -80,3 +130,4 @@ tabs_sort () {
     [[ n -gt ${#header[@]} ]] && n=1
     sort -t "$TAB" -k "$n" "$@"
 }
+# ~~~
