@@ -30,9 +30,11 @@ source strings.bash
 nosql_from_fixed_width_table () {
     local -a a
     local line
-    read_fixed_width_fields "$1" a
+    IFS= read -r line
+    split_fixed_width_fields "$line" a "$1"
     IFS=$'\t' eval 'printf "%s\n" "${a[*]/#/${SOH}}"'
-    while read_fixed_width_fields "$1" a; do
+    while IFS= read -r line; do
+        split_fixed_width_fields "$line" a "$1"
 	IFS=$'\t' eval 'printf "%s\n" "${a[*]}"'
     done | sort -n
 }

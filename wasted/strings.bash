@@ -59,12 +59,12 @@ __split_recursive () {
 }
 # ~~~
 
-read_fixed_width_fields () {
+split_fixed_width_fields () {
     local w
     eval $2='()'
-    for w in $1 ; do
-	read -r -N $w value || return 1
-	eval $2[\${#$2[@]}]='"$(strip "$value")"'
+    local s=0
+    for w in $3 ; do
+	eval read $2[\${#${2}[@]}] <<<"${1:${s}:${w}}"
+        (( s += $w ))
     done
-    read -r value
 }
