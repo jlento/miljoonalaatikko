@@ -10,33 +10,31 @@
 # Library of functions that work with NoSQL-formatted tables,
 # [*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm).
 #
-#
-# Constructing a NoSQL-formatted table
-# ------------------------------------
-#
 # NoSQL-format is really simple to write with practically any programming
-# language. The helper function here, `column_table_nosql`, converts a
-# text table with fixed column widths to nosql-format. The first column is
+# language.
+
+#
+# ~~~ {.bash}
+source strings.bash
+# ~~~
+# Construct a NoSQL-format table from fixed width columns
+# -------------------------------------------------------
+#
+# The first column is
 # implicitly assumed to be a valid and unique key for the row (record). This
 # function is generally useful when the format of the source table is
 # known. See function `squeue_nosql` in `wasted.bash`, for
 # example.
 #
 # ~~~ {.bash}
-column_table_nosql () {
-    awk -f tabs.awk --source '
-        BEGIN{FIELDWIDTHS="'"${1}"'"}
-        NR == 1 {
-            for( i = 1; i <= NF; i++ )
-                a[i] = strip( $i )
-            nosql_print_header( a )
-            next
-        }
-        {
-            for( i = 1; i <= NF; i++ )
-                a[i] = strip( $i )
-            nosql_print_fields( a )
-        }' | sort -n
+nosql_from_fixed_width_table () {
+    local -a a
+    local line
+    read_fixed_width_fields "$1" a
+    IFS=$'\t' eval 'printf "%s\n" "${a[*]/#/${SOH}}"'
+    while read_fixed_width_fields "$1" a; do
+	IFS=$'\t' eval 'printf "%s\n" "${a[*]}"'
+    done | sort -n
 }
 # ~~~
 #

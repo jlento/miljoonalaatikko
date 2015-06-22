@@ -32,7 +32,7 @@ squeue_nosql () {
     else
         squeue -t R -o "$fmt"
     fi | sed 's/    NODES/RES_NODES/' | \
-        column_table_nosql "$fieldwidths"
+        nosql_from_fixed_width_table "$fieldwidths"
 }
 # ~~~
 #
