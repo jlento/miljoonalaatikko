@@ -20,7 +20,7 @@
 #
 # ~~~ {.bash}
 tabs_print() {
-    LC_ALL=C awk -f tabs.awk --source '
+    LC_ALL=C awk --source '
         function drop_nonprinting( s ) {
             gsub( /\x01|(\033\[|\x9b)[ -?]*[@-~]/, "", s )
             return s
@@ -43,13 +43,16 @@ tabs_print() {
         BEGIN{
             FS  = "\t"
         }
+        NR == 1 {
+            gsub( /\x01/, "", $0 )
+        }
         {
             rows[NR] = $0
             columnwidths( w )
         }
         END {
-            for(j=1;j<=NR;j++)
-                print_row( rows[j], w )
+            for(i=1;i<=NR;i++)
+                print_row( rows[i], w )
         }'
 } 
 # ~~~
