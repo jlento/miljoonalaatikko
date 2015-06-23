@@ -44,6 +44,8 @@ nosql_from_fixed_width_table () {
 # Merging two nosql-tables
 # ------------------------
 #
+# Checks that both inputs are nosql-format, too.
+#
 # ~~~ {.bash}
 nosql_paste () {
     local -a header
@@ -56,15 +58,21 @@ nosql_paste () {
 	echo "ERROR: Only newline record separator works with join" 1>&2
 	return 1
     fi
+    trap 'rm -f "${__nosql_temp[@]}"' INT EXIT HUP TERM RETURN
     for ((i=1;i<=2;i++)); do
-	IFS="$nosql_FS" read -d "$nosql_RS" -r -a a < "${!i}"
+	__nosql_temp[$i]="$(mktemp)"
+	tee "${__nosql_temp[$i]}" < "${!i}" | sort -n -u -c || {
+	    echo "ERROR: Input table row key (first column) not sorted" 2>&1
+	    echo "       and/or unique." 2>&1
+	    return 1
+	}
+	IFS="$nosql_FS" read -d "$nosql_RS" -r -a a < "${__nosql_temp[$i]}"
 	header+=( "${a[@]:$(( i > 1 ))}" )
 	opts+=" -a$i"
 	for ((j=2;j<=${#a[@]};j++)); do
 	    ofmt+=" $i.$j"
 	done
     done
-    IFS=$'\t' eval 'printf "%s${nosql_RS}" "${header[*]}"'
-    join -t $'\t' -e "" $opts -o $ofmt "$@"
+    join -t $'\t' -e "" $opts -o $ofmt "${__nosql_temp[@]}"
 }
 # ~~~
