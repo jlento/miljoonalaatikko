@@ -26,7 +26,7 @@ source nosql.bash
 # ~~~ {.bash}
 squeue_nosql () {
     fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
-    fieldwidths=$(sed 's/[^0-9]/ /g' <<< "$fmt")
+    fieldwidths=${fmt//[^[:digit:]]/ }
     if [ -n "$OFFLINE" ]; then
         cat squeue.txt
     else

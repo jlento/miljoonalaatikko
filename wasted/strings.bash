@@ -4,6 +4,8 @@
 # % juha.lento@csc.fi
 # % 2015-06-22
 
+SOH=$'\x01'
+
 # Remove leading and trailing white space characters
 # --------------------------------------------------
 #
@@ -58,13 +60,25 @@ __split_recursive () {
   fi
 }
 # ~~~
-
+${var#"${var%%[![:space:]]*}"}
 split_fixed_width_fields () {
     local w
-    eval $2='()'
-    local s=0
-    for w in $3 ; do
-	eval read $2[\${#${2}[@]}] <<<"${1:${s}:${w}}"
-        (( s += $w ))
+    local re
+    for w in $1 ; do
+	re+="(.{$w})"
     done
+    [[ "$2" =~ $re ]]
+    printf "%s\n" "${BASH_REMATCH[*]:1}"
+#    BASH_REMATCH=( "${BASH_REMATCH[@]:1}" )
+#    BASH_REMATCH=( "${BASH_REMATCH[@]#""}" )
+#    BASH_REMATCH=( "${BASH_REMATCH[@]:1}" )
+    # local w
+    # local s=0
+    # local -a a
+    # for w in $1 ; do
+    # 	[[ "${2:${s}:${w}}" =~ ^[[:space:]]*(.*[^[:space:]]) ]]
+    # 	a+=( \"${BASH_REMATCH[1]}\" )
+    #     (( s += $w ))
+    # done
+    # printf "%s\n" "${a[*]}"
 }
