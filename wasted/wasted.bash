@@ -8,46 +8,50 @@
 # ======
 #
 # Compares the batch job reservation information from SLURM against
-# the runtime information from APLS and highlights possible overbooking
-# of resources.
-#
-# This implementation is written for demonstration and testing purposes.
-# The attention is paid on data structures, code refactoring and
-# making the functions general.
+# the runtime information from APLS and highlights possible over-booking
+# of the resources.
 #
 #
-# General notes about the implementation and the data structures
-# --------------------------------------------------------------
+# General notes
+# -------------
 #
-# Linux command line has excellent small programs to work with streams
-# of newline separated lines of text. The usefulness of these small
-# programs is enchanced with the possibility of easily piping the text
-# streams from one function to an another. The purpose of the helper
-# functions here is to make it easier to work with tables represented as
-# text streams.
+# Linux command line has a a comprehensive set of small programs that
+# work with plain text streams. The output of one program can be easily
+# piped to another program, making it possible to combine
+# many small programs into a larger program. Here we extend the idea from
+# the small programs that work with unstructured text streams
+# to small programs that work with tables.
+#
+#
+# Table format
+# ------------
+#
+# In order to make it possible for the programs to exchange tables
+# in the form of test streams, the table format needs to be defined.
 #
 # Here we work with two flavors of tables. Tables which have sorted and
 # unique key columns,
 # [*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm),
-# and simple *tabs*-tables, without the key-column restriction. Both
-# table formats have a header row as the first row. Columns are
-# separated by tabs, and each column header begins with a non-printing
-# start-of-header character (ascii `\x01`). Fields cannot contain newline,
-# tab or start-of-header characters.
+# and simple *tabs*-tables, without the key-column restriction. See
+# the documentation of the `nosql.bash` library for details.
 #
-# Some operations, such as merging tables, are easier to define on the
-# more constrained nosql-format tables. On the other hand, many of the
-# operations do not require uniquely keyed
-# columns, and can be made more general.
 #
-# Functions that operate on the nosql-tables have `nosql` in their name,
-# and the functions that operate on both the more general tabs-tables, and
-# nosql-tables, have `tabs` in their name.
+# Interrogating SLURM and ALPS
+# ----------------------------
+#
+# The implementation of the interfaces to SLURM and ALPS (implemented here in
+# `myproviders.bash`) are cleanly separated from following the analysis.
+#
+#
+# Implementation notes
+# --------------------
+#
+# The programs that work with tables are implemented here as bash
+# funtions.
 #
 # ~~~ {.bash}
 source myproviders.bash
 source nosql.bash
-source tabs.bash
 # ~~~
 #
 #
@@ -63,6 +67,6 @@ source tabs.bash
 # ~~~ {.bash}
 nosql_paste <(squeue_nosql) <(apstat_nosql) \
     | tabs_sort 'RES_NODES' -n -r \
-    | tabs_paint 'a["RES_NODES"] > a["USED_NODES"]' 'RES_NODES|USED_NODES' \
+    | tabs_paint '$RES_NODES > $USED_NODES' 'RES_NODES|USED_NODES' \
     | tabs_print
 # ~~~

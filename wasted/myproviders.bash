@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# % Wasted
+# % SLURM and ALPS interfaces
 # % juha.lento@csc.fi
-# % 2015-06-22
+# % 2015-06-24
 #
 # ~~~ {.bash}
 source nosql.bash
@@ -17,7 +17,7 @@ source nosql.bash
 # If there are changes in the job reservation information provider,
 # this is the part that will need to be modified, or rewritten. Note,
 # this function can be written with whatever language that the writer is
-# familiar with, as long as this function writes a nosql-formatted table
+# familiar with, as long as it writes a nosql-formatted table
 # to the stdout.
 #
 # To test the script with a data cached in a file, set the environment
