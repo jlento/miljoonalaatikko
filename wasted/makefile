@@ -1,14 +1,14 @@
 SHELL=/bin/bash
+DESTDIR = $(PWD)
 
 srcdir  = ./src
 datadir = ./data
 vpath %.txt   $(datadir)
 vpath %.bash  $(srcdir)
 
-installdir = $(PWD)
-bindir  = $(installdir)/bin
-libdir  = $(installdir)/lib
-docdir  = $(installdir)/doc
+bindir  = $(DESTDIR)/bin
+libdir  = $(DESTDIR)/lib
+docdir  = $(DESTDIR)/doc
 
 PROG = wasted
 LIBS = myproviders.bash nosql.bash
