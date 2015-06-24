@@ -51,7 +51,7 @@ apstat_nosql () {
         cat apstat.txt
     else
         apstat -av
-    fi | awk -f tabs.awk --source '
+    fi | awk -v OFS="$nosql_FS" -v SOH="$nosql_SOH" '
         /Batch System ID = / {
             jobid  = gensub( /[^0-9]/, "", "g", $NF )
         }
@@ -62,10 +62,10 @@ apstat_nosql () {
             }
         }
         END {
-            split( "JOBID  USED_NODES COMMAND", a )
-            nosql_print_header( a )
+            s = "JOBID USED_NODES COMMAND"
+            print SOH gensub( " ", OFS SOH, "g", s )
             for( i in nodes )
-            printf( "%s\t%s\t%s\n", i, nodes[i], prog[i] )
+               print i, nodes[i], prog[i]
         }
     ' | sort -n
 }

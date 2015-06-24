@@ -197,53 +197,46 @@ tabs_print() {
 # ----------------------------
 #
 # The function `tabs_paint` reads tabs-formatted table from stdin and
-# prints tabs-formatted table to stdout. The first argument of `tabs_paint`
+# prints tabs-formatted table to stdout. The first argument to `tabs_paint`
 # is an awk expression that is used to select records. The record fields
-# are referenced as `$<FIELD_NAME>` or $<FIELD_NUMBER> in the expression.
-# Possible spaces are replaced by underscores in the <FIELD_NAMES>s.
-# The second argument is a `|` separated list of field names or
-# numbers that should be painted.  See
+# are referenced as `$"<FIELD_NAME>"` or $<FIELD_NUMBER> in the expression.
+# The remaining arguments are the names or numbers of the fields
+# that should be painted. If no fields are given, all fields are painted. See
 # the `tabs_paint` call in `wasted.bash`, for example.
 #
-# This function is an (ugly) example of a function that
+# This function is an example of a function that
 # selects records (rows) from the table and then performs actions on
 # that record. This function can be easily modified, to drop the
 # selected lines, for example.
 #
 # ~~~ {.bash}
 tabs_paint () {
-    local -a a
-    local -a cols
-    local -a sel
-    local opts
+    local expression
+    local -a header
+    local -a selection
+    local line
     local -i i
-    local -i j
-    IFS="$nosql_FS" read -a a
-    IFS="$nosql_FS" eval 'printf "%s\n" "${a[*]}"'
-    cols=( "${a[@]/${nosql_SOH}}" )
-    IFS="|" eval 'opts="-v columns=${cols[*]} -v select=${2}"'
-    for((i=0;i<${#cols[@]};i++)); do
-	opts+=" -v ${cols[$i]}=$((i+1))"
+    expression="$1"
+    shift
+    selection=( "$@" )
+    IFS='' read line
+    echo "$line"
+    IFS="$nosql_FS" read -a header <<<"${line//${nosql_SOH}}"
+    for((i=0;i<${#header[@]};i++)); do
+	expression=${expression//\$\"${header[$i]}\"/\$$((i+1))}
+	selection=( "${selection[@]/#${header[$i]}/$((i+1))}" )
     done
-    awk -F "$nosql_FS" -v OFS="$nosql_FS" $opts '
+    selection=( "${selection[@]/#/p[}" )
+    selection=( "${selection[@]/%/]\;}" )
+    awk -F "$nosql_FS" -v OFS="$nosql_FS" '
         function red ( s ) {
             return "\033[1;31m" s "\033[0m"
         }
-        BEGIN {
-                n = split( select, sel, "|" )
-                split( columns, col, "|" )
-                for(i=1;i<=length(col);i++) {
-                    for(j=1;j<=n;j++) {
-                        if( n == 0 || col[i] == sel[j] || i == sel[j] ) {
-                            paint[i] = 1
-                        }
-                    }
-                }
-        }
+        BEGIN {'"${selection[*]}"'}
         {
-            if('"$1"')
+            if('"$expression"')
                 for(i=1;i<=NF;i++)
-                    if( paint[i] )
+                    if( i in p || length(p) == 0 )
                         $i = red( $i )
             print $0
         }'
@@ -263,17 +256,15 @@ tabs_paint () {
 tabs_sort () {
     key=$1
     shift
-    TAB=$(printf "\t")
-    SOH=$(printf "\x01")
     IFS='' read -r line
     printf "%s\n" "$line"
-    IFS="$TAB" header=($line)
+    IFS="$nosql_FS" header=($line)
     n=1
     for h in "${header[@]}"
     do
-        if [ "$h" == "${SOH}$key" ]; then break; else (( n++ )); fi
+        if [ "$h" == "${nosql_SOH}$key" ]; then break; else (( n++ )); fi
     done
     [[ n -gt ${#header[@]} ]] && n=1
-    sort -t "$TAB" -k "$n" "$@"
+    sort -s -t "$nosql_FS" -k "$n" "$@"
 }
 # ~~~
