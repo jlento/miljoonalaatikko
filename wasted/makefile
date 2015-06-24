@@ -15,7 +15,7 @@ LIBS = myproviders.bash nosql.bash
 SRC  = $(PROG).bash $(LIBS)
 DOCS = $(SRC:%.bash=%.md)
 DATA = squeue.txt apstat.txt
-INSTALL-TARGETS=$(LIBS:%=$(libdir)/%) $(bindir)/$(PROG) $(DOCS:%=$(docdir)/%)
+
 
 .PHONY: all test install clean real-clean
 
