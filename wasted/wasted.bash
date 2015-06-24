@@ -65,8 +65,8 @@ source nosql.bash
 # separately.
 #
 # ~~~ {.bash}
-nosql_paste <(squeue_nosql) <(apstat_nosql) \
-    | tabs_sort 'RES_NODES' -n -r \
-    | tabs_paint '$"RES_NODES" > $"USED_NODES"' 'RES_NODES' 'USED_NODES' \
-    | tabs_print
+nosql_paste <(squeue_nosql) <(apstat_nosql) |
+    tabs_sort 'RES_NODES' -n -r |
+    tabs_paint '$"RES_NODES" > $"USED_NODES"' 'RES_NODES' 'USED_NODES' |
+    tabs_print
 # ~~~
