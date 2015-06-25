@@ -1,13 +1,15 @@
 #!/bin/bash
 #
-# % SLURM and ALPS interfaces
-# % juha.lento@csc.fi
-# % 2015-06-24
+# SLURM and ALPS interfaces
+# -------------------------
+#
+# SLURM and ALPS information providers output the data in NoSQL-table
+# format.
 #
 # ~~~ {.bash}
 source "${LIBDIR:=../lib}/nosql.bash"
-squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
-: ${SQUEUE:="squeue -t R -o '$fmt'"}
+__squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
+: ${SQUEUE:="squeue -t R -o '$__squeue_fmt'"}
 : ${APSTAT:=apstat -av}
 # ~~~
 #
@@ -28,7 +30,7 @@ squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
 # 
 # ~~~ {.bash}
 squeue_nosql () {
-    fieldwidths=${squeue_fmt//[^[:digit:]]/ }
+    fieldwidths=${__squeue_fmt//[^[:digit:]]/ }
     ${SQUEUE} | sed 's/    NODES/RES_NODES/' | \
         nosql_from_fixed_width_table "$fieldwidths"
 }

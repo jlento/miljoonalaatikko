@@ -1,8 +1,4 @@
 
-% NoSQL table format
-% juha.lento@csc.fi
-% 2015-06-24
-
 NoSQL table format
 ==================
 
@@ -28,11 +24,11 @@ Tabs table format
 Many operations do not require unique and sorted key. Here I refer
 the table format which obeys rules 1 -- 6 as "tabs" format tables.
 
-~~~ {.bash}
+```bash
 nosql_FS=$'\t'
 nosql_RS=$'\n'
 nosql_SOH=$'\x01'
-~~~ {.bash}
+```bash
 
 
 Validate NoSQL table format
@@ -43,7 +39,7 @@ it. If the table is valid, the program prints it back to the stdout,
 otherwise, returns with exit code 1 and
 prints nothing to the stdout.
 
-~~~ {.bash}
+```bash
 nosql_validate () {
     local f=$(mktemp)
     local -a a
@@ -81,7 +77,7 @@ nosql_validate () {
 	return 1
     fi
 }
-~~~
+```
 
 
 Construct a NoSQL-format table from fixed width columns
@@ -97,7 +93,7 @@ function is generally useful when the format of the source table is
 known. See function `squeue_nosql` in `myproviders.bash`, for
 example.
 
-~~~ {.bash}
+```bash
 nosql_from_fixed_width_table () {
     awk -v FIELDWIDTHS="$1" -v OFS="$nosql_FS"  '
         {
@@ -110,7 +106,7 @@ nosql_from_fixed_width_table () {
             print $0
         }' | sort -n
 }
-~~~
+```
 
 
 Merging two nosql-tables
@@ -119,7 +115,7 @@ Merging two nosql-tables
 The function `nosql_paste` reads two files containing NoSQL formatted
 tables, validates them, and writes a single merged NoSQL table to stdout.
 
-~~~ {.bash}
+```bash
 nosql_paste () {
     __nosql_paste <(nosql_validate < $1) \
                   <(nosql_validate < $2)
@@ -146,7 +142,7 @@ __nosql_paste () {
     IFS="$nosql_FS" eval 'printf "%s\n" "${header[*]}"'
     join --check-order -t "$nosql_FS" -e "" $opts -o $ofmt "$@"
 }
-~~~
+```
 
 
 Pretty printing a table
@@ -155,7 +151,7 @@ Pretty printing a table
 Function `tabs_print` reads a NoSQL formatted table from the stdin
 and prints fixed column width table to stdout.
 
-~~~ {.bash}
+```bash
 tabs_print() {
     LC_ALL=C awk -F "$nosql_FS" --source '
         function drop_nonprinting( s ) {
@@ -189,7 +185,7 @@ tabs_print() {
                 print_row( rows[i], w )
         }'
 } 
-~~~
+```
 
 
 Selecting records and fields
@@ -208,7 +204,7 @@ selects records (rows) from the table and then performs actions on
 that record. This function can be easily modified, to drop the
 selected lines, for example.
 
-~~~ {.bash}
+```bash
 tabs_paint () {
     local expression
     local -a header
@@ -240,7 +236,7 @@ tabs_paint () {
             print $0
         }'
 }
-~~~
+```
 
 
 Sorting the tables
@@ -251,7 +247,7 @@ and writes a (re)sorted tabs-formatted table to the stdout. The first
 argument is name of the column that is used as the key for the sort.
 The remaining arguments are passed to the OS sort command.
 
-~~~ {.bash}
+```bash
 tabs_sort () {
     key=$1
     shift
@@ -266,4 +262,4 @@ tabs_sort () {
     [[ n -gt ${#header[@]} ]] && n=1
     sort -s -t "$nosql_FS" -k "$n" "$@"
 }
-~~~
+```

@@ -1,8 +1,4 @@
 
-% Wasted
-% juha.lento@csc.fi
-% 2015-06-22
-
 Wasted
 ======
 
@@ -48,10 +44,10 @@ Implementation notes
 The programs that work with tables are implemented here as bash
 funtions.
 
-~~~ {.bash}
+```bash
 source "${LIBDIR:=../lib}/myproviders.bash"
 source "${LIBDIR}/nosql.bash"
-~~~
+```
 
 
 Main
@@ -63,9 +59,9 @@ highlight the possible overbooking, and pretty print the table.
 Note, each part of the chain can be implemented and easily tested
 separately.
 
-~~~ {.bash}
+```bash
 nosql_paste <(squeue_nosql) <(apstat_nosql) |
     tabs_sort 'RES_NODES' -n -r |
     tabs_paint '$"RES_NODES" > $"USED_NODES"' 'RES_NODES' 'USED_NODES' |
     tabs_print
-~~~
+```

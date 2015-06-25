@@ -1,9 +1,5 @@
 #!/bin/bash
 #
-# % Wasted
-# % juha.lento@csc.fi
-# % 2015-06-22
-#
 # Wasted
 # ======
 #

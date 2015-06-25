@@ -1,9 +1,5 @@
 #!/bin/bash
 #
-# % NoSQL table format
-# % juha.lento@csc.fi
-# % 2015-06-24
-#
 # NoSQL table format
 # ==================
 #

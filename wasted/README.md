@@ -25,7 +25,7 @@ My list of points to consider in the implementation of the application is:
 3. Reducing dependencies and conditional compilation
 
 Above all, and in all stages, there are two principles that I think
-everyone should follow:
+everybody should follow:
 
 KISS
 :   Keep It Simple, Stupid!

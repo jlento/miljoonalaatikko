@@ -1,14 +1,16 @@
 
-% SLURM and ALPS interfaces
-% juha.lento@csc.fi
-% 2015-06-24
+SLURM and ALPS interfaces
+-------------------------
 
-~~~ {.bash}
+SLURM and ALPS information providers output the data in NoSQL-table
+format.
+
+```bash
 source "${LIBDIR:=../lib}/nosql.bash"
-squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
-: ${SQUEUE:="squeue -t R -o '$fmt'"}
+__squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
+: ${SQUEUE:="squeue -t R -o '$__squeue_fmt'"}
 : ${APSTAT:=apstat -av}
-~~~
+```
 
 
 Job reservation information
@@ -25,13 +27,13 @@ to the stdout.
 To test the script with a data cached in a file, set the environment
 variable OFFLINE to a non-empty string.
 
-~~~ {.bash}
+```bash
 squeue_nosql () {
-    fieldwidths=${squeue_fmt//[^[:digit:]]/ }
+    fieldwidths=${__squeue_fmt//[^[:digit:]]/ }
     ${SQUEUE} | sed 's/    NODES/RES_NODES/' | \
         nosql_from_fixed_width_table "$fieldwidths"
 }
-~~~
+```
 
 
 Runtime information
@@ -42,7 +44,7 @@ Interrogate ALPS and produce a nosql-table.
 Implementation notes are the same as for the job
 reservation information above.
 
-~~~ {.bash}
+```bash
 apstat_nosql () {
     ${APSTAT} | awk -v OFS="$nosql_FS" -v SOH="$nosql_SOH" '
         /Batch System ID = / {
@@ -62,4 +64,4 @@ apstat_nosql () {
         }
     ' | sort -n
 }
-~~~
+```

@@ -20,6 +20,13 @@ TESTENV = SQUEUE="cat $(datadir)/squeue.txt" \
           APSTAT="cat $(datadir)/apstat.txt" \
           LIBDIR=$(srcdir) 
 
+SED_STRIP_ANNOTATION  = sed -r '/^\#[^!]|^\#$$/d' 
+SED_PANDOC_ANNOTATION = sed -r -e '1 {/^\#!\/*/d}' -e 's/^\# |^\#$$//'
+SED_GITHUB_ANNOTATION = sed -r -e '1 {/^\#!\/*/d}' -e 's/^\# |^\#$$//' \
+                               -e 's/^~{3,} *\{?\.?([[:alnum:]_]*).*/```\1/' \
+
+SED_ANNOTATION = $(value SED_GITHUB_ANNOTATION)
+
 .PHONY: all test install install-libs install-exe install-doc clean real-clean
 
 all: test install
@@ -36,14 +43,15 @@ install-libs: $(LIBS:%=$(libdir)/%)
 install-doc: $(DOCS:%=$(docdir)/%)
 
 $(bindir)/$(PROG): $(PROG).bash
-	sed -r -e "1 s|\$$|\nLIBDIR=$(libdir)|" -e '/^#[^!]|^#$$/d' $< > $@
+	sed -r -e "1 s|\$$|\nLIBDIR=$(libdir)|" $< | \
+            $(SED_STRIP_ANNOTATION) > $@
 	chmod u+rwx $@
 
 $(libdir)/%.bash : %.bash
-	sed -r '/^#[^!]|^#$$/d' $< > $@
+	$(SED_STRIP_ANNOTATION) $< > $@
 
 $(docdir)/%.md : %.bash
-	sed -r -e '1 {/^#!\/*/d}' -e 's/^# |^#$$//' $< > $@
+	 $(SED_ANNOTATION) $< > $@
 
 clean :
 	find . -name '*~' -delete
