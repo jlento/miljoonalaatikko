@@ -6,29 +6,29 @@ Find out jobs that possible waste CPU resources.
 Works in Cray XT5, sisu.csc.fi, by comparing squeue resource
 reservation info and apstat runtime info.
 
-Two versions of implementation, `wasted_draft`, and `wasted.bash`. The
-first is a quick implementation and the second one is a
-demonstration/test of making it more general.
+I have tried to follow good programming development practices in the
+implementation of the project. I hope that this project could be used as
+course material in teaching good programming and program development
+practices.
 
+My list of points to consider in the program development process is:
 
-Files
------
+1. Source code version control, backup, development collaboration (git
+   and github)
+2. Documentation (annotated source, pandoc, markdown)
+3. Build process, i.e. configuration, compilation, linking, testing (make)
 
-`wasted.bash`
-: the main program and two information provider scripts
+My list of points to consider in the implementation of the application is:
 
-`nosql.bash`
-: helper funtions to work with nosql-format tables
+1. Modularity (factoring, interfaces, data structures and formats)
+2. Generality (interfaces, data structures and formats)
+3. Reducing dependencies and conditional compilation
 
-`tabs.bash`
-: helper funtions to work with tabs-format tables
+Above all, and in all stages, there are two principles that I think
+everyone should follow:
 
-`tabs.awk`
-: helper funtions to work with tabs-format table's headers and records
+KISS
+:   Keep It Simple, Stupid!
 
-`squeue.txt` and `apstat.txt`
-: test input data
-
-`wasted_draft`
-: not the worst kind of usual implementation
-
+DRY
+:   Don't Repeat Yourself!
