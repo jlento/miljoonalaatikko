@@ -29,7 +29,7 @@
 nosql_FS=$'\t'
 nosql_RS=$'\n'
 nosql_SOH=$'\x01'
-# ~~~ {.bash}
+# ~~~
 #
 #
 # Validate NoSQL table format
