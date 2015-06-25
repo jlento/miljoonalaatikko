@@ -73,9 +73,9 @@ nosql_validate () {
         }
     ' $f
     if [ $? == 0 ]; then
-	cat $f
+        cat $f
     else
-	return 1
+        return 1
     fi
 }
 # ~~~
@@ -129,16 +129,16 @@ __nosql_paste () {
     local opts=""
     local ofmt="0"
     if [ "$nosql_RS" != $'\n' ]; then
-	echo "ERROR: Only newline record separator works with join" 1>&2
-	return 1
+        echo "ERROR: Only newline record separator works with join" 1>&2
+        return 1
     fi
     for ((i=1;i<=2;i++)); do
-	IFS="$nosql_FS" read -d "$nosql_RS" -r -a a < "${!i}"
-	header+=( "${a[@]:$(( i > 1 ))}" )
-	opts+=" -a$i"
-	for ((j=2;j<=${#a[@]};j++)); do
-	    ofmt+=" $i.$j"
-	done
+        IFS="$nosql_FS" read -d "$nosql_RS" -r -a a < "${!i}"
+        header+=( "${a[@]:$(( i > 1 ))}" )
+        opts+=" -a$i"
+        for ((j=2;j<=${#a[@]};j++)); do
+            ofmt+=" $i.$j"
+        done
     done
     IFS="$nosql_FS" eval 'printf "%s\n" "${header[*]}"'
     join --check-order -t "$nosql_FS" -e "" $opts -o $ofmt "$@"
@@ -219,8 +219,8 @@ tabs_paint () {
     echo "$line"
     IFS="$nosql_FS" read -a header <<<"${line//${nosql_SOH}}"
     for((i=0;i<${#header[@]};i++)); do
-	expression=${expression//\$\"${header[$i]}\"/\$$((i+1))}
-	selection=( "${selection[@]/#${header[$i]}/$((i+1))}" )
+        expression=${expression//\$\"${header[$i]}\"/\$$((i+1))}
+        selection=( "${selection[@]/#${header[$i]}/$((i+1))}" )
     done
     selection=( "${selection[@]/#/p[}" )
     selection=( "${selection[@]/%/]\;}" )
