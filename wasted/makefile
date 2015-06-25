@@ -16,15 +16,22 @@ SRC  = $(PROG).bash $(LIBS)
 DOCS = $(SRC:%.bash=%.md)
 DATA = squeue.txt apstat.txt
 
+TESTENV = SQUEUE="cat $(datadir)/squeue.txt" \
+          APSTAT="cat $(datadir)/apstat.txt" \
+          LIBDIR=$(srcdir) 
 
-.PHONY: all test install clean real-clean
+.PHONY: all test install install-libs install-exe install-doc clean real-clean
 
-all: test install install-doc clean real-clean
+all: test install
 
 test: $(PROG).bash $(DATA)
-	OFFLINE=true LIBDIR=$(srcdir) DATADIR=$(datadir) $(SHELL) $<
+	$(TESTENV) $(SHELL) $<
 
-install: $(LIBS:%=$(libdir)/%) $(bindir)/$(PROG) install-doc
+install: install-libs install-exe install-doc
+
+install-exe: $(bindir)/$(PROG)
+
+install-libs: $(LIBS:%=$(libdir)/%)
 
 install-doc: $(DOCS:%=$(docdir)/%)
 

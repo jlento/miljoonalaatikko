@@ -5,6 +5,9 @@
 
 ~~~ {.bash}
 source "${LIBDIR:=../lib}/nosql.bash"
+squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
+: ${SQUEUE:="squeue -t R -o '$fmt'"}
+: ${APSTAT:=apstat -av}
 ~~~
 
 
@@ -24,13 +27,8 @@ variable OFFLINE to a non-empty string.
 
 ~~~ {.bash}
 squeue_nosql () {
-    fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
-    fieldwidths=${fmt//[^[:digit:]]/ }
-    if [ -n "$OFFLINE" ]; then
-        cat "${DATADIR:=../data}/squeue.txt"
-    else
-        squeue -t R -o "$fmt"
-    fi | sed 's/    NODES/RES_NODES/' | \
+    fieldwidths=${squeue_fmt//[^[:digit:]]/ }
+    ${SQUEUE} | sed 's/    NODES/RES_NODES/' | \
         nosql_from_fixed_width_table "$fieldwidths"
 }
 ~~~
@@ -46,11 +44,7 @@ reservation information above.
 
 ~~~ {.bash}
 apstat_nosql () {
-    if [ -n "$OFFLINE" ]; then
-        cat "${DATADIR:=../data}/apstat.txt"
-    else
-        apstat -av
-    fi | awk -v OFS="$nosql_FS" -v SOH="$nosql_SOH" '
+    ${APSTAT} | awk -v OFS="$nosql_FS" -v SOH="$nosql_SOH" '
         /Batch System ID = / {
             jobid  = gensub( /[^0-9]/, "", "g", $NF )
         }
