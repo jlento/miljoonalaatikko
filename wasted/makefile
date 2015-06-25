@@ -35,14 +35,14 @@ install-libs: $(LIBS:%=$(libdir)/%)
 
 install-doc: $(DOCS:%=$(docdir)/%)
 
-$(LIBS:%=$(libdir)/%): $(libdir)/% : %
-	sed -r '/^#[^!]|^#$$/d' $< > $@
-
 $(bindir)/$(PROG): $(PROG).bash
 	sed -r -e "1 s|\$$|\nLIBDIR=$(libdir)|" -e '/^#[^!]|^#$$/d' $< > $@
 	chmod u+rwx $@
 
-$(DOCS:%=$(docdir)/%): $(docdir)/%.md : %.bash
+$(libdir)/%.bash : %.bash
+	sed -r '/^#[^!]|^#$$/d' $< > $@
+
+$(docdir)/%.md : %.bash
 	sed -r -e '1 {/^#!\/*/d}' -e 's/^# |^#$$//' $< > $@
 
 clean :
