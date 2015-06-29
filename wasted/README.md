@@ -6,6 +6,13 @@ This program, `wasted`, finds out jobs that possible waste CPU resources.
 The program works in Cray XT5, `sisu.csc.fi`, by comparing squeue resource
 reservation info and apstat runtime info.
 
+Running `make test` uses cached example input data from files, and can be
+executed on any linux box.
+
+
+Project goal
+------------
+
 I have tried to follow good programming and program development
 practices in the implementation of the project. I hope that this
 project could be used as course material in teaching general
