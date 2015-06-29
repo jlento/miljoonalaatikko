@@ -24,8 +24,9 @@ this function can be written with whatever language that the writer is
 familiar with, as long as it writes a nosql-formatted table
 to the stdout.
 
-To test the script with a data cached in a file, set the environment
-variable OFFLINE to a non-empty string.
+The `test` target in `makefile` shows an example how to test the
+function using cached data from from a file instead of interacting
+with live SLURM in sisu.
 
 ```bash
 squeue_nosql () {

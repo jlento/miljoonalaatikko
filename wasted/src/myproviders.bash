@@ -25,8 +25,9 @@ __squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
 # familiar with, as long as it writes a nosql-formatted table
 # to the stdout.
 #
-# To test the script with a data cached in a file, set the environment
-# variable OFFLINE to a non-empty string.
+# The `test` target in `makefile` shows an example how to test the
+# function using cached data from from a file instead of interacting
+# with live SLURM in sisu.
 # 
 # ~~~ {.bash}
 squeue_nosql () {

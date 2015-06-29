@@ -22,7 +22,7 @@
 # Table format
 # ------------
 #
-# In order to make it possible for the programs to exchange tables
+# To make it possible for the programs to exchange tables
 # in the form of test streams, the table format needs to be defined.
 #
 # Here we work with two flavors of tables. Tables which have sorted and
@@ -36,7 +36,7 @@
 # ----------------------------
 #
 # The implementation of the interfaces to SLURM and ALPS (implemented here in
-# `myproviders.bash`) are cleanly separated from following the analysis.
+# `myproviders.bash`) are cleanly separated from the following analysis.
 #
 #
 # Implementation notes
