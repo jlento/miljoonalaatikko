@@ -18,7 +18,7 @@ TESTENV = SQUEUE="cat $(datadir)/squeue.txt" \
 
 .PHONY: all build test install install-libs install-exe clean realclean
 
-all: build test install
+all: build test
 
 build: $(PROG).bash $(LIBS)
 
