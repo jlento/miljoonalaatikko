@@ -3,59 +3,50 @@ DESTDIR = $(PWD)
 
 srcdir  = ./src
 datadir = ./data
-vpath %.txt   $(datadir)
-vpath %.bash  $(srcdir)
+vpath %.txt $(datadir)
+vpath %.md  $(srcdir)
 
 bindir  = $(DESTDIR)/bin
 libdir  = $(DESTDIR)/lib
-docdir  = $(DESTDIR)/doc
 
 PROG = wasted
 LIBS = myproviders.bash nosql.bash
-SRC  = $(PROG).bash $(LIBS)
-DOCS = $(SRC:%.bash=%.md)
 DATA = squeue.txt apstat.txt
 
 TESTENV = SQUEUE="cat $(datadir)/squeue.txt" \
-          APSTAT="cat $(datadir)/apstat.txt" \
-          LIBDIR=$(srcdir) 
+          APSTAT="cat $(datadir)/apstat.txt"
 
-SED_STRIP_ANNOTATION  = sed -r '/^\#[^!]|^\#$$/d' 
-SED_PANDOC_ANNOTATION = sed -r -e '1 {/^\#!\/*/d}' -e 's/^\# |^\#$$//'
-SED_GITHUB_ANNOTATION = sed -r -e '1 {/^\#!\/*/d}' -e 's/^\# |^\#$$//' \
-                               -e 's/^~{3,} *\{?\.?([[:alnum:]_]*).*/```\1/' \
+.PHONY: all build test install install-libs install-exe clean realclean
 
-SED_ANNOTATION = $(value SED_GITHUB_ANNOTATION)
+all: build test install
 
-.PHONY: all test install install-libs install-exe install-doc clean real-clean
+build: $(PROG).bash $(LIBS)
 
-all: test install
-
-test: $(PROG).bash $(DATA)
+test: $(PROG).bash $(LIBS) $(DATA)
 	$(TESTENV) $(SHELL) $<
 
-install: install-libs install-exe install-doc
+install: install-libs install-exe
 
 install-exe: $(bindir)/$(PROG)
 
 install-libs: $(LIBS:%=$(libdir)/%)
 
-install-doc: $(DOCS:%=$(docdir)/%)
-
 $(bindir)/$(PROG): $(PROG).bash
-	sed -r -e "1 s|\$$|\nLIBDIR=$(libdir)|" $< | \
-            $(SED_STRIP_ANNOTATION) > $@
+	mkdir -p "$(bindir)"
+	sed -r -e "1 s|\$$|\nLIBDIR=$(libdir)|" $< > $@
 	chmod u+rwx $@
 
 $(libdir)/%.bash : %.bash
-	$(SED_STRIP_ANNOTATION) $< > $@
+	mkdir -p "$(libdir)"
+	cp -f $< $@
 
-$(docdir)/%.md : %.bash
-	 $(SED_ANNOTATION) $< > $@
+%.bash : %.md
+	awk '/```bash/{f=1;next} /```/{f=0} f' $< > $@
 
 clean :
 	find . -name '*~' -delete
-	rm -f $(LIBS:%=$(libdir)/%) $(bindir)/$(PROG) 
+	rm -f $(PROG) $(LIBS) $(PROG).bash
 
-real-clean: clean
-	rm -f $(DOCS:%=$(docdir)/%)
+uninstall: clean
+	rm -f $(bindir)/$(PROG) $(addprefix $(libdir)/,$(LIBS))
+	rmdir $(bindir) $(libdir) 2> /dev/null ; :

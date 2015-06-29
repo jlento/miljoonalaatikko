@@ -1,4 +1,3 @@
-
 SLURM and ALPS interfaces
 -------------------------
 
@@ -6,7 +5,8 @@ SLURM and ALPS information providers output the data in NoSQL-table
 format.
 
 ```bash
-source "${LIBDIR:=../lib}/nosql.bash"
+#!/bin/bash
+source "${LIBDIR:=.}/nosql.bash"
 __squeue_fmt="%.8i%.12P%.17j%.10u%.12M%.12l%.11D"
 : ${SQUEUE:="squeue -t R -o '$__squeue_fmt'"}
 : ${APSTAT:=apstat -av}

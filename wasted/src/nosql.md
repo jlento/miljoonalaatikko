@@ -1,46 +1,44 @@
-#!/bin/bash
-#
-# NoSQL table format
-# ==================
-#
-# Library of functions that work with NoSQL-formatted tables,
-# [*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm).
-#
-# NoSQL table format is really simple to write with practically any
-# programming language. It is defined by the following rules:
-#
-# 1. Table field separator (FS) is tab
-# 2. Table record (row) separator (RS) is newline
-# 3. All rows have the same number of fields
-# 4. First line is a header line
-# 5. Each field in the header line begins with a start-of-header (SOH)
-#    character (ascii \x01)
-# 6. Fields must not contain FS, RS or SOH characters
-# 7. The first field of each row is a unique and sorted integer key
-#
-#
-# Tabs table format
-# -----------------
-#
-# Many operations do not require unique and sorted key. Here I refer
-# the table format which obeys rules 1 -- 6 as "tabs" format tables.
-#
-# ~~~ {.bash}
+NoSQL table format
+==================
+
+Library of functions that work with NoSQL-formatted tables,
+[*nosql*-tables](http://www.troubleshooters.com/lpm/200704/200704.htm).
+
+NoSQL table format is really simple to write with practically any
+programming language. It is defined by the following rules:
+
+1. Table field separator (FS) is tab
+2. Table record (row) separator (RS) is newline
+3. All rows have the same number of fields
+4. First line is a header line
+5. Each field in the header line begins with a start-of-header (SOH)
+   character (ascii \x01)
+6. Fields must not contain FS, RS or SOH characters
+7. The first field of each row is a unique and sorted integer key
+
+
+Tabs table format
+-----------------
+
+Many operations do not require unique and sorted key. Here I refer
+the table format which obeys rules 1 -- 6 as "tabs" format tables.
+
+```bash
 nosql_FS=$'\t'
 nosql_RS=$'\n'
 nosql_SOH=$'\x01'
-# ~~~
-#
-#
-# Validate NoSQL table format
-# ---------------------------
-#
-# The function `nosql_validate` reads NoSQL table from stdin and validates
-# it. If the table is valid, the program prints it back to the stdout,
-# otherwise, returns with exit code 1 and
-# prints nothing to the stdout.
-# 
-# ~~~ {.bash}
+```
+
+
+Validate NoSQL table format
+---------------------------
+
+The function `nosql_validate` reads NoSQL table from stdin and validates
+it. If the table is valid, the program prints it back to the stdout,
+otherwise, returns with exit code 1 and
+prints nothing to the stdout.
+
+```bash
 nosql_validate () {
     local f=$(mktemp)
     local -a a
@@ -78,23 +76,23 @@ nosql_validate () {
         return 1
     fi
 }
-# ~~~
-#
-#
-# Construct a NoSQL-format table from fixed width columns
-# -------------------------------------------------------
-#
-# The function `nosql_from_fixed_width_table` reads lines with fixed width
-# column from stdin and writes the corresponding
-# NOSQL formatted table to stdout.
+```
 
-# The first column of the input records is
-# implicitly assumed to be a valid and unique key for the record. This
-# function is generally useful when the format of the source table is
-# known. See function `squeue_nosql` in `myproviders.bash`, for
-# example.
-#
-# ~~~ {.bash}
+
+Construct a NoSQL-format table from fixed width columns
+-------------------------------------------------------
+
+The function `nosql_from_fixed_width_table` reads lines with fixed width
+column from stdin and writes the corresponding
+NOSQL formatted table to stdout.
+
+The first column of the input records is
+implicitly assumed to be a valid and unique key for the record. This
+function is generally useful when the format of the source table is
+known. See function `squeue_nosql` in `myproviders.bash`, for
+example.
+
+```bash
 nosql_from_fixed_width_table () {
     awk -v FIELDWIDTHS="$1" -v OFS="$nosql_FS"  '
         {
@@ -107,16 +105,16 @@ nosql_from_fixed_width_table () {
             print $0
         }' | sort -n
 }
-# ~~~
-#
-#
-# Merging two nosql-tables
-# ------------------------
-#
-# The function `nosql_paste` reads two files containing NoSQL formatted
-# tables, validates them, and writes a single merged NoSQL table to stdout.
-#
-# ~~~ {.bash}
+```
+
+
+Merging two nosql-tables
+------------------------
+
+The function `nosql_paste` reads two files containing NoSQL formatted
+tables, validates them, and writes a single merged NoSQL table to stdout.
+
+```bash
 nosql_paste () {
     __nosql_paste <(nosql_validate < $1) \
                   <(nosql_validate < $2)
@@ -143,16 +141,16 @@ __nosql_paste () {
     IFS="$nosql_FS" eval 'printf "%s\n" "${header[*]}"'
     join --check-order -t "$nosql_FS" -e "" $opts -o $ofmt "$@"
 }
-# ~~~
-#
-#
-# Pretty printing a table
-# -----------------------
-#
-# Function `tabs_print` reads a NoSQL formatted table from the stdin
-# and prints fixed column width table to stdout.
-#
-# ~~~ {.bash}
+```
+
+
+Pretty printing a table
+-----------------------
+
+Function `tabs_print` reads a NoSQL formatted table from the stdin
+and prints fixed column width table to stdout.
+
+```bash
 tabs_print() {
     LC_ALL=C awk -F "$nosql_FS" --source '
         function drop_nonprinting( s ) {
@@ -186,26 +184,26 @@ tabs_print() {
                 print_row( rows[i], w )
         }'
 } 
-# ~~~
-#
-#
-# Selecting records and fields
-# ----------------------------
-#
-# The function `tabs_paint` reads tabs-formatted table from stdin and
-# prints tabs-formatted table to stdout. The first argument to `tabs_paint`
-# is an awk expression that is used to select records. The record fields
-# are referenced as `$"<FIELD_NAME>"` or $<FIELD_NUMBER> in the expression.
-# The remaining arguments are the names or numbers of the fields
-# that should be painted. If no fields are given, all fields are painted. See
-# the `tabs_paint` call in `wasted.bash`, for example.
-#
-# This function is an example of a function that
-# selects records (rows) from the table and then performs actions on
-# that record. This function can be easily modified, to drop the
-# selected lines, for example.
-#
-# ~~~ {.bash}
+```
+
+
+Selecting records and fields
+----------------------------
+
+The function `tabs_paint` reads tabs-formatted table from stdin and
+prints tabs-formatted table to stdout. The first argument to `tabs_paint`
+is an awk expression that is used to select records. The record fields
+are referenced as `$"<FIELD_NAME>"` or $<FIELD_NUMBER> in the expression.
+The remaining arguments are the names or numbers of the fields
+that should be painted. If no fields are given, all fields are painted. See
+the `tabs_paint` call in `wasted.bash`, for example.
+
+This function is an example of a function that
+selects records (rows) from the table and then performs actions on
+that record. This function can be easily modified, to drop the
+selected lines, for example.
+
+```bash
 tabs_paint () {
     local expression
     local -a header
@@ -237,18 +235,18 @@ tabs_paint () {
             print $0
         }'
 }
-# ~~~
-#
-#
-# Sorting the tables
-# ------------------
-#
-# The function `tabs_sort` reads a tabs-formatted table from the stdin
-# and writes a (re)sorted tabs-formatted table to the stdout. The first
-# argument is name of the column that is used as the key for the sort.
-# The remaining arguments are passed to the OS sort command.
-#
-# ~~~ {.bash}
+```
+
+
+Sorting the tables
+------------------
+
+The function `tabs_sort` reads a tabs-formatted table from the stdin
+and writes a (re)sorted tabs-formatted table to the stdout. The first
+argument is name of the column that is used as the key for the sort.
+The remaining arguments are passed to the OS sort command.
+
+```bash
 tabs_sort () {
     key=$1
     shift
@@ -263,4 +261,4 @@ tabs_sort () {
     [[ n -gt ${#header[@]} ]] && n=1
     sort -s -t "$nosql_FS" -k "$n" "$@"
 }
-# ~~~
+```

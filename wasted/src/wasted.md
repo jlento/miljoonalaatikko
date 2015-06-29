@@ -1,4 +1,3 @@
-
 Wasted
 ======
 
@@ -45,7 +44,8 @@ The programs that work with tables are implemented here as bash
 funtions.
 
 ```bash
-source "${LIBDIR:=../lib}/myproviders.bash"
+#!/bin/bash
+source "${LIBDIR:=.}/myproviders.bash"
 source "${LIBDIR}/nosql.bash"
 ```
 
