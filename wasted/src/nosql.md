@@ -221,7 +221,7 @@ tabs_paint () {
         selection=( "${selection[@]/#${header[$i]}/$((i+1))}" )
     done
     selection=( "${selection[@]/#/p[}" )
-    selection=( "${selection[@]/%/]\;}" )
+    selection=( "${selection[@]/%/];}" )
     awk -F "$nosql_FS" -v OFS="$nosql_FS" '
         function red ( s ) {
             return "\033[1;31m" s "\033[0m"
