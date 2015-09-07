@@ -11,10 +11,15 @@ General notes
 
 Linux command line has a a comprehensive set of small programs that
 work with plain text streams. The output of one program can be easily
-piped to another program, making it possible to combine
-many small programs into a larger program. Here we extend the idea from
-the small programs that work with unstructured text streams
-to small programs that work with tables.
+piped to another program, making it possible to combine many small
+programs into a larger application.
+
+Another way of looking at the small programs and the text streams is
+to treat the small programs as functions, and the text streams as
+their arguments and return values. Here we specify that the internal
+data structure that is used as function arguments and return values,
+is a table, serialized as a text stream.
+
 
 
 Table format
