@@ -1,0 +1,37 @@
+#!/bin/bash
+
+usage="
+Usage: mdslides <pandoc-source-file>.<ext>
+
+Options to pandoc are read from an auxiliary file '<pandoc-source-file>.pop'.
+"
+
+
+# Pandoc source file
+
+src=$(readlink -f "$1")
+srcroot="${src%/*}"
+
+
+# Make a soft link from the mdslides' root to the source file's directory
+
+thisfile="$(readlink -f ${BASH_SOURCE[0]})"
+slidesroot="$(readlink -f ${thisfile%/*}/..)"
+test -e .mdslides || ln -s "${slidesroot}" "${srcroot}/.mdslides"
+
+
+# Read Pandoc options from a file
+
+pop="${1%.*}.pop"
+if test -f "$pop"; then
+    opts=$(cat "$pop")
+else
+    opts=$(cat .mdslides/snippets/default.pop)
+fi
+
+# Undocument feature: arguments after the first one are added to pandoc's
+# options :D
+
+shift
+echo pandoc "$src" $opts $@
+pandoc "$src" $opts $@

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Run Reveal.js's local Node.js HTTP server with some additions
+
+thisfile="$(readlink -f ${BASH_SOURCE[0]})"
+pkgroot="$(readlink -f ${thisfile%/*}/..)"
+mdsrc="$(readlink -f $1)"
+shift
+
+gruntopts=(
+    "--gruntfile=${pkgroot}/reveal.js/Gruntfile.js"
+    "--tasks=${pkgroot}/tasks"
+    "--pkgroot=${pkgroot}"
+    "--root=${mdsrc%/*}"
+    "--mdsrc=${mdsrc}"
+    "--pandocopts=\"$*\""
+)
+
+npm --prefix=${pkgroot}/reveal.js start -- "${gruntopts[@]}"

@@ -1,0 +1,6 @@
+-f markdown_github
+-t revealjs
+--section-divs
+-s
+-mathml
+--slide-level=1
