@@ -15,7 +15,7 @@ Convert markdown* to HTML slide show. Basically just some messy scripts on top o
 * Basic use: Bash, Git, Pandoc
 * Development: Node.js, Grunt, npm
 * ... and a browser, of course!
- 
+* includes reveal.js as a git submodule 
 
 ## Simple install
 
