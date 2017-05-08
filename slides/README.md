@@ -32,9 +32,8 @@ cd miljoonalaatikko/slides
 Compile the slides into a single HTML file and open it in a browser:
 
 ```bash
-./bin/mdslides.bash examples/ex1/README.md \
-    --self-contained -o README.html
-chromium-browser README.html &
+./bin/mdslides.bash examples/ex1/README.md --self-contained -o examples/ex1/README.md
+chromium-browser examples/ex1/README.md &
 ```
 
 
@@ -74,6 +73,7 @@ Sixty characters wide **code blocks** should fit without scroll
 The layout is controlled with CSS, here the file
 `reveal.js/css/themes/source/custom.scss`.
 
+TODO: If this is moved to
 
 ## How this was bootstrapped (OUTDATED!)
 

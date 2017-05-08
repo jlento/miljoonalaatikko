@@ -13,7 +13,37 @@ module.exports = function(grunt) {
             src: [ mdsrc ],
             dest: mdsrc.replace(/\.md$/,".html"),
         },
+        sass: {
+			      themes: {
+				        files: [
+					          {
+						            expand: true,
+						            cwd: 'css/theme/source',
+						            src: ['*.sass', '*.scss'],
+						            dest: 'css/theme',
+						            ext: '.css'
+					          },
+					          {
+						            expand: true,
+						            cwd: '../snippets',
+						            src: ['*.sass', '*.scss'],
+						            dest: '../snippets',
+						            ext: '.css'
+					          }
+				        ]
+			      }
+		    },
         watch: {
+			      theme: {
+				        files: [
+					          'css/theme/source/*.sass',
+					          'css/theme/source/*.scss',
+					          'css/theme/template/*.sass',
+					          'css/theme/template/*.scss',
+                    '../snippets/*.sass',
+                    '../snippets/*.scss'
+				        ],
+			      },
             markdown: {
                 files: [ mdsrc ],
                 tasks: [ 'pandoc' ],

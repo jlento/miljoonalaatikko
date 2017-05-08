@@ -13,7 +13,7 @@ gruntopts=(
     "--pkgroot=${pkgroot}"
     "--root=${mdsrc%/*}"
     "--mdsrc=${mdsrc}"
-    "--pandocopts=\"$*\""
+    "--pandocopts=$*"
 )
 
 npm --prefix=${pkgroot}/reveal.js start -- "${gruntopts[@]}"

@@ -8,7 +8,7 @@
 --include-after-body=.mdslides/snippets/csc-colorbar.html
 --include-after-body=.mdslides/snippets/prompt.html
 --variable=revealjs-url:.mdslides/reveal.js
---variable=theme:custom
+--variable=theme:../../../snippets/custom
 --variable=controls:false
 --variable=width:1200
 --variable=height:675
