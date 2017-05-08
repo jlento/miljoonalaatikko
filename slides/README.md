@@ -43,7 +43,7 @@ Advanced features of reveal.js and the automatic compile and reload of the slide
 
 * Install Node.js, Grunt and npm
 
-* do reveal.js [full-setup](https://github.com/hakimel/reveal.js#full-setup)
+* do reveal.js [full-setup](https://github.com/hakimel/reveal.js#full-setup):
 
 ```bash
 npm --prefix=reveal.js install
