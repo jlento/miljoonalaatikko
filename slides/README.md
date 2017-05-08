@@ -1,6 +1,6 @@
 # Slides
 
-Convert markdown* to [Reveal.js](https://github.com/hakimel/reveal.js) slide shows using [Pandoc](http://pandoc.org).
+Convert markdown* to HTML slide show. Basically just some messy scripts on top of the great: [Reveal.js](https://github.com/hakimel/reveal.js) and [Pandoc](http://pandoc.org).
 
 <p style="margin-top: 2em">*<span style="font-size: 75%"> or any other input format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
 
