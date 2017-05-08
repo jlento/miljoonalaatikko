@@ -32,8 +32,8 @@ cd miljoonalaatikko/slides
 Compile the slides into a single HTML file and open it in a browser:
 
 ```bash
-./bin/mdslides.bash examples/ex1/README.md --self-contained -o examples/ex1/README.md
-chromium-browser examples/ex1/README.md &
+./bin/mdslides.bash examples/ex1/README.md --self-contained -o examples/ex1/README.html
+chromium-browser examples/ex1/README.html &
 ```
 
 
