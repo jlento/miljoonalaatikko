@@ -6,17 +6,23 @@ Usage: mdslides <pandoc-source-file>.<ext>
 Options to pandoc are read from an auxiliary file '<pandoc-source-file>.pop'.
 "
 
+# OS X workaround
+readlink-f () {
+    readlink "$1" || (
+        cd $(dirname "$1") 2> /dev/null && echo "$(pwd -P)/$(basename "$1")"
+    )
+}
 
 # Pandoc source file
 
-src=$(readlink -f "$1")
+src=$(readlink-f "$1")
 srcroot="${src%/*}"
 
 
 # Make a soft link from the mdslides' root to the source file's directory
 
-thisfile="$(readlink -f ${BASH_SOURCE[0]})"
-slidesroot="$(readlink -f ${thisfile%/*}/..)"
+thisfile="$(readlink-f ${BASH_SOURCE[0]})"
+slidesroot="$(readlink-f ${thisfile%/*}/..)"
 test -e .mdslides || ln -s "${slidesroot}" "${srcroot}/.mdslides"
 
 

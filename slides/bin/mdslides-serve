@@ -2,9 +2,16 @@
 
 # Run Reveal.js's local Node.js HTTP server with some additions
 
-thisfile="$(readlink -f ${BASH_SOURCE[0]})"
-pkgroot="$(readlink -f ${thisfile%/*}/..)"
-mdsrc="$(readlink -f $1)"
+# OS X workaround
+readlink-f () {
+    readlink "$1" || (
+        cd $(dirname "$1") 2> /dev/null && echo "$(pwd -P)/$(basename "$1")"
+    )
+}
+
+thisfile="$(readlink-f ${BASH_SOURCE[0]})"
+pkgroot="$(readlink-f ${thisfile%/*}/..)"
+mdsrc="$(readlink-f $1)"
 shift
 
 gruntopts=(
