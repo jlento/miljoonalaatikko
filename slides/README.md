@@ -1,33 +1,38 @@
 # Slides
 
-Convert markdown* to HTML slide show. Basically just some messy scripts on top of the great: [Reveal.js](https://github.com/hakimel/reveal.js) and [Pandoc](http://pandoc.org).
+Convert markdown* to HTML slide show. Basically just some messy scripts on top
+of the great: [Reveal.js](https://github.com/hakimel/reveal.js)
+and [Pandoc](http://pandoc.org).
 
-<p style="margin-top: 2em">*<span style="font-size: 75%"> or any other input format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
-
-
-## Alternatives
-
-* [reveal-md](https://github.com/webpro/reveal-md) (very nice, slightly less general, more elegant, but bug in pdf export)
+<p style="margin-top: 2em">*<span style="font-size: 75%"> or any other input
+format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
 
 
-## Requires
+# Alternatives
+
+* [reveal-md](https://github.com/webpro/reveal-md) (very nice, slightly less
+  general, more elegant, but bug in pdf export)
+
+
+# Requires
 
 * Basic use: Bash, Git, Pandoc
-* Development: Node.js, Grunt, npm
+* Development: Node.js and npm
 * ... and a browser, of course!
 * includes reveal.js as a git submodule 
 
-## Simple install
 
-Install pandoc, clone this repository:
+# Simple install
 
-```bash
-git clone https://github.com/jlento/miljoonalaatikko.git
-cd miljoonalaatikko/slides
-```
+* Install Pandoc
+* Clone this repository:
+  ```bash
+  git clone https://github.com/jlento/miljoonalaatikko.git
+  cd miljoonalaatikko/slides
+  ```
 
 
-## Simple usage example
+# Simple usage example
 
 Compile the slides into a single HTML file and open it in a browser:
 
@@ -37,11 +42,14 @@ chromium-browser examples/ex1/README.html &
 ```
 
 
-## Advanced / development install
+# Advanced / development install
 
-Advanced features of reveal.js and the automatic compile and reload of the slides after markdown source modifications uses Node.js and local HTTP server.
+Not much more involved. No fear. Lot's of more features.
 
-* Install Node.js, Grunt and npm
+Advanced features of reveal.js and the automatic compile and reload of the
+slides after markdown source modifications uses Node.js and local HTTP server.
+
+* Install Node.js and npm
 
 * do reveal.js [full-setup](https://github.com/hakimel/reveal.js#full-setup):
 
@@ -50,16 +58,17 @@ npm --prefix=reveal.js install
 ```
 
 
-## Advanced / development use
+# Advanced / development use
 
-Compile the markdown to HTML, but do not make it self-contained as in basic usage. Instead, serve the pages dynamically
+Compile the markdown to HTML, but do not make it self-contained as in basic
+usage. Instead, serve the pages dynamically
 
 ```bash
 ./bin/mdslides-serve example/ex1/README.md
 ```
     
 
-## Source guide
+# Source guide
 
 Sixty characters wide **code blocks** should fit without scroll
 
@@ -68,14 +77,13 @@ Sixty characters wide **code blocks** should fit without scroll
 ```
 
 
-## Tuning layout
+# Tuning layout
 
 The layout is controlled with CSS, here the file
 `reveal.js/css/themes/source/custom.scss`.
 
-TODO: If this is moved to
 
-## How this was bootstrapped (OUTDATED!)
+# How this was bootstrapped (OUTDATED!)
 
 Got CSC's official PowerPoint template `Presentation-CSC-PPT-template-2016.potx`
 and unpacked it
@@ -95,19 +103,3 @@ Copied the images from the CSC template to the repo
 mkdir -p img/csc
 cp ../CSCTemplate/Presentation-CSC-PPT-template-2016/ppt/media/*.jpg img/csc/
 ```
-
-
-------------------------------------------
-
-
-Reveal.js stuff, packages npm, nodejs-dev, nodejs-legacy, python-pip
-
-```bash
-npm install
-sudo npm install -g grunt-cli
-cp css/theme/source/white.scss css/theme/source/csc.scss
-grunt css-themes
-pip install pandocfilters
-```
-
-Wrote md2slides.bash, CSC-README.md, templates/csc-template.html

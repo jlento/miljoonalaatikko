@@ -10,12 +10,24 @@ section {
   text-align: left;
   padding: 20px 20px !important; }
 
-#csc-colorbar {
+/* 1. Style header/footer <div> so they are positioned as desired. */
+#header-left {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  top: 0%;
+  left: 0%; }
+
+#header-right {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  width: 10%; }
+
+#footer-left {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
   width: 100%;
-  height: 1em;
+  height: 0.5em;
   background: #830051;
   background: -moz-linear-gradient(left, #830051 50%, #006778 50%, #006778 75%, #7dc242 75%, #7dc242 75%);
   background: -webkit-linear-gradient(left, #830051 50%, #006778 50%, #006778 75%, #7dc242 75%, #7dc242 75%);

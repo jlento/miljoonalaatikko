@@ -39,5 +39,4 @@ fi
 # options :D
 
 shift
-echo pandoc "$src" $opts $@
 pandoc "$src" $opts $@

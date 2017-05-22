@@ -1,0 +1,27 @@
+<!-- According to Leftium in https://github.com/hakimel/reveal.js/issues/806 -->
+
+<!-- 2. Create hidden header/footer <div> -->
+<div id="hidden" style="display:none;">
+    <div id="header">
+        <!-- <div id="header-left">HEADER-LEFT</div> -->
+        <img id="header-right" src=".mdslides/img/CSC_logo.svg">
+        <div id="footer-left"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+ // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+ var header = document.querySelector('#header');
+ console.log(header);
+ if ( window.location.search.match( /print-pdf/gi ) ) {
+     console.log("print-pdf");
+     Reveal.addEventListener( 'ready', function( event ) {
+         console.log(document.querySelectorAll('.slide-background'));
+         [].forEach.call(document.querySelectorAll('.slide-background'), function (e) {
+             e.appendChild(header.cloneNode(true));
+         });
+     });
+ } else {
+     document.querySelector('body').appendChild(header);
+ }
+</script>

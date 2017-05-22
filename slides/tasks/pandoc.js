@@ -1,18 +1,31 @@
 //grunt task for pandoc
 module.exports = function(grunt) {
 
+	  var port       = grunt.option('port') || 8000;
 	  var pkgroot    = grunt.option('pkgroot');
 	  var root       = grunt.option('root') || '.';
 	  var mdsrc      = grunt.option('mdsrc');
 	  var pandocopts = grunt.option('pandocopts');
 
+    var page       = mdsrc.replace(root, "").replace(/\.md$/,".html");
+
     grunt.log.writeln(root);
 
     grunt.config.merge({
         pandoc: {
-            src: [ mdsrc ],
+            src: [ mdsrc, mdsrc.replace(/\.md$/,".pop"), "../snippets/default.pop" ],
             dest: mdsrc.replace(/\.md$/,".html"),
         },
+        connect: {
+			      server: {
+				        options: {
+                    port: port,
+					          base: root,
+					          livereload: true,
+					          open: `http://localhost:8000/${page}`,
+				        }
+			      },
+		    },
         sass: {
 			      themes: {
 				        files: [
@@ -44,9 +57,21 @@ module.exports = function(grunt) {
                     '../snippets/*.scss'
 				        ],
 			      },
+            bin: {
+                files: [ '../bin/mdslides' ],
+                tasks: 'pandoc'
+            },
+            img: {
+                files: [ '../img/*' ],
+                tasks: 'pandoc'
+            },
+            snippets: {
+                files: [ '../snippets/*' ],
+                tasks: 'pandoc'
+            },
             markdown: {
-                files: [ mdsrc ],
-                tasks: [ 'pandoc' ],
+                files: [ mdsrc, mdsrc.replace(/\.md$/,".pop"), "../snippets/default.pop" ],
+                tasks: 'pandoc'
             }
         }
     });

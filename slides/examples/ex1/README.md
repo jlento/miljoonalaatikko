@@ -1,7 +1,7 @@
 ---
 title: Markdown slides with Pandoc and Reveal JS
 author: Juha Lento
-date: 5 May 2017
+date: 22 May 2017
 ---
 
 
@@ -14,7 +14,7 @@ viewed in a browser.
 ## Requires
 
 * Basic use: Bash, Git, Pandoc
-* Development: Node.js, Grunt, npm
+* Development: Node.js and npm
 * ... and a browser, of course!
  
 
