@@ -1,4 +1,4 @@
-# Slides
+## Slides
 
 Convert markdown* to HTML slide show. Basically just some messy scripts on top
 of the great: [Reveal.js](https://github.com/hakimel/reveal.js)
@@ -8,13 +8,13 @@ and [Pandoc](http://pandoc.org).
 format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
 
 
-# Alternatives
+## Alternatives
 
 * [reveal-md](https://github.com/webpro/reveal-md) (very nice, slightly less
   general, more elegant, but bug in pdf export)
 
 
-# Requires
+## Requires
 
 * Basic use: Bash, Git, Pandoc
 * Development: Node.js and npm
@@ -22,17 +22,17 @@ format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
 * includes reveal.js as a git submodule 
 
 
-# Simple install
+## Simple install
 
 * Install Pandoc
 * Clone this repository:
-  ```bash
-  git clone https://github.com/jlento/miljoonalaatikko.git
-  cd miljoonalaatikko/slides
-  ```
+    ```bash
+    git clone https://github.com/jlento/miljoonalaatikko.git
+    cd miljoonalaatikko/slides
+    ```
 
 
-# Simple usage example
+## Simple usage example
 
 Compile the slides into a single HTML file and open it in a browser:
 
@@ -43,7 +43,7 @@ chromium-browser examples/ex1/README.html &
 ```
 
 
-# Advanced / development install
+## Advanced / development install
 
 Not much more involved. No fear. Lot's of more features.
 
@@ -51,15 +51,13 @@ Advanced features of reveal.js and the automatic compile and reload of the
 slides after markdown source modifications uses Node.js and local HTTP server.
 
 * Install Node.js and npm
-
-* do reveal.js [full-setup](https://github.com/hakimel/reveal.js#full-setup):
-
-```bash
-npm --prefix=reveal.js install
-```
+* do reveal.js [full-setup](https://github.com/hakimel/reveal.js##full-setup):
+    ```bash
+    npm --prefix=reveal.js install
+    ```
 
 
-# Advanced / development use
+## Advanced / development use
 
 Compile the markdown to HTML, but do not make it self-contained as in basic
 usage. Instead, serve the pages dynamically
@@ -69,7 +67,7 @@ usage. Instead, serve the pages dynamically
 ```
     
 
-# Source guide
+## Source guide
 
 Sixty characters wide **code blocks** should fit without scroll
 
@@ -78,29 +76,7 @@ Sixty characters wide **code blocks** should fit without scroll
 ```
 
 
-# Tuning layout
+## Tuning layout
 
 The layout is controlled with CSS, here the file
-`reveal.js/css/themes/source/custom.scss`.
-
-
-# How this was bootstrapped (OUTDATED!)
-
-Got CSC's official PowerPoint template `Presentation-CSC-PPT-template-2016.potx`
-and unpacked it
-
-```bash
-mkdir Presentation-CSC-PPT-template-2016
-( cd $_ ; unzip ../Presentation-CSC-PPT-template-2016.potx )
-```
-
-
-------------------------------------------
-
-
-Copied the images from the CSC template to the repo 
-
-```bash
-mkdir -p img/csc
-cp ../CSCTemplate/Presentation-CSC-PPT-template-2016/ppt/media/*.jpg img/csc/
-```
+`reveal.js/css/themes/source/custom.scss`
