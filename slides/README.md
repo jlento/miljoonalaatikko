@@ -37,7 +37,8 @@ format that Pandoc reads, see 'pandoc --list-input-formats'</span></p>
 Compile the slides into a single HTML file and open it in a browser:
 
 ```bash
-./bin/mdslides examples/ex1/README.md --self-contained -o examples/ex1/README.html
+./bin/mdslides examples/ex1/README.md --self-contained \
+    > examples/ex1/README.html
 chromium-browser examples/ex1/README.html &
 ```
 

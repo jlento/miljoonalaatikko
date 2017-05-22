@@ -8,23 +8,26 @@ Options to pandoc are read from an auxiliary file '<pandoc-source-file>.pop'.
 
 # OS X workaround
 readlink-f () {
-    readlink "$1" || (
+    local absname
+    readlink "$1" || ( test -d "$1" && cd "$1" && pwd -P ) || (
         cd $(dirname "$1") 2> /dev/null && echo "$(pwd -P)/$(basename "$1")"
     )
 }
+
+# slides root
+
+thisfile="$(readlink-f ${BASH_SOURCE[0]})"
+slidesroot="$(readlink-f ${thisfile%/*}/..)"
 
 # Pandoc source file
 
 src=$(readlink-f "$1")
 srcroot="${src%/*}"
 
+# Create a soft link from the mdslides' root to the source file's directory
+# (addmittable uggly, but simplest this way)
 
-# Make a soft link from the mdslides' root to the source file's directory
-
-thisfile="$(readlink-f ${BASH_SOURCE[0]})"
-slidesroot="$(readlink-f ${thisfile%/*}/..)"
-test -e .mdslides || ln -s "${slidesroot}" "${srcroot}/.mdslides"
-
+ln -sf "${slidesroot}" "${srcroot}/.mdslides"
 
 # Read Pandoc options from a file
 
@@ -32,11 +35,10 @@ pop="${1%.*}.pop"
 if test -f "$pop"; then
     opts=$(cat "$pop")
 else
-    opts=$(cat .mdslides/snippets/default.pop)
+    opts=$(cat "${slidesroot}/snippets/default.pop")
 fi
 
-# Undocument feature: arguments after the first one are added to pandoc's
-# options :D
 
 shift
+cd "$srcroot"
 pandoc "$src" $opts $@

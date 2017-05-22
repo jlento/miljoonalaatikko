@@ -3,7 +3,7 @@
 --section-divs
 -s
 -mathml
---slide-level=1
+--slide-level=2
 --highlight-style=zenburn
 --include-after-body=.mdslides/snippets/binit.html
 --include-after-body=.mdslides/snippets/headers-n-footers.html

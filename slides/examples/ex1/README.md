@@ -76,46 +76,14 @@ The layout is controlled with CSS, here the file
 `reveal.js/css/themes/source/custom.scss`.
 
 
+## Printing PDF handouts
+
+PDF printing works as in Reveal.js,
+see <https://github.com/hakimel/reveal.js#pdf-export>, i.e. add `?print-pdf` to
+the page URL in the Chrome browser and print from the browser.
+
 ## Implementation details
 
 Both Pandoc and slideshow HTTP server need access to auxiliary files from
 package root directory. It is simplest to just create a soft link so everything
-seems to be in the same directory as the markdown source
-
-
-## How this was bootstrapped
-
-Got CSC's official PowerPoint template `Presentation-CSC-PPT-template-2016.potx`
-and unpacked it
-
-```bash
-mkdir Presentation-CSC-PPT-template-2016
-( cd $_ ; unzip ../Presentation-CSC-PPT-template-2016.potx )
-```
-
-
-------------------------------------------
-
-
-Copied the images from the CSC template to the repo 
-
-```bash
-mkdir -p img/csc
-cp ../CSCTemplate/Presentation-CSC-PPT-template-2016/ppt/media/*.jpg img/csc/
-```
-
-
-------------------------------------------
-
-
-Reveal.js stuff, packages npm, nodejs-dev, nodejs-legacy, python-pip
-
-```bash
-npm install
-sudo npm install -g grunt-cli
-cp css/theme/source/white.scss css/theme/source/csc.scss
-grunt css-themes
-pip install pandocfilters
-```
-
-Wrote md2slides.bash, CSC-README.md, templates/csc-template.html
+seems to be in the same directory as the markdown source.
