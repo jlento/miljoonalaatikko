@@ -6,15 +6,16 @@
 --   the product of all primes <= N, and I is a positive integer
 
 import Data.List
+import Data.Natural
 
-isPrime :: Int -> Bool
+isPrime :: Natural -> Bool
 isPrime 1 = False
 isPrime 2 = True
 isPrime x = and $ map ((0 /=) . rem x) [2..(x-1)]
 
-isDivisibleByAll :: [Int] -> Int -> Bool
+isDivisibleByAll :: [Natural] -> Natural -> Bool
 isDivisibleByAll xs y = and $ map ((0 ==) . rem y) xs
 
-divisibleByAll :: Int -> Maybe Int
+divisibleByAll :: Natural -> Maybe Natural
 divisibleByAll x = find (isDivisibleByAll [1..x]) [1*c,2*c..]
   where c = product $ filter isPrime [1..x]
