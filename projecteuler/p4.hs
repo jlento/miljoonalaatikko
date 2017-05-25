@@ -5,8 +5,10 @@ import Data.List
 import Data.Maybe
 
 decending2NDigitPalindromes :: Int -> [Int]
-decending2NDigitPalindromes n =
-  map (\x -> read $ show x ++ reverse (show x)) ([(10^n - 1),(10^n - 2)..(10^(n - 1))] :: [Int])
+decending2NDigitPalindromes n = map palindromize [xmax,(xmax - 1)..xmin]
+  where xmax = 10^n - 1 :: Int
+        xmin = (10^(n - 1)) :: Int
+        palindromize x = read $ show x ++ reverse (show x)
 
 smallerOfNDigitFactors :: Int -> Int -> Maybe Int
 smallerOfNDigitFactors n x
