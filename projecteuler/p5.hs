@@ -1,5 +1,6 @@
 -- Project Euler, Problem 5
 -- https://projecteuler.net
+-- $ cabal install natural-numbers
 
 -- Theorem: Any positive integer X that is evenly divisible by
 --   all positive integers up to N is of the form X = C * I, where C is
