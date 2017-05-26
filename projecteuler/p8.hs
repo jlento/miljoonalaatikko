@@ -5,7 +5,7 @@ import Data.List
 
 digitsFromString = map (\c -> fromEnum c - fromEnum '0')
 
-xs = digitsFromString "\
+digits = digitsFromString "\
     \73167176531330624919225119674426574742355349194934\
     \96983520312774506326239578318016984801869478851843\
     \85861560789112949495459501737958331952853208805511\
@@ -27,12 +27,21 @@ xs = digitsFromString "\
     \05886116467109405077541002256983155200055935729725\
     \71636269561882670428252483600823257530420752963450"
 
-data Acc = Acc { maxProductOfAdjacent :: Int
-               , digits :: [Int]
+data Acc = Acc {maxProductOfAdjacent ::Int
+               ,adjacenDigits :: [Int]
                } deriving Show
 
+initAcc :: Int -> Acc
 initAcc n = Acc 0 (take n $ repeat 0)
 
-updateAcc (Acc s xs) x = Acc (max s (product (x:init xs))) (x:(init xs))
+updateAcc :: Acc -> Int -> Acc
+updateAcc acc x = Acc (max oldMaxProduct currentProduct) newDigits
+  where oldMaxProduct = maxProductOfAdjacent acc
+        newDigits = x:(init $ adjacenDigits acc)
+        currentProduct = product newDigits
 
-maxProductOfNAdjacent n = maxProductOfAdjacent $ foldl updateAcc (initAcc n) xs
+maxProductOfNAdjacent :: Int -> [Int] -> Int
+maxProductOfNAdjacent n = (maxProductOfAdjacent . foldl updateAcc (initAcc n))
+
+main :: IO ()
+main = print $ maxProductOfNAdjacent 13 digits

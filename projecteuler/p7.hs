@@ -4,4 +4,5 @@
 
 import Data.Numbers.Primes
 
-answer = primes!!10000
+main :: IO ()
+main =print $ (primes!!10000 :: Integer)

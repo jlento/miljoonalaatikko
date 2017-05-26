@@ -1,5 +1,6 @@
 -- Project Euler, Problem 5
 -- https://projecteuler.net
+
 -- $ cabal install natural-numbers
 
 -- Theorem: Any positive integer X that is evenly divisible by
@@ -20,3 +21,6 @@ isDivisibleByAll xs y = and $ map ((0 ==) . rem y) xs
 divisibleByAll :: Natural -> Maybe Natural
 divisibleByAll x = find (isDivisibleByAll [1..x]) [1*c,2*c..]
   where c = product $ filter isPrime [1..x]
+
+main :: IO ()
+main = print $ divisibleByAll 20

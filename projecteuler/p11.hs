@@ -1,6 +1,6 @@
 -- Project Euler, Problem 11
 -- https://projecteuler.net
-                 
+
 import Data.List.Split
 
 grid = map (\x -> (read x :: Int)) $ splitOn " " "\
@@ -37,6 +37,11 @@ stencil i g = maximum [g!!i * g!!(i+1) *g!!(i+2) * g!!(i+3)
                       ,g!!i * g!!(i+24) *g!!(i+48) * g!!(i+72)
                       ,g!!(i+3) * g!!(i+25) *g!!(i+47) * g!!(i+69)]
 
+allStencils :: [[Int] -> Int]
 allStencils = map stencil stencilTopLeftPositions
 
+stencilMax :: Int
 stencilMax = maximum $ map ($ grid) allStencils
+
+main :: IO ()
+main = print stencilMax

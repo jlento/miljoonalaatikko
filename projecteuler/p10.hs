@@ -3,4 +3,5 @@
 
 import Data.Numbers.Primes
 
-answer = sum $ takeWhile (<2000000) primes
+main :: IO ()
+main = print $ sum $ takeWhile (<2000000) (primes :: [Integer])
