@@ -2,7 +2,6 @@
 -- https://projecteuler.net
 
 -- Inspiration from Data.List.Unique
--- cabal install digits
 
 import Data.List
 import Data.Numbers.Primes
@@ -27,7 +26,6 @@ zeroDigitsIfEqual is x =
   else x
   where vs = digits is x
 
-
 newEq :: [Int] -> (Int -> Int -> Bool)
 newEq xs = (\p q -> zeroDigitsIfEqual xs p ==  zeroDigitsIfEqual xs q)
 
@@ -39,9 +37,6 @@ sg xs = groupBy (newEq xs) . sortBy (newOrder xs)
 
 filterByLength :: [Int] -> (Int -> Bool) -> [Int] -> [[Int]]
 filterByLength xs p = filter (p . length) . sg xs
-
---repeatedBy :: [Int] -> (Int -> Bool) -> [Int] -> [Int]
---repeatedBy xs p = map head . filterByLength xs p
 
 primesOfNDigits :: Int -> [Int]
 primesOfNDigits n =
@@ -64,5 +59,3 @@ firstFamilyOf m = find (not . null) (concat $ firstFamiliesOf m)
 
 main :: IO ()
 main = print $ firstFamilyOf 8
-  --
-
