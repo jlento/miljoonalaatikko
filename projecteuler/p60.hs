@@ -28,4 +28,4 @@ addPrime (xs:xss) x =
   else xs : addPrime xss x
 
 main :: IO ()
-main = print $ find isJust $ map (find ((4<) . length)) $ scanl addPrime [[]] $ takeWhile (9000>) primes
+main = print $ find isJust $ map (find ((4<) . length)) $ scanl addPrime [[]] $ primes
