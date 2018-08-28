@@ -9,25 +9,25 @@ import Data.Char
 
 main :: IO ()
 main = do
-     xs <- getLine
-     print $ noi (map digitToInt xs)
+  xs <- getLine
+  print $ noi (map digitToInt xs)
 
 -- Number Of Interpretations
 noi :: [Int] -> Int
 noi [] = 1
 noi (x:xs)
-    | x == 0 = 0
-    | xs == [] = 1
-    | x == 1 || x == 2 && head xs < 7 = noi xs + noi (tail xs)
-    | otherwise = noi xs
+  | x == 0 = 0
+  | xs == [] = 1
+  | x == 1 || (x == 2 && head xs < 7) = noi xs + noi (tail xs)
+  | otherwise = noi xs
 
 
 -- This recursive approach is running into trouble quite quickly due to
--- combinatorial explosion in with some test data. Try:
+-- combinatorial explosion with some test data. Try:
 --     stack ghc src/Recursive.hs
 --     stack exec src/Recursive <<<"1111111111111111111111111111111111111"
 --
--- Notice any familiar sequence if running with? :)
+-- Notice any familiar sequence if running with?
 --     "1"
 --     "11"
 --     "111"
