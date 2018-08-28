@@ -35,8 +35,8 @@ folding (x:xs) = fst.fst $ foldl update ((1, 1), x) xs
 
 -- The recursive approach is running into trouble quite quickly due to
 -- combinatorial explosion with some test data. Try:
---     stack ghc src/Recursive.hs
---     stack exec src/Recursive <<<"1111111111111111111111111111111111111"
+--     stack ghc src/Decoders.hs
+--     stack exec src/Decoders <<<"1111111111111111111111111111111111111"
 --
 -- Notice any familiar sequence if running with?
 --     "1"
@@ -47,4 +47,4 @@ folding (x:xs) = fst.fst $ foldl update ((1, 1), x) xs
 --     "111111"
 --     ...
 --
--- Does this give a hint about a more efficient approach? :)
+-- Does this give a hint about a more efficient approach (here folding)? :)
