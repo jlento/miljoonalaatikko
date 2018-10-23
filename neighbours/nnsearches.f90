@@ -79,24 +79,4 @@ program nnsearches
   write(*,'("  ",2(I19),2(F19.3))') linear_nnn, lattice_nnn, linear_time,&
        & lattice_time
 
-!  print *, "Number of vertices in bins ", sum(nv)
-!  print *, "Max number of vertices in a single bin ", maxval(nv)
-!  print *, "Min number of vertices in a single bin ", minval(nv)
-!  print *, "Length of neighbour index list ", sv(n-1) + nv(n-1) - 1
-!  print *, "Boxed neighbour search status ", status
-!  print *, "Boxed neighbour search took ", real(count2 - count1) / real(rate)
-!  print *
-!  print *, nv
-!  print *, sv
-!  print *, iv(1:sv(n-1) + nv(n-1) - 1)
-!  print *
-
-  !  if (status == 0) then
-!     do i = 1, n
-!       write(*,'(21(i4))') nn(i,:)
-!     end do
-!  else
-!     print *, 'Error: nnmax exceeded!'
-!  end if
-
 end program nnsearches
