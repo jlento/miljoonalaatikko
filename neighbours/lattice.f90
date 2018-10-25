@@ -4,7 +4,7 @@ module lattice
 
 contains
 
-  subroutine init_lattice(zorder)
+  pure subroutine init_lattice(zorder, status)
 
     ! Initialize Z-order/Morton table for nx*nx*nx lattice, where
     ! nx < 2^8 and nx = 2^n
@@ -15,17 +15,19 @@ contains
     ! For convenience, there is a "padding" with zeros, i.e.
     ! zorder(i,j,k) = 0, when i,j,k=0, or i,j,k=nx+1
 
-    integer, intent(out) :: zorder(0:, 0:, 0:)
+    integer, intent(out) :: zorder(0:, 0:, 0:), status
 
     integer, dimension (0:1023) :: dilute_table
     integer :: i, j, k, b, v, z, nx
 
+    status = 0
     nx = size(zorder, 1) - 2
     zorder = 0
 
-    if (popcnt(nx) .ne. 1 .or. nx .lt. 1 .or. nx .gt. 2** 8) then
-       print *, "Error: Out of bounds value for nx", nx
-       stop
+
+    if (popcnt(nx) .ne. 1 .or. nx .lt. 1 .or. nx .gt. 2 ** 8) then
+       status = 1
+       return
     end if
 
     do v=0, 1023
@@ -49,7 +51,7 @@ contains
   end subroutine init_lattice
 
 
-  subroutine sort_vertices(vertices, zorder, ibox, ifbox, mybox, nv, tmp)
+  pure subroutine sort_vertices(vertices, zorder, ibox, ifbox, mybox, nv, tmp)
 
     ! Sorts vertices in boxes
     !
@@ -69,8 +71,8 @@ contains
     real, intent(inout)  :: vertices(:, :)
     integer, intent(in)  :: zorder(0:, 0:, 0:)
     integer, intent(out) :: ibox(:), ifbox(:, :)
-    integer              :: mybox(:), nv(:)
-    real                 :: tmp(:, :)
+    integer, intent(out) :: mybox(:), nv(:)
+    real, intent(out)    :: tmp(:, :)
 
     real    :: c
     integer :: i, j, k, ii, n, nx

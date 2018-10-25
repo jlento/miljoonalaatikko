@@ -4,7 +4,7 @@ module fixed_radius
 
 contains
 
-    subroutine nnsearch(vertices, i, from, to, neighbors, ineighbors, status)
+    pure subroutine nnsearch(vertices, i, from, to, neighbors, ineighbors, status)
 
     ! Searches the neighborss of ith vertex from the range of vertices,
     ! given
@@ -30,18 +30,16 @@ contains
           neighbors(ineighbors(i + 1 )) = j
           ineighbors(i + 1) = ineighbors(i + 1) + 1
           if (ineighbors(i + 1) > inmax) then
-             goto 99
+             status = 99
+             return
           end if
        end if
     end do
 
-    return
-99  status = 99
-
   end subroutine nnsearch
 
 
-  subroutine nnsearch_linear(vertices, neighbors, ineighbors, status)
+  pure subroutine nnsearch_linear(vertices, neighbors, ineighbors, status)
 
     ! The brute force algorithm that scales as n^2
 
@@ -63,7 +61,7 @@ contains
   end subroutine nnsearch_linear
 
 
-  subroutine nnsearch_lattice(vertices, ibox, ifbox, neighbors, ineighbors,&
+  pure subroutine nnsearch_lattice(vertices, ibox, ifbox, neighbors, ineighbors,&
        & status)
 
     ! For each vertex, search the box in which the vertex is, plus the
@@ -89,7 +87,9 @@ contains
           ineighbors(j + 1) = ineighbors(j)
           call nnsearch(vertices, j, j + 1, jj, neighbors, ineighbors&
                &, status)
-          if (status .ne. 0) exit top
+          if (status .ne. 0) then
+             return
+          end if
           do k = 1, 13
              kk = ifbox(k, i)
              if (kk .ne. 0) then

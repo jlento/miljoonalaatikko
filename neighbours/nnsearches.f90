@@ -5,7 +5,12 @@ program nnsearches
   ! Brute force "linear" algorithm should scale as O(n^2), and
   ! "lattice" as O(n+k), where n is the number of vertices and k
   ! is the number of nearest neigbors.
-
+  !
+  ! Build with (Intel)
+  !    ifort -fast -qopt-report lattice.f90 fixed_radius.f90 nnsearches.f90
+  ! or
+  !    gfortran -Ofast lattice.f90 fixed_radius.f90 nnsearches.f90
+  
   use lattice, only : init_lattice, sort_vertices
   use fixed_radius, only  : nnsearch_linear, nnsearch_lattice
 
@@ -15,7 +20,7 @@ program nnsearches
   ! *** Parameters ***
 
   integer, parameter :: n = 2500
-  integer, parameter :: nrounds = 200
+  integer, parameter :: nrounds = 2500
   real, parameter    :: rmax = 1.0 / real(n) ** (1.0/3.0)
   integer, parameter :: nx = 2 ** (floor(-log(2.0*rmax) / log(2.0)))
   integer, parameter :: nave = ceiling(real(n) * 16.0 * rmax ** 3.0)
@@ -63,7 +68,11 @@ program nnsearches
 
   ! *** Lattice search ***
 
-  call init_lattice(zorder)
+  call init_lattice(zorder, status)
+  if (status .ne. 0) then
+     print *, "Number of lattice cells nx larger than 256"
+     stop
+  end if
 
   call system_clock(count1, rate)
   do i = 1, nrounds
