@@ -1,0 +1,62 @@
+#!/bin/bash
+
+usage="Usage: ./multirun exe nproc input1 [input2] ...
+
+$0 runs simultaneously nproc executables,
+each on a separate input file.
+
+        exe    -- the executable to run
+        nproc  -- number of executables to run simultaneously
+        input1 -- name of the first input file, etc.
+
+Example:
+
+       ./multirun ${PWD}/myexe 4 job_*/*_in* &
+"
+
+exe="$1"
+shift
+nproc="$1"
+shift
+
+
+# Check that the arguments are valid
+
+# TODO
+
+# Process ID of this shell script
+
+mypid=$$
+
+# Loop over input files
+
+for ifile in "$@"; do
+
+    # Check that $ifile points (1) to a regular file, and
+    # (2) the file name contains '_in'
+
+    [[ -f "$ifile" ]] && [[ "$ifile" =~ _in ]] || {
+        echo "$usage" >&2
+        exit 1
+    }
+
+    # Start a new Executable in the background
+    #   - The executable should be idempotent
+
+    echo "Running '$exe $ifile &'"
+    $exe "$ifile" &
+
+    # If there are more that nproc executables running
+    # wait for a second and check again
+
+    while (( $(pgrep -P $mypid .* | wc -l) >= nproc )); do
+        echo "Waiting..."
+        sleep 1
+    done
+
+done
+
+# Wait for the last process to finish
+echo "Waiting for the last ones..."
+wait
+
