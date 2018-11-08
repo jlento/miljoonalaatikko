@@ -2,7 +2,7 @@
 
 # A phony executable for the exercises :)
 
-usage="Usage: ./myexe.sh INPUT"
+usage="Usage: ./myexe.sh input"
 
 
 # Check that the first argument $1 points (1) to a regular file, and
@@ -20,12 +20,14 @@ usage="Usage: ./myexe.sh INPUT"
 ifile="$1"
 ofile="${1/_in/_out}"
 
+
 # If we already have the output file, report and do nothing (idempotent)
 
 [[ -f "$ofile" ]] && {
     echo "Output file $ofile exist. Exiting." >&2
     exit 0
 }
+
 
 # Random number from 3 to 5
 

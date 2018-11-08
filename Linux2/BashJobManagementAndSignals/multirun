@@ -14,6 +14,10 @@ Example:
        ./multirun ${PWD}/myexe 4 job_*/*_in* &
 "
 
+
+# Copy the two first positional arguments and throw them away. This
+# leaves only the input file names in $@
+
 exe="$1"
 shift
 nproc="$1"
@@ -22,11 +26,13 @@ shift
 
 # Check that the arguments are valid
 
-# TODO
+# TODO :)
+
 
 # Process ID of this shell script
 
 mypid=$$
+
 
 # Loop over input files
 
@@ -40,13 +46,15 @@ for ifile in "$@"; do
         exit 1
     }
 
+
     # Start a new Executable in the background
     #   - The executable should be idempotent
 
     echo "Running '$exe $ifile &'"
     $exe "$ifile" &
 
-    # If there are more that nproc executables running
+
+    # If there are more that nproc child processes running,
     # wait for a second and check again
 
     while (( $(pgrep -P $mypid .* | wc -l) >= nproc )); do
@@ -56,7 +64,8 @@ for ifile in "$@"; do
 
 done
 
+
 # Wait for the last process to finish
+
 echo "Waiting for the last ones..."
 wait
-
