@@ -54,7 +54,7 @@ for ifile in "$@"; do
     $exe "$ifile" &
 
 
-    # If there are more that nproc child processes running,
+    # Blocking: if there are more that nproc child processes running,
     # wait for a second and check again
 
     while (( $(pgrep -P $mypid .* | wc -l) >= nproc )); do
