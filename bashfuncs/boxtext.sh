@@ -1,7 +1,8 @@
 #!/bin/bash
 
 hr () {
-    printf "+%${1}s+\n" '' | tr ' ' '-'
+    local line=$(printf "+%${1}s+\n" '')
+    echo ${line// /-}
 }
 
 boxtext () {
