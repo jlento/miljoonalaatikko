@@ -1,15 +1,17 @@
 #!/bin/bash
 
-line () {
+hr () {
     printf "+%${1}s+\n" '' | tr ' ' '-'
 }
 
 boxtext () {
-    local x=$(tr '[:print:]' 'x' <<<"$1" | sort | tail -1 | wc -c)
-    local y=$(wc -l <<<"$1")
-    line $((x+1))
-    while read l; do
-        printf "| %-$((x-1))s |\n" "$l"
+    local nx=0 line
+    while read line; do
+        (( ${#line} > nx )) && nx=${#line}
     done <<<"$1"
-    line $((x+1))
+    hr $((nx+2))
+    while read line; do
+        printf "| %-${nx}s |\n" "$line"
+    done <<<"$1"
+    hr $((nx+2))
 }
