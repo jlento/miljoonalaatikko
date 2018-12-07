@@ -1,6 +1,10 @@
+//usr/bin/clang "$0" && exec ./a.out "$@"
+
 #include <stdint.h>
 #include <inttypes.h>
 #include <stdio.h>
+
+#define MAXBITTABLE 1024*256
 
 int main(int argc, char *argv[]) {
 
@@ -20,11 +24,24 @@ int main(int argc, char *argv[]) {
 
   printf("Part 1 answer: %" PRId64 "\n", sum);
 
-  int64_t seen[1024*256] = {0};
+  sum = 0;
+  uint64_t seen[MAXBITTABLE] = {0};
+  while (1) {
+    rewind(file);
+    while (fscanf(file, "%" SCNd64, &value ) != EOF) {
+      sum += value;
+      size_t pos = sum / 64;
+      uint64_t entry = (uint64_t)1 << (63 - sum % 64);
+      if (seen[pos] & entry) {
+        goto exitloop;
+      } else {
+        seen[pos] |= entry;
+      }
+    }
+  }
+ exitloop:
 
-  rewind(file);
-
-
+  printf("Part 1 answer: %" PRId64 "\n", sum);
 
   fclose(file);
 
