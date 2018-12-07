@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+usage='
+  Usage: load_day <#day>
+
+  You need to log in into https://adventofcode.com/2018 in the
+  browser, get the session cookie, and put it into SESSION environment
+  variable.
+'
+
+: ${1:?${usage}}
+: ${SESSION:?${usage}}
+
+curl -s "https://adventofcode.com/2018/day/${1}/input" -X GET -H "Cookie: session=${SESSION}" -o $(printf "Dec%02d.dat" "$1")
