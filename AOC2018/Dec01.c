@@ -31,6 +31,11 @@ int main(int argc, char *argv[]) {
     while (fscanf(file, "%" SCNd64, &value ) != EOF) {
       sum += value;
       size_t pos = sum / 64;
+      if (pos >= MAXBITTABLE) {
+        fprintf(stderr, "Index pos = %zu exceeds MAXBITTABLE = %d\n",
+                pos, MAXBITTABLE);
+        return(1);
+      }
       uint64_t entry = (uint64_t)1 << (63 - sum % 64);
       if (seen[pos] & entry) {
         goto exitloop;
