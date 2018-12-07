@@ -22,6 +22,10 @@ int main(int argc, char *argv[]) {
 
   int64_t seen[1024*256] = {0};
 
+  rewind(file);
+
+
+
   fclose(file);
 
 }
