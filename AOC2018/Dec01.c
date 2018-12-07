@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   if (file == 0) {
     fprintf(stderr, "Missing input file %s\n", fname);
-    return(1);
+    goto failure;
   }
 
   int64_t value;
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
       if (pos >= MAXBITTABLE) {
         fprintf(stderr, "Index pos = %zu exceeds MAXBITTABLE = %d\n",
                 pos, MAXBITTABLE);
-        return(1);
+        goto failure;
       }
       uint64_t entry = (uint64_t)1 << (63 - sum % 64);
       if (seen[pos] & entry) {
@@ -48,6 +48,11 @@ int main(int argc, char *argv[]) {
 
   printf("Part 1 answer: %" PRId64 "\n", sum);
 
+ success:
   fclose(file);
+  return(0);
 
+ failure:
+  fclose(file);
+  return(1);
 }
