@@ -38,3 +38,43 @@ modify () {
 	printf "%s" "<$ENTITY>$CONTENT"
     done
 }
+
+read_tag () {
+    local IFS=\> entity ret
+    read -d \< entity CONTENT
+    ret=$?
+    [[ "$entity" =~ ^(/?)([^ ]+)\ *(.*) ]]
+    [ -z "${BASH_REMATCH[1]}" ] && CLOSING=false || CLOSING=true
+    TAG=${BASH_REMATCH[2]}
+    ATTR=${BASH_REMATCH[3]}
+    return $ret
+}
+
+pt () {
+    unset TAGS ATTRIBUTES CONTENTS CHILDREN PARENT
+    local -i i free=0 current=0
+    local tag attributes
+    printf "%5s" {1..7} ; printf "\n"
+    while read_tag; do
+        [ -z "$TAG" ] && continue
+        if $CLOSING; then
+            current=${PARENT[$current]}
+        else
+            CHILDREN[$current]+=" $free"
+            PARENT[$free]=$current
+            current=$free
+            free=$(( ++free ))
+            TAGS[$current]="$TAG"
+            ATTRIBUTES[$current]="$ATTR"
+        fi
+        if [ -n "$CONTENT" ]; then
+            CHILDREN[$current]+=" $free"
+            PARENT[$free]=$current
+            CONTENTS[$free]="$CONTENT"
+            free=$(( ++free ))
+        fi
+    done
+    for (( i = 0; i < free; i++ )); do
+        echo $i:${TAGS[$i]}:${ATTRIBUTES[$i]}:${CONTENTS[$i]}:${PARENT[$i]}:${CHILDREN[$i]}
+    done
+}
