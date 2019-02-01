@@ -1,0 +1,18 @@
+\usepackage{fancyvrb,newverbs,xcolor}
+\definecolor{cverbbg}{gray}{0.93}
+
+% Gray background on \texttt{*} and \begin{verbatim}*\end{verbatim}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\colorbox{cverbbg}{\OldTexttt{#1}}}
+
+\let\Oldverbatim\verbatim
+\renewenvironment{verbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
