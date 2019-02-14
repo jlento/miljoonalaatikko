@@ -2,18 +2,18 @@
 
 ### Description
 
-[Conda] is  a package  management tool  that is  used to  distribute and
+[Conda][] is  a package management tool  that is used to  distribute and
 install software tools  together with their dependencies.  In Taito, the
 **bioconda  module** takes  in use  a CSC  maintained Conda  environment
 (Python2 based  miniconda2) together  with channel settings  that enable
-easy usage of the [Bioconda repository.]
+easy usage of the [Bioconda repository.][]
 
 The Bioconda environment is used for two purposes in Taito:
 
 1.  Some  software tools, maintained by  CSC, are installed and  used as
     conda environments.
 2.  Taito users can use bioconda  module to install [tools, available in
-    Bioconda repository], to their own personal Conda environments.
+    Bioconda repository][], to their own personal Conda environments.
 
 There is two versions of  Bioconda installation available in taito:
 
@@ -112,8 +112,8 @@ Biosciences
 
 ### Manual
 
--   [Conda home page]
--   [Bioconda home page]
+-   [Conda home page][]
+-   [Bioconda home page][]
 
 * * *
 
