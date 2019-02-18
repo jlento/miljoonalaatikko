@@ -1,4 +1,4 @@
-# CSC's current (2019-02-18) documantation in markdown
+# CSC's current (2019-02-18) documentation in markdown
 
 The  converted   documents  are  in   folders  [software-pages],
 [environment-guide], and  [taito-guide]. The  rest of  this file
