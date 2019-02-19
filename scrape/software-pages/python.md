@@ -2,13 +2,13 @@
 
 ### Description
 
-Python  is an  interpreted,  interactive, object-oriented  programming
-language. It  incorporates modules,  exceptions, dynamic  typing, very
-high level dynamic data types, and classes. Python combines remarkable
-power with very  clear syntax. It has interfaces to  many system calls
-and libraries, as well as to various window systems, and is extensible
-in  C  or  C++.  It  is  also usable  as  an  extension  language  for
-applications that need a programmable interface.
+Python is an interpreted, interactive, object-oriented programming
+language. It incorporates modules, exceptions, dynamic typing, very high
+level dynamic data types, and classes. Python combines remarkable power
+with very clear syntax. It has interfaces to many system calls and
+libraries, as well as to various window systems, and is extensible in C
+or C++. It is also usable as an extension language for applications that
+need a programmable interface.
 
 The standard packages installed to all versions include at least:
 
@@ -67,7 +67,7 @@ In Taito use
 Omitting version will initialise the default version which will change
 when bugs are fixed or new versions are accepted stable.
 
-Separate modules  are available for specific  areas, inc: [biopython],
+Separate modules are available for specific areas, inc: [biopython],
 [geopython], and [mlpython].
 
  
@@ -83,11 +83,11 @@ If needed you can also specify the version number, like this:
 
 `pip install <name of python module>==2.2.1 --user`
 
-Additional information,  inc more advanced options  for installing own
-Python  modules is  availabe  from CSC  webinar: <span  id="eow-title"
-class="watch-title"  dir="ltr" title="Webinar:  Python environment  in
-CSC compute  servers">[Python environment in CSC  compute servers] and
-</span>from [here].
+Additional information, inc more advanced options for installing own
+Python modules is availabe from CSC webinar: <span id="eow-title"
+class="watch-title" dir="ltr"
+title="Webinar: Python environment in CSC compute servers">[Python
+environment in CSC compute servers] and </span>from [here].
 
  
 

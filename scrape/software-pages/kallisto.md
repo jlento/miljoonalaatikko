@@ -2,11 +2,11 @@
 
 ### Description
 
-**kallisto** is  a program  for quantifying abundances  of transcripts
-from  RNA-Seq  data,  or  more generally  of  target  sequences  using
-high-throughput sequencing  reads. It  is based on  the novel  idea of
-pseudoalignment  for rapidly  determining the  compatibility of  reads
-with targets, without the need for alignment.
+**kallisto** is a program for quantifying abundances of transcripts from
+RNA-Seq data, or more generally of target sequences using
+high-throughput sequencing reads. It is based on the novel idea of
+pseudoalignment for rapidly determining the compatibility of reads with
+targets, without the need for alignment.
 
  
 
@@ -35,9 +35,9 @@ For help on writing batch job scripts see the [Taito User Guide].
 
 ### Sleuth
 
-**sleuth** is a program for  differential analysis of RNA-Seq data. It
-makes  use  of  quantification   uncertainty  estimates  obtained  via
-**kallisto** for accurate differential  analysis of isoforms or genes,
+**sleuth** is a program for differential analysis of RNA-Seq data. It
+makes use of quantification uncertainty estimates obtained via
+**kallisto** for accurate differential analysis of isoforms or genes,
 allows testing in the context of experiments with complex designs, and
 supports interactive exploratory data analysis via sleuth live.
 
@@ -62,15 +62,15 @@ Biosciences
 
 Kallisto:
 
-1.  Nicolas  L Bray, Harold  Pimentel, Páll Melsted and  Lior Pachter,
-    [Near-optimal   probabilistic   RNA-seq  quantification],   Nature
+1.  Nicolas L Bray, Harold Pimentel, Páll Melsted and Lior Pachter,
+    [Near-optimal probabilistic RNA-seq quantification], Nature
     Biotechnology **34**, 525–527 (2016), doi:10.1038/nbt.3519
 
 Sleuth:
 
-1.   H Pimentel,  NL  Bray,  S Puente,  P  Melsted  and Lior  Pachter,
-    [Differential  analysis  of RNA-seq  incorporating  quantification
-    uncertainty],    Nature    Methods   **14**,    687–690    (2017),
+1.  H Pimentel, NL Bray, S Puente, P Melsted and Lior Pachter,
+    [Differential analysis of RNA-seq incorporating quantification
+    uncertainty], Nature Methods **14**, 687–690 (2017),
     doi:10.1038/nmeth.4324
 
 ------------------------------------------------------------------------

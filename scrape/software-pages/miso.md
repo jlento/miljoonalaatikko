@@ -2,18 +2,18 @@
 
 ### Description
 
-MISO  (Mixture   of  Isoforms)  is  a   probabilistic  framework  that
-quantitates the  expression level of alternatively  spliced genes from
-RNA-Seq  data, and  identifies  differentially  regulated isoforms  or
-exons  across samples.  By modeling  the generative  process by  which
-reads  are produced  from isoforms  in  RNA-Seq, the  MISO model  uses
-Bayesian inference to  compute the probability that  a read originated
-from a particular isoform.
+MISO (Mixture of Isoforms) is a probabilistic framework that quantitates
+the expression level of alternatively spliced genes from RNA-Seq data,
+and identifies differentially regulated isoforms or exons across
+samples. By modeling the generative process by which reads are produced
+from isoforms in RNA-Seq, the MISO model uses Bayesian inference to
+compute the probability that a read originated from a particular
+isoform.
 
-MISO uses the  inferred assignment of reads to  isoforms to quantitate
-the abundances  of the  underlying set  of alternative  mRNA isoforms.
-Confidence intervals  over estimates  can be obtained,  which quantify
-the reliability of the estimates.
+MISO uses the inferred assignment of reads to isoforms to quantitate the
+abundances of the underlying set of alternative mRNA isoforms.
+Confidence intervals over estimates can be obtained, which quantify the
+reliability of the estimates.
 
  
 
@@ -36,8 +36,8 @@ In Taito, MISO is initialized with command:
 
     module load miso
 
-In Taito,  MISO jobs should  be run as batch  jobs. Below is  a sample
-batch job file, for running a MISO job in Taito:
+In Taito, MISO jobs should be run as batch jobs. Below is a sample batch
+job file, for running a MISO job in Taito:
 
     #!/bin/bash -l
     #SBATCH -J miso
@@ -59,13 +59,12 @@ batch job file, for running a MISO job in Taito:
     run_miso.py --summarize-samples miso-output/ summaries/ 
 
 In the batch job example above, the *run\_events\_analysis.py* command
-is  launched with  command  line option  *--use-cluster*. This  option
+is launched with command line option *--use-cluster*. This option
 automatically split the *run\_events\_analysis.py* task into number of
-sub-tasks  that  can   be  run  in  parallel  fashion   in  the  Taito
-cluster. This speeds up the analysis significantly.
+sub-tasks that can be run in parallel fashion in the Taito cluster. This
+speeds up the analysis significantly.
 
-You  can submit  the  batch job  file  to the  batch  job system  with
-command:
+You can submit the batch job file to the batch job system with command:
 
     sbatch batch_job_file.bash
 

@@ -2,9 +2,9 @@
 
 ### Description
 
-SageMath is  a free  open-source mathematics software  system licensed
+SageMath is a free open-source mathematics software system licensed
 under the GPL. It builds on top of many existing open-source packages:
-NumPy, SciPy, matplotlib, Sympy, Maxima,  GAP, FLINT, R and many more.
+NumPy, SciPy, matplotlib, Sympy, Maxima, GAP, FLINT, R and many more.
 Access their combined power through a common, Python-based language or
 directly via interfaces or wrappers.
 
@@ -33,7 +33,7 @@ and then
 
  
 
-To  open browser-based  notebook interface,  use SageMath's notebook()
+To open browser-based notebook interface, use SageMath's notebook()
 command.
 
     sage: notebook()
@@ -50,7 +50,7 @@ Mathematics and Statistics
 
 ### References
 
-See                           instructions                          on
+See instructions on
 page <http://www.sagemath.org/library-publications.html#CiteSage>
 
 ------------------------------------------------------------------------

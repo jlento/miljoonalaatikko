@@ -4,12 +4,12 @@
 
 ## **Current LMS Amesim licenses at CSC are valid until 31st of January 2019.  After that date the licenses are not anymore renewed!**
 
-<span class="Generic-Article">LMS Imagine.Lab  Amesim offers engineers
-an   integrated  simulation   platform  to   accurately  predict   the
-multidisciplinary  performance  of  intelligent  systems.  LMS  Amesim
-enables  you to  model, simulate  and analyze  multi-domain controlled
-systems and offers plant modeling  capabilities to connect to controls
-design helping you assess and validate control strategies.</span>
+<span class="Generic-Article">LMS Imagine.Lab Amesim offers engineers an
+integrated simulation platform to accurately predict the
+multidisciplinary performance of intelligent systems. LMS Amesim enables
+you to model, simulate and analyze multi-domain controlled systems and
+offers plant modeling capabilities to connect to controls design helping
+you assess and validate control strategies.</span>
 
  
 

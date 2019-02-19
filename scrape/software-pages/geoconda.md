@@ -2,75 +2,73 @@
 
 ### Description
 
-Geoconda  includes Python  GIS packages  and enables  users easily  to
-install new  Python packags for  their own  use. It is  an alternative
+Geoconda includes Python GIS packages and enables users easily to
+install new Python packags for their own use. It is an alternative
 installation to the [GeoPython] module.
 
-[Conda] is  a package management tool  that is used to  distribute and
-install  software tools  together  with  their dependencies.  Geoconda
+[Conda] is a package management tool that is used to distribute and
+install software tools together with their dependencies. Geoconda
 installation is done with miniconda3, it includes **Python3**
 
-Geoconda  is  a collection  of  python  packages that  facilitate  the
-development  of python  scripts  for  geoinformatics applications.  It
+Geoconda is a collection of python packages that facilitate the
+development of python scripts for geoinformatics applications. It
 includes following python packages (mostly the same as [GeoPython]):
 
 -   [cartopy] - for map plotting (not included in GeoPython).
--   [descartes]  - use  Shapely or  GeoJSON-like geometric  objects as
+-   [descartes] - use Shapely or GeoJSON-like geometric objects as
     matplotlib paths and patches.
 -   **[fiona]** - reads and writes spatial data files.
--   [gdal]  - reads and writes  spatial data files, and  GDAL/OGR data
+-   [gdal] - reads and writes spatial data files, and GDAL/OGR data
     manipulation tools.
--    [geoalchemy2] (only  in  geoconda/3.7) -  provides extensions  to
+-   [geoalchemy2] (only in geoconda/3.7) - provides extensions to
     [SQLAlchemy] for working with spatial databases, primarly PostGIS.
--    **[geopandas]**  -  GeoPandas   extends  the  datatypes  used  by
-    [pandas.]
+-   **[geopandas]** - GeoPandas extends the datatypes used by [pandas.]
 -   [laspy] - reading and writing .las and .laz files.
--    [networkx] -  for the  creation, manipulation,  and study  of the
+-   [networkx] - for the creation, manipulation, and study of the
     structure, dynamics, and functions of complex networks.
 -   [pyfor] - lidar analysis for forestry purposes.
--    [pyproj] -  performs  cartographic  transformations and  geodetic
+-   [pyproj] - performs cartographic transformations and geodetic
     computations.
 -   **[pysal]** - spatial analysis functions.
--   [osmnx] (only  in geoconda/3.7) - download  spatial geometries and
-    construct, project,  visualize, and  analyze street  networks from
+-   [osmnx] (only in geoconda/3.7) - download spatial geometries and
+    construct, project, visualize, and analyze street networks from
     OpenStreetMap's APIs.
 -   **[rasterio]** - access to geospatial raster data.
--   [rasterstats]  - for summarizing geospatial  raster datasets based
-    on vector  geometries. It includes functions  for zonal statistics
-    and interpolated point queries.
+-   [rasterstats] - for summarizing geospatial raster datasets based on
+    vector geometries. It includes functions for zonal statistics and
+    interpolated point queries.
 -   [rtree] - spatial indexing and search.
--   [shapely] - manipulation and  analysis of geometric objects in the
+-   [shapely] - manipulation and analysis of geometric objects in the
     Cartesian plane.
--    <span   id="yui_patched_v3_11_0_1_1503314242269_554">[skimage]  -
+-   <span id="yui_patched_v3_11_0_1_1503314242269_554">[skimage] -
     algorithms for image processing.</span>
--    [scikit-learn]  (only in  geoconda/3.7)  -  machine learning  for
-    Python.
--   And many  more, for retrieving the full list  in Taito use: `conda
-    list`
+-   [scikit-learn] (only in geoconda/3.7) - machine learning for Python.
+-   And many more, for retrieving the full list in Taito use:
+    `conda list`
 -   ([pdal] package is available only with [GeoPython])
 -   ([snappy] has its own conda environment, see [SNAP])
 
 Additionally geoconda includes:
 
--    [spyder]   -  Scientific  PYthon  Development   EnviRonment  with
-    graphical interface (similar to RStudio for R). If you want to use
-    Spyer, you should  connect to taito-shell using  [-X connection or
-    NoMachine for Windows users].
+-   [spyder] - Scientific PYthon Development EnviRonment with graphical
+    interface (similar to RStudio for R). If you want to use Spyer, you
+    should connect to taito-shell using [-X connection or NoMachine for
+    Windows users].
 -   GDAL/OGR commandline tools and proj
--   And  many more,  see /appl/earth/geoconda/miniconda3/bin  for full
+-   And many more, see /appl/earth/geoconda/miniconda3/bin for full
     list.
 
-Python  has   also  packages  for  parallel   computing,  for  example
-**multiprocessing**. In our  examples there is two  cases using Python
+Python has also packages for parallel computing, for example
+**multiprocessing**. In our examples there is two cases using Python
 multiprocessing: [zonal statistics] and [focal mean].
 
 If you want to use Python2, see also [GeoPython] module.
 
-Geoconda  can not  be used  simultaneously with  [geo-env] (GeoPython)
+Geoconda can not be used simultaneously with [geo-env] (GeoPython)
 module
 
-(If you  think that some important  GIS package for Python  is missing
-from here, you can ask for installation from servicedesk@csc.fi.)
+(If you think that some important GIS package for Python is missing from
+here, you can ask for installation from servicedesk@csc.fi.)
 
  
 
@@ -88,17 +86,17 @@ Taito: 3.6, 3.7 (version number is the same as Python version)
 
 **1. Using packages installed by CSC**
 
-To use software  environments that are installed to  Taito using Conda
+To use software environments that are installed to Taito using Conda
 (either by CSC or yourself),  first load geoconda module:
 
     module load geoconda
 
-This loads latest geoconda module. If  you want a specific version you
+This loads latest geoconda module. If you want a specific version you
 can do:
 
     module load geoconda/VERSION
 
-After   that  you   can  use   Python  with   GIS  packages   as  with
+After that you can use Python with GIS packages as with
 [GeoPython.][GeoPython]
 
 For using the Spyder IDE give:
@@ -109,24 +107,24 @@ For using the Spyder IDE give:
 
 **2. Adding more Python packages to packages included in GeoConda**
 
-You can add  more packages to your  own use, the details  can be found
-from [Python] documention.
+You can add more packages to your own use, the details can be found from
+[Python] documention.
 
-The   packages   are   installed   to  your   home   directory   under
+The packages are installed to your home directory under
 `.local/lib/python3.6 or .local/lib/python3.7`
 
-The packages installed  for GeoPython are not  available together with
+The packages installed for GeoPython are not available together with
 GeoConda Python because of different Python versions.
 
  
 
 **3. Installing software for your own use with geoconda**
 
-You can use  the geoconda module to install software  to your personal
-Conda environments. Please see  [Conda environments] documentation for
-details  and CSC  [Bioconda] documentation  for example.  The personal
-Conda  environment  does not  include  software  included in  GeoConda
-environment.  The software is installed to:
+You can use the geoconda module to install software to your personal
+Conda environments. Please see [Conda environments] documentation for
+details and CSC [Bioconda] documentation for example. The personal Conda
+environment does not include software included in GeoConda environment.
+The software is installed to:
 
 `/wrk/your_user_name/DONOTREMOVE/geoconda3_env`
 
@@ -146,9 +144,9 @@ Geosciences
 
 -   [Essential Python Geospatial Libraries]
 -   [Geoprocessing with Python using Open Source GIS]
--    <span id="yui_patched_v3_11_0_1_1502174857789_709">[GeoExamples],
-    a lot of examples of using Python for spatial analysis</span>
--   [Automating  GIS processes  course materials],  where most  of the
+-   <span id="yui_patched_v3_11_0_1_1502174857789_709">[GeoExamples], a
+    lot of examples of using Python for spatial analysis</span>
+-   [Automating GIS processes course materials], where most of the
     exercises are done using Python (University of Helsinki)
 -   [Geohack Week materials]
 -   [Multiprocessing Basics]

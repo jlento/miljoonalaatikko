@@ -2,9 +2,9 @@
 
 ### Description
 
-EMBOSS  (European  Molecular  Biology  Open  Software  Suite)  package
-contains  over  200  programs   for  sequence  analysis.  Examples  of
-application areas of EMBOSS tools are given below.
+EMBOSS (European Molecular Biology Open Software Suite) package contains
+over 200 programs for sequence analysis. Examples of application areas
+of EMBOSS tools are given below.
 
 -   Sequence alignment
 -   Phylogeny
@@ -12,11 +12,11 @@ application areas of EMBOSS tools are given below.
 -   Rapid database searching with sequence patterns
 -   Protein motif identification, including domain analysis
 -   EST analysis
--   Nucleotide sequence pattern analysis,  for example to identify CpG
+-   Nucleotide sequence pattern analysis, for example to identify CpG
     islands.
 -   Simple and species-specific repeat identification
 -   Codon usage analysis for small genomes
--   Rapid identification of sequence  patterns in large scale sequence
+-   Rapid identification of sequence patterns in large scale sequence
     sets.
 -   Presentation tools for publication
 -   RNA secondary structure prediction
@@ -36,24 +36,23 @@ FGI grid: 6.4.0
 
 **Graphical EMBOSS interfaces**
 
-Many  EMBOSS progams  can be  used  via the  **Chipster data  analysis
+Many EMBOSS progams can be used via the **Chipster data analysis
 environment**. To use Chipster you need a user account at CSC.
 
-> - [Open Chipster client]
+> -   [Open Chipster client]
 
 **EMBOSS in Taito**
 
-To  make  EMBOSS  programs  available  in  Taito  super-cluster,  give
-command:
+To make EMBOSS programs available in Taito super-cluster, give command:
 
     module load biokit
 
-The  *biokit* module  sets up  a set  of commonly  used bioinformatics
-tools, including  EMBOSS. Note  however that there  are bioinformatics
-tools in Taito, that have a separate setup commands.
+The *biokit* module sets up a set of commonly used bioinformatics tools,
+including EMBOSS. Note however that there are bioinformatics tools in
+Taito, that have a separate setup commands.
 
-After loading  biokit, you  can start  any of  the EMBOSS  programs by
-typing its name. For example:
+After loading biokit, you can start any of the EMBOSS programs by typing
+its name. For example:
 
     wossname
 

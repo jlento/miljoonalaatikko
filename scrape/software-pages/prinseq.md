@@ -12,8 +12,7 @@ A quality control tool for high throughput sequence data.
 
 Taito: 0.20.4 (prinseq-lite)
 
-Prinseq  can  also  be   used  through  the [Chipster] graphical  user
-interface
+Prinseq can also be used through the [Chipster] graphical user interface
 
 ------------------------------------------------------------------------
 
@@ -41,7 +40,7 @@ Biosciences
 
 If you use PRINSEQ, please cite: 
 
-Schmieder  R  and Edwards  R:  Quality  control and  preprocessing  of
+Schmieder R and Edwards R: Quality control and preprocessing of
 metagenomic datasets. *Bioinformatics* 2011, 27:863-864.
 
 ------------------------------------------------------------------------

@@ -26,7 +26,7 @@ To get a summary of available tools:
 
     picard
 
-Please note that  in the Picard manual commands start  with "java -jar
+Please note that in the Picard manual commands start with "java -jar
 picard.jar". In Taito Picard needs to be run through a wrapper script,
 so substitute that with just **picard**.
 

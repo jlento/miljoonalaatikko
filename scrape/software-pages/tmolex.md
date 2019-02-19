@@ -2,14 +2,14 @@
 
 ### Description
 
-TmoleX is a  GraphicalUser Interface for Turbomole that  can be freely
+TmoleX is a GraphicalUser Interface for Turbomole that can be freely
 downloaded from 
 
 <http://www.cosmologic.de/support-download/downloads/tmolex-client.html>
 
-TmoleX  is  used   as  a  locally  installed   client  for  preparing,
-submitting, monitoring and post  processing remote Turbomole jobs that
-are run on Taito.
+TmoleX is used as a locally installed client for preparing, submitting,
+monitoring and post processing remote Turbomole jobs that are run on
+Taito.
 
 ------------------------------------------------------------------------
 
@@ -23,24 +23,24 @@ are run on Taito.
 
 ### Usage
 
-The most  convenient way of using  TmoleX is to install  the client on
-your          local         workstation.          For         details,
-see,[ http://www.cosmologic.de/turbomole/tmolex.html][][**.**] If  you
-prefer to  use the  version installed  on Taito  it is  recommended to
-launch it  via the [NoMachine Remote Desktop.] From  the NX-connection
-you open a connection Taito-shell which is an interactive session on a
-compute  node. There  you  load the  turbomole  environment and  start
-tmolex simply by
+The most convenient way of using TmoleX is to install the client on your
+local workstation. For details,
+see,[ http://www.cosmologic.de/turbomole/tmolex.html][][**.**] If you
+prefer to use the version installed on Taito it is recommended to launch
+it via the [NoMachine Remote Desktop.] From the NX-connection you open a
+connection Taito-shell which is an interactive session on a compute
+node. There you load the turbomole environment and start tmolex simply
+by
 
 `module load turbomole/7.3;TmoleX18`
 
-If you  use it from your  local workstation you can  define the actual
-run to be done on Taito. After you have selected **Run (network)** the
+If you use it from your local workstation you can define the actual run
+to be done on Taito. After you have selected **Run (network)** the
 parameters for a batch job on Taito can be defined like:
 
 ![][1]
 
-Where the complete script to be  inserted in  the field "Script before
+Where the complete script to be inserted in  the field "Script before
 job execution" looks like (modify according to your actual needs):
 
     #SBATCH -p test           # queue

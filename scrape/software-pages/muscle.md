@@ -3,8 +3,8 @@
 ### Description
 
 MUSCLE is a fast and accurate sequence alignment program. It's novelty
-lies  in  the  algorithm  that  initially creates  a  fast  and  crude
-alignment that is subsequently refined to a more optimal alignment.
+lies in the algorithm that initially creates a fast and crude alignment
+that is subsequently refined to a more optimal alignment.
 
 ------------------------------------------------------------------------
 
@@ -23,23 +23,23 @@ In Taito MUSCLE is taken in use with command:
 
     module load biokit
 
-A basic alignment from FastA-formatted  input sequences (here, in file
+A basic alignment from FastA-formatted input sequences (here, in file
 inseqs.fasta) is created by the call:
 
     muscle -in inseqs.fasta -out outseqs.fasta
 
-Note that the output  is also in FastA format. If you  need to get the
+Note that the output is also in FastA format. If you need to get the
 alignment in, say, Phylip format, you first need to save the alignment
-in  muscle in  Clustal-format. Then  you need  to open  and save  this
-alignment in  Clustal in  Phylip format.  Clustal-formatted alignments
-can be produced with the following command:
+in muscle in Clustal-format. Then you need to open and save this
+alignment in Clustal in Phylip format. Clustal-formatted alignments can
+be produced with the following command:
 
     muscle -in inseqs.fasta -out outseqs.fasta -clw -clwstrict
 
-Options  related  to refining  and  creation  of large  alignment  are
+Options related to refining and creation of large alignment are
 described in detail in the [MUSCLE manual].
 
-Information on  setting up a  batch job in Taito  can be found  in the
+Information on setting up a batch job in Taito can be found in the
 [Taito manual].
 
  

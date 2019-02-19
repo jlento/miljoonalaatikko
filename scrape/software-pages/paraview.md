@@ -2,7 +2,7 @@
 
 ### Description
 
-ParaView  is  an  Open   Source,  versatile  software  for  scientific
+ParaView is an Open Source, versatile software for scientific
 visualization.
 
 ------------------------------------------------------------------------
@@ -19,47 +19,45 @@ Taito-gpu: 5.4.1
 
 ### Usage
 
-ParaView is designed to run parallel  tasks and consists of one client
-and one  or several servers  (pvservers). There  are many ways  to run
-ParaView, to suit  different needs. The following  examples cover most
-cases. (Instructions to use older  version of ParaView are provided at
+ParaView is designed to run parallel tasks and consists of one client
+and one or several servers (pvservers). There are many ways to run
+ParaView, to suit different needs. The following examples cover most
+cases. (Instructions to use older version of ParaView are provided at
 the end of this page.)
 
 The most straightforward way to use ParaView is to run it in (combined
-client-server)  standalone mode  from Taito-shell,  see **Example  1**
+client-server) standalone mode from Taito-shell, see **Example 1**
 below. [NoMachine] is recommended for smooth interaction. In this mode
-ParaView  uses one  and the  same CPU  for data  processing and  image
-rendering. When  using OSPRay  rendering option,  four CPUs  are being
-used for  rendering. This  mode is  sufficient for  most visualization
-tasks.  (Standalone  mode can also  be used via SLURM  system, running
-ParaView interactively in one of Taito's computing nodes, as explained
-in [*Taito User Guide, chapter 3.4*].)
+ParaView uses one and the same CPU for data processing and image
+rendering. When using OSPRay rendering option, four CPUs are being used
+for rendering. This mode is sufficient for most visualization tasks.
+(Standalone mode can also be used via SLURM system, running ParaView
+interactively in one of Taito's computing nodes, as explained in [*Taito
+User Guide, chapter 3.4*].)
 
-For more  demanding jobs  it might  be beneficial  to use  ParaView in
-parallel  mode, as  one  client  and many  pvservers  each running  on
-separate CPUs, see **Example 2**. In this mode ParaView client runs on
-Taito-shell and pvservers on Taito. The  client connects to one of the
-pvservers,    which    communicates    with   the    rest    of    the
-pvservers.  (Pvserver  can  alternatively  connect to  a  client,  see
-**Example 6**.)  Note that  if most of  the work is  done by  only one
-pvserver, using parallel setup can  actually make ParaView run slower,
-due to extra time taken to parse data from different cores. By opening
-*Memory  Inspector*  window  in ParaView  (file  menu:  *View*/*Memory
-Inspector*)  you   can  check   how  much   each  pvserver   is  being
-used.  ParaView's *D3*-filter  can  be used  to  distribute work  more
-evenly between the cores.
+For more demanding jobs it might be beneficial to use ParaView in
+parallel mode, as one client and many pvservers each running on separate
+CPUs, see **Example 2**. In this mode ParaView client runs on
+Taito-shell and pvservers on Taito. The client connects to one of the
+pvservers, which communicates with the rest of the pvservers. (Pvserver
+can alternatively connect to a client, see **Example 6**.) Note that if
+most of the work is done by only one pvserver, using parallel setup can
+actually make ParaView run slower, due to extra time taken to parse data
+from different cores. By opening *Memory Inspector* window in ParaView
+(file menu: *View*/*Memory Inspector*) you can check how much each
+pvserver is being used. ParaView's *D3*-filter can be used to distribute
+work more evenly between the cores.
 
-If the  model you are working  with is very large  and has complicated
-geometry, lag in screen updates  may become noticeable. ParaView has a
-tick  box option  to use  OSPRay renderer  for faster  screen re-draws
-(since ParaView 5). OSPRay scales better with increasing geometry than
-ParaView's  default  renderer, and  is  capable  of using  threads  to
-further   accelerate  screen   updates.  When   running  ParaView   in
-client-server mode from Taito-shell,  OSPRay uses four threads running
-on four CPUs as default. Even more threads can be reserved from Taito,
-see **Example 3**. Note that  switching between rendering modes can be
-slow,  and that  the current  OSPRay implementation  renders artifacts
-with some filters.
+If the model you are working with is very large and has complicated
+geometry, lag in screen updates may become noticeable. ParaView has a
+tick box option to use OSPRay renderer for faster screen re-draws (since
+ParaView 5). OSPRay scales better with increasing geometry than
+ParaView's default renderer, and is capable of using threads to further
+accelerate screen updates. When running ParaView in client-server mode
+from Taito-shell, OSPRay uses four threads running on four CPUs as
+default. Even more threads can be reserved from Taito, see **Example
+3**. Note that switching between rendering modes can be slow, and that
+the current OSPRay implementation renders artifacts with some filters.
 
 In cases where OSPRay does not work well enough, pvservers can also be
 run on Taito-gpu, utilizing one or several GPUs. See **Example 4** and
@@ -76,24 +74,24 @@ Login to Taito-shell and type
 
  
 
-**Example 2: ParaView in multi-core  mode. Client runs on Taito-shell,
+**Example 2: ParaView in multi-core mode. Client runs on Taito-shell,
 pvservers run on Taito**
 
-Login   to  Taito   and   submit  the   example   script  from   below
-(*paraview\_multicore\_job.sh*),  to reserve  resources  and to  start
+Login to Taito and submit the example script from below
+(*paraview\_multicore\_job.sh*), to reserve resources and to start
 pvservers
 
     sbatch paraview_multicore_job.sh
 
-When your  batch job has  started, check in  which compute node  it is
+When your batch job has started, check in which compute node it is
 running
 
     squeue -l -u $USER
 
-Now  that  you   have  the  node  address,  say   *c765*,  **login  to
-Taito-shell**, start ParaView  as shown in **Example  1**, and connect
-it manually to one pvserver,  by inserting the pvserver's node address
-and port number details as follows:
+Now that you have the node address, say *c765*, **login to
+Taito-shell**, start ParaView as shown in **Example 1**, and connect it
+manually to one pvserver, by inserting the pvserver's node address and
+port number details as follows:
 
 choose *File/Connect* from ParaView's file menu  
 click *Add Server*  
@@ -106,24 +104,24 @@ click *Configure*
 click *Save* (*Startup Type: Manual*)  
 click *Connect*
 
-If everything  went OK, ParaView's *Pipeline  Browser* window displays
-now your server's name, node address and port number (*cs://c765:9454*
-in this example). When using the same script repeatedly, you only need
-to edit the existing server description (*File/Connect*, *Edit Server*
-button), so that it points to  the correct compute node (which changes
+If everything went OK, ParaView's *Pipeline Browser* window displays now
+your server's name, node address and port number (*cs://c765:9454* in
+this example). When using the same script repeatedly, you only need to
+edit the existing server description (*File/Connect*, *Edit Server*
+button), so that it points to the correct compute node (which changes
 from job to job).
 
-(Note  that  when  running  ParaView in  multicore  mode,  the  client
-(paraview) and the  server (pvserver) need to be the  same version. If
-you want  to run older  versions of ParaView, check  the corresponding
-module files with "module avail" command,  and use these in the script
-and on the command line. Modifications  for version 5.1.2 can be found
-at the end of this page.)
+(Note that when running ParaView in multicore mode, the client
+(paraview) and the server (pvserver) need to be the same version. If you
+want to run older versions of ParaView, check the corresponding module
+files with "module avail" command, and use these in the script and on
+the command line. Modifications for version 5.1.2 can be found at the
+end of this page.)
 
-Example script *paraview\_multicore\_job.sh*  below runs six pvservers
-for one hour,  reserves 12 GB memory, and uses  port *9454*. Note that
-the port must  not be in use already, so  better choose another number
-than *9454*, before running the script.
+Example script *paraview\_multicore\_job.sh* below runs six pvservers
+for one hour, reserves 12 GB memory, and uses port *9454*. Note that the
+port must not be in use already, so better choose another number than
+*9454*, before running the script.
 
     #!/bin/bash -l
     ### ParaView multicore job ###
@@ -146,16 +144,15 @@ than *9454*, before running the script.
 
  
 
-**Example 3:  ParaView with threads (for  OSPRay rendering), pvservers
-run on Taito**
+**Example 3: ParaView with threads (for OSPRay rendering), pvservers run
+on Taito**
 
-Run  the following  script as  described in  **Example 2**.  Note that
-ParaView utilises threads  for OSPRay rendering but not  for its basic
-functions,  so  this  approach  is  useful only  if  you  need  faster
-graphics.  Enable OSPRay  by ticking the box located on  the bottom of
-ParaView's  *Properties*  panel. The  example  script  below runs  two
-pvservers, both with  five threads, so altogether ten  cores are being
-reserved.
+Run the following script as described in **Example 2**. Note that
+ParaView utilises threads for OSPRay rendering but not for its basic
+functions, so this approach is useful only if you need faster graphics.
+Enable OSPRay by ticking the box located on the bottom of ParaView's
+*Properties* panel. The example script below runs two pvservers, both
+with five threads, so altogether ten cores are being reserved.
 
     #!/bin/bash -l
     ### ParaView with threads ###
@@ -186,13 +183,13 @@ reserved.
 **Example 4: ParaView rendering with graphics card (one GPU), pvserver
 runs on Taito-gpu**
 
-Run the  following script as  described in **Example 2**,  except that
-**login  to Taito-gpu**  instead  of  Taito (same  *username/password*
-works on both)  to submit your script via *sbatch*  command. Note that
-graphics  node names  start with  *g* while  compute nodes  start with
-*c*. The example  script below runs one pvserver and  uses one GPU for
-rendering.  Although not necessarily beneficial, you can use more than
-one CPU, and add threads as described in the previous example.
+Run the following script as described in **Example 2**, except that
+**login to Taito-gpu** instead of Taito (same *username/password* works
+on both) to submit your script via *sbatch* command. Note that graphics
+node names start with *g* while compute nodes start with *c*. The
+example script below runs one pvserver and uses one GPU for rendering.
+Although not necessarily beneficial, you can use more than one CPU, and
+add threads as described in the previous example.
 
     #!/bin/bash -l
     ### ParaView using one GPU ###
@@ -215,25 +212,24 @@ one CPU, and add threads as described in the previous example.
 
  
 
-**Example 5:  ParaView rendering with  several GPUs, pvservers  run on
+**Example 5: ParaView rendering with several GPUs, pvservers run on
 Taito-gpu**
 
-Follow the instructions  of the previous **Example 4**.  Note that the
-example   script   below   uses    a   separate   configuration   file
-*paraview\_8cpu\_4gpu.conf*,  which  is  also shown.  Also  note  that
-running ParaView with many CPUs  and GPUs does not necessarily provide
-speed enhancements, and may result in long queuing times.
+Follow the instructions of the previous **Example 4**. Note that the
+example script below uses a separate configuration file
+*paraview\_8cpu\_4gpu.conf*, which is also shown. Also note that running
+ParaView with many CPUs and GPUs does not necessarily provide speed
+enhancements, and may result in long queuing times.
 
-Taito-gpu has two types of graphics  cards in its nodes, K80 and P100.
-Both node types  have four GPUs. Currently you need  to reserve either
-one or all GPUs in a node.
+Taito-gpu has two types of graphics cards in its nodes, K80 and P100.
+Both node types have four GPUs. Currently you need to reserve either one
+or all GPUs in a node.
 
-The  example  script  below  runs eight  pvservers,  each  with  three
-threads,  and reserves  four GPUs  for rendering.  All the  K80 node's
-GPUs, cores and  memory are being reserved. (If no  threads were used,
-the node's 24 cores could have run 24 pvservers, and the configuration
-file would have included 24 lines. Extending the configuration file is
-straightforward.)
+The example script below runs eight pvservers, each with three threads,
+and reserves four GPUs for rendering. All the K80 node's GPUs, cores and
+memory are being reserved. (If no threads were used, the node's 24 cores
+could have run 24 pvservers, and the configuration file would have
+included 24 lines. Extending the configuration file is straightforward.)
 
     #!/bin/bash -l
     ### ParaView using several CPUs and GPUs ###
@@ -276,31 +272,30 @@ Configuration file *paraview\_8cpu\_4gpu.conf* for the above script:
 **Example 6: ParaView in reverse connection multi-core mode, pvservers
 run on Taito**
 
-This method  is similar to **Example  2** but does the  connection the
+This method is similar to **Example 2** but does the connection the
 other way round. ParaView client is started first and made to wait for
-the pvserver to  connect. When the resources become  available and the
-submitted  pvserver job  starts, the  client is  ready for  use. (This
-example  complies with  a previous  version of  instructions on  these
-pages, on how to use ParaView in multi-core mode.)
+the pvserver to connect. When the resources become available and the
+submitted pvserver job starts, the client is ready for use. (This
+example complies with a previous version of instructions on these pages,
+on how to use ParaView in multi-core mode.)
 
-**Login to Taito-shell**, type *hostname*  to explicitely see the name
-of the  compute node  you are  in (say *c765*),  start ParaView  as in
-**Example 1**, and prepare ParaView to wait for connection as follows:
+**Login to Taito-shell**, type *hostname* to explicitely see the name of
+the compute node you are in (say *c765*), start ParaView as in **Example
+1**, and prepare ParaView to wait for connection as follows:
 
 choose *File/Connect* from ParaView's file menu  
 click *Add Server*  
 fill in a *Name* of your liking  
 choose *Client/Server (reverse connection)* as *Server Type*  
-fill in the  port number, that you'll be using  in your script (*9454*
-in
+fill in the port number, that you'll be using in your script (*9454* in
 this example) as *Port*  
 click *Configure*  
 click *Save* (*Startup Type: Manual*)  
 click *Connect*
 
-Message  *Waiting  for Server  Connection*  should  now show  up,  and
-Taito-shell  terminal window  should display  the node  name and  port
-number *Accepting connection(s): c765:9454*.
+Message *Waiting for Server Connection* should now show up, and
+Taito-shell terminal window should display the node name and port number
+*Accepting connection(s): c765:9454*.
 
 Next, login to Taito, and type
 
@@ -308,12 +303,12 @@ Next, login to Taito, and type
     sbatch <the name of your job script>
 
 Note that server-port number in the batch job script below must be the
-same   number  you   defined   in   your  *Client/Server*   connection
-configuration, otherwise  the server  side is not  able to  connect to
-your client. Port number must not  be in use already, so better choose
-another number  than *9454*  for your script.  Remember that  you must
-have the environment variable CLIENT\_IP  - without it the server side
-does not know where the client runs.
+same number you defined in your *Client/Server* connection
+configuration, otherwise the server side is not able to connect to your
+client. Port number must not be in use already, so better choose another
+number than *9454* for your script. Remember that you must have the
+environment variable CLIENT\_IP - without it the server side does not
+know where the client runs.
 
     #!/bin/bash -l
     ### ParaView multicore reverse connection job ###
@@ -340,11 +335,10 @@ does not know where the client runs.
 
 **Using previous versions of ParaView**
 
-If you  want to use  the older 5.1.2  version of ParaView,  modify the
-above scripts  as follows. In  this setup, VirtualGL  middleware takes
-care  of  directing the  rendering  commands  to Taito-gpu's  graphics
-cards. There are no changes  in the resource reservation part (denoted
-by ...).
+If you want to use the older 5.1.2 version of ParaView, modify the above
+scripts as follows. In this setup, VirtualGL middleware takes care of
+directing the rendering commands to Taito-gpu's graphics cards. There
+are no changes in the resource reservation part (denoted by ...).
 
 **Example 1**
 

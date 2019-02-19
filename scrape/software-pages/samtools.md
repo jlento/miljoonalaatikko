@@ -2,9 +2,9 @@
 
 ### Description
 
-SAMtools  provides  tools  for  using and  manipulating  SAM  and  BAM
-formatted alignments. You  can use SAMtools for  example for indexing,
-variant calling and viewing alignments.
+SAMtools provides tools for using and manipulating SAM and BAM formatted
+alignments. You can use SAMtools for example for indexing, variant
+calling and viewing alignments.
 
 ------------------------------------------------------------------------
 
@@ -28,11 +28,11 @@ or
     module load biokit/4.9.3
 
 The biokit module sets up a set of commonly used bioinformatics tools,
-including  SAMtools  and Picard  (Note  however  that there  are  also
+including SAMtools and Picard (Note however that there are also
 bioinformatics tools in Taito, that have a separate setup commands.)
 
-The default version of samtools is  currently 1.8 in biokit and 1.9 in
-biokit/4.9.3. There are also other  versions of Samtools available. To
+The default version of samtools is currently 1.8 in biokit and 1.9 in
+biokit/4.9.3. There are also other versions of Samtools available. To
 check all available versions of Samtools use command:
 
     module spider samtools
@@ -45,9 +45,9 @@ After this you can launch samtools
 
     samtools
 
-SAMtool jobs  should either be  run in  Taito-shell or be  executed as
-batch jobs. Below  is a sample batch job file,  for running a SAMtools
-job in Taito:
+SAMtool jobs should either be run in Taito-shell or be executed as batch
+jobs. Below is a sample batch job file, for running a SAMtools job in
+Taito:
 
     #!/bin/bash -l
     #SBATCH -J samtools
@@ -66,17 +66,16 @@ job in Taito:
     #Index the bam file
     samtools index aln-sorted.bam
 
-In  the batch  job example  above  one task  (-n 1)  is executed.  The
-maximum  duration of  the job  is four  hours (-t  04:00:00 )  and the
-reserved memory size is about 4 GB (--mem-per-cpu=4000).
+In the batch job example above one task (-n 1) is executed. The maximum
+duration of the job is four hours (-t 04:00:00 ) and the reserved memory
+size is about 4 GB (--mem-per-cpu=4000).
 
-You  can submit  the  batch job  file  to the  batch  job system  with
-command:
+You can submit the batch job file to the batch job system with command:
 
     sbatch batch_job_file.bash
 
-Check the  chapter 3 of  the [Taito  user guide] for  more information
-about running batch jobs.
+Check the chapter 3 of the [Taito user guide] for more information about
+running batch jobs.
 
 ------------------------------------------------------------------------
 
@@ -88,10 +87,10 @@ Biosciences
 
 ### References
 
-Li H.\*,  Handsaker B.\*, Wysoker A.,  Fennell T., Ruan J.,  Homer N.,
-Marth  G.,  Abecasis  G.,  Durbin  R. and  1000  Genome  Project  Data
-Processing Subgroup (2009) The Sequence alignment/map (SAM) format and
-SAMtools.  Bioinformatics, 25, 2078-9. \[PMID: 19505943\]
+Li H.\*, Handsaker B.\*, Wysoker A., Fennell T., Ruan J., Homer N.,
+Marth G., Abecasis G., Durbin R. and 1000 Genome Project Data Processing
+Subgroup (2009) The Sequence alignment/map (SAM) format and SAMtools.
+Bioinformatics, 25, 2078-9. \[PMID: 19505943\]
 
 ------------------------------------------------------------------------
 

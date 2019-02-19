@@ -4,7 +4,7 @@
 
 Versatile ab initio and classical molecular dynamics.
 
-CP2k is suited  for large parallel quantum  chemistry calculations, in
+CP2k is suited for large parallel quantum chemistry calculations, in
 particular for AIMD.
 
 ------------------------------------------------------------------------
@@ -30,8 +30,8 @@ In your batch script, give:
     module load cp2k/2.5-version
 
 Loading the module points you to the installation directory, which has
-example submit commands for  different parallelization schemes. Before
-each project  make sure that  your job can  utilize all the  cores you
+example submit commands for different parallelization schemes. Before
+each project make sure that your job can utilize all the cores you
 request in the batch script!
 
 [Examples for running cp2k in Sisu]
@@ -50,8 +50,7 @@ Physics
 ### References
 
 CP2K prints out a list of relevant publications towards the end of the
-log file.  Choose ans  cite the  ones relevant  to the  methods you've
-used.
+log file. Choose ans cite the ones relevant to the methods you've used.
 
 ------------------------------------------------------------------------
 

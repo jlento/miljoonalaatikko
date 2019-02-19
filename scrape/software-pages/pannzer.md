@@ -20,11 +20,10 @@ In Taito, SANSPANZ 3 annotation tool is taken in use with command:
 
     module load sanspanz
 
- You should  note that this tool  unloads all the other  modules (e.g.
+ You should note that this tool unloads all the other modules (e.g.
 biokit).
 
-After  loading  the module  you  can  launch sanspanz  analysis  using
-command
+After loading the module you can launch sanspanz analysis using command
 
     runsanspanz.py -R -m Pannzer -s "species name" -i input_seqs.fasta
 
@@ -48,10 +47,10 @@ Biosciences
 
 ### References
 
-Home                   page:<span                  class="clickylink">
+Home page:<span class="clickylink">
 <http://ekhidna2.biocenter.helsinki.fi/sanspanz></span>
 
-Publication: [<span role="menubar">Nucleic  Acids Res.</span> 2018 Jul
+Publication: [<span role="menubar">Nucleic Acids Res.</span> 2018 Jul
 2;46(W1):W84-W88.]
 
 ------------------------------------------------------------------------

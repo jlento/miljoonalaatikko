@@ -2,10 +2,10 @@
 
 ### Description
 
-SOAPdenovo  is  a short-read  assembly  method  specially designed  to
-assemble Illumina GA  short reads. SOAPdenovo designed  for  for large
-plant and animal  genome assembly tasks, although it can  also be used
-for bacteria and fungi genomes.
+SOAPdenovo is a short-read assembly method specially designed to
+assemble Illumina GA short reads. SOAPdenovo designed for  for large
+plant and animal genome assembly tasks, although it can also be used for
+bacteria and fungi genomes.
 
 ------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ In Taito there are two versions of SOAPdenovo2 program available:
 
 You do not need to load any module to use these.
 
-Once  you have  created a  configuration file  (soap.config) for  your
+Once you have created a configuration file (soap.config) for your
 assembly task, you can launch the assembly job with the command
 *SOAPdenovo-63mer* or *SOAPdenovo-127mer* .  
   
@@ -55,8 +55,8 @@ servicedesk@csc.fi
 
 ### Manual
 
-More information  about SOAPdenovo can  be found form  the [SOAPdenovo
-home page].
+More information about SOAPdenovo can be found form the [SOAPdenovo home
+page].
 
 ------------------------------------------------------------------------
 

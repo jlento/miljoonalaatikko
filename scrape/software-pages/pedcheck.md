@@ -2,8 +2,8 @@
 
 ### Description
 
-PedCheck detects  marker typing incompatibilities in  pedigree data --
-if they are Mendelian consistent.
+PedCheck detects marker typing incompatibilities in pedigree data -- if
+they are Mendelian consistent.
 
 ------------------------------------------------------------------------
 
@@ -30,20 +30,20 @@ Run also
 
     pedcheck -2
 
-to guarantee  that there is  no inconsistency  in a pedigree  (see the
+to guarantee that there is no inconsistency in a pedigree (see the
 documentation).
 
 **Input files:**
 
-PedCheck  will look  for 'datafile.dat'  and 'pedfile.dat'  as default
-inputs. These are LINKAGE format files  ( which means that makeped has
-been run  on the  pedigree file ).  If either of  these is  not found,
+PedCheck will look for 'datafile.dat' and 'pedfile.dat' as default
+inputs. These are LINKAGE format files ( which means that makeped has
+been run on the pedigree file ). If either of these is not found,
 PedCheck will prompt you to input a file name.
 
-Command line options  are also available for inputing  these files: -p
--d .
+Command line options are also available for inputing these files: -p -d
+.
 
-PedCheck can handle pre-makeped files,  so the pedigree and individual
+PedCheck can handle pre-makeped files, so the pedigree and individual
 names can be any string, not just numeric.
 
  
@@ -58,7 +58,7 @@ Biosciences
 
 ### References
 
-"PedCheck:  A program  for identifying  genotype incompatibilities  in
+"PedCheck: A program for identifying genotype incompatibilities in
 linkage analysis," O'Connell JR, Weeks DE, Am J Hum Genet 63:259-266
 
 ------------------------------------------------------------------------

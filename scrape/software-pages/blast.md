@@ -2,16 +2,15 @@
 
 ### Description
 
-BLAST (Basic Local Alignment Search  Tool) is the most frequently used
-sequence homology search  tool. Given a probe  sequence (nucleotide or
-protein),  BLAST compares  it to  a  sequence database  and picks  out
-sequences  with significant  similarity to  the probe  sequence. BLAST
-uses  a  heuristic  search  protocol, which  makes  search  very  fast
-compared  to non-heuristic  methods. The  heuristics used  may however
-cause BLAST to
+BLAST (Basic Local Alignment Search Tool) is the most frequently used
+sequence homology search tool. Given a probe sequence (nucleotide or
+protein), BLAST compares it to a sequence database and picks out
+sequences with significant similarity to the probe sequence. BLAST uses
+a heuristic search protocol, which makes search very fast compared to
+non-heuristic methods. The heuristics used may however cause BLAST to
 fail to find all significant hits.  
   
-The command  line version of  NCBI-BLAST allows  a user to  modify all
+The command line version of NCBI-BLAST allows a user to modify all
 parameters of BLAST, to use special methods like PSI-BLAST and
 PHI-BLAST, and to analyze large data sets.  
   
@@ -22,31 +21,30 @@ several subjobs, that can be executed simultaneously (more below).
   
 The most commonly used BLAST commands are:
 
--   **blastn** search  hits for a nucleotide  sequence from nucleotide
+-   **blastn** search hits for a nucleotide sequence from nucleotide
     database
--    **blastp**  search  hits  for a  protein  sequence  from  protein
+-   **blastp** search hits for a protein sequence from protein database
+-   **blastx** search hits for a nucleotide sequence from protein
     database
--    **blastx** search  hits for  a nucleotide  sequence from  protein
+-   **psiblast** do iterative search for a protein sequence from protein
     database
--    **psiblast** do  iterative  search for  a  protein sequence  from
-    protein database
--    **rpsblast** search  hits  for a  protein  sequence from  protein
+-   **rpsblast** search hits for a protein sequence from protein profile
+    database
+-   **rpstblastn** search hits for a nucleotide sequence from protein
     profile database
--   **rpstblastn** search hits for  a nucleotide sequence from protein
-    profile database
--   **tblastn**  search hits  for a  protein sequence  from nucleotide
+-   **tblastn** search hits for a protein sequence from nucleotide
     database
--   **tblastx** search hits for  a nucleotide sequence from nucleotide
-    database  by using  the  protein translations  of  both query  and
+-   **tblastx** search hits for a nucleotide sequence from nucleotide
+    database by using the protein translations of both query and
     database sequences.
 
 Oter blast commands
 
--    **blastdbcmd** retrieve  a sequence  or a  set of  sequences form
-    BLAST databases
+-   **blastdbcmd** retrieve a sequence or a set of sequences form BLAST
+    databases
 -   **makeblastdb** create a new BLAST database
--    **blast\_formatter** reformat  a  BLAST  archive formatted  BLAST
-    result file.
+-   **blast\_formatter** reformat a BLAST archive formatted BLAST result
+    file.
 
 ------------------------------------------------------------------------
 
@@ -76,13 +74,13 @@ To use the latest BLAST in Taito first give set up command :
 
     module load biokit
 
-After that  you can start using  the BLAST commands listed  above. For
-example  following command  would  search for  sequence homologs  form
+After that you can start using the BLAST commands listed above. For
+example following command would search for sequence homologs form
 *UniProt* database for a protein sequence.
 
     blastp -query proteinseq.fasta -db uniprot -out result.txt
 
-You  can use  *-help* option  to see,  what command  line options  are
+You can use *-help* option to see, what command line options are
 available for a certain BLAST command. For example 
 
     blastp -help
@@ -92,22 +90,22 @@ For example, command:  
     blastp -query proteinseq.fasta -evalue 0.001 -db uniprot -outfmt 7 -out result.table
 
 Would run the same search as described above, except that the  e-value
-threshold would  be set  to 0.001(-evalue  0.001) and  the out  put is
+threshold would be set to 0.001(-evalue 0.001) and the out put is
 printed out a a table (-outfmt 7).
 
 **Usage of pb (Parallel BLAST)  at CSC**
 
-If  your query  sequence  set  contains less  than  20 sequences  then
-Taito-shell is probable  the most effective platforms  for the search.
+If your query sequence set contains less than 20 sequences then
+Taito-shell is probable the most effective platforms for the search.
 However, if your query set contains hundreds or thousands of sequences
-then utilizing the  taito.csc.fi cluster is more   effective. For this
-kind of massive  blast searches you can utilize the  **pb** command in
-Taito. *pb*  (Parallel BLAST)  is designed  for situations,  where the
-query file  includes large  amount of sequences.  It splits  the query
-task into  several subjobs, that  can be run simultaneously  using the
-resources  of the  server very  effectively. For  large sets  of query
-sequences, *pb* can speed up the search up to 50 fold. Two sample *pb*
-commands for taito.csc.fi:
+then utilizing the taito.csc.fi cluster is more  effective. For this
+kind of massive blast searches you can utilize the **pb** command in
+Taito. *pb* (Parallel BLAST) is designed for situations, where the query
+file includes large amount of sequences. It splits the query task into
+several subjobs, that can be run simultaneously using the resources of
+the server very effectively. For large sets of query sequences, *pb* can
+speed up the search up to 50 fold. Two sample *pb* commands for
+taito.csc.fi:
 
     module load biokit
 
@@ -117,24 +115,23 @@ commands for taito.csc.fi:
 
 **Using own BLAST databases with pb**
 
-The pb  program also allows users  to do BLAST searches  against their
-own fasta formatted sequence sets. This is done by replacing the *-db*
-option with  option **-dbnuc**  (for nucleotides) or  **-dbprot** (for
+The pb program also allows users to do BLAST searches against their own
+fasta formatted sequence sets. This is done by replacing the *-db*
+option with option **-dbnuc** (for nucleotides) or **-dbprot** (for
 proteins). Example:
 
     pb blastn -dbnuc my_seq_set.fasta -query querys.fasta -out results.out
 
 **Using genome data from ensembl with pb**
 
-**pb**  command can  also  automatically retrieve  a species  specific
-dataset from  the *Ensembl* or  *Ensembl genomes* servers and  use the
-dataset as  the search database. This  is done by replacing  the *-db*
-option  with option  **-ensembl\_dna** (retrieves  the genomic  DNA), 
-**-ensenmbl\_cdna**    (retrieves    the     cDNA    sequences)     or
-**-ensembl\_prot** (retrieves  the protein sequences). The  latin name
-of a species or taxonomy index number  is given as an argument for the
-ensembl options. You  should use underscore (\_) in stead  of space in
-the
+**pb** command can also automatically retrieve a species specific
+dataset from the *Ensembl* or *Ensembl genomes* servers and use the
+dataset as the search database. This is done by replacing the *-db*
+option with option **-ensembl\_dna** (retrieves the genomic DNA), 
+**-ensenmbl\_cdna** (retrieves the cDNA sequences)  or
+**-ensembl\_prot** (retrieves the protein sequences). The latin name of
+a species or taxonomy index number is given as an argument for the
+ensembl options. You should use underscore (\_) in stead of space in the
 species name.  
   
 For example to compare a set of nucleotide sequences against the human
@@ -143,13 +140,13 @@ genome, you could use a command like:
     pb blastn -query dna_fargments.fasta -ensembl_dna homo_sapiens -out  human_hits.txt
 
   
-To  compare the  same  dna fragments  against  the protein  sequences,
+To compare the same dna fragments against the protein sequences,
 predicted from the chicken genome, you could use command:
 
     pb tblastn -query dna_fargments.fasta -ensembl_prot gallus_gallus -out  chicken_hits.txt
 
   
-You can  see the  list of  species, available  at Ensembl  and Ensembl
+You can see the list of species, available at Ensembl and Ensembl
 genomes databases with command:
 
     ensemblfetch -names
@@ -158,23 +155,23 @@ genomes databases with command:
 
 Below is a list of BLAST databases maintained at the servers of CSC.
 
-|                     | | |
+|                     |                                                                                           |                                                             |
 |---------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| **Name** | **Database** | **Source file** |
-| **Nucleotides** |   | |
-| nt | NCBI non-redundant nucleotide database | ftp://ftp.ncbi.nih.gov/blast/db/FASTA/ |
-| refseq | NCBI RefSeq RNA database | ftp://ftp.ncbi.nih.gov/refseq/release/complete/ |
-| refseq\_con | NCBI RefSeq human contigs | ftp://ftp.ncbi.nih.gov/refseq/H\_sapiens/H\_sapiens/ |
-|   |   |   |
-| **Proteins** |   |   |
-| nr | NCBI non-redundant protein database | ftp://ftp.ncbi.nih.gov/blast/db/FASTA/ |
-| pdb | PDB protein structure database | ftp://ftp.rcsb.org/pub/pdb/derived\_data/ |
-| swiss | Uniprot/Swiss database | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/knowledgebase/ |
-| trembl | Uniprot/TrEMBL database | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/knowledgebase/ |
-| uniref100 | Uniref100 database | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref100/ |
-| uniref90 | UniRef90 database | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref90/ |
-| uniref50 | UniRef50 database | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref50/ |
-| **Ensembl genomes** | elect one of the species  with pb options: -ensembl\_dna, -ensembl\_cdna or -ensembl\_pep | ftp://ftp.ensembl.org/ |
+| **Name**            | **Database**                                                                              | **Source file**                                             |
+| **Nucleotides**     |                                                                                           |                                                             |
+| nt                  | NCBI non-redundant nucleotide database                                                    | ftp://ftp.ncbi.nih.gov/blast/db/FASTA/                      |
+| refseq              | NCBI RefSeq RNA database                                                                  | ftp://ftp.ncbi.nih.gov/refseq/release/complete/             |
+| refseq\_con         | NCBI RefSeq human contigs                                                                 | ftp://ftp.ncbi.nih.gov/refseq/H\_sapiens/H\_sapiens/        |
+|                     |                                                                                           |                                                             |
+| **Proteins**        |                                                                                           |                                                             |
+| nr                  | NCBI non-redundant protein database                                                       | ftp://ftp.ncbi.nih.gov/blast/db/FASTA/                      |
+| pdb                 | PDB protein structure database                                                            | ftp://ftp.rcsb.org/pub/pdb/derived\_data/                   |
+| swiss               | Uniprot/Swiss database                                                                    | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/knowledgebase/    |
+| trembl              | Uniprot/TrEMBL database                                                                   | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/knowledgebase/    |
+| uniref100           | Uniref100 database                                                                        | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref100/ |
+| uniref90            | UniRef90 database                                                                         | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref90/  |
+| uniref50            | UniRef50 database                                                                         | ftp://ftp.ebi.ac.uk/pub/databases/uniprot/uniref/uniref50/  |
+| **Ensembl genomes** | elect one of the species  with pb options: -ensembl\_dna, -ensembl\_cdna or -ensembl\_pep | ftp://ftp.ensembl.org/                                      |
 
   
 **Users own BLAST databases**
@@ -190,23 +187,21 @@ sets with blast commands in Chipster
 
   
 2. pb BLAST and gb BLAST  
-In pb  blast own databases  are used  by replacing the  **-db** option
-with  option   **-dbnuc**  (for   nucleotides)  or   **-dbprot**  (for
-proteins).  Example:
+In pb blast own databases are used by replacing the **-db** option with
+option **-dbnuc** (for nucleotides) or **-dbprot** (for proteins).
+Example:
 
-    pb  blastn  -dbnuc   my_seq_set.fasta  -query  querys.fasta  -oout
-    results.out
+    pb blastn -dbnuc my_seq_set.fasta -query querys.fasta -oout results.out
 
   
 3. makeblastdb  
-You can  use command *makeblastdb*  to create a BLAST  search database
-form you  own asn1 or fasta  formatted sequence set. If  you use fasta
-formatted  sequence  files,  please note  that  *makeblastdb*  command
-assumes that  the comment lines in  the fasta file contain  ncbi style
-names for the
+You can use command *makeblastdb* to create a BLAST search database form
+you own asn1 or fasta formatted sequence set. If you use fasta formatted
+sequence files, please note that *makeblastdb* command assumes that the
+comment lines in the fasta file contain ncbi style names for the
 sequences ( e.g. gnl\|db\_name\|sequece\_id).  
   
-You can use EMBOSS command seqret to  convert a normal fasta file to a
+You can use EMBOSS command seqret to convert a normal fasta file to a
 ncbi formatted fasta file. For exmaple:
 
     module load emboss
@@ -229,7 +224,7 @@ be defined with environment variable BLASTDB
 
     export BLASTDB=/path/to/your/blastdatabse
 
-Note that  the *-dbprot*  and *-dbnuc* options  of the  **pb** command
+Note that the *-dbprot* and *-dbnuc* options of the **pb** command
 (described above) do the database building operations automatically.
 
 ------------------------------------------------------------------------

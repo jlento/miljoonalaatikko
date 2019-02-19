@@ -22,7 +22,7 @@ First load Proj4 module
 
 Then use the command-line utilities, for example proj or cs2cs
 
-For  processing a  lot  of  files, so  that  processing  order is  not
+For processing a lot of files, so that processing order is not
 important, [array jobs] could be used.
 
 ------------------------------------------------------------------------

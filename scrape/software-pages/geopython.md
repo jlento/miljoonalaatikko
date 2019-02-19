@@ -2,45 +2,45 @@
 
 ### Description
 
-Geopython  is a  collection  of python  packages  that facilitate  the
-development  of python  scripts  for  geoinformatics applications.  It
+Geopython is a collection of python packages that facilitate the
+development of python scripts for geoinformatics applications. It
 includes following python packages:
 
--   [descartes]  - use  Shapely or  GeoJSON-like geometric  objects as
+-   [descartes] - use Shapely or GeoJSON-like geometric objects as
     matplotlib paths and patches.
 -   [fiona] - reads and writes spatial data files.
--   [gdal]  - reads and writes  spatial data files, and  GDAL/OGR data
+-   [gdal] - reads and writes spatial data files, and GDAL/OGR data
     manipulation tools.
 -   [geopandas] - GeoPandas extends the datatypes used by [pandas.]
--    [networkx] -  for the  creation, manipulation,  and study  of the
+-   [networkx] - for the creation, manipulation, and study of the
     structure, dynamics, and functions of complex networks.
--    [pyproj] -  performs  cartographic  transformations and  geodetic
+-   [pyproj] - performs cartographic transformations and geodetic
     computations.
 -   osgeo - used currently only for gdal.
 -   [pysal] - spatial analysis functions.
 -   [rasterio] - access to geospatial raster data.
--   [rasterstats]  - for summarizing geospatial  raster datasets based
-    on vector  geometries. It includes functions  for zonal statistics
-    and interpolated point queries.
+-   [rasterstats] - for summarizing geospatial raster datasets based on
+    vector geometries. It includes functions for zonal statistics and
+    interpolated point queries.
 -   [rtree] - spatial indexing and search.
--   [shapely] - manipulation and  analysis of geometric objects in the
+-   [shapely] - manipulation and analysis of geometric objects in the
     Cartesian plane.
--    <span   id="yui_patched_v3_11_0_1_1503314242269_554">[skimage]  -
+-   <span id="yui_patched_v3_11_0_1_1503314242269_554">[skimage] -
     algorithms for image processing.</span>
 
-GeoPython  module  is  build  on  top  of  Taito's  [python-env/2.7.10
-module].  See that page for packages  included in the basic module and
-how to install your own packages.
+GeoPython module is build on top of Taito's [python-env/2.7.10 module].
+See that page for packages included in the basic module and how to
+install your own packages.
 
-Python  has   also  packages  for  parallel   computing,  for  example
-**multiprocessing**. In our  examples there is two  cases using Python
+Python has also packages for parallel computing, for example
+**multiprocessing**. In our examples there is two cases using Python
 multiprocessing: [zonal statistics] and [focal mean].
 
-If you  want to use  Python3, cartopy  package and/or Spyder  IDE, see
-also [Geoconda] module.
+If you want to use Python3, cartopy package and/or Spyder IDE, see also
+[Geoconda] module.
 
-(If you  think that some important  GIS package for python  is missing
-from here, you can ask for installation from servicedesk@csc.fi.)
+(If you think that some important GIS package for python is missing from
+here, you can ask for installation from servicedesk@csc.fi.)
 
 ------------------------------------------------------------------------
 
@@ -54,13 +54,13 @@ Taito: Python-2.7.10
 
 ### Usage
 
-To  use geopython  in Taito,  load first  the [geo-env]  module, which
+To use geopython in Taito, load first the [geo-env] module, which
 includes **Python** with GIS packages, GDAL, QGIS and LasTools.
 
     module load geo-env
 
-The  module unloads  all previously  loaded modules,  so it  should be
-loaded first, if you need to load also some other modules.
+The module unloads all previously loaded modules, so it should be loaded
+first, if you need to load also some other modules.
 
 After this you can launch your python program with command
 
@@ -70,8 +70,8 @@ For running your script via batch job system, use:
 
 `srun python my_geopython_code.py`
 
-Alternatively you can  change the python definition in  the first line
-of your code to `#!/bin/env python`
+Alternatively you can change the python definition in the first line of
+your code to `#!/bin/env python`
 
 and execute the python program
 
@@ -98,9 +98,9 @@ Geosciences
 
 -   [Essential Python Geospatial Libraries]
 -   [Geoprocessing with Python using Open Source GIS]
--    <span id="yui_patched_v3_11_0_1_1502174857789_709">[GeoExamples],
-    a lot of examples of using Python for spatial analysis</span>
--   [Automating  GIS processes  course] materials,  where most  of the
+-   <span id="yui_patched_v3_11_0_1_1502174857789_709">[GeoExamples], a
+    lot of examples of using Python for spatial analysis</span>
+-   [Automating GIS processes course] materials, where most of the
     exercises are done using Python (University of Helsinki)
 -    
 -   [Multiprocessing Basics]

@@ -2,11 +2,11 @@
 
 ### Description
 
-Stacks  is  a software  pipeline  for  building loci  from  short-read
-sequences, such  as those generated  on the Illumina  platform. Stacks
-was  developed to  work with  restriction enzyme-based  data, such  as
-RAD-seq,  for the  purpose  of building  genetic  maps and  conducting
-population genomics and phylogeography.
+Stacks is a software pipeline for building loci from short-read
+sequences, such as those generated on the Illumina platform. Stacks was
+developed to work with restriction enzyme-based data, such as RAD-seq,
+for the purpose of building genetic maps and conducting population
+genomics and phylogeography.
 
  
 
@@ -34,23 +34,23 @@ To load a specific version of Stacks use e.g.:
     module load biokit/4.9.3
     module load stacks/2.0
 
-After that  you can  launch Stacks  commands like  denovo\_map.pl. for
+After that you can launch Stacks commands like denovo\_map.pl. for
 example:
 
     denovo_map.pl  -m 3 -M 2 -n 3 -T 4 -S -b 1 -t -a 2010-11-30 -o ./stacks  -p ./samples/male.fa  -p ./samples/female.fa -r ./samples/progeny_1.fa  -r ./samples/progeny_2.fa  -r ./samples/progeny_3.fa
 
-As  stacks  jobs can  be  rather  heavy  they  should be  executed  in
-[taito-shell.csc.fi] or  as batch jobs.  Note that in  Taito-shell the
-maximum number of threads  to be used is 4 (-T 4)  while in batch jobs
-you can  use larger  values (up  to 24 ).  The Stacks  installation in
-Taito   is  not   linked  to   a  stacks   result  database   and  web
-interface. Because of that you should  use option -S ( and not options
--B and -D) in denovo\_map.pl runs.
+As stacks jobs can be rather heavy they should be executed in
+[taito-shell.csc.fi] or as batch jobs. Note that in Taito-shell the
+maximum number of threads to be used is 4 (-T 4) while in batch jobs you
+can use larger values (up to 24 ). The Stacks installation in Taito is
+not linked to a stacks result database and web interface. Because of
+that you should use option -S ( and not options -B and -D) in
+denovo\_map.pl runs.
 
-It is  howerver possible to  set up your  own Stacks database  and WWW
+It is howerver possible to set up your own Stacks database and WWW
 interface to a virtual machine running in the cPouta cloud environment
-of CSC. (Link to  instrctions to set up a Stacks  server in cPouta can
-be found form the end of this page.)
+of CSC. (Link to instrctions to set up a Stacks server in cPouta can be
+found form the end of this page.)
 
  
 

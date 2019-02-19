@@ -3,12 +3,11 @@
 ### Description
 
 ORCA is a flexible, efficient and easy-to-use general purpose tool for
-quantum chemistry  with specific emphasis on  spectroscopic properties
-of  open-shell  molecules. It  features  a  wide variety  of  standard
-quantum chemical methods ranging from  semiempirical methods to DFT to
-single- and multireference  correlated ab initio methods.  It can also
-treat environmental  and relativistic  effects. For  more information,
-see
+quantum chemistry with specific emphasis on spectroscopic properties of
+open-shell molecules. It features a wide variety of standard quantum
+chemical methods ranging from semiempirical methods to DFT to single-
+and multireference correlated ab initio methods. It can also treat
+environmental and relativistic effects. For more information, see
 <https://orcaforum.cec.mpg.de/>  
  
 
@@ -38,7 +37,7 @@ private copy of the program (via <https://orcaforum.cec.mpg.de/> )
   
 An example job file can be copied from /appl/chem/orca/orca\_4.1.job
 (orca\_4.1.inp) .  
-Please remember to  adjust %pal nproc in your input  file according to
+Please remember to adjust %pal nproc in your input file according to
 the  --ntasks in your jobfile
 
 ------------------------------------------------------------------------
@@ -52,7 +51,7 @@ Chemistry
 ### References
 
 The generic reference for ORCA is:  
-Neese, F.  (2012) The  ORCA program  system, Wiley  Interdiscip. Rev.:
+Neese, F. (2012) The ORCA program system, Wiley Interdiscip. Rev.:
 Comput. Mol. Sci., 2, 73-78.
 
 Please do not only cite the above generic reference, but also cite in

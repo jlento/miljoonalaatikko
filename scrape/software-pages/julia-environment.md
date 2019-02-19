@@ -2,10 +2,10 @@
 
 ### Description
 
-Julia is  a high-level, high-performance dynamic  programming language
-for  numerical  computing.  It   provides  a  sophisticated  compiler,
-distributed parallel  execution, numerical accuracy, and  an extensive
-mathematical function library.
+Julia is a high-level, high-performance dynamic programming language for
+numerical computing. It provides a sophisticated compiler, distributed
+parallel execution, numerical accuracy, and an extensive mathematical
+function library.
 
 On Taito Julia uses Intel's MKL library.
 
@@ -60,15 +60,15 @@ where x.y.z is the version number.
 
 <span style="font-size:16px;">**Interactive use**</span>
 
-After loading the Julia module,  Julia can be run interactively simply
-by typing
+After loading the Julia module, Julia can be run interactively simply by
+typing
 
 ~~~~ western
  julia
 ~~~~
 
-The recommended way  to use Julia interactively is  on Taito-shell. If
-more  resources are  required,  one can  request  an interactive  node
+The recommended way to use Julia interactively is on Taito-shell. If
+more resources are required, one can request an interactive node
 directly on a computing node on taito with
 
 ~~~~ western
@@ -83,8 +83,8 @@ Here -c is the number of cores, -t is the time limit in hh:mm:ss,
  
 
 **NOTE:** <span style="font-weight: normal">The following </span><span
-style="font-weight:      normal">J</span><span     style="font-weight:
-normal">ulia code is for v0.6.2 </span>
+style="font-weight: normal">J</span><span
+style="font-weight: normal">ulia code is for v0.6.2 </span>
 
 **Installing packages**
 
@@ -116,9 +116,9 @@ export JULIA_PKGDIR=/your/directory
 
 **NOTE:** <span style="font-weight: normal">Packages that work for one
 version of Julia might not work at all for another. Check the required
-version number. </span><span  style="font-weight: normal">Working with
-packages is  very slow  on Taito,  it can take  up to  several minutes
-before Julia seems to respond to Pkg commands.</span>
+version number. </span><span style="font-weight: normal">Working with
+packages is very slow on Taito, it can take up to several minutes before
+Julia seems to respond to Pkg commands.</span>
 
  
 
@@ -158,9 +158,8 @@ srun julia my_script.jl
 ~~~~
 
 -J is our jobname, -o is our output file, -e is our error file  
-<span style="font-weight:  normal">-p is the partition  we are running
-on, -t is the </span><span style="font-weight: normal">maxium time for
-the
+<span style="font-weight: normal">-p is the partition we are running on,
+-t is the </span><span style="font-weight: normal">maxium time for the
 </span>  
 run –-ntasks is the number of times we run our script –-nodes is how
 many nodes  
@@ -192,12 +191,11 @@ module load julia-env
 srun julia my_script.jl
 ~~~~
 
-<span style="font-weight:  normal">This runs the  script my\_script.jl
-one  time   using  four  cpu-cores   </span><span  style="font-weight:
-normal">(the
+<span style="font-weight: normal">This runs the script my\_script.jl one
+time using four cpu-cores </span><span style="font-weight: normal">(the
 -c option)</span>  
-Changing --ntask=4  and removing  the -c option  would run  the script
-four times on one cpu-core each.
+Changing --ntask=4 and removing the -c option would run the script four
+times on one cpu-core each.
 
 For more details about the batch jobs see Taito user guide.
 
@@ -207,8 +205,8 @@ For more details about the batch jobs see Taito user guide.
 
 **Running julia on Taito using multiple workers**
 
-Using some  packages, we  can run multiple  Julia workers  on separate
-nodes that are able to communicate with each other.  
+Using some packages, we can run multiple Julia workers on separate nodes
+that are able to communicate with each other.  
 
 We start by allocating resources
 

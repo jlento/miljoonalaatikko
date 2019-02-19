@@ -2,12 +2,12 @@
 
 ### Description
 
-Falcon is  a set of tools  for fast aligning long  reads for consensus
-and assembly
+Falcon is a set of tools for fast aligning long reads for consensus and
+assembly
 
 The Falcon tool kit is a set of simple code collection which I use for
 studying efficient assembly algorithm for haploid and diploid genomes.
-It has some  back-end code implemented in C for  speed and some simple
+It has some back-end code implemented in C for speed and some simple
 front-end written in Python for convenience.
 
 ------------------------------------------------------------------------
@@ -28,21 +28,20 @@ To use Falcon:
     module load python-env/2.7.10
     module load falcon
 
-Falcon has a main program **fc\_run.py**  that splits the job and runs
+Falcon has a main program **fc\_run.py** that splits the job and runs
 the sub-jobs throug the batch job system. The main program itself does
-not take  much resourses, but it  should remain running until  all the
+not take much resourses, but it should remain running until all the
 sub-jobs have finished.
 
-One way to  run Falcon is to run **fc\_run.py**  as an interactive job
-in Taito-shell. As the  job can take long, it's best  to either run it
-in  *screen*  or  via  NoMachine  (see [Taito-shell  user  guide]  for
-details).
+One way to run Falcon is to run **fc\_run.py** as an interactive job in
+Taito-shell. As the job can take long, it's best to either run it in
+*screen* or via NoMachine (see [Taito-shell user guide] for details).
 
-The example .cfg  files provided with the software are  written to use
-SGE batch job system. They will need to be edited to use SLURM.
+The example .cfg files provided with the software are written to use SGE
+batch job system. They will need to be edited to use SLURM.
 
-To run  an example assemply with  *E. coli* data as  described [here],
-you can do the following:
+To run an example assemply with *E. coli* data as described [here], you
+can do the following:
 
 To prepare the data:
 
@@ -97,8 +96,8 @@ Here is the file **fc\_run\_ecoli.cfg** modified to use SLURM:
 
 Main changes are in lines starting with **sge\_options\_\***
 
-The parameters here  are sufficient to run the test  assembly, but you
-may need to adjust them to match your own dataset.
+The parameters here are sufficient to run the test assembly, but you may
+need to adjust them to match your own dataset.
 
 To run, log into Taito-shell, and:
 

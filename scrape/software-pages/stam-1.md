@@ -2,7 +2,7 @@
 
 ### Description
 
-Stampy  is a  package for  the mapping  of short  reads from  illumina
+Stampy is a package for the mapping of short reads from illumina
 sequencing machines onto a reference.
 
 ------------------------------------------------------------------------
@@ -40,9 +40,8 @@ Biosciences
 
 ### References
 
-Lunter and Goodson. Stampy: a  statistical algorithm for sensitive and
-fast     mapping     of     Illumina    sequence     reads.     Genome
-Res. 2011. 21:936-939. 
+Lunter and Goodson. Stampy: a statistical algorithm for sensitive and
+fast mapping of Illumina sequence reads. Genome Res. 2011. 21:936-939. 
 
 ------------------------------------------------------------------------
 
@@ -54,7 +53,7 @@ helpdesk@csc.fi
 
 ### Manual
 
-Stampy                         manual                        available
+Stampy manual available
 here: <http://www.well.ox.ac.uk/~gerton/README.txt>
 
  

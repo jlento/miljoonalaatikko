@@ -1,71 +1,70 @@
 # 1.5 Monitoring and applying computing resources
 
-In  CSC's environment  the  computing quota  is  measured in  *billing
-units* and the storage space in *terabytes*.
+In CSC's environment the computing quota is measured in *billing units*
+and the storage space in *terabytes*.
 
 ## [][1]1.5.1 Applying for computing resources {#applying-for-computing-resources .western}
 
-Each  project has  got  a certain  amount of  billing  units that  are
-consumed  by the  computing  tasks and  virtual  machines executed  at
-CSC. The billing  unit consumption is calculated in  different ways in
-different platforms:
+Each project has got a certain amount of billing units that are consumed
+by the computing tasks and virtual machines executed at CSC. The billing
+unit consumption is calculated in different ways in different platforms:
 
--   In  **Sisu** supercomputer the billing  unit is defined so  that 1
-    CPU core hours consumes 2 billing units.
--   In **Taito** cluster the  billing unit consumption is based either
-    on  the number  of reserved  cores or  number (rounded  up to  the
-    nearest  integer) of  4 GB  blocks of  memory, depending  which is
-    larger. For example:
+-   In **Sisu** supercomputer the billing unit is defined so that 1 CPU
+    core hours consumes 2 billing units.
+-   In **Taito** cluster the billing unit consumption is based either on
+    the number of reserved cores or number (rounded up to the nearest
+    integer) of 4 GB blocks of memory, depending which is larger. For
+    example:
     -   an 8 core job with 16 GB of memory will be billed with 2 x 8 =
         16 billing units per hour,
-    -   an 8 core job with 64 GB  of memory will be billed with 2 x 16
-        = 32 billing units per hour.
+    -   an 8 core job with 64 GB of memory will be billed with 2 x 16 =
+        32 billing units per hour.
 
-To get more  resources for a *Commercial Project*  requires renewal of
-the [customer agreement] with CSC.
+To get more resources for a *Commercial Project* requires renewal of the
+[customer agreement] with CSC.
 
-Additional  computing  resources  can  be  applied  for  an  *Academic
-Project*  in the  Scientist's User  Interface. Any project  member can
-apply for additional resources, not just the project's PI.
+Additional computing resources can be applied for an *Academic Project*
+in the Scientist's User Interface. Any project member can apply for
+additional resources, not just the project's PI.
 
-To apply  for more billing  units for  computing, please open  the [My
-Projects tool].  Select the project  for which  you want to  apply for
-more resources.  Then choose *Apply  For Resources*. Fill in  the form
-that  opens.  You  can  find  the  filling  instructions  by  clicking
-Help. Press Send to submit your application.
+To apply for more billing units for computing, please open the [My
+Projects tool]. Select the project for which you want to apply for more
+resources. Then choose *Apply For Resources*. Fill in the form that
+opens. You can find the filling instructions by clicking Help. Press
+Send to submit your application.
 
 ![][2]
 
 **Figure:** Resource application form for an Academic Project.
 
-[The upcoming  deadlines for  resource applications] are  available on
-main CSC  webpages. See also the  instructions on how to  to apply for
-more data storage space for your project.
+[The upcoming deadlines for resource applications] are available on main
+CSC webpages. See also the instructions on how to to apply for more data
+storage space for your project.
 
-Those who  require exceptionally large computing  or storage resources
-can apply  for them  through periodically announced  [Grand Challenge]
-and [PRACE] Tier-0 and Tier-1 calls.
+Those who require exceptionally large computing or storage resources can
+apply for them through periodically announced [Grand Challenge] and
+[PRACE] Tier-0 and Tier-1 calls.
 
 ## [][3]1.5.2 Switching between projects {#switching-between-projects .western}
 
-If you have  more than one project  you might want to  use one project
-for certain tasks and the other  projects for other tasks. This can be
-done by changing the user's *billing project*.
+If you have more than one project you might want to use one project for
+certain tasks and the other projects for other tasks. This can be done
+by changing the user's *billing project*.
 
-The default  billing project for Taito  and Sisu can changed  with the
-[My Projects tool] in the  Scientist's User Interface. This tool lists
-the  computing  projects you  can  use.  To  set the  default  billing
-project, select  a project  from the  list and  press "Set  As Billing
-Project" as decribed in [Chapter 1.4.3.]
+The default billing project for Taito and Sisu can changed with the [My
+Projects tool] in the Scientist's User Interface. This tool lists the
+computing projects you can use. To set the default billing project,
+select a project from the list and press "Set As Billing Project" as
+decribed in [Chapter 1.4.3.]
 
-To change  the billing project temporarily  on Taito or Sisu,  run the
-[][4]**newgrp**  command on  the command  line. This  command actually
-changes the primary Linux group. It  takes as the argument the name of
-the  group that  you want  your new  primary group  to be.  Groups and
+To change the billing project temporarily on Taito or Sisu, run the
+[][4]**newgrp** command on the command line. This command actually
+changes the primary Linux group. It takes as the argument the name of
+the group that you want your new primary group to be. Groups and
 projects are linked with each other.
 
-The *newgrp*  command is  best used in  combination with  the *sbatch*
-command (the command  that submits batch jobs to  computing nodes, see
+The *newgrp* command is best used in combination with the *sbatch*
+command (the command that submits batch jobs to computing nodes, see
 [chapter 4.3]):
 
     taito-login3:~$ newgrp project_2000084
@@ -76,12 +75,12 @@ command (the command  that submits batch jobs to  computing nodes, see
     Submitted batch job 10282313
 
 The first job will be charged to the project 2000084 and the second to
-the project 2000251. You can check  the groups you belong to using the
+the project 2000251. You can check the groups you belong to using the
 command **groups** or **id**.
 
 ## [][5]1.5.3 Viewing computing resource usage {#viewing-computing-resource-usage .western}
 
-When your computing quota is zero  or close to zero, you start getting
+When your computing quota is zero or close to zero, you start getting
 this kind of warnings:
 
     WARNING: You belong to the project 2000251, which has used over 90% of its quota.
@@ -90,7 +89,7 @@ this kind of warnings:
 
  
 
-The project whose  resources are finished you can no  longer use batch
+The project whose resources are finished you can no longer use batch
 jobs in Sisu or Taito:
 
     taito-login4:~$ sbatch job.sh
@@ -101,24 +100,24 @@ When your storage quota is used up, you get this kind of errors:
 
     write error: Disk quota exceeded
 
-The usage  of computing resources  can be monitored both  on computing
+The usage of computing resources can be monitored both on computing
 servers and at the Scientist's User Interface. The storage space usage
 can be monitored only on computing servers.
 
-To view  computing resource usage  at the Scientist's  User Interface,
-sign in to the service and open the My Projects tool (Figure 1.4). The
-usage  is shown  in the  *Information* box.  In the  future, the  *CPU
-Usage* box  will provide more  detailed information about  your usage:
-you could for example define a time  period to be viewed or break down
-the usage by project members.
+To view computing resource usage at the Scientist's User Interface, sign
+in to the service and open the My Projects tool (Figure 1.4). The usage
+is shown in the *Information* box. In the future, the *CPU Usage* box
+will provide more detailed information about your usage: you could for
+example define a time period to be viewed or break down the usage by
+project members.
 
 Computing quota is expressed in billing units and the storage space in
-gigabytes. The  billing unit  is defined  so that 1  CPU core  hour on
-Sisu, Taito or cPouta consumes 2 billing units.
+gigabytes. The billing unit is defined so that 1 CPU core hour on Sisu,
+Taito or cPouta consumes 2 billing units.
 
-The computing  resource usage  can be  monitored on  computing servers
-using the [][6]**saldo** command. An  example output is shown below. A
-more detailed documentation about the [saldo command] is available.
+The computing resource usage can be monitored on computing servers using
+the [][6]**saldo** command. An example output is shown below. A more
+detailed documentation about the [saldo command] is available.
 
     taito-login4:~$ saldo
     -----------------------------------------------------------------
@@ -153,7 +152,7 @@ more detailed documentation about the [saldo command] is available.
 ## [][7]1.5.4 Viewing storage space usage {#viewing-storage-space-usage style="text-align: justify;"}
 
 The storage space usage can be checked from the command line using the
-**quota**  command.  An  example  output  is  shown  below.  For  more
+**quota** command. An example output is shown below. For more
 information on the *quota* command, and hints on how to find the files
 that use the most space, see [chapter 3.1].
 

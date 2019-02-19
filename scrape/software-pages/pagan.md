@@ -2,18 +2,18 @@
 
 ### Description
 
-Pagan is  a tool  for generating  and extending  phylogenetic multiple
+Pagan is a tool for generating and extending phylogenetic multiple
 sequence alignments.
 
-PAGAN is based on  the phylogeny-aware progressive alignment algorithm
-and  uses  graphs to  describe  the  uncertainty  in the  presence  of
-characters at  certain sequence positions. However,  graphs also allow
-describing  the  uncertainty in  input  sequences  and modelling  e.g.
-homopolymer errors  in NGS  reads, or representing  inferred ancestral
+PAGAN is based on the phylogeny-aware progressive alignment algorithm
+and uses graphs to describe the uncertainty in the presence of
+characters at certain sequence positions. However, graphs also allow
+describing the uncertainty in input sequences and modelling e.g.
+homopolymer errors in NGS reads, or representing inferred ancestral
 sequences against which other sequences can then be aligned.
 
-The  graph  representation has  features  that  make PAGAN  especially
-powerful  for  phylogenetic  placement   of  sequences  into  existing
+The graph representation has features that make PAGAN especially
+powerful for phylogenetic placement of sequences into existing
 alignments.
 
 ------------------------------------------------------------------------

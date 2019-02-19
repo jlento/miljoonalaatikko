@@ -25,11 +25,11 @@ You can then start FastQC:
 
     fastqc
 
-FastQC  is a  graphical software  so you  will need  a working  X-term
-connection.  Alternatively you  could you  FreeNX remote  desktop. See
-[CSC computing environment user guide] for details.
+FastQC is a graphical software so you will need a working X-term
+connection. Alternatively you could you FreeNX remote desktop. See [CSC
+computing environment user guide] for details.
 
-See [Taito User  Guide] for infomation on running  interactive jobs in
+See [Taito User Guide] for infomation on running interactive jobs in
 Taito.
 
 ------------------------------------------------------------------------

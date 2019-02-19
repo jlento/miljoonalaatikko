@@ -2,11 +2,11 @@
 
 ### Description
 
-GPAW  is  an  efficient   program  package  for  electronic  structure
-calculations.  It  is based  on  the  density-functional theory  (DFT)
-implemented  within the  projector augmented  wave (PAW)  method using
-uniform real-space grids.  GPAW can be used for  systems containing up
-to hundres of atoms and thousands of electrons.
+GPAW is an efficient program package for electronic structure
+calculations. It is based on the density-functional theory (DFT)
+implemented within the projector augmented wave (PAW) method using
+uniform real-space grids. GPAW can be used for systems containing up to
+hundres of atoms and thousands of electrons.
 
 Some features of the software:
 
@@ -14,7 +14,7 @@ Some features of the software:
 -   structural optimizations
 -   different boundary conditions (finite, wire, slab, bulk)
 -   efficient parallelization
--   excited state  properties within time-dependent density-functional
+-   excited state properties within time-dependent density-functional
     theory
 
  
@@ -33,10 +33,9 @@ Taito: 0.9.0, 0.10.0, 0.11.0, 1.1.0, 1.2.0, 1.3.0, 1.4.0
 
 ### Usage
 
-GPAW  can be  used from  command  line or  with limited  functionality
-through    the [SOMA2] modeling   environment    (GUI   through    web
-browser).    The   GPAW    environment    can   be    set   up    with
-the **module** command.
+GPAW can be used from command line or with limited functionality through
+the [SOMA2] modeling environment (GUI through web browser). The GPAW
+environment can be set up with the **module** command.
 
 On **Sisu**, one loads the default version with the command
 
@@ -58,7 +57,7 @@ calculations are run by python interpreter as
 
 `python input.py`
 
-For **parallel**  calculations a  special *gpaw-python*  executable is
+For **parallel** calculations a special *gpaw-python* executable is
 used, whose full pathname in CSC environment is given in $GPAW\_PYTHON
 variable.
 
@@ -108,18 +107,17 @@ Sample job script for parallel calculations:
 
 ### FGI grid
 
-You  can find  the  instructions to  run  GPAW in  the  FGI Grid  from
-the [GPAW runtime environment page].
+You can find the instructions to run GPAW in the FGI Grid from the [GPAW
+runtime environment page].
 
 ### DataWarp on Sisu
 
-Compute nodes  on Sisu  have so called DataWarps available,  i.e. fast
-flash-based temporary  storage attached  directly to the  nodes. These
-may offer improved  burst-I/O buffering for I/O patterns  that are not
-optimal for the Lustre  filesystem. If your calculation involves a lot
-of frequent reads/writes,  it is worthwhile to  test if DataWarp gives
-you a performance  boost. For more information,  please see [Sisu User
-Guide].
+Compute nodes on Sisu have so called DataWarps available, i.e. fast
+flash-based temporary storage attached directly to the nodes. These may
+offer improved burst-I/O buffering for I/O patterns that are not optimal
+for the Lustre filesystem. If your calculation involves a lot of
+frequent reads/writes, it is worthwhile to test if DataWarp gives you a
+performance boost. For more information, please see [Sisu User Guide].
 
 ------------------------------------------------------------------------
 

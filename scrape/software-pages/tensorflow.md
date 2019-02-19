@@ -2,20 +2,20 @@
 
 ### Description
 
-TensorFlow™  is   an  open  source  software   library  for  numerical
-computation  using data  flow  graphs. Nodes  in  the graph  represent
-mathematical  operations,   while  the   graph  edges   represent  the
-multidimensional data arrays (tensors)  communicated between them. The
-flexible architecture allows you to  deploy computation to one or more
-CPUs or  GPUs in  a desktop,  server, or mobile  device with  a single
-API. TensorFlow was originally  developed by researchers and engineers
-working on the Google Brain  Team within Google's Machine Intelligence
-research organization for the  purposes of conducting machine learning
-and deep neural networks research, but the system is general enough to
-be applicable in a wide variety of other domains as well.
+TensorFlow™ is an open source software library for numerical computation
+using data flow graphs. Nodes in the graph represent mathematical
+operations, while the graph edges represent the multidimensional data
+arrays (tensors) communicated between them. The flexible architecture
+allows you to deploy computation to one or more CPUs or GPUs in a
+desktop, server, or mobile device with a single API. TensorFlow was
+originally developed by researchers and engineers working on the Google
+Brain Team within Google's Machine Intelligence research organization
+for the purposes of conducting machine learning and deep neural networks
+research, but the system is general enough to be applicable in a wide
+variety of other domains as well.
 
-GPU-enabled versions of TensorFlow for both  Python 2 and Python 3 are
-available   in   Taito-GPU.   For  CPU-only   TensorFlow,   using   an
+GPU-enabled versions of TensorFlow for both Python 2 and Python 3 are
+available in Taito-GPU. For CPU-only TensorFlow, using an
 Intel-optimized version is recommended.
 
 ------------------------------------------------------------------------
@@ -42,27 +42,27 @@ Taito-GPU:
 -   1.11.0 (Python 3.5 only)
 -   1.12.0 (Python 3.5 only)
 
-The versions marked  with an asterisk (\*) are optimized  only for K80
-GPUs.   The recent  versions are  optimized for  both current  CSC GPU
-types (K80 and P100).
+The versions marked with an asterisk (\*) are optimized only for K80
+GPUs.  The recent versions are optimized for both current CSC GPU types
+(K80 and P100).
 
 ------------------------------------------------------------------------
 
 ### Usage
 
-*These  instructions  are  for  installing a  GPU-enabled  version  of
-TensorFlow in Taito-GPU.  See below for installing  a CPU-only version
-in Taito.*
+*These instructions are for installing a GPU-enabled version of
+TensorFlow in Taito-GPU. See below for installing a CPU-only version in
+Taito.*
 
-TensorFlow  can be  used either  by  installing a  local version  into
-$USERAPPL  or  by  loading  a generic  [mlpython]  (machine  learning)
-environment     python-env/2.7.10-ml,      python-env/3.4.5-ml,     or
+TensorFlow can be used either by installing a local version into
+$USERAPPL or by loading a generic [mlpython] (machine learning)
+environment python-env/2.7.10-ml, python-env/3.4.5-ml, or
 python-env/3.5.3-ml. These two options are described below.
 
 ### 1) Installing TensorFlow into $USERAPPL
 
-The following  instructions install a recent  CSC-compiled pip package
-of  TensorFlow into  $USERAPPL. Other  versions can  also be  found at
+The following instructions install a recent CSC-compiled pip package of
+TensorFlow into $USERAPPL. Other versions can also be found at
 /appl/opt/tensorflow.
 
 **Python 2**
@@ -109,9 +109,9 @@ Before running jobs, set up the environment like this:
 
 ### 2) Using mlpython
 
-The  Python  environments  python-env/2.7.10-ml,  python-env/3.4.5-ml,
+The Python environments python-env/2.7.10-ml, python-env/3.4.5-ml,
 and python-env/3.5.3-ml contain up-to-date versions of several machine
-learning  packages for  Python, including  TensorFlow, Theano,  Keras,
+learning packages for Python, including TensorFlow, Theano, Keras,
 PyTorch, and MXNet. They can be loaded as:
 
     module purge
@@ -132,22 +132,22 @@ or
     module purge
     module load python-env/3.6.3-ml
 
-Note that all  ML packages are not available in  all environments. See
-[Mlpython] for more information. Also,  note that the machine learning
+Note that all ML packages are not available in all environments. See
+[Mlpython] for more information. Also, note that the machine learning
 packages in the environments are updated periodically.
 
 ### Known issues
 
 **MPI Error**
 
-Slurm  batch scripts  running TensorFlow  may encounter  the following
-error message:
+Slurm batch scripts running TensorFlow may encounter the following error
+message:
 
     python: error: _get_addr: No such file or directory
     Fatal error in PMPI_Init_thread: Other MPI error, error stack: 
 
-This can  be fixed by adding  "srun" before the Python  interpreter in
-the script.  For example:
+This can be fixed by adding "srun" before the Python interpreter in the
+script.  For example:
 
     #!/bin/bash
     #SBATCH -p gputest --gres=gpu:k80:1 --mem 8G -t 15
@@ -155,8 +155,8 @@ the script.  For example:
 
 ### TensorBoard
 
-To visualize TensorFlow computations using  TensorBoard, a port on the
-local  computer  needs  to  be   forwarded  to  taito-gpu.   Login  to
+To visualize TensorFlow computations using TensorBoard, a port on the
+local computer needs to be forwarded to taito-gpu.  Login to
 taito-gpu.csc.fi and launch TensorBoard as follows:
 
     ssh -l USERNAME -L PORT:localhost:PORT taito-gpu.csc.fi
@@ -166,12 +166,11 @@ taito-gpu.csc.fi and launch TensorBoard as follows:
     export PYTHONPATH=$USERAPPL/tensorflow.1.9.0-py34/lib/python3.4/site-packages
     python3.4 -m tensorboard.main --logdir=LOGDIR --port=PORT
 
-Replace USERNAME  with your  taito-gpu user name,  PORT with  a freely
-selectable port  number (&gt;1023),  and  LOGDIR with the name  of the
-directory containing  TensorFlow event files. By  default, TensorBoard
+Replace USERNAME with your taito-gpu user name, PORT with a freely
+selectable port number (&gt;1023),  and LOGDIR with the name of the
+directory containing TensorFlow event files. By default, TensorBoard
 uses the port 6006, but using a different port is recommended to avoid
-overlaps.  (Python  3.4  and  TensorFlow 1.9.0  are  assumed  in  this
-example.)
+overlaps. (Python 3.4 and TensorFlow 1.9.0 are assumed in this example.)
 
 To access TensorBoard, point your web browser to *localhost:*PORT .
 
@@ -190,8 +189,8 @@ TensorFlow (among other frameworks).  It can be installed using pip.
 
 ### Installing CPU-only TensorFlow in Taito
 
-Using an  [Intel-optimized version] is recommended  for CPU-only usage
-of TensorFlow.
+Using an [Intel-optimized version] is recommended for CPU-only usage of
+TensorFlow.
 
 **Python 2**
 
@@ -237,8 +236,8 @@ servicedesk@csc.fi
 
 ### Manual
 
-Please       see      the       TensorFlow      documentation       at
-<https://www.tensorflow.org/> .
+Please see the TensorFlow documentation at <https://www.tensorflow.org/>
+.
 
 ------------------------------------------------------------------------
 

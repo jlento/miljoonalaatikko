@@ -36,7 +36,7 @@ Other executables provided by the module are:
 
 ## Example batch job
 
-SOFI3D  creates  a lot  of  a  auxiliary  files,  so in  this  example
+SOFI3D creates a lot of a auxiliary files, so in this example
 subdirectories are used in order to reduce clutter.
 
     #!/bin/bash
@@ -209,8 +209,8 @@ where the input file is sofi3D.json defined as:
                 "CHECKPT_FILE" : "tmp/checkpoint_sofi3D",
     }
 
-This example runs  sofi3D on 4 nodes  with 4 cpu:s on  each node (just
-for demonstration purposes, could also be run on a single node with 16
+This example runs sofi3D on 4 nodes with 4 cpu:s on each node (just for
+demonstration purposes, could also be run on a single node with 16
 cpu:s). For a single node job we would set
 
     --nodes=1, --ntasks-per-node=16, --partition=serial
@@ -219,40 +219,40 @@ cpu:s). For a single node job we would set
 
 ## Common errors
 
--   The variables NPROCX, NPROCY and  NPROCZ can be found under Domain
-    Decomposition in the  json file. Their product has to  be equal to
-    the  --ntasks   option,  otherwise  the  program   will  stop.  So
+-   The variables NPROCX, NPROCY and NPROCZ can be found under Domain
+    Decomposition in the json file. Their product has to be equal to the
+    --ntasks option, otherwise the program will stop. So
     NPROCX\*NPROCY\*NPROCZ=16 in the example run.
 
  
 
--   A json file must  be provided` sofi3D my_file.json`, otherwise the
-    program will  try read a  default sofi3D.json file in  the current
+-   A json file must be provided` sofi3D my_file.json`, otherwise the
+    program will try read a default sofi3D.json file in the current
     directory.
 
  
 
--   The  folders specified  in the  json file have  to exist  when the
+-   The folders specified in the json file have to exist when the
     program is run as it does not create them.
 
  
 
--    <span  class="word">The</span>  <span  class="word">output</span>
-    <span class="word">from</span> <span class="word">different</span>
-    <span  class="word">workers</span> <span  class="word">have</span>
-    <span  class="word">to</span>  <span class="word">be</span>  <span
-    class="word">accessible</span> <span  class="word">to</span> <span
-    class="word">each</span>  <span  class="word">other</span>,  <span
-    class="word">as</span>    <span   class="word">one</span>    <span
-    class="word">worker</span>  <span  class="word">will</span>  <span
-    class="word">merge</span>   <span  class="word">the</span>   <span
-    class="word">results</span>  <span class="word">from</span>  <span
-    class="word">the</span>   <span  class="word">other</span>   <span
-    class="word">workers</span>  <span  class="word">and</span>  <span
-    class="word">will</span>   <span  class="word">fail</span>   <span
-    class="word">if</span>    <span    class="word">it</span>    <span
-    class="word">can't</span>  <span class="word">access</span>  <span
-    class="word">all</span>   <span    class="word">the</span>   <span
+-   <span class="word">The</span> <span class="word">output</span> <span
+    class="word">from</span> <span class="word">different</span> <span
+    class="word">workers</span> <span class="word">have</span> <span
+    class="word">to</span> <span class="word">be</span> <span
+    class="word">accessible</span> <span class="word">to</span> <span
+    class="word">each</span> <span class="word">other</span>, <span
+    class="word">as</span> <span class="word">one</span> <span
+    class="word">worker</span> <span class="word">will</span> <span
+    class="word">merge</span> <span class="word">the</span> <span
+    class="word">results</span> <span class="word">from</span> <span
+    class="word">the</span> <span class="word">other</span> <span
+    class="word">workers</span> <span class="word">and</span> <span
+    class="word">will</span> <span class="word">fail</span> <span
+    class="word">if</span> <span class="word">it</span> <span
+    class="word">can't</span> <span class="word">access</span> <span
+    class="word">all</span> <span class="word">the</span> <span
     class="word">data</span>.
 
 ------------------------------------------------------------------------

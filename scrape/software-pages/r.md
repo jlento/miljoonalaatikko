@@ -2,22 +2,21 @@
 
 ### Description
 
-R  is  a  free  software environment  for  statistical  computing  and
-graphics.  The R language is  widely used among statisticians and data
-miners for developing  statistical software and data  analysis. R also
-provides  a wide  range  of tools  and methods  for  the analysis  and
-comprehension  of next  generation  sequencing  (NGS), microarray  and
-proteomics  data in  [Bioconductor]  packages.  For more  information,
-see [CRAN's R Manuals] .
+R is a free software environment for statistical computing and graphics.
+The R language is widely used among statisticians and data miners for
+developing statistical software and data analysis. R also provides a
+wide range of tools and methods for the analysis and comprehension of
+next generation sequencing (NGS), microarray and proteomics data in
+[Bioconductor] packages. For more information, see [CRAN's R Manuals] .
 
 In Taito you can find the Rmpi-package, which provides an interface to
-MPI APIs,  as well as foreach,  pbdMPI and of course  the base package
-parallel.  These packages  allow you  to  run R  programs in  parallel
-across multiple processors and to  accomplish a goal more quickly than
-running a single program on one machine.
+MPI APIs, as well as foreach, pbdMPI and of course the base package
+parallel. These packages allow you to run R programs in parallel across
+multiple processors and to accomplish a goal more quickly than running a
+single program on one machine.
 
-Taito also includes  RStudio which<span class="st"> is  a powerful and
-productive graphical user  interface for R. To  use RStudio</span> you
+Taito also includes RStudio which<span class="st"> is a powerful and
+productive graphical user interface for R. To use RStudio</span> you
 must have a graphical connection to the server. The recommended way is
 to use [NoMachine remote desktop]
 
@@ -50,19 +49,19 @@ Taito:
 
 ### Usage
 
-In Taito  and Taito-shell, to load  the latest installed version  of R
-use the following command:
+In Taito and Taito-shell, to load the latest installed version of R use
+the following command:
 
 `module load r-env`
 
-To load the  module with support for spatial libraries  such as rgdal,
+To load the module with support for spatial libraries such as rgdal,
 RSAGA, rgrass7 etc. use [rspatial-env] instead:
 
 `module load rspatial-env`
 
 Please note that execution of the command unloads all currently loaded
-modules. Thus,  if your  R session depends  on some  atypical modules,
-these need to be loaded after loading the R module.
+modules. Thus, if your R session depends on some atypical modules, these
+need to be loaded after loading the R module.
 
 To use a specific version use a command like this instead:
 
@@ -73,28 +72,28 @@ where x.y.z is replaced by the version number wanted.
 ### Interactive use {#yui_patched_v3_11_0_1_1435310747621_978 style="text-align: justify;"}
 
 The recommended way to use R interactively (without RStudio) is to run
-the session  on Taito-shell. After  logging to Taito-shell load  the R
+the session on Taito-shell. After logging to Taito-shell load the R
 module as explained above and start the R session simply by typing
 
 `R`
 
-For RStudio  it is recommended  to use [NoMachine remote  desktop]. To
-use RStudio this  way first log in to NoMachine  remote desktop, right
-click in the NoMachine desktop to bring up the Fluxbox menu and choose
-Applications &gt;  Taito-shell &gt;  Mathematics &gt; RStudio,  or GIS
-&gt; RStudio for GIS. You will  then be prompted for your CSC password
-and after giving  it, RStudio will start. Alternatively  you can start
-RStudio manually  by choosing CSC  local servers &gt;  Taito-shell and
-after giving your CSC password, typing
+For RStudio it is recommended to use [NoMachine remote desktop]. To use
+RStudio this way first log in to NoMachine remote desktop, right click
+in the NoMachine desktop to bring up the Fluxbox menu and choose
+Applications &gt; Taito-shell &gt; Mathematics &gt; RStudio, or GIS &gt;
+RStudio for GIS. You will then be prompted for your CSC password and
+after giving it, RStudio will start. Alternatively you can start RStudio
+manually by choosing CSC local servers &gt; Taito-shell and after giving
+your CSC password, typing
 
     module load r-env
     module load rstudio
     rstudio
 
-This is necessary  if you also need  to use some other  R version than
-the default, or some additional modules etc.
+This is necessary if you also need to use some other R version than the
+default, or some additional modules etc.
 
-You can run R without RStudio  on NoMachine remote desktop as well, by
+You can run R without RStudio on NoMachine remote desktop as well, by
 typing
 
     module load r-env
@@ -102,19 +101,18 @@ typing
 
 instead, after connecting to Taito-shell as above.
 
-An alternative  way is  to request  an interactive  job directly  in a
-computing node on Taito. Note  that getting resources may take minutes
-or hours  this way,  so using  Taito-shell is  almost always  a better
-solution.   Once  the  module  has  been loaded,  you  can  launch  an
-interactive   single-processor   R   session   using   the   following
-command. Please note that  you must set a limit on  the total run time
-of the  job and that  the R session  will be terminated  once hh:mm:ss
-time has exceeded.
+An alternative way is to request an interactive job directly in a
+computing node on Taito. Note that getting resources may take minutes or
+hours this way, so using Taito-shell is almost always a better solution.
+Once the module has been loaded, you can launch an interactive
+single-processor R session using the following command. Please note that
+you must set a limit on the total run time of the job and that the R
+session will be terminated once hh:mm:ss time has exceeded.
 
 `srun -n1 -t hh:mm:ss --x11=first --pty R`
 
 An interactive multi-processor R session can in turn be launched using
-one of the following two  commands (see below about parallel computing
+one of the following two commands (see below about parallel computing
 for more details):
 
 `srun -n5 -t hh:mm:ss --x11=first --pty Rmpi`
@@ -123,10 +121,10 @@ for more details):
 
 ### Serial batch jobs {#serial-batch-jobs style="text-align: justify;"}
 
-If you don't need to run interactively  and you need more than 4 cores
-or a lot  of memory (over 120GB)  you can run your  R-scripts in batch
-mode.  Below is sample batch job file for running a single-processor R
-batch   job  in   Taito.   Example  files   are   also  available   at
+If you don't need to run interactively and you need more than 4 cores or
+a lot of memory (over 120GB) you can run your R-scripts in batch mode.
+Below is sample batch job file for running a single-processor R batch
+job in Taito. Example files are also available at
 <https://github.com/CSCfi/CSC-R-examples>.
 
     #!/bin/bash -l
@@ -142,13 +140,12 @@ batch   job  in   Taito.   Example  files   are   also  available   at
     module load r-env
     srun Rscript --no-save myrscript.R
 
-In the  batch job example above,  one task (-ntasks=1) is  executed in
-the test queue (-p test). R  session will use one processor with total
-of 1 GB of memory (--mem-per-cpu=1000).  The total run time of the job
-is limited to five minutes (-t 0:05:00).
+In the batch job example above, one task (-ntasks=1) is executed in the
+test queue (-p test). R session will use one processor with total of 1
+GB of memory (--mem-per-cpu=1000). The total run time of the job is
+limited to five minutes (-t 0:05:00).
 
-You  can submit  the  batch job  file  to the  batch  job system  with
-command:
+You can submit the batch job file to the batch job system with command:
 
     sbatch batch_job_file.sh
 
@@ -156,14 +153,13 @@ For more details about the batch jobs see [Taito user guide].
 
 ### Parallel batch jobs {#parallel-batch-jobs style="text-align: justify;"}
 
-There  are several  R  packages you  might want  to  use for  parallel
-computing. In the following we explain  the use of Rmpi, parallel (the
-parts adapted from  snow), foreach together with doMPI,  and pbdMPI on
-Taito, but when using any of  them, please also read the corresponding
+There are several R packages you might want to use for parallel
+computing. In the following we explain the use of Rmpi, parallel (the
+parts adapted from snow), foreach together with doMPI, and pbdMPI on
+Taito, but when using any of them, please also read the corresponding
 manuals and vignettes. With all of these packages the needed batch job
-file  is   similar  up  to   the  execution  command,  and   is  shown
-below.      Example     files      are      also     available      at
-<https://github.com/CSCfi/CSC-R-examples>.
+file is similar up to the execution command, and is shown below. Example
+files are also available at <https://github.com/CSCfi/CSC-R-examples>.
 
     #!/bin/bash -l
     #SBATCH -J r_multi_proc
@@ -177,25 +173,25 @@ below.      Example     files      are      also     available      at
 
     module load r-env
 
-In this example, 8 processors  are reserved (--ntasks=8) from one node
-(--nodes=1).  The  job  will will  use  a  total  of  8 GB  of  memory
+In this example, 8 processors are reserved (--ntasks=8) from one node
+(--nodes=1). The job will will use a total of 8 GB of memory
 (--mem-per-cpu=1000). The total run time of the job is limited to five
 minutes (-t 00:05:00).
 
 #### Rmpi {#rmpi style="text-align: justify;"}
 
-Rmpi is  the low  level interface  from R  to the  MPI library  of the
-system.  The  execution command that needs  to be added to  the end of
-the batch job file given above is like this:
+Rmpi is the low level interface from R to the MPI library of the system.
+The execution command that needs to be added to the end of the batch job
+file given above is like this:
 
     srun Rmpi --no-save --slave -f myrscript.R
 
-With this approach,  only the master process runs the  given R script,
-and  the function  calls from  the  Rmpi package  are available.  The 
---slave  argument  is optional  and  will  prevent all  the  different
-processes from printing out the  welcome message etc. Despite the term
-it  has nothing  to do  with the  master-slave structure  of the  Rmpi
-approach. Here is an example script:
+With this approach, only the master process runs the given R script, and
+the function calls from the Rmpi package are available. The  --slave
+argument is optional and will prevent all the different processes from
+printing out the welcome message etc. Despite the term it has nothing to
+do with the master-slave structure of the Rmpi approach. Here is an
+example script:
 
     funtorun<-function(k) {
       system.time(sort(runif(1e7)))
@@ -210,19 +206,19 @@ approach. Here is an example script:
 
 #### parallel (snow)
 
-The  parallel package  is included  in  the base  installation and  is
-derived from the  packages multicore (now discontinued)  and snow. The
-MPI cluster  creation is handled by  snow, but any other  package that
-depends  on the  parallel package  for handling  the cluster  (such as
-runjags) should accept  those. The execution command that  needs to be
-added to the end of the batch job file given above is like this:
+The parallel package is included in the base installation and is derived
+from the packages multicore (now discontinued) and snow. The MPI cluster
+creation is handled by snow, but any other package that depends on the
+parallel package for handling the cluster (such as runjags) should
+accept those. The execution command that needs to be added to the end of
+the batch job file given above is like this:
 
     srun RMPISNOW --no-save --slave -f myrscript.R
 
-Like with  Rmpi, only the  master process  continues to run  the given
-script. The   --slave argument  is optional and  will prevent  all the
-different processes  from printing  out the  welcome message  etc. The
-script  should contain  a getMPIcluster  call which  will produce  the
+Like with Rmpi, only the master process continues to run the given
+script. The  --slave argument is optional and will prevent all the
+different processes from printing out the welcome message etc. The
+script should contain a getMPIcluster call which will produce the
 reference to the cluster that can be given to various other functions,
 like in this example:
 
@@ -239,20 +235,20 @@ like in this example:
 
 #### foreach and doMPI
 
-The foreach  package implements  a for-loop  that uses  iterators, and
-also  allows for  parallel execution  using its  %dopar% operator.  It
-comes with  several "parallel  backends", of  which the  doMPI pacakge
-should be used on Taito. The  execution command that needs to be added
-to the end of the batch job file given above is like this:
+The foreach package implements a for-loop that uses iterators, and also
+allows for parallel execution using its %dopar% operator. It comes with
+several "parallel backends", of which the doMPI pacakge should be used
+on Taito. The execution command that needs to be added to the end of the
+batch job file given above is like this:
 
     srun Rscript --no-save --slave myrscript.R
 
-Note that this  starts a number of  R sessions equal to  the number of
+Note that this starts a number of R sessions equal to the number of
 reserved cores that all start to execute the given script (unlike with
-the Rmpi  and RMPISNOW above, where  only the master does  that). The 
---slave  argument  is optional  and  will  prevent all  the  different
+the Rmpi and RMPISNOW above, where only the master does that). The 
+--slave argument is optional and will prevent all the different
 processes from printing out the welcome message etc. The script should
-include a call to startMPIcluster very  close to the beginning, as all
+include a call to startMPIcluster very close to the beginning, as all
 the processes will execute everything before that call, while only the
 master continues after that call. An example:
 
@@ -277,29 +273,29 @@ TBA
 ### Installing packages
 
 The simplest way to see if a needed package is installed is to try and
-load it  with the  `library()` command.  For missing  package requests
-please  contact   CSC's  Service   Desk  at  servicedesk   at  csc.fi.
+load it with the `library()` command. For missing package requests
+please contact CSC's Service Desk at servicedesk at csc.fi.
 Alternatively you can also install packages yourself using R command
 
     install.packages("pkgname")
 
-in  an  interactive session  or  by  using RStudio's  menus.  Packages
+in an interactive session or by using RStudio's menus. Packages
 installed this way will be stored in your home directory so in case of
-large packages  and/or packages  you know  to be  in wider  use please
+large packages and/or packages you know to be in wider use please
 consider contacting the Service Desk.
 
 ### Removing packages
 
-Sometimes version  conflicts crop  up between user  installed packages
-and the  ones installed for  all. Usually the simplest way  to resolve
-such  conflicts  is to  remove  the  user  installed ones  and  either
-re-install them or request a system installation from Service Desk. To
-see which paths R searches for packages , use
+Sometimes version conflicts crop up between user installed packages and
+the ones installed for all. Usually the simplest way to resolve such
+conflicts is to remove the user installed ones and either re-install
+them or request a system installation from Service Desk. To see which
+paths R searches for packages , use
 
     .libPaths()
 
 Usually this shows a list of two paths, one to user's on libraries and
-the second to the system libraries.  In that case, to see the packages
+the second to the system libraries. In that case, to see the packages
 installed by the user, use
 
     installed.packages(lib.loc=.libPaths()[1])
@@ -308,13 +304,12 @@ and to remove specific packages, use a command like
 
     remove.packages("name_of_package",lib=.libPaths()[1])
 
-where  you  replace name\_of\_package  with  the  actual name  of  the
-package.
+where you replace name\_of\_package with the actual name of the package.
 
 #### More information {#yui_patched_v3_11_0_1_1435310747621_1027}
 
-More information about  R and Bionconductor can be found  from the [R]
-and [Bionconductor] home page.
+More information about R and Bionconductor can be found from the [R] and
+[Bionconductor] home page.
 
 ------------------------------------------------------------------------
 
@@ -328,25 +323,25 @@ Mathematics and Statistics
 
 #### References {#yui_patched_v3_11_0_1_1435310747621_1075}
 
-When you use  R, please cite. Please note  that corresponding citation
-is available at R by typing *citation()*.
+When you use R, please cite. Please note that corresponding citation is
+available at R by typing *citation()*.
 
-R  Development Core  Team (2008).  R: A  language and  environment for
+R Development Core Team (2008). R: A language and environment for
 statistical computing. R Foundation for Statistical Computing, Vienna,
 Austria. ISBN 3-900051-07-0, URL http://www.R-project.org.
 
-R  Core Team  (2013). R:  A language  and environment  for statistical
-computing.   R   Foundation   for   Statistical   Computing,   Vienna,
-Austria. ISBN 3-900051-07-0, URL http://www.R-project.org/.
+R Core Team (2013). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria. ISBN
+3-900051-07-0, URL http://www.R-project.org/.
 
 If you use Bionconductor, please cite:
 
-Gentleman RC,  Carey VJ, Bates  DM, Bolstad  B, Dettling M,  Dudoit S,
-Ellis B,  Gautier L,  Ge Y, Gentry  J, Hornik K,  Hothorn T,  Huber W,
-Iacus S, Irizarry R, Leisch F,  Li C, Maechler M, Rossini AJ, Sawitzki
-G, Smith C,  Smyth G, Tierney L, Yang JY,  Zhang J. Bioconductor: open
-software     development     for     computational     biology     and
-bioinformatics. Genome biology 5.10 (2004): R80.
+Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, Ellis
+B, Gautier L, Ge Y, Gentry J, Hornik K, Hothorn T, Huber W, Iacus S,
+Irizarry R, Leisch F, Li C, Maechler M, Rossini AJ, Sawitzki G, Smith C,
+Smyth G, Tierney L, Yang JY, Zhang J. Bioconductor: open software
+development for computational biology and bioinformatics. Genome biology
+5.10 (2004): R80.
 
 ------------------------------------------------------------------------
 

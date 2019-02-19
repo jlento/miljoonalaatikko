@@ -2,7 +2,7 @@
 
 ### Description
 
-VisIt   is an  Open   Source,   versatile   software  for   scientific
+VisIt is an Open Source, versatile software for scientific
 visualization.
 
 ------------------------------------------------------------------------
@@ -19,7 +19,7 @@ Taito-GPU: 2.12.3
 
 ### Usage
 
-The easiest way to run VisIt  is to login to **Taito-shell**, load the
+The easiest way to run VisIt is to login to **Taito-shell**, load the
 corresponding environment module, and start VisIt
 
     module load visit
@@ -29,33 +29,33 @@ corresponding environment module, and start VisIt
 
 **Parallel use**
 
-VisIt  can  be  run  interactively in  parallel  configuration,  using
-several processors.  Issue the following from  **Taito-shell** (rather
-than from Taito, to avoid using a login node)
+VisIt can be run interactively in parallel configuration, using several
+processors. Issue the following from **Taito-shell** (rather than from
+Taito, to avoid using a login node)
 
     module load visit
     visit -l srun -np 6 -p serial -t 00:30:00 -la --mem-per-cpu=2000
 
-The job reservation parameters are:  -np *number of cores*, -p *queue*
-(serial   is    OK   for   up    to   24   processors),    -t   *time*
-(hours:minutes:seconds), -la --mem-per-cpu  *memory per processor* (in
+The job reservation parameters are: -np *number of cores*, -p *queue*
+(serial is OK for up to 24 processors), -t *time*
+(hours:minutes:seconds), -la --mem-per-cpu *memory per processor* (in
 MB). Note that running VisIt with many processors does not necessarily
-bring  speed  benefits. It  will  depend  on VisIt's  particular  data
-reader, if  (and to what extent)  the data can be  distributed between
-the processors.
+bring speed benefits. It will depend on VisIt's particular data reader,
+if (and to what extent) the data can be distributed between the
+processors.
 
  
 
 **Using host profile of local VisIt installation**
 
-Local  VisIt  host profiles  can  be  used  to  launch jobs  in  Taito
-computing nodes. Graphics get rendered with Taito CPUs and streamed to
-local PC.  Local and remote VisIt versions have to match.
+Local VisIt host profiles can be used to launch jobs in Taito computing
+nodes. Graphics get rendered with Taito CPUs and streamed to local PC.
+Local and remote VisIt versions have to match.
 
-An  example of  a working  host profile  is screen  captured in  links
-below.  Note that job reservation parameters not directly available as
-profile options should be  given as *Advanced/Launcher arguments*, see
-the last screen capture.
+An example of a working host profile is screen captured in links below.
+Note that job reservation parameters not directly available as profile
+options should be given as *Advanced/Launcher arguments*, see the last
+screen capture.
 
 [Taito host profile, screen capture 1][]  
 [Taito host profile, screen capture 2][]  
@@ -66,16 +66,16 @@ the last screen capture.
 
 **With graphics card**
 
-It  is also  possible to  speed  up interaction  by using  Taito-GPU's
+It is also possible to speed up interaction by using Taito-GPU's
 graphics cards. To run VisIt using many CPUs, while rendering with one
 GPU, follow the instructions in [Taito User Guide, chapter 6.9]. Login
-to **taito-gpu.csc.fi**  and submit the  batch script provided  in the
-chapter 6.9. In the script, reserve one  GPU in one GPU node, and CPUs
+to **taito-gpu.csc.fi** and submit the batch script provided in the
+chapter 6.9. In the script, reserve one GPU in one GPU node, and CPUs
 and memory according to your needs.
 
-When  launching  VisIt via  *vglrun*  command  in Taito-GPU's  virtual
-desktop window, state explicitely the  launch program (*srun*) and the
-number of CPUs allocated to your job (say 6 processors)
+When launching VisIt via *vglrun* command in Taito-GPU's virtual desktop
+window, state explicitely the launch program (*srun*) and the number of
+CPUs allocated to your job (say 6 processors)
 
     vglrun visit -l srun -np 6
 
@@ -85,20 +85,20 @@ Time and memory, allocated to your job, will apply automatically.
 
 **Non-interactive parallel batch job, with Python script**
 
-Login to **Taito**  and copy the provided two scripts  (below) to your
-home directory. Edit  your resource requirements and  submit the SLURM
-batch   script    *visit\_mpi\_job.sh*.   It   uses    Python   script
+Login to **Taito** and copy the provided two scripts (below) to your
+home directory. Edit your resource requirements and submit the SLURM
+batch script *visit\_mpi\_job.sh*. It uses Python script
 *col\_per\_proc.py* to open the data file *multi\_ucd3d.silo* (example
-file  that  comes with  VisIt),  setting  viewpoint and  image  output
+file that comes with VisIt), setting viewpoint and image output
 parameters, and rendering a pseudocolor plot into a PNG image, colored
 by the processor ID. The example batch job uses 8 CPUs, so the data is
 divided into 8 volumes, and each volume is processed by one processor.
 (Note that not all data types are suitable for parallelisation.)
 
-To modify  the Python script for  other uses, see the  instructions in
-the latest [VisIt Python Interface Manual]. Note that you can instruct
-VisIt  to  create  Python  scripts   from  your  actions  in  the  GUI
-(Controls/Command, Record).
+To modify the Python script for other uses, see the instructions in the
+latest [VisIt Python Interface Manual]. Note that you can instruct VisIt
+to create Python scripts from your actions in the GUI (Controls/Command,
+Record).
 
 ***visit\_mpi\_job.sh* (SLURM batch script)**
 
@@ -194,7 +194,7 @@ servicedesk@csc.fi
 
 ### Manual
 
--    [VisIt homepage  (source code,  binaries, manuals  and tutorials,
+-   [VisIt homepage (source code, binaries, manuals and tutorials,
     example data files)]
 -   [User community web site]
 

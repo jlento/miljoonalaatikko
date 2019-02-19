@@ -2,14 +2,14 @@
 
 ### Description
 
-MACS (Model-based  Analysis of ChIP-Seq)  is an analysis tool  for NGS
-ChIP-Seq data.  MACS empirically  models the  length of  the sequenced
-ChIP  fragments and  uses  it  to improve  the  spatial resolution  of
-predicted binding sites. 
+MACS (Model-based Analysis of ChIP-Seq) is an analysis tool for NGS
+ChIP-Seq data. MACS empirically models the length of the sequenced ChIP
+fragments and uses it to improve the spatial resolution of predicted
+binding sites. 
 
-MACS also uses  a dynamic Poisson distribution  to effectively capture
-local biases in  the genome sequence, allowing for  more sensitive and
-robust  prediction. MACS  compares can  be used  for ChIP-Seq  with or
+MACS also uses a dynamic Poisson distribution to effectively capture
+local biases in the genome sequence, allowing for more sensitive and
+robust prediction. MACS compares can be used for ChIP-Seq with or
 without control samples.
 
 ------------------------------------------------------------------------
@@ -40,9 +40,9 @@ or
 
     macs2
 
-MACS can  be run  interactively in  Taito-shell or as  a batch  job in
-Taito.  Check [chapter 3] of the Taito User Guide for more information
-on running batch jobs.
+MACS can be run interactively in Taito-shell or as a batch job in Taito.
+Check [chapter 3] of the Taito User Guide for more information on
+running batch jobs.
 
 ------------------------------------------------------------------------
 

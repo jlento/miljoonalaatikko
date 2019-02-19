@@ -1,14 +1,14 @@
 # 5. Moving data between CSC and local environment {#moving-data-between-csc-and-local-environment style="margin-bottom: 0in;"}
 
-The  disk environment  of  CSC allows  user to  deal  with very  large
-datasets. However, transferring large datasets  to CSC can take a long
-time. Data transfer performance  depends mostly on available bandwidth
-and distance  or latency of  the connection. Recent  operating systems
-have automatic TCP  buffer tuning feature that  improves data transfer
-performance.  Firewalls   and  VPN   tunnels  may   cause  performance
-degradation.  Transferring  a 1  GB  file  to  or from  CSC  computing
-environment should usually  not take more than a minute  or two if the
-organization's network  is connected  to Funet.  Contact the  local IT
+The disk environment of CSC allows user to deal with very large
+datasets. However, transferring large datasets to CSC can take a long
+time. Data transfer performance depends mostly on available bandwidth
+and distance or latency of the connection. Recent operating systems have
+automatic TCP buffer tuning feature that improves data transfer
+performance. Firewalls and VPN tunnels may cause performance
+degradation. Transferring a 1 GB file to or from CSC computing
+environment should usually not take more than a minute or two if the
+organization's network is connected to Funet. Contact the local IT
 support in case of problems.
 
 ## [5.1 Copying files from linux and Mac OSX machines with scp] {#copying-files-from-linux-and-mac-osx-machines-with-scp style="margin-bottom: 0in;"}

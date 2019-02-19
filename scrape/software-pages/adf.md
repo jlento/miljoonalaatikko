@@ -2,12 +2,12 @@
 
 ### Description
 
-ADF  (Amsterdam Density  Functional) is  suitable for  calculations on
-atoms and molecules (in gas phase or solution). It can be used for the
-study of  such diverse fields  as molecular spectroscopy,  organic and
-inorganic chemistry, crystallography and pharmacochemistry.
+ADF (Amsterdam Density Functional) is suitable for calculations on atoms
+and molecules (in gas phase or solution). It can be used for the study
+of such diverse fields as molecular spectroscopy, organic and inorganic
+chemistry, crystallography and pharmacochemistry.
 
-A separate program in the ADF  package, **BAND**, is available for the
+A separate program in the ADF package, **BAND**, is available for the
 study of periodic systems: crystals, surfaces, and polymers.
 
 **News!**
@@ -16,8 +16,7 @@ study of periodic systems: crystals, surfaces, and polymers.
 extended the license to cover three new modules:**  
  
 
-**\*  [Quantum Espresso,  including  a GUI  for  input generation  and
-output
+**\* [Quantum Espresso, including a GUI for input generation and output
 visualization]  
 \* [COSMO-RS]  
 \* [ReaxFF]  
@@ -26,10 +25,10 @@ Depending on the level of usage, we might prolong the extended license
 to the subsequent licensing period.**
 
 The present license also includes the Graphical User Interfaces to ADF
-and  BAND.   For  details  about  installing the  GUI  on  your  local
+and BAND.  For details about installing the GUI on your local
 workstation please contact [Nino Runeberg].
 
-The GUIs  can also  be conveniently  used from  CSC's servers  via the
+The GUIs can also be conveniently used from CSC's servers via the
 [FreeNX Remote Desktop.]
 
 The settings for the SLURM batch jobs launced via ADFjobs look like:
@@ -67,14 +66,14 @@ In order to set the interactive ADF environment  issue the command:
 
 **Taito**
 
-If you  want to use  the  ADF  GUI's (adfinput  , adfview etc.)  it is
+If you want to use the  ADF  GUI's (adfinput , adfview etc.) it is
 recommended to run these on the compute nodes
 
 `salloc -p serial -n 1 -t 02:00:00 srun --x11=first adfview`
 
-To perform an  ADF calculation, you need to prepare  a batch job file.
-There  is no  difference between  a parallel  or serial  (1 CPU)  job,
-however,  except for  the number  of allocated  CPU's, of  course. The
+To perform an ADF calculation, you need to prepare a batch job file.
+There is no difference between a parallel or serial (1 CPU) job,
+however, except for the number of allocated CPU's, of course. The
 example below shows one geometry optimization cycle of
 Tetrapropylammonium (TPA) in a ZSM-5 channel.  
   
@@ -106,40 +105,39 @@ Chemistry
 
 For calculations with the molecular ADF program, version 2017:
 
-:   G.te  Velde, F.M. Bickelhaupt,  E.J. Baerends, C.  Fonseca Guerra,
-    S.J.A.  van Gisbergen,  J.G. Snijders  and T.  Ziegler, *Chemistry
-    with ADF*, [Journal of Computational Chemistry 22, 931 (2001)]
+:   G.te Velde, F.M. Bickelhaupt, E.J. Baerends, C. Fonseca Guerra,
+    S.J.A. van Gisbergen, J.G. Snijders and T. Ziegler, *Chemistry with
+    ADF*, [Journal of Computational Chemistry 22, 931 (2001)]
 
-    C.Fonseca Guerra,  J.G. Snijders, G.  te Velde and  E.J. Baerends,
-    *Towards an  order-N DFT method*, [Theoretical  Chemistry Accounts
-    99, 391 (1998)]
+    C.Fonseca Guerra, J.G. Snijders, G. te Velde and E.J. Baerends,
+    *Towards an order-N DFT method*, [Theoretical Chemistry Accounts 99,
+    391 (1998)]
 
-    ADF2017,   SCM,   Theoretical   Chemistry,   Vrije   Universiteit,
-    Amsterdam, The Netherlands,  <http://www.scm.com>. Optionally, you
-    may  add   the  following   list  of  authors   and  contributors:
-    E.J.   Baerends,  T.    Ziegler,  A.J.   Atkins,  J.   Autschbach,
-    O. Baseggio,  D. Bashford,  A.  Bérces,  F.M. Bickelhaupt,  C. Bo,
-    P.M. Boerrigter, L.  Cavallo, C.  Daul, D.P.  Chong, D.V. Chulhai,
-    L.  Deng,  R.M.  Dickson,  J.M.  Dieterich,  D.E.  Ellis,  M.  van
-    Faassen, L. Fan,  T.H. Fischer, C.  Fonseca  Guerra, M. Franchini,
-    A. Ghysels, A. Giammona, S.J.A. van Gisbergen, A. Goez, A.W. Götz,
-    J.A.  Groeneveld,   O.V.  Gritsenko,  M.   Grüning,   S.  Gusarov,
-    F.E. Harris,  P. van den  Hoek, Z.  Hu, C.R.  Jacob,  H. Jacobsen,
-    L. Jensen,  L. Joubert,  J.W. Kaminski, G.  van Kessel,  C. König,
-    F.  Kootstra,   A.  Kovalenko,  M.V.  Krykunov,   E.  van  Lenthe,
-    D.A.  McCormack,   A.  Michalak,  M.  Mitoraj,   S.M.  Morton,  J.
-    Neugebauer,   V.P.   Nicu,   L.   Noodleman,   V.P.   Osinga,   S.
-    Patchkovskii,  M.  Pavanello,   C.A.  Peeples,  P.H.T.  Philipsen,
-    D. Post, C.C.  Pye, H. Ramanantoanina, P. Ramos,  W. Ravenek, J.I.
-    Rodríguez, P. Ros,  R. Rüger, P.R.T. Schipper, D.  Schlüns, H. van
-    Schoot,  G.   Schreckenbach,  J.S.  Seldenthuis,  M.   Seth,  J.G.
-    Snijders, M. Solà, M. Stener,  M. Swart, D. Swerhone, V. Tognetti,
-    G.  te Velde,  P. Vernooijs, L. Versluis, L.  Visscher, O. Visser,
-    F.   Wang, T.A.  Wesolowski, E.M.  van Wezenbeek,  G. Wiesenekker,
-    S.K.  Wolff, T.K. Woo, A.L. Yakovlev
+    ADF2017, SCM, Theoretical Chemistry, Vrije Universiteit, Amsterdam,
+    The Netherlands, <http://www.scm.com>. Optionally, you may add the
+    following list of authors and contributors: E.J. Baerends, T.
+    Ziegler, A.J. Atkins, J. Autschbach, O. Baseggio, D. Bashford, A.
+    Bérces, F.M. Bickelhaupt, C. Bo, P.M. Boerrigter, L. Cavallo, C.
+    Daul, D.P. Chong, D.V. Chulhai, L. Deng, R.M. Dickson, J.M.
+    Dieterich, D.E. Ellis, M. van Faassen, L. Fan, T.H. Fischer, C.
+    Fonseca Guerra, M. Franchini, A. Ghysels, A. Giammona, S.J.A. van
+    Gisbergen, A. Goez, A.W. Götz, J.A. Groeneveld, O.V. Gritsenko, M.
+    Grüning, S. Gusarov, F.E. Harris, P. van den Hoek, Z. Hu, C.R.
+    Jacob, H. Jacobsen, L. Jensen, L. Joubert, J.W. Kaminski, G. van
+    Kessel, C. König, F. Kootstra, A. Kovalenko, M.V. Krykunov, E. van
+    Lenthe, D.A. McCormack, A. Michalak, M. Mitoraj, S.M. Morton, J.
+    Neugebauer, V.P. Nicu, L. Noodleman, V.P. Osinga, S.
+    Patchkovskii, M. Pavanello, C.A. Peeples, P.H.T. Philipsen, D. Post,
+    C.C. Pye, H. Ramanantoanina, P. Ramos, W. Ravenek, J.I.
+    Rodríguez, P. Ros, R. Rüger, P.R.T. Schipper, D. Schlüns, H. van
+    Schoot, G. Schreckenbach, J.S. Seldenthuis, M. Seth, J.G.
+    Snijders, M. Solà, M. Stener, M. Swart, D. Swerhone, V. Tognetti, G.
+    te Velde, P. Vernooijs, L. Versluis, L. Visscher, O. Visser, F.
+    Wang, T.A. Wesolowski, E.M. van Wezenbeek, G. Wiesenekker, S.K.
+    Wolff, T.K. Woo, A.L. Yakovlev
 
-[Detailed instructions on  how to properly cite  results obtained with
-the ADF/BAND package.]
+[Detailed instructions on how to properly cite results obtained with the
+ADF/BAND package.]
 
 ------------------------------------------------------------------------
 
@@ -149,21 +147,20 @@ the ADF/BAND package.]
 
 ### Manual
 
--    The ADF  and  BAND  manuals are  available  in different  formats
-    online:
+-   The ADF and BAND manuals are available in different formats online:
     -   [Online docs]
--   [Course  material from the ADF  course at CSC, 2006].  Courtesy of
-    Dr.  Michael Patzschke.
+-   [Course material from the ADF course at CSC, 2006]. Courtesy of Dr.
+    Michael Patzschke.
 -   Additional information can be found at the [ADF home page].
 -   There is also a [mailing list] for ADF and BAND.
 
 #### Licensing restrictions
 
--    You may  use  the Software  exclusively  for non-profit  research
+-   You may use the Software exclusively for non-profit research
     purposes.
--    Only users  from academic  (i.e. degree-granting)  institutes are
+-   Only users from academic (i.e. degree-granting) institutes are
     allowed to use the Software
--    Please read  the ADF/BAND  standard [End  User License  Agreement
+-   Please read the ADF/BAND standard [End User License Agreement
     (EULA)] for a complete description
 
 ------------------------------------------------------------------------

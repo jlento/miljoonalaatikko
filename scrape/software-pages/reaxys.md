@@ -2,7 +2,7 @@
 
 ### Description
 
-No  longer available  via  CSC,  please consult  the  library at  your
+No longer available via CSC, please consult the library at your
 university.
 
 ------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 ### Description
 
-Trimmomatic performs a  variety of useful trimming  tasks for illumina
+Trimmomatic performs a variety of useful trimming tasks for illumina
 paired-end and single ended data.
 
 ------------------------------------------------------------------------
@@ -23,55 +23,52 @@ In Taito, trimmomatic can be launched with command:
     trimmomatic
 
 This command corresponds the trimmoamatic launch command:  
-*java                                                             -jar
-/appl/bio/trimmomatic/Trimmomatic-0.33/trimmomatic-0.33.jar*
+*java -jar /appl/bio/trimmomatic/Trimmomatic-0.33/trimmomatic-0.33.jar*
 
-The sample adapter sequence sets  provided be trimmomatic can be found
-in Taito in directory: **/appl/bio/trimmomatic/adapters**.
+The sample adapter sequence sets provided be trimmomatic can be found in
+Taito in directory: **/appl/bio/trimmomatic/adapters**.
 
-The selection  of trimming steps  and their associated  parameters are
+The selection of trimming steps and their associated parameters are
 supplied on the trimmomatic command line.
 
 The current trimming steps are:
 
--   ILLUMINACLIP:  Cut adapter  and other  illumina-specific sequences
-    from the read.
+-   ILLUMINACLIP: Cut adapter and other illumina-specific sequences from
+    the read.
 -   SLIDINGWINDOW: Perform a sliding window trimming, cutting once the
     average quality within the window falls below a threshold.
--   LEADING: Cut bases  off the start of a read,  if below a threshold
+-   LEADING: Cut bases off the start of a read, if below a threshold
     quality
--   TRAILING: Cut  bases off the end  of a read, if  below a threshold
+-   TRAILING: Cut bases off the end of a read, if below a threshold
     quality
 -   CROP: Cut the read to a specified length
--   HEADCROP: Cut the specified number  of bases from the start of the
+-   HEADCROP: Cut the specified number of bases from the start of the
     read
 -   MINLEN: Drop the read if it is below a specified length
 -   TOPHRED33: Convert quality scores to Phred-33
 -   TOPHRED64: Convert quality scores to Phred-64
 
-Trimmomatic works with  FASTQ (using phred + 33 or  phred + 64 quality
-scores, depending on the  Illumina pipeline used), either uncompressed
-or gzipp'ed FASTQ.  Use of gzip format is determined  based on the .gz
+Trimmomatic works with FASTQ (using phred + 33 or phred + 64 quality
+scores, depending on the Illumina pipeline used), either uncompressed or
+gzipp'ed FASTQ. Use of gzip format is determined based on the .gz
 extension.
 
-For *single-ended*(SE)  data,  one  input  and  one  output  file  are
-specified, plus the processing  steps. For *paired-end* (PE) data, two
-input files  are specified,  and 4  output files,  2 for  the 'paired'
-output  where   both  reads  survived   the  processing,  and   2  for
-corresponding 'unpaired' output where a read survived, but the partner
-read did not.
+For *single-ended*(SE) data, one input and one output file are
+specified, plus the processing steps. For *paired-end* (PE) data, two
+input files are specified, and 4 output files, 2 for the 'paired' output
+where both reads survived the processing, and 2 for corresponding
+'unpaired' output where a read survived, but the partner read did not.
 
-Note that by default Trimmomatic tries  to use all the computing cores
-of the  server where  it is  launched. In Taito  this approach  is not
-feasible and **you should  always use command line  option -threads to
-limit   the    number   of   cores    to   be   used**.    Note   that
-the *-threads* option  shuld  be  given  immediately  after  the  mode
-selection (SE or PE).
+Note that by default Trimmomatic tries to use all the computing cores of
+the server where it is launched. In Taito this approach is not feasible
+and **you should always use command line option -threads to limit the
+number of cores to be used**. Note that the *-threads* option shuld be
+given immediately after the mode selection (SE or PE).
 
-In taito-shell, this value should be  four or less. In the Taito login
-nodes, you should use just one core  and in the batch jobs, this value
-should be  equal to  the number  of cores  reserved ( --cpus-per-task)
-(max.  16 cores).
+In taito-shell, this value should be four or less. In the Taito login
+nodes, you should use just one core and in the batch jobs, this value
+should be equal to the number of cores reserved ( --cpus-per-task) (max.
+16 cores).
 
 A sample trimmomatic command for taito-shell ( character: \\ indicates
 that the command line continues to the next row) :
@@ -81,8 +78,7 @@ that the command line continues to the next row) :
     ILLUMINACLIP:/appl/bio/trimmomatic/adapters/TruSeq3-PE.fa:2:30:10 \
     LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 
-Same task  as a  batch job  reserving 8 cores,  12 hours  and 8  GB of
-memory:
+Same task as a batch job reserving 8 cores, 12 hours and 8 GB of memory:
 
     #!/bin/bash
     #SBATCH -J trimmomatic

@@ -2,18 +2,18 @@
 
 ### Description
 
-This software implements  MSMC, a method to infer  population size and
+This software implements MSMC, a method to infer population size and
 gene flow from multiple genome sequences.
 
 In short, msmc can infer
 
 -   the scaled population size of a single population as a function of
     time
--    the  timing and  nature  of  population separations  between  two
+-   the timing and nature of population separations between two
     populations
 
-from multiple phased  haplotypes. When only two  haplotypes are given,
-MSMC  is similar  to PSMC,  and  we call  it PSMC'  because of  subtle
+from multiple phased haplotypes. When only two haplotypes are given,
+MSMC is similar to PSMC, and we call it PSMC' because of subtle
 differences in the method and the underlying model, which allows PSMC'
 to infer more accurately the recombination rate.
 
@@ -35,7 +35,7 @@ To load MSMC:
     module load python-env/3.4.1
     module load msmc
 
-Note that the MSMC module can  also be loaded directly. Python is only
+Note that the MSMC module can also be loaded directly. Python is only
 needed if you wish to use the msmc-tools scripts (bamCaller.py etc)
 
 ------------------------------------------------------------------------
@@ -48,7 +48,7 @@ Biosciences
 
 ### References
 
-Inferring human  population size and separation  history from multiple
+Inferring human population size and separation history from multiple
 genome sequences. Stephan Schiffels & Richard Durbin, [Nature Genetics
 46, 919–925 (2014)] doi:10.1038/ng.3015
 

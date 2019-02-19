@@ -1,43 +1,42 @@
 # 2.7 Linux bash scripts   {#linux-bash-scripts align="JUSTIFY"}
 
   
-One  way  of utilizing  the  flexibility  of  linux is  using  command
-scripts.  A command  script is simply a file, which  contains a set of
-normal   linux  commands   that   the  command   shell  will   perform
-automatically  in  the  given  order.  Compared  to  real  programming
-languages,  like python,  perl  or  c, programming  with linux  (bash,
-tcsh, csh or sh) is computationally rather ineffective. However, often
-handy linux scripts can be constructed in few minutes. You do not have
-to know  too much about command  scripting to be able  to write simple
-programs that save a lot of work.
+One way of utilizing the flexibility of linux is using command scripts.
+A command script is simply a file, which contains a set of normal linux
+commands that the command shell will perform automatically in the given
+order. Compared to real programming languages, like python, perl  or c,
+programming with linux (bash, tcsh, csh or sh) is computationally rather
+ineffective. However, often handy linux scripts can be constructed in
+few minutes. You do not have to know too much about command scripting to
+be able to write simple programs that save a lot of work.
 
 ## [][1]2.7.1 Constructing a script file
 
-A  script file  is a  simple text  file that  can be  constructed with
-normal text  editors like  *nano*, *emacs*  or *vi*.  To create  a new
-script file, type for example:
+A script file is a simple text file that can be constructed with normal
+text editors like *nano*, *emacs* or *vi*. To create a new script file,
+type for example:
 
     nano my_test.script
 
-A script  file usually starts  with a  command line which  defines the
-command shell to be  used. In guide we use *bash*  shell, which is the
+A script file usually starts with a command line which defines the
+command shell to be used. In guide we use *bash* shell, which is the
 default command shell at CSC. The bash defining row is:
 
     #!/bin/bash
 
-After  that you  add  the  linux commands,  you  wish  to perform.  In
-practice, just type to the file  the commands, that you would normally
-use to do the task in active command shell. For example, the following
-script can be used to create a sub directory *"mapfiles*" and copy all
-.*map* files to there
+After that you add the linux commands, you wish to perform. In practice,
+just type to the file the commands, that you would normally use to do
+the task in active command shell. For example, the following script can
+be used to create a sub directory *"mapfiles*" and copy all .*map* files
+to there
 
     #!/bin/bash
     mkdir mapfiles
     cp *.map mapfiles/
 
 If a line in the script starts with a **\#** mark, it will be skipped,
-and rest of the  line is considered as a comment  ( with the exception
-of the first line that start with **\#!** ).
+and rest of the line is considered as a comment ( with the exception of
+the first line that start with **\#!** ).
 
     #!/bin/bash
     # This is a comment line that is not executed
@@ -45,12 +44,12 @@ of the first line that start with **\#!** ).
     mkdir mapfiles
     cp *.map mapfiles/
 
-After saving the  script file and closing the editor,  you can perform
-the commands in the script file by giving a command:
+After saving the script file and closing the editor, you can perform the
+commands in the script file by giving a command:
 
     source my_test.script
 
-Optionally you could  give execution permissions for  your script file
+Optionally you could give execution permissions for your script file
 with command:
 
     chmod u+x my_test.script
@@ -65,8 +64,8 @@ And then execute the script with command:
 
 ## [][2]2.7.2 Variables and arrays {#variables-and-arrays align="JUSTIFY"}
 
-You  can  use  variables,  loops and  conditional  statements  in  the
-scripts.  Variables can be set with syntax:
+You can use variables, loops and conditional statements in the scripts.
+Variables can be set with syntax:
 
     variable=value
 
@@ -84,9 +83,9 @@ For example, command:
 
     echo $variable
 
-writes  the value  of  variable to  the output.  Note  that in  *bash*
-scripts the variables are considered to be either strings ( i.e. text)
-or integers. **This  means that decimal numbers can't be  used in bash
+writes the value of variable to the output. Note that in *bash* scripts
+the variables are considered to be either strings ( i.e. text) or
+integers. **This means that decimal numbers can't be used in bash
 scripts** for mathematical operations.
 
  
@@ -102,21 +101,21 @@ Example of using string variables
 
  
 
-For  integer variables,  you can  do simple  arithmetics with  syntax:
-((*expression*)). Commonly  used arithmetic operations  are  listed in
+For integer variables, you can do simple arithmetics with syntax:
+((*expression*)). Commonly used arithmetic operations  are listed in
 table 2.10
 
 **Table 2.10** Basic arithmetic operations in bash
 
-|              | |
+|              |                   |
 |--------------|-------------------|
-| **Operator** | **Function** |
-| \+ | addition |
-| \- | subtraction |
-| \* | multiplication |
-| / | division |
-| % | division reminder |
-| \*\* | exponentiation |
+| **Operator** | **Function**      |
+| \+           | addition          |
+| \-           | subtraction       |
+| \*           | multiplication    |
+| /            | division          |
+| %            | division reminder |
+| \*\*         | exponentiation    |
 
   
 Simple integer arithmetics examples:
@@ -131,15 +130,15 @@ Simple integer arithmetics examples:
     [kkayttaj@taito ~]$ echo "$a divided by $b results $d and reminder $e"
     5 divided by 3 results 1 and reminder 2
 
-Bash   can   also  use   one   dimensional   array  variables,   <span
-lang="en-US">i.e.</span>  variables  that  contain list  of  items.  A
-specified  array item  can be  recalled by  using an  index number  in
-brackets with  the array  variable name  *(${variable\[index\]}*). For
+Bash can also use one dimensional array variables, <span
+lang="en-US">i.e.</span> variables that contain list of items. A
+specified array item can be recalled by using an index number in
+brackets with the array variable name *(${variable\[index\]}*). For
 example we can define a simple three element array with command:
 
     array=(a b c)
 
-We can now recall  either the whole array or just  on element from it.
+We can now recall either the whole array or just on element from it.
 Command:
 
     echo ${array[*]} 
@@ -167,13 +166,13 @@ prints out value:
 
     3
 
-A  special case  of  array variable  is *$*  that  holds command  line
-arguments i.  e. items that  you can  provide as input  parameters for
-your script. It the case of this  argument array $0 refers to the name
-of the  actual script,  $1 refers  to the first  arguments, $2  to the
-second and so on.  $\# refers to the number of arguments and $@ to the
-full argument  list. Below is  a sample script that  illustrates using
-the *$* array variable:
+A special case of array variable is *$* that holds command line
+arguments i. e. items that you can provide as input parameters for your
+script. It the case of this argument array $0 refers to the name of the
+actual script, $1 refers to the first arguments, $2 to the second and so
+on.  $\# refers to the number of arguments and $@ to the full argument
+list. Below is a sample script that illustrates using the *$* array
+variable:
 
     #!/bin/bash
     from_dir=$1
@@ -181,41 +180,41 @@ the *$* array variable:
     mkdir $to_dir
     cp $from_dir/*.map $to_dir
 
-If we now execute this script,  named e.g. *my\_script2.sh* we have to
+If we now execute this script, named e.g. *my\_script2.sh* we have to
 give two arguments for the command. The first argument is in this case
-used to  define a  source directory  for the  copy command  and second
+used to define a source directory for the copy command and second
 argument as target directory. For example command:
 
     ./my_script2.csh source_data map_files
 
-Would copy all the file with  extension .map from a directory named as
+Would copy all the file with extension .map from a directory named as
 *source\_data* to a new directory called:*map\_files.*
 
  
 
 ## [][3]2.7.3 Quotation marks {#quotation-marks .western align="JUSTIFY"}
 
-Three different quotation marks are  used in bash. Quotation marks are
-frequently needed  to define  variables and  commands to  be executed.
+Three different quotation marks are used in bash. Quotation marks are
+frequently needed to define variables and commands to be executed.
 Following quotation marks can be used
 
--   **" "**  Take text within quotes literally  after substituting any
+-   **" "** Take text within quotes literally after substituting any
     variables
 
 -   **' '** Take text enclosed within quotes literally
 
--   **\`  \`**Take text enclosed  within quotes as a  command, execute
-    the command  and then replace  with output  of the command  to the
-    location of quotation marks
+-   **\` \`**Take text enclosed within quotes as a command, execute the
+    command and then replace with output of the command to the location
+    of quotation marks
 
-Below are  some examples to  illustrate the functional  differences of
+Below are some examples to illustrate the functional differences of
 different quotation marks. Quotation marks can be used to operate with
 variables and arguments. When the double or single quotation marks are
-used  all the  the text  inside the  quotation marks  are used  as one
-argument. The difference between these  two quotation marks is that in
-when double  quotation marks  are used,  variables are  substituted by
-their  values while  single quotation  marks all  text is  used as  it
-is. If you run commands:
+used all the the text inside the quotation marks are used as one
+argument. The difference between these two quotation marks is that in
+when double quotation marks are used, variables are substituted by their
+values while single quotation marks all text is used as it is. If you
+run commands:
 
     variable=sample1 echo "value = $variable"
 
@@ -231,50 +230,49 @@ you will get output:
 
     value = $variable
 
-In linux  commands and scripts  quotation marks are typically  used to
-define arguments that  contain space or other  special characters. Say
-we would like to use **[grep]** to pick all rows that contain a string
-*file size* from a file  called *files.txt*. Following command **would
+In linux commands and scripts quotation marks are typically used to
+define arguments that contain space or other special characters. Say we
+would like to use **[grep]** to pick all rows that contain a string
+*file size* from a file called *files.txt*. Following command **would
 not work**:
 
     grep file size files.txt
 
-If you run  the command above, you  get an error message,  as the word
+If you run the command above, you get an error message, as the word
 *size* is now interpreted to be the second argument defining the input
 file. We can fix the situation by using quotation marks.
 
     grep "file size" files.txt
 
-Now the first  argument, defining the string to be  searched, is *file
-size*,  (including  the  space  between  the  words)  and  the  second
-argument, defining the  input file, is now  *files.txt*, as originally
-intended.
+Now the first argument, defining the string to be searched, is *file
+size*, (including the space between the words) and the second argument,
+defining the input file, is now *files.txt*, as originally intended.
 
-The third  quotation mark type  \` has  a special meaning.  With these
+The third quotation mark type \` has a special meaning. With these
 quotation marks, you can make one linux command to produce an argument
 for another linux command. The basic syntax \` \` marks is:
 
     command1 `command2`
 
 where *command1* will use the product of *command2* as an argument. In
-Bash  script, the  same functionality  can be  done also  with syntax:
+Bash script, the same functionality can be done also with syntax:
 $(*command*)
 
  
 
 ## [][4]2.7.4 Loops and conditional statements {#loops-and-conditional-statements .western}
 
-Loops and condition statements are  rarely used in interactive command
-line usage.  However they  are frequently used  in scripts  to perform
-similar  commands several  times and  to  control the  commands to  be
+Loops and condition statements are rarely used in interactive command
+line usage. However they are frequently used in scripts to perform
+similar commands several times and to control the commands to be
 executed. Bash provides a wide selection loops, conditional statements
 and other control structures. In this section we show examples of some
 of the most commonly used control structures.
 
 A [***for***] *l*o*op* performs specified commands iteratively so that
-on each iteration the  loop variable is set to be equal  to one of the
-items in  the given  element list.  In bash  a for  loop is  made with
-command structure:
+on each iteration the loop variable is set to be equal to one of the
+items in the given element list. In bash a for loop is made with command
+structure:
 
     for variable in element_list
     do
@@ -295,18 +293,18 @@ Would print out:
     sample3.txt
 
 Typically the argument list contains file names to be processed but it
-can  also be  any other  parameter  too. For  example, say  we have  a
-directory  called  *project\_3*  that   contains  nine  files  called:
-*sample1.txt*, *sample2.txt* ... *sample9.txt*.  To see the content of
+can also be any other parameter too. For example, say we have a
+directory called *project\_3* that contains nine files called:
+*sample1.txt*, *sample2.txt* ... *sample9.txt*. To see the content of
 the directory we in this case use command *ls*.
 
     testuser@hippu1:/wrk/testuser> ls project_3/
     sample1.txt sample3.txt sample5.txt sample7.txt sample9.txt  
     sample2.txt sample4.txt sample6.txt sample8.txt  
 
-If we  would like  to rename  each of  these files  so that  they have
-extension *.old* we could run command  *mv* nine times or we could use
-a for loop:
+If we would like to rename each of these files so that they have
+extension *.old* we could run command *mv* nine times or we could use a
+for loop:
 
     for filename in sample1.txt sample2.txt sample3.txt sample4.txt  \
     sample5.txt  sample6.txt  sample7.txt  sample8.txt  sample9.txt
@@ -315,9 +313,9 @@ a for loop:
        mv project_3/${filename} project_3/${filename}.old
     done
 
-The for loop above  is still quite clumsy as we need  to write all the
-file names to the element list.  We can avoid this by substituting the
-element list with  *$(ls project\_3/)*. Now, command  *ls project3* is
+The for loop above is still quite clumsy as we need to write all the
+file names to the element list. We can avoid this by substituting the
+element list with *$(ls project\_3/)*. Now, command *ls project3* is
 used to produce a list of file names to be processed
 
     for filename in $(ls project_3/)
@@ -326,14 +324,14 @@ used to produce a list of file names to be processed
       mv project_3/$filename project_3/"$filename".old
     done
 
-In  bash you  can  also create  a  for loop  where  a numerical  index
-variable that is increased automatically  by certain step size in each
-iteration.  In this case the syntax is:
+In bash you can also create a for loop where a numerical index variable
+that is increased automatically by certain step size in each iteration.
+In this case the syntax is:
 
     for ((variable=start; variable<=end; i++)) 
 
-Below  is a  for loop  that performs  the same  renaming operation  as
-above, but using just numbers as elements.
+Below is a for loop that performs the same renaming operation as above,
+but using just numbers as elements.
 
     for ((number=1; number<=9; number++))
     do
@@ -342,7 +340,7 @@ above, but using just numbers as elements.
     done
 
 In [***while***] *loop*, the loop keeps running as long as the defined
-condition statement  is true. In  bash a while  loop can be  made with
+condition statement is true. In bash a while loop can be made with
 syntax:
 
     while [[ condition ]]
@@ -350,7 +348,7 @@ syntax:
       commands
     done
 
-The renaming operation, made above with  a for loop could also be done
+The renaming operation, made above with a for loop could also be done
 with while loop.
 
     number=1
@@ -361,10 +359,10 @@ with while loop.
        ((number = number + 1))
     done
 
-In the example  above a variable called *number* is  first set to have
-value 1. The value of this variable  is then increased by 1 in the end
-of  each  iteration cycle.  The  iterations  are continued  until  the
-variable reaches value 10.
+In the example above a variable called *number* is first set to have
+value 1. The value of this variable is then increased by 1 in the end of
+each iteration cycle. The iterations are continued until the variable
+reaches value 10.
 
 Conditional statements ([**if**]) can be made as follows.
 
@@ -375,38 +373,38 @@ Conditional statements ([**if**]) can be made as follows.
        commands
     fi
 
-You  can  use  operands,  listed  in  table  2.11,  in  the  condition
-statements  of  *if* and  *while*  commands.  Note, that  *bash*  uses
-different  conditional statements  for *strings*  and *integers*.  For
-example     the     equality     of     *<span     style="font-weight:
-normal">strings</span>* is tested  with "==" while the  equality of **
-*<span  style="font-weight:  normal">integers </span>*is  tested  with
-"-eq".   The  syntax is  also  strict  about  the spaces  between  the
-brackets and the  condition statement: definition \[\[a  == b\]\] will
-not work and should be fixed to \[\[ a == b \]\].
+You can use operands, listed in table 2.11, in the condition statements
+of *if* and *while* commands. Note, that *bash* uses different
+conditional statements for *strings* and *integers*. For example the
+equality of *<span style="font-weight: normal">strings</span>* is tested
+with "==" while the equality of ** *<span
+style="font-weight: normal">integers </span>*is tested with "-eq".  The
+syntax is also strict about the spaces between the brackets and the
+condition statement: definition \[\[a == b\]\] will not work and should
+be fixed to \[\[ a == b \]\].
 
   
-**Table  2.11:**<span   style="font-weight:  normal">   Commonly  used
-string, integer and file o</span>perands of if and while statements
+**Table 2.11:**<span style="font-weight: normal"> Commonly used string,
+integer and file o</span>perands of if and while statements
 
-| Statement | Operation |
+| Statement                  | Operation                                                      |
 |----------------------------|----------------------------------------------------------------|
-| **\[\[ a == b \]\]** | True if strings a and b are equal.  |
-| **\[\[ a != b \]\]** | True if strings a and b are not equal.  |
-| **\[\[ a =~ b \]\]** | True if strings a and b are similar (allows wildcards).  |
-| **\[\[ a &lt; b \]\]** | True if string a is alphabetically before string b.  |
-| **\[\[ a &gt; b \]\]** | True if string a is alphabetically after string b.  |
-| **\[\[ *a* -eq *b* \]\]** | True if integers a and b are equal.  |
-| **\[\[ *a* -ne *b* \]\]** | True if integers a and b are not equal.  |
-| **\[\[ *a* -lt *b* \]\]** | True if integer a is less than b.  |
-| **\[\[ *a* -gt *b* \]\]** | True if integer a is greater than b.  |
-| **\[\[ *a* -le *b* \]\]** | True if integer a is less or equal to b.  |
-| **\[\[ *a* -ge *b* \]\]** | True if integer a is greater or equal to b.  |
-| **\[\[ -e *name* \]\]** | True if file exists.  |
-| **\[\[ -n *a* \]\]** | True if string a has non-zero length.  |
-| **\[\[ *A* \|\| *B* \]\]** | True if condition A **or** condition B is true (logical OR).  |
-| **\[\[ *A* && *B* \]\]** | True if condition A **and** condition B is true (logical AND). |
-| **\[\[ ! *A* \]\]** | True if condition A is **not** true.  |
+| **\[\[ a == b \]\]**       | True if strings a and b are equal.                             |
+| **\[\[ a != b \]\]**       | True if strings a and b are not equal.                         |
+| **\[\[ a =~ b \]\]**       | True if strings a and b are similar (allows wildcards).        |
+| **\[\[ a &lt; b \]\]**     | True if string a is alphabetically before string b.            |
+| **\[\[ a &gt; b \]\]**     | True if string a is alphabetically after string b.             |
+| **\[\[ *a* -eq *b* \]\]**  | True if integers a and b are equal.                            |
+| **\[\[ *a* -ne *b* \]\]**  | True if integers a and b are not equal.                        |
+| **\[\[ *a* -lt *b* \]\]**  | True if integer a is less than b.                              |
+| **\[\[ *a* -gt *b* \]\]**  | True if integer a is greater than b.                           |
+| **\[\[ *a* -le *b* \]\]**  | True if integer a is less or equal to b.                       |
+| **\[\[ *a* -ge *b* \]\]**  | True if integer a is greater or equal to b.                    |
+| **\[\[ -e *name* \]\]**    | True if file exists.                                           |
+| **\[\[ -n *a* \]\]**       | True if string a has non-zero length.                          |
+| **\[\[ *A* \|\| *B* \]\]** | True if condition A **or** condition B is true (logical OR).   |
+| **\[\[ *A* && *B* \]\]**   | True if condition A **and** condition B is true (logical AND). |
+| **\[\[ ! *A* \]\]**        | True if condition A is **not** true.                           |
 
 Below is some examples of *if* command structures.  
   
@@ -438,9 +436,9 @@ You can compare also variables containing text (strings):
        echo "you didn't answer yes or no"
     fi 
 
-When  using *less  than* and  *more  than* comparisons  you should  be
-careful  not  to  mix  string and  integer  comparisons.  For  example
-following condition:
+When using *less than* and *more than* comparisons you should be careful
+not to mix string and integer comparisons. For example following
+condition:
 
     [[ 123 > 3 ]]
 
@@ -451,13 +449,13 @@ numerical comparison:
 
 is TRUE.
 
-There  are  a number  of  operators  you  can  use to  test  different
-attributes of  a file. The  most commonly  used operator is  -*e* that
-checks if  a file exists.  As an example, lets  assume that we  have a
-simple list of  file names called: *checklist.txt*. Now  we would like
-to check which of these files are found from the current directory. We
-can use *for* loop  to study all the file names  and *if* command with
-***-e*** condition to test the file exists.
+There are a number of operators you can use to test different attributes
+of a file. The most commonly used operator is -*e* that checks if a file
+exists. As an example, lets assume that we have a simple list of file
+names called: *checklist.txt*. Now we would like to check which of these
+files are found from the current directory. We can use *for* loop to
+study all the file names and *if* command with ***-e*** condition to
+test the file exists.
 
     for file_name in $(cat checklist.txt)
     do  
@@ -473,7 +471,7 @@ can use *for* loop  to study all the file names  and *if* command with
 
 ## [][5]2.7.5 Printing the output {#printing-the-output .western}
 
-In the  previous examples we  have already used [**echo**]  command to
+In the previous examples we have already used [**echo**] command to
 write text and variables to the standard output (i.e. to the screen or
 to a file by standard output redirection). For example command:
 
@@ -483,20 +481,20 @@ Prints out:
 
     Hello world
 
-Echo can be  used for printing output  in many cases, but  it does not
-provide good  tools for  creating well  formatted output  with defined
-columns. In  situations where well  structured text output  is needed,
-[**printf**] should be used instead  of *echo*. The syntax of *printf*
+Echo can be used for printing output in many cases, but it does not
+provide good tools for creating well formatted output with defined
+columns. In situations where well structured text output is needed,
+[**printf**] should be used instead of *echo*. The syntax of *printf*
 is:
 
     printf "format definition" arguments_to_print
 
 The *format definition* defines what types of output is to be printed.
-Common types  include text  (**%s**), integers (**%i**),  and floating
+Common types include text (**%s**), integers (**%i**), and floating
 point numbers (**%f**). The format statements can also define how much
-space  is reserved  for each  argument and  how it  is located  in the
-column.   Below is  some simple  examples to  illustrate the  usage of
-*printf* command.
+space is reserved for each argument and how it is located in the column.
+Below is some simple examples to illustrate the usage of *printf*
+command.
 
 Command:
 
@@ -506,14 +504,14 @@ Prints out:
 
     1 Hello World 23.750000
 
-Here  the  format  statement  defines   that  the  first  argument  is
-considered  to be  an integer,  second and  third as  strings and  the
-fourth  argument as  a floating  point number.  Note that  by default,
-*printf* does not  add newline character to the end  of the output. To
-do that the format statement ends with definition **\\n**.
+Here the format statement defines that the first argument is considered
+to be an integer, second and third as strings and the fourth argument as
+a floating point number. Note that by default, *printf* does not add
+newline character to the end of the output. To do that the format
+statement ends with definition **\\n**.
 
-In the  next example we  define how  many characters are  reserved for
-each argument. Command:
+In the next example we define how many characters are reserved for each
+argument. Command:
 
     printf "%4i %10s %10s %6.2f\n" 1 Hello World 23.75
 
@@ -521,13 +519,12 @@ Prints out:
 
     1 Hello World 23.75
 
-Here  we reserve  four  characters  for the  first  integer, then  ten
-characters  for each  of the  strings.  The floating  point number  is
-presented  with six  characters, two  of which  are after  the decimal
-point.
+Here we reserve four characters for the first integer, then ten
+characters for each of the strings. The floating point number is
+presented with six characters, two of which are after the decimal point.
 
-You can also add text  and control characters like tabulator (**\\t**)
-to the format statement. Command:
+You can also add text and control characters like tabulator (**\\t**) to
+the format statement. Command:
 
     printf "This is my %i:st %s %s\t %6.1f\n" 1 Hello World 23.75
 

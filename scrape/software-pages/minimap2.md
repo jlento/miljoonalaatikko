@@ -2,15 +2,14 @@
 
 ### Description
 
-Minimap2 is  a fast  general-purpose alignment program  to map  DNA or
-long mRNA  sequences against  a large reference  database.  It  can be
-used for:
+Minimap2 is a fast general-purpose alignment program to map DNA or long
+mRNA sequences against a large reference database.  It can be used for:
 
 -   mapping of accurate short reads (preferably longer that 100 bases)
--    mapping 1kb  genomic reads  at error   rate 15%  (e.g. PacBio  or
-    Oxford Nanopore genomic reads)
+-   mapping 1kb genomic reads at error  rate 15% (e.g. PacBio or Oxford
+    Nanopore genomic reads)
 -   mapping full-length noisy Direct RNA or cDNA reads
--   mapping  and comparing  assembly contigs  or closely  related full
+-   mapping and comparing assembly contigs or closely related full
     chromosomes of hundreds of megabases in length.
 
  
@@ -31,8 +30,8 @@ Minimap2 starts in Taito with command:
 
     minimap2
 
-Without any options,  minimap2 takes a reference database  and a query
-sequence  file  as  input  and produce  approximate  mapping,  without
+Without any options, minimap2 takes a reference database and a query
+sequence file as input and produce approximate mapping, without
 base-level alignment (i.e. no CIGAR), in the PAF format:
 
     minimap2 ref.fa query.fq > approx-mapping.paf

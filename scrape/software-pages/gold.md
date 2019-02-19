@@ -2,9 +2,9 @@
 
 ### Description
 
-GOLD is a  docking program for predicting how  flexible molecules will
-bind  to  proteins. GOLD  uses  a  genetic algorithm  methodology  for
-protein-ligand  docking and  allows  full ligand  and partial  protein
+GOLD is a docking program for predicting how flexible molecules will
+bind to proteins. GOLD uses a genetic algorithm methodology for
+protein-ligand docking and allows full ligand and partial protein
 flexibility.
 
 ------------------------------------------------------------------------
@@ -22,38 +22,36 @@ flexibility.
 
 ### License
 
-GOLD is  part of the  Cambridge Crystallographic Database  System. See
-our [CSD page for licensing information].
+GOLD is part of the Cambridge Crystallographic Database System. See our
+[CSD page for licensing information].
 
-GOLD can be used either from the  command line or via a graphical user
-interface (GUI).  The best  way to run  a GUI remotely  is to  use the
-[NoMachine Remote Desktop service] available  for CSC users. To set up
+GOLD can be used either from the command line or via a graphical user
+interface (GUI). The best way to run a GUI remotely is to use the
+[NoMachine Remote Desktop service] available for CSC users. To set up
 the GOLD interactive environment:
 
 `module load ccdc `
 
-This will  load the  latest version  of GOLD. The  easiest way  to run
-interactive jobs is  to log in to taito-shell and  start gold with the
+This will load the latest version of GOLD. The easiest way to run
+interactive jobs is to log in to taito-shell and start gold with the
 command `gold`. If you want dedicated interactive resources, you start
 interactive session on a compute node, type:
 
 `salloc -p serial -n 1 -t 02:00:00 srun --x11=first xterm `
 
-Launch the  gold command  in the  xterm. Longer jobs  are best  run as
-batch
+Launch the gold command in the xterm. Longer jobs are best run as batch
 jobs, see below.  
  
 
 **NOTE:** Gold license now covers unlimited simultaneous jobs.
 
-The PVM  daemon must be running  before parallel GOLD dockings  can be
-started. After docking,  the PVM daemon should be stopped  and all its
-generated files  removed. In principle  it is possible to  run several
+The PVM daemon must be running before parallel GOLD dockings can be
+started. After docking, the PVM daemon should be stopped and all its
+generated files removed. In principle it is possible to run several
 docking jobs simultaneously, but if two PVM jobs run on the same node,
 problems might arise
 
-[This example  job script]  is for  a serial job.  Submit it  on Taito
-with:
+[This example job script] is for a serial job. Submit it on Taito with:
 
 `sbatch job-gold2016-taitoser.job `
 
@@ -63,8 +61,8 @@ with:
 
 ### Usage via Discovery Studio or Maestro
 
-GOLD is available in  the Discovery  Studio 2018 server and Maestro at
-CSC.  This  GOLD  installation  can be  used  with  locally  installed
+GOLD is available in  the Discovery Studio 2018 server and Maestro at
+CSC. This GOLD installation can be used with locally installed
 [Discovery Studio] molecular modeling program, but to use with locally
 installed Maestro, you need to install GOLD locally also.
 

@@ -2,10 +2,10 @@
 
 ### Description
 
-<span style="text-align: justify;">MIRA is  a whole genome shotgun and
-EST sequence assembler.  The current   version is able to perform true
-hybrid  *de   novo*  assemblies  using  reads   gathered  through  NGS
-sequencing technology.</span>
+<span style="text-align: justify;">MIRA is a whole genome shotgun and
+EST sequence assembler.  The current  version is able to perform true
+hybrid *de novo* assemblies using reads gathered through NGS sequencing
+technology.</span>
 
 ------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ Biosciences
 
 ### References
 
-See     the    list     of     references     in    MIRA     webpages:
+See the list of references in MIRA webpages:
 [http://www.chevreux.org/mira\_papersnposters.html]
 
 ------------------------------------------------------------------------

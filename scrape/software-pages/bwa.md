@@ -2,16 +2,15 @@
 
 ### Description
 
-Burrows-Wheeler  Aligner (BWA)  is  an efficient  program that  aligns
-relatively  short  nucleotide  sequences   against  a  long  reference
-sequence such  as the  human genome.  It implements  three algorithms,
-BWA-MEM    (**mem**),     BWA-Backtrack    (**aln**)     and    BWA-SW
-(**bwasw**).  BWA-Backtrack works  for  query  sequences shorter  than
-200bp. The  other two algorithms  are used  longer reads up  to around
-100kbp.  BWA-MEM is  recommend  for  reads longer  than  70 gb.   Both
-algorithms do gapped alignment.
+Burrows-Wheeler Aligner (BWA) is an efficient program that aligns
+relatively short nucleotide sequences against a long reference sequence
+such as the human genome. It implements three algorithms, BWA-MEM
+(**mem**), BWA-Backtrack (**aln**) and BWA-SW (**bwasw**). BWA-Backtrack
+works for query sequences shorter than 200bp. The other two algorithms
+are used longer reads up to around 100kbp. BWA-MEM is recommend for
+reads longer than 70 gb.  Both algorithms do gapped alignment.
 
-BWA can  be used to  align both single-end and  paired end reads  to a
+BWA can be used to align both single-end and paired end reads to a
 reference genome or sequence set.
 
 ------------------------------------------------------------------------
@@ -39,36 +38,35 @@ The basic syntax of BWA commands is:
 
 **Reference genome indexing**
 
-CSC does not maintain pre-compiled  BWA indexes for reference genomes.
-Thus  normally  the  fist  step  in creating  alignment  with  BWA  is
-downloading the  reference genome  and indexing  it. Please  note that
-your  $HOME directory  is often  too small  for working  with complete
-genomes. In stead you should  do the analysis in temporary directories
-like $WRKDIR.
+CSC does not maintain pre-compiled BWA indexes for reference genomes.
+Thus normally the fist step in creating alignment with BWA is
+downloading the reference genome and indexing it. Please note that your
+$HOME directory is often too small for working with complete genomes. In
+stead you should do the analysis in temporary directories like $WRKDIR.
 
-You can  use for example  command ensemblfetch  or wget to  download a
+You can use for example command ensemblfetch or wget to download a
 reference genome to CSC. For example
 
     ensemblfetch homo_sapiens
 
-The  command above  retrieves  the  human genome  sequence  to a  file
-called.   Homo\_sapiens.GRCh37.75.dna.toplevel.fa.  You can  calculate
-the BWA indexes for this file with command:
+The command above retrieves the human genome sequence to a file called.
+Homo\_sapiens.GRCh37.75.dna.toplevel.fa. You can calculate the BWA
+indexes for this file with command:
 
     bwa index -a bwtsw homo_sapiens.GRCh37.75.dna.toplevel.fa
 
-Note that  for small less  than 2 GB  reference genomes you  could use
+Note that for small less than 2 GB reference genomes you could use
 faster,  "is" indexing algorithm ( bwa index -a is )
 
 **Single-end alignment**
 
-Once  the indexing  is  ready  you can  carry  out  the alignment  for
-singe-end reads with command:
+Once the indexing is ready you can carry out the alignment for singe-end
+reads with command:
 
     bwa mem Homo_sapiens.GRCh37.63.dna.toplevel.fa reads.fastq > aln.sam
 
-If you  wish to use the  aln (BWA-Backtrack) algorithm you  need to do
-the alignment in two steps.
+If you wish to use the aln (BWA-Backtrack) algorithm you need to do the
+alignment in two steps.
 
 First calculate the actual alignment:
 
@@ -81,7 +79,7 @@ SAM format with bwa samse command:
 
 **Paired end alignment**
 
-If you use the MEM algorithm  you can do the paired-end alignment with
+If you use the MEM algorithm you can do the paired-end alignment with
 just one command:
 
     bwa mem Homo_sapiens.GRCh37.63.dna.toplevel.fa read1.fq read2.fq > aln.sam
@@ -104,11 +102,11 @@ In Taito, BWA is initialized with command:
     module load biokit
 
 The biokit module sets up a set of commonly used bioinformatics tools.
-(Note however that there are  bioinformatics tools in Taito, that have
-a separate setup commands.)
+(Note however that there are bioinformatics tools in Taito, that have a
+separate setup commands.)
 
-In Taito,  BWA jobs  should be run  as batch jobs.  Below is  a sample
-batch job file, for running a BWA job in Taito:
+In Taito, BWA jobs should be run as batch jobs. Below is a sample batch
+job file, for running a BWA job in Taito:
 
     #!/bin/bash -l
     #SBATCH -J bwa
@@ -132,14 +130,13 @@ batch job file, for running a BWA job in Taito:
 
  
 
-In the batch  job example above one  BWA task (-n 1)  is executed. The
-BWA  job uses  4 cores  (--cpus-per-task=4 )  with total  of 32  GB of
-memory (--mem-per-cpu=8000). The  maximum duration of the  job is four
-hours (-t  04:00:00 ). All the  cores are assigned from  one computing
-node (--nodes=1 ).
+In the batch job example above one BWA task (-n 1) is executed. The BWA
+job uses 4 cores (--cpus-per-task=4 ) with total of 32 GB of memory
+(--mem-per-cpu=8000). The maximum duration of the job is four hours (-t
+04:00:00 ). All the cores are assigned from one computing node
+(--nodes=1 ).
 
-You  can submit  the  batch job  file  to the  batch  job system  with
-command:
+You can submit the batch job file to the batch job system with command:
 
     sbatch batch_job_file.bash
 
@@ -148,24 +145,24 @@ running batch jobs.
 
 #### Running BWA alignments utilizing grid computing
 
-Aligning  millions of  reads  to  a large  reference  genome can  take
-several hours  or even  days. Using  grid computing  through grid\_bwa
-command  you  can   speed  up  the  alignment  process   ten  fold  or
-more.  grid\_bwa  command  splits  the  alignment  task  into  several
-subtasks that it submits to be simultaneously executed in the FGI grid
-environment. When  all the subtasks  are ready they are  collected and
-combined into a single result alignment.
+Aligning millions of reads to a large reference genome can take several
+hours or even days. Using grid computing through grid\_bwa command you
+can speed up the alignment process ten fold or more. grid\_bwa command
+splits the alignment task into several subtasks that it submits to be
+simultaneously executed in the FGI grid environment. When all the
+subtasks are ready they are collected and combined into a single result
+alignment.
 
 To be able to use grid\_bwa command you should have:
 
 1.  A valid grid certificate installed in the hippu.csc.fi server.
 2.  Membership of FGI Virtual Organization
 
-Please check  the detailed instructions  to obtain and install  a grid
+Please check the detailed instructions to obtain and install a grid
 certificate and to join FGI Virtual organization.
 
-Once you have  the certificate installed and  the Virtual organization
-membership  is approved,   you can  submit a  grid\_bwa jobs  with for
+Once you have the certificate installed and the Virtual organization
+membership is approved,  you can submit a grid\_bwa jobs with for
 example following commands:
 
     module load bwa

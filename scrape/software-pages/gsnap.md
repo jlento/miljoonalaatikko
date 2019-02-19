@@ -2,10 +2,10 @@
 
 ### Description
 
-GSNAP is an efficient program  that aligns relatively short nucleotide
+GSNAP is an efficient program that aligns relatively short nucleotide
 sequences against a long reference sequence such as the human genome.
 
-GSNAP can be used  to align both single-end and paired  end reads to a
+GSNAP can be used to align both single-end and paired end reads to a
 reference genome or sequence set.
 
 At the moment GSNAP is not able to map color-space data.
@@ -38,36 +38,36 @@ The command line help of GSNAP can be checked with command:
 
 **Reference genome indexing**
 
-CSC  does  not  maintain  pre-compiled  GSNAP  indexes  for  reference
-genomes.  Thus normally the fist step in creating alignment with GSNAP
-is downloading the reference genome and indexing it.
+CSC does not maintain pre-compiled GSNAP indexes for reference genomes.
+Thus normally the fist step in creating alignment with GSNAP is
+downloading the reference genome and indexing it.
 
-Please note that  your $HOME directory is often too  small for working
-with  complete  genomes.  In  stead  you should  do  the  analysis  in
-temporary directories like $WRKDIR, $METAWRK or $FCWRKDIR.
+Please note that your $HOME directory is often too small for working
+with complete genomes. In stead you should do the analysis in temporary
+directories like $WRKDIR, $METAWRK or $FCWRKDIR.
 
-You  can use  for example  command **ensemblfetch**  or [**wget**]  to
+You can use for example command **ensemblfetch** or [**wget**] to
 download a reference genome to CSC. For example
 
     ensemblfetch homo_sapiens
 
-The  command above  retrieves  the  human genome  sequence  to a  file
-called.   Homo\_sapiens.GRCh37.63.dna.toplevel.fa.  You can  calculate
-the GSNAP indexes for this file with command:
+The command above retrieves the human genome sequence to a file called.
+Homo\_sapiens.GRCh37.63.dna.toplevel.fa. You can calculate the GSNAP
+indexes for this file with command:
 
     gmap_build -d human -D $WRKDIR/gsnap_indexes Homo_sapiens.GRCh37.63.dna.toplevel.fa
 
-The option -d defines the name of  the GSNAP indexes and the option -D
+The option -d defines the name of the GSNAP indexes and the option -D
 defines the location, where the indexes will be stored.
 
 **Single-end and pair-end alignment**
 
-Once  the indexing  is  ready  you can  carry  out  the alignment  for
-singe-end reads with command like:
+Once the indexing is ready you can carry out the alignment for singe-end
+reads with command like:
 
     gsnap -t 4 -d human -D $WRKDIR/gsnap_indexes query.fastq 
 
-In the  case of  paired-end reads  you should have  read pairs  in two
+In the case of paired-end reads you should have read pairs in two
 matching fastq files:
 
     gsnap -t 4 -d human -D $WRKDIR/gsnap_indexes query1.fastq query2.fastq 

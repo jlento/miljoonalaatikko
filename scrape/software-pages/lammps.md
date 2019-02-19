@@ -2,14 +2,14 @@
 
 ### Description
 
-LAMMPS  is a  classical molecular  dynamics code,  and an  acronym for
+LAMMPS is a classical molecular dynamics code, and an acronym for
 Large-scale Atomic/Molecular Massively Parallel Simulator.
 
-LAMMPS   has    potentials   for   solid-state    materials   (metals,
-semiconductors)   and  soft   matter   (biomolecules,  polymers)   and
-coarse-grained or  mesoscopic systems. It  can be used to  model atoms
-or, more generically, as a  parallel particle simulator at the atomic,
-meso, or continuum scale.
+LAMMPS has potentials for solid-state materials (metals, semiconductors)
+and soft matter (biomolecules, polymers) and coarse-grained or
+mesoscopic systems. It can be used to model atoms or, more generically,
+as a parallel particle simulator at the atomic, meso, or continuum
+scale.
 
 ------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ To get the LAMMPS binary in path, give:
 
 `module load lammps`
 
-Have a look at the example  submit script for Sisu in the installation
+Have a look at the example submit script for Sisu in the installation
 directory (/appl/chem/lammps/example.job).
 
 ------------------------------------------------------------------------
@@ -44,14 +44,14 @@ Physics
 
 Citing LAMMPS in your papers
 
-The following JCP  paper is the canoncial reference to  use for citing
-LAMMPS.    It    describes   the    parallel    spatial-decomposition,
+The following JCP paper is the canoncial reference to use for citing
+LAMMPS. It describes the parallel spatial-decomposition,
 neighbor-finding, and communcation algorithms used in the code. Please
-also  give the  URL of  the [LAMMPS  WWW Site]  in your  paper, namely
+also give the URL of the [LAMMPS WWW Site] in your paper, namely
 http://lammps.sandia.gov.
 
-S.  Plimpton, **Fast  Parallel  Algorithms  for Short-Range  Molecular
-Dynamics**, J Comp Phys, 117,  1-19 (1995). ([abstract]) ([pdf]) ([tar
+S. Plimpton, **Fast Parallel Algorithms for Short-Range Molecular
+Dynamics**, J Comp Phys, 117, 1-19 (1995). ([abstract]) ([pdf]) ([tar
 file] of figures if they don't display correctly in the PDF file)
 
 ------------------------------------------------------------------------
@@ -62,7 +62,7 @@ file] of figures if they don't display correctly in the PDF file)
 
 ### Manual
 
-Instructions  on how  to use  LAMMPS  can be  found on  the web  page:
+Instructions on how to use LAMMPS can be found on the web page:
 <http://lammps.sandia.gov/index.html>
 
 ------------------------------------------------------------------------

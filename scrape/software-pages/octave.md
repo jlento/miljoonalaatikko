@@ -2,15 +2,14 @@
 
 ### Description
 
-GNU Octave  is a  high-level interpreted language,  primarily intended
-for numerical computations. It provides capabilities for the numerical
-solution of  linear and nonlinear  problems, and for  performing other
-numerical   experiments.   It   also   provides   extensive   graphics
-capabilities  for  data  visualization  and  manipulation.  Octave  is
-normally used through  its interactive command line  interface, but it
-can  also  be  used  to write  non-interactive  programs.  The  Octave
-language is quite  similar to Matlab so that most  programs are easily
-portable.
+GNU Octave is a high-level interpreted language, primarily intended for
+numerical computations. It provides capabilities for the numerical
+solution of linear and nonlinear problems, and for performing other
+numerical experiments. It also provides extensive graphics capabilities
+for data visualization and manipulation. Octave is normally used through
+its interactive command line interface, but it can also be used to write
+non-interactive programs. The Octave language is quite similar to Matlab
+so that most programs are easily portable.
 
 ------------------------------------------------------------------------
 
@@ -53,7 +52,7 @@ or without GUI with a --no-gui option
 
 ##### Octave Batch Jobs
 
-Taito batch job  system is described in Taito  User Guide, [chapter 3.
+Taito batch job system is described in Taito User Guide, [chapter 3.
 Batch Jobs]. Below is an example of a simple serial job for Octave.
 
     #!/bin/bash -l
@@ -81,22 +80,21 @@ Mathematics and Statistics
 
 ### References
 
-In view  of the  many contributions made  by numerous  developers over
-many years it  is common courtesy to cite Octave  in publications when
-it has been  used during the course of research  or the preparation of
-figures.   The   citation  function   can  automatically   generate  a
-recommended citation text  for Octave or any of its  packages. See the
-help text below on how to use citation.
+In view of the many contributions made by numerous developers over many
+years it is common courtesy to cite Octave in publications when it has
+been used during the course of research or the preparation of figures.
+The citation function can automatically generate a recommended citation
+text for Octave or any of its packages. See the help text below on how
+to use citation.
 
     citation
     citation package
 
-Display  instructions  for  citing  GNU  Octave  or  its  packages  in
-publications. When called without  an argument, display information on
-how to  cite the  core GNU  Octave system. When  given a  package name
-package,   display   information   on  citing   the   specific   named
-package. Note that some packages may  not yet have instructions on how
-to cite them.
+Display instructions for citing GNU Octave or its packages in
+publications. When called without an argument, display information on
+how to cite the core GNU Octave system. When given a package name
+package, display information on citing the specific named package. Note
+that some packages may not yet have instructions on how to cite them.
 
 ------------------------------------------------------------------------
 

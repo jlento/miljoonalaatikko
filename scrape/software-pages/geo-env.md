@@ -2,7 +2,7 @@
 
 ### Description
 
-This is  an convenience module  for loading easily Python  and spatial
+This is an convenience module for loading easily Python and spatial
 analysis tools. It loads the following software:
 
 -   [GeoPython] (2.7.10)
@@ -20,22 +20,21 @@ analysis tools. It loads the following software:
 
 ### Usage
 
-If  you want  to use  QGIS, Saga  GIS or  GRASS with  GUI, you  should
-connect to taito-shell  using [-X connection or  NoMachine for Windows
-users].
+If you want to use QGIS, Saga GIS or GRASS with GUI, you should connect
+to taito-shell using [-X connection or NoMachine for Windows users].
 
 In Taito and Taito-shell, to load:
 
 `module load geo-env`
 
 Please note that execution of the command unloads all current modules.
-Thus, if you want to use  also some other software, these modules must
-be loaded after geo-env.
+Thus, if you want to use also some other software, these modules must be
+loaded after geo-env.
 
 Comments:
 
--   You can use both *GRASS*  and *SagaGIS* together with geo-env, but
-    only  one  of  them  at  a time,  because  they  have  conflicting
+-   You can use both *GRASS* and *SagaGIS* together with geo-env, but
+    only one of them at a time, because they have conflicting
     dependencies.
 -   It is not possible to use *rspatial-env* together with geo-env.
 

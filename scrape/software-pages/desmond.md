@@ -4,10 +4,10 @@
 
 ### License
 
-Desmond can be  used for non-commercial research. [Please  take a look
-at the license agreement].
+Desmond can be used for non-commercial research. [Please take a look at
+the license agreement].
 
-Desmond  is   a  software  package  for   running  molecular  dynamics
+Desmond is a software package for running molecular dynamics
 simulations.
 
 ------------------------------------------------------------------------
@@ -29,19 +29,19 @@ Taito, Taito-shell 2017.3
 ### Usage
 
 The simulations are set up by a free for academic users version of the
-Schrödinger  Maestro  GUI.  The  GUI  can be  run  on  taito-shell  or
-installed and run  locally. Simulations are best run as  batch jobs on
-Taito GPGPU nodes.
+Schrödinger Maestro GUI. The GUI can be run on taito-shell or installed
+and run locally. Simulations are best run as batch jobs on Taito GPGPU
+nodes.
 
 To start using Desmond on Taito (or taito-shell) give:
 
     module load desmond
     desmond
 
-Detailed instructions  to preparing jobs  locally and running  them on
-Taito  can be  found on  our Maestro  page or  in this  tutorial video
-(which is  for the commercial  version of Maestro, which  is available
-only for the consortium members, but the steps are identical):
+Detailed instructions to preparing jobs locally and running them on
+Taito can be found on our Maestro page or in this tutorial video (which
+is for the commercial version of Maestro, which is available only for
+the consortium members, but the steps are identical):
 
 ------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ Chemistry
 
 ### Manual
 
-Official                         Desmond                         page:
+Official Desmond page:
 <https://www.deshawresearch.com/resources_desmond.html>
 
 ------------------------------------------------------------------------

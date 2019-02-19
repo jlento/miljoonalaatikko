@@ -2,14 +2,14 @@
 
 ### Description
 
-BEAST  is  a cross-platform  program  for  Bayesian MCMC  analysis  of
-molecular  sequences.  It  is   entirely  orientated  towards  rooted,
-time-measured phylogenies  inferred using strict or  relaxed molecular
+BEAST is a cross-platform program for Bayesian MCMC analysis of
+molecular sequences. It is entirely orientated towards rooted,
+time-measured phylogenies inferred using strict or relaxed molecular
 clock models. It can be used as a method of reconstructing phylogenies
-but is  also a framework  for testing evolutionary  hypotheses without
-conditioning on  a single  tree topology. BEAST  uses MCMC  to average
-over tree  space, so that  each tree  is weighted proportional  to its
-posterior probability.
+but is also a framework for testing evolutionary hypotheses without
+conditioning on a single tree topology. BEAST uses MCMC to average over
+tree space, so that each tree is weighted proportional to its posterior
+probability.
 
 ------------------------------------------------------------------------
 
@@ -41,10 +41,10 @@ To check the available versions use:
     module spider beast
 
 BEAST can be used either interactively with a graphical user interface
-or in command line mode. Any batch  jobs need to be run in the command
-line mode.  Interactive use is  best done in Taito-shell.  Longer runs
-should be  done as  batch jobs  in Taito.  You can  of course  use the
-graphical tools in  Taito-shell to set up  the run and the  do the run
+or in command line mode. Any batch jobs need to be run in the command
+line mode. Interactive use is best done in Taito-shell. Longer runs
+should be done as batch jobs in Taito. You can of course use the
+graphical tools in Taito-shell to set up the run and the do the run
 itself in Taito.
 
 To run with the GUI (you will need X server connection):
@@ -57,7 +57,7 @@ To run in command line mode:
 
     beast <options> example.xml
 
-Sometimes you  may need to  give some extra  options to Java,  e.g. to
+Sometimes you may need to give some extra options to Java, e.g. to
 increase MaxHeapSize. In these cases use:
 
     java <java options> -jar $CLASSPATH/beast.jar
@@ -66,23 +66,23 @@ For example:
 
     java -Xmx4g -jar $CLASSPATH/beast.jar example.xml
 
-BEAST installation  also includes helper programs  FigTree and Tracer.
-They are set up  when the BEAST module is loaded  and are started with
-commands  **figtree**  and  **tracer**   respectively.  Due  to  their
+BEAST installation also includes helper programs FigTree and Tracer.
+They are set up when the BEAST module is loaded and are started with
+commands **figtree** and **tracer** respectively. Due to their
 interactive nature they are best used in Taito-shell.
 
 You need a X server connection to use the graphical interfaces. If you
-have trouble setting  this up, you might also  consider running beauti
+have trouble setting this up, you might also consider running beauti
 locally on your own computer and transferring the resulting .xml files
 to CSC for analysis in command line mode.
 
 **BEAGLE**
 
-BEAGLE is a high-performance library  that can improve the performance
-of  BEAST. Depending  on the  dataset and  analysis you  can typically
-expect  a  2x-3x speedup.  To  use  BEAGLE  you  need to  specify  the
-appropriate options on the beast command line. You can try beagle\_SSE
-and beagle\_CPU options.
+BEAGLE is a high-performance library that can improve the performance of
+BEAST. Depending on the dataset and analysis you can typically expect a
+2x-3x speedup. To use BEAGLE you need to specify the appropriate options
+on the beast command line. You can try beagle\_SSE and beagle\_CPU
+options.
 
     beast -beagle_SSE example.xml
 
@@ -92,13 +92,13 @@ BEAGLE extensions are available on all servers.
 
 **BEAST 2 Packages**
 
-In BEAST 2.x many models and analysis methods are implemented as BEAST
-2 Packages. For version management  reasons these are not installed in
-the common installation, but they can be easily installed by each user
-as necessary.
+In BEAST 2.x many models and analysis methods are implemented as BEAST 2
+Packages. For version management reasons these are not installed in the
+common installation, but they can be easily installed by each user as
+necessary.
 
 You can use the either use the **beauti** interface (from the top menu
-select  "File"  -&gt;  "Manage  packages") or  use  the  command  line
+select "File" -&gt; "Manage packages") or use the command line
 **addonmanager** program.
 
 To list available packages:
@@ -117,11 +117,11 @@ To uninstall a package:
 
 **Batch jobs in Taito**
 
-To submit  a BEAST job  in Taito, you must  construct a xml  file (see
-BEAST documentation for details) and a batch job script.
+To submit a BEAST job in Taito, you must construct a xml file (see BEAST
+documentation for details) and a batch job script.
 
-BEAST  can use  thread based  parallelization that  can speed  up some
-analyses.  In this  example  batch job  script we  run  BEAST using  8
+BEAST can use thread based parallelization that can speed up some
+analyses. In this example batch job script we run BEAST using 8
 computing cores.
 
     !/bin/bash -l
@@ -151,8 +151,8 @@ computing cores.
     ## run my executable
     beast -overwrite -seed 345 -beagle_sse -threads 8 benchmark1.xml > example.out
 
-The batch  job is submitted  with command (where  "my\_job\_script" is
-the name of your batch file):
+The batch job is submitted with command (where "my\_job\_script" is the
+name of your batch file):
 
     sbatch my_job_script
 

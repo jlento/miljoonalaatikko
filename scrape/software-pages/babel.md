@@ -2,7 +2,7 @@
 
 ### Description
 
-Open Babel  is a  program designed  to interconvert  a number  of file
+Open Babel is a program designed to interconvert a number of file
 formats currently used in molecular modeling.
 
 ------------------------------------------------------------------------
@@ -20,8 +20,7 @@ formats currently used in molecular modeling.
 
 #### Usage {#yui_patched_v3_11_0_1_1439990446051_927}
 
-The Open  Babel environment is  set by loading the  appropriate module
-e.g.
+The Open Babel environment is set by loading the appropriate module e.g.
 
 `module load openbabel/2.4.1`
 
@@ -29,8 +28,8 @@ A simple example, converting a PDB file to a Turbomole coord file:
 
 `obabel -ipdb molecule.pdb -otmol coord`
 
-For  a  comprehensive list  of  options  and supported  file  formats,
-execute 'babel -H',  'babel -L formats' or check the man/web pages.
+For a comprehensive list of options and supported file formats, execute
+'babel -H',  'babel -L formats' or check the man/web pages.
 
 #### More information
 
@@ -74,4 +73,6 @@ Nino Runeberg
 
 ------------------------------------------------------------------------
 
-  [Open Babel wiki]: http://openbabel.org/wiki/Main_Page [J. Cheminf. 2011, 3:33]: http://www.jcheminf.com/content/3/1/33 {.external .text}
+  [Open Babel wiki]: http://openbabel.org/wiki/Main_Page
+  [J. Cheminf. 2011, 3:33]: http://www.jcheminf.com/content/3/1/33
+  {.external .text}

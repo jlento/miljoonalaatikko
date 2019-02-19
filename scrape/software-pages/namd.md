@@ -2,11 +2,10 @@
 
 ### Description
 
-NAMD   is   a   parallel   molecular  dynamics   code   designed   for
-high-performance  simulation   of  large  biomolecular   systems.  The
-software  is   developed  and  distributed  by   the  Theoretical  and
-Computational  Biophysics  Group  at  the  Beckman  Institute  of  the
-University of Illinois.
+NAMD is a parallel molecular dynamics code designed for high-performance
+simulation of large biomolecular systems. The software is developed and
+distributed by the Theoretical and Computational Biophysics Group at the
+Beckman Institute of the University of Illinois.
 
 ------------------------------------------------------------------------
 
@@ -28,7 +27,7 @@ Taito: 2.9, 2.11 (also GPU)
 
 **Taito**
 
-Below is  a sample  batch job  file, to  run NAMD  using 128  cores on
+Below is a sample batch job file, to run NAMD using 128 cores on
 SandyBridge.
 
     #!/bin/bash -l
@@ -53,7 +52,7 @@ You can submit the batch queue file with command
 
     sbatch namd_job.bash
 
-Note that namd2  is also available in  taito-shell.csc.fi which allows
+Note that namd2 is also available in taito-shell.csc.fi which allows
 currently interactive usage upto 8 cores.
 
 **Sisu**
@@ -91,21 +90,21 @@ Chemistry
 
 ### References
 
-The NAMD  License Agreement  specifies that  any reports  or published
-results obtained  with NAMD shall  acknowledge its use and  credit the
+The NAMD License Agreement specifies that any reports or published
+results obtained with NAMD shall acknowledge its use and credit the
 developers as:
 
--    "NAMD   was  developed  by  the   Theoretical  and  Computational
-    Biophysics Group in the Beckman Institute for Advanced Science and
-    Technology at the University of Illinois at Urbana-Champaign."
+-   "NAMD was developed by the Theoretical and Computational Biophysics
+    Group in the Beckman Institute for Advanced Science and Technology
+    at the University of Illinois at Urbana-Champaign."
 
-James C.  Phillips,  Rosemary Braun,  Wei  Wang,  James Gumbart,  Emad
-Tajkhorshid,  Elizabeth  Villa,  Christophe Chipot,  Robert D.  Skeel,
-Laxmikant Kale,  and Klaus Schulten. Scalable  molecular dynamics with
+James C. Phillips, Rosemary Braun, Wei Wang, James Gumbart, Emad
+Tajkhorshid, Elizabeth Villa, Christophe Chipot, Robert D. Skeel,
+Laxmikant Kale, and Klaus Schulten. Scalable molecular dynamics with
 NAMD. *Journal of Computational Chemistry*, 26:1781-1802, 2005.
 [abstract], [journal]  
   
-In addition,  electronic documents should include  the following link:
+In addition, electronic documents should include the following link:
 <http://www.ks.uiuc.edu/Research/namd/>
 
  

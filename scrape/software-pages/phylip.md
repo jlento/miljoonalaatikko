@@ -2,9 +2,9 @@
 
 ### Description
 
-PHYLIP  is  a FREE  package  of  programs  by Joseph  Felsenstein  for
-inferring  phylogenies  and carrying  out  certain  related tasks.  At
-present it contains 35 programs.
+PHYLIP is a FREE package of programs by Joseph Felsenstein for inferring
+phylogenies and carrying out certain related tasks. At present it
+contains 35 programs.
 
 ------------------------------------------------------------------------
 
@@ -34,17 +34,17 @@ The programs read the input file from the current directory. The input
 file has to be named 'input'. The programs write to the file 'outfile'
 and/or 'treefile'.
 
-If you are a first time user,  start out by reading the relevant parts
-from  the main  PHYLIP  documentation  and then  proceed  to read  the
-program specific texts below.
+If you are a first time user, start out by reading the relevant parts
+from the main PHYLIP documentation and then proceed to read the program
+specific texts below.
 
 **Command scripts**
 
-If  you  are  doing an  analysis  that  takes  long  time, it  may  be
-reasonable to  build a command script  file that can be  executed as a
-batch job in Taito.
+If you are doing an analysis that takes long time, it may be reasonable
+to build a command script file that can be executed as a batch job in
+Taito.
 
-Here's an  example of a  PHYLIP command script file  for bootstrapping
+Here's an example of a PHYLIP command script file for bootstrapping
 using distance methods.
 
     #!/bin/bash
@@ -104,7 +104,7 @@ using distance methods.
     # The infile will contain the sequence alignment...
     mv -f infile1 infile
 
-You  can save  this  script  as e.g.  phylip.job.sh  and  the make  it
+You can save this script as e.g. phylip.job.sh and the make it
 executable:
 
     chmod u+x phylip.job.sh
@@ -131,20 +131,20 @@ See [Taito user guide] for details.
 
 ### DrawTree and DrawGram
 
-To use DrawTree  and DrawGram you need font files.  These are provided
-with  the software,  but the  programs try  to look  for them  in your
-current directory, not in the  installation folder. The easiest way to
-use them is to copy them into your own folder:
+To use DrawTree and DrawGram you need font files. These are provided
+with the software, but the programs try to look for them in your current
+directory, not in the installation folder. The easiest way to use them
+is to copy them into your own folder:
 
     cp /homeappl/appl_taito/bio/phylip/phylip-3.695/exe/font* .
 
-The programs look  for a file called "fontfile" by  default, so if you
+The programs look for a file called "fontfile" by default, so if you
 have a favorite font, you can copy it by that name, e.g.
 
     cp font1 fontfile
 
-Alternatively you  can just provide  a full path  name to a  font file
-when prompted.
+Alternatively you can just provide a full path name to a font file when
+prompted.
 
 ------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 
 ### Description
 
-Softwere for  structural analysis,  multibody dynamics,  non-linear FE
+Softwere for structural analysis, multibody dynamics, non-linear FE
 analysis, explicit dynamics and fluid-structure interaction
 
 ------------------------------------------------------------------------
@@ -33,8 +33,8 @@ http://www.mscsoftware.com/
 
 Information available on SUI
 
-**The  terms of  use  of this  software  allow its  use  for only  the
-affiliates   (staff  and   students)  of   Finnish  higher   education
+**The terms of use of this software allow its use for only the
+affiliates (staff and students) of Finnish higher education
 institutions.**
 
 ------------------------------------------------------------------------

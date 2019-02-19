@@ -2,10 +2,10 @@
 
 ### Description
 
-TopHat is a  fast splice junction mapper for RNA-Seq  reads. It aligns
-RNA-Seq   reads   to   mammalian-sized   genomes   using   the   ultra
-high-throughput  short  read aligner  Bowtie,  and  then analyzes  the
-mapping results to identify splice junctions between exons.
+TopHat is a fast splice junction mapper for RNA-Seq reads. It aligns
+RNA-Seq reads to mammalian-sized genomes using the ultra high-throughput
+short read aligner Bowtie, and then analyzes the mapping results to
+identify splice junctions between exons.
 
 ------------------------------------------------------------------------
 
@@ -27,11 +27,11 @@ In Taito cluster tophat is initialized with command:
     module load biokit
 
 The biokit module sets up a set of commonly used bioinformatics tools,
-including Bowtie,  Bowtie2, TopHat  and Cufflinks. (Note  however that
-there are  bioinformatics tools in  Taito, that have a  separate setup
+including Bowtie, Bowtie2, TopHat and Cufflinks. (Note however that
+there are bioinformatics tools in Taito, that have a separate setup
 commands.).
 
-In Taito, tophat jobs  should be run as batch jobs.  Below is a sample
+In Taito, tophat jobs should be run as batch jobs. Below is a sample
 batch job file, for running a TopHat job in Taito:
 
     #!/bin/bash -l
@@ -48,19 +48,18 @@ batch job file, for running a TopHat job in Taito:
     module load biokit
     tophat -p $SLURM_CPUS_PER_TASK -o tophat_results Homo.sapiens_bwt2_index reads1.fq reads2 
 
-In the  batch job  example above,  one task (-n  1) is  executed.  The
-Tophat job  uses 4 cores (--cpus-per-task=4  ) with total of  16 GB of
-memory  (--mem-per-cpu=4000).  The  maximum  duration of  the  job  is
-twentyfour hours (-t  24:00:00 ). All the cores are  assigned from one
-computing node (--nodes=1 ).
+In the batch job example above, one task (-n 1) is executed.  The Tophat
+job uses 4 cores (--cpus-per-task=4 ) with total of 16 GB of memory
+(--mem-per-cpu=4000). The maximum duration of the job is twentyfour
+hours (-t 24:00:00 ). All the cores are assigned from one computing node
+(--nodes=1 ).
 
-You  can submit  the  batch job  file  to the  batch  job system  with
-command:
+You can submit the batch job file to the batch job system with command:
 
     sbatch batch_job_file.bash
 
-Check the  chapter 3  of the [Taito  user guide] for  more information
-about running batch jobs.
+Check the chapter 3 of the [Taito user guide] for more information about
+running batch jobs.
 
 ------------------------------------------------------------------------
 
@@ -82,8 +81,7 @@ servicedesk@csc.fi
 
 ### Manual
 
-More  information about  TopHat  can be  found  from the [TopHat  home
-page].
+More information about TopHat can be found from the [TopHat home page].
 
 ------------------------------------------------------------------------
 

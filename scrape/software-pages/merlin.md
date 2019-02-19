@@ -2,8 +2,8 @@
 
 ### Description
 
-MERLIN is  a very  fast linkage analysis  package that  uses efficient
-data structures (sparse trees) to  represent the traversal of genes in
+MERLIN is a very fast linkage analysis package that uses efficient data
+structures (sparse trees) to represent the traversal of genes in
 pedigrees.
 
 MERLIN can be used for:
@@ -41,12 +41,12 @@ MERLIN requires the following input files:
 3.  Locus file (can be replaced by a LINKAGE format locus file)
 4.  Allele frequency file (optional)
 
-To  run MERLIN,  type merlin  followed  by command  line options,  for
+To run MERLIN, type merlin followed by command line options, for
 example:
 
     merlin -d linkage.loci -p linkage.pre -m linkage.map --npl --trim --bits 30
 
-A full description of MERLIN command  line parameters can be viewed at
+A full description of MERLIN command line parameters can be viewed at
 [MERLIN reference sheet] at the University of Michigan.
 
  
@@ -63,7 +63,7 @@ Biosciences
 
 When you use MERLIN, cite:
 
-Abecasis  GR, Cherny  SS, Cookson  WO and  Cardon LR,  Merlin -  rapid
+Abecasis GR, Cherny SS, Cookson WO and Cardon LR, Merlin - rapid
 analysis of dense genetic maps using sparse gene flow trees. Nat Genet
 (2002) 30: 97-101.
 
@@ -77,8 +77,7 @@ servicedesk@csc.fi
 
 ### Manual
 
-More  information about  MERLIN can  be  found from  the [Merlin  home
-page].
+More information about MERLIN can be found from the [Merlin home page].
 
 ------------------------------------------------------------------------
 

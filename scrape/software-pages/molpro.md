@@ -17,12 +17,11 @@
 
 The environment is set by the command:
 
-`module load  molpro-env/2015.1 ("module avail molpro-env"  for a list
-of available versions)`
+`module load molpro-env/2015.1 ("module avail molpro-env" for a list of available versions)`
 
-In order  to run  MOLPRO you  need to  create an  input file.  See the
-[manual] for detailed instruction on  how to prepare one. Examples can
-be found in the **examples** and **testjobs** directories:
+In order to run MOLPRO you need to create an input file. See the
+[manual] for detailed instruction on how to prepare one. Examples can be
+found in the **examples** and **testjobs** directories:
 
 -   /appl/chem/molpro/examples
 -   /appl/chem/molpro/testjobs
@@ -31,7 +30,7 @@ be found in the **examples** and **testjobs** directories:
 
 **Parallel runs**
 
-Many parts  of MOLPRO have  been parallelized.  To run the  program in
+Many parts of MOLPRO have been parallelized. To run the program in
 parallel, you need to prepare a batch job file for parallel jobs and
 submit it. The file and procedure differs depending on architecture.  
  
@@ -42,7 +41,7 @@ Submit the job with:
 
 `sbatch  job-molprop2015-taito.job`
 
-Small  interactive serial  jobs can  be done  in Taito-shell  by first
+Small interactive serial jobs can be done in Taito-shell by first
 loading the molpro environment with:
 
 `module load molpro-env/2015.1`
@@ -68,42 +67,42 @@ Chemistry
 
 ### References
 
--      <span   id="yui_patched_v3_11_0_1_1439993932381_625">Scientific
-    publications  require proper  citation of  methods and  procedures
-    employed.  All  publications resulting  from  use  of MOLPRO  must
+-   <span id="yui_patched_v3_11_0_1_1439993932381_625">Scientific
+    publications require proper citation of methods and procedures
+    employed. All publications resulting from use of MOLPRO must
     acknowledge at least the following:</span>
 
-All publications resulting  from use of this  program must acknowledge
-the following two references.
+All publications resulting from use of this program must acknowledge the
+following two references.
 
-H.-J. Werner,  P. J. Knowles,  G. Knizia, F.  R. Manby and  M. Schütz,
-WIREs Comput Mol Sci **2**, 242-253 (2012), doi: [10.1002/wcms.82]
+H.-J. Werner, P. J. Knowles, G. Knizia, F. R. Manby and M. Schütz, WIREs
+Comput Mol Sci **2**, 242-253 (2012), doi: [10.1002/wcms.82]
 
-[MOLPRO,  version 2015.1,  a package  of *ab  initio* programs,  H.-J.
-Werner, P. J.  Knowles, G. Knizia, F. R. Manby,  M. Schütz, P. Celani,
-W. Györffy, D. Kats, T. Korona,  R. Lindh, A. Mitrushenkov, G. Rauhut,
-K. R.   Shamasundar,  T. B.   Adler,   R. D.  Amos,   A. Bernhardsson,
-A. Berning, D. L.  Cooper, M. J. O.  Deegan, A. J.  Dobbyn, F. Eckert,
-E. Goll,  C. Hampel, A. Hesselmann,  G. Hetzer, T. Hrenar,  G. Jansen,
-C. Köppl,   Y. Liu,    A. W.   Lloyd,    R. A.   Mata,    A. J.   May,
-S. J. McNicholas,  W. Meyer, M. E.  Mura, A. Nicklass,  D. P. O'Neill,
-P. Palmieri, D. Peng,  K. Pflüger, R. Pitzer,  M. Reiher, T. Shiozaki,
-H. Stoll, A. J.  Stone, R. Tarroni, T. Thorsteinsson, and  M. Wang,] ,
-see <http://www.molpro.net>.
+[MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.
+Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, P. Celani,
+W. Györffy, D. Kats, T. Korona, R. Lindh, A. Mitrushenkov, G. Rauhut,
+K. R. Shamasundar, T. B. Adler, R. D. Amos, A. Bernhardsson, A. Berning,
+D. L. Cooper, M. J. O. Deegan, A. J. Dobbyn, F. Eckert, E. Goll,
+C. Hampel, A. Hesselmann, G. Hetzer, T. Hrenar, G. Jansen, C. Köppl,
+Y. Liu, A. W. Lloyd, R. A. Mata, A. J. May, S. J. McNicholas, W. Meyer,
+M. E. Mura, A. Nicklass, D. P. O'Neill, P. Palmieri, D. Peng,
+K. Pflüger, R. Pitzer, M. Reiher, T. Shiozaki, H. Stoll, A. J. Stone,
+R. Tarroni, T. Thorsteinsson, and M. Wang,] , see
+<http://www.molpro.net>.
 
 Some journals insist on a shorter list of authors; in such a case, the
 following should be used instead.
 
-[MOLPRO,  version 2015.1,  a package  of *ab  initio* programs,  H.-J.
-Werner, P. J. Knowles, G. Knizia,  F. R. Manby, M. Schütz, and others]
-, see <http://www.molpro.net>.
+[MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.
+Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, and others] ,
+see <http://www.molpro.net>.
 
-Depending on how  the programs are used, other  references should also
-be cited. For instructions see the [manual][1].
+Depending on how the programs are used, other references should also be
+cited. For instructions see the [manual][1].
 
 #### Licensing restrictions {#yui_patched_v3_11_0_1_1549272710679_481}
 
--    You may  use  the Software  exclusively  for non-profit  research
+-   You may use the Software exclusively for non-profit research
     purposes.
 -   See the [Licence Agreement] for additional details
 
@@ -122,9 +121,9 @@ The manual is available in different formats:
 
     #### More information
 
-    Additional   information    can   be   found   at    the   [MOLPRO
-    homepage]. There  is also a  [mailing list] for MOLPRO  users, the
-    use of which is encouraged.
+    Additional information can be found at the [MOLPRO homepage]. There
+    is also a [mailing list] for MOLPRO users, the use of which is
+    encouraged.
 
  
 
@@ -132,7 +131,21 @@ The manual is available in different formats:
 
   [manual]: http://www.molpro.net/info/current/doc/manual/?portal=user&choice=User%27s+manual
   [job-molprop2015-taito.job]: https://extras.csc.fi/chem/progs/molpro/job-molprop2015-taito.job
-  [10.1002/wcms.82]: http://dx.doi.org/10.1002/wcms.82 {#tex2html11} [MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.  Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, P. Celani, W. Györffy, D. Kats, T. Korona, R. Lindh, A. Mitrushenkov, G. Rauhut, K. R. Shamasundar, T. B. Adler, R. D. Amos, A. Bernhardsson, A. Berning, D. L. Cooper, M. J. O. Deegan, A. J. Dobbyn, F. Eckert, E. Goll, C. Hampel, A. Hesselmann, G. Hetzer, T. Hrenar, G. Jansen, C. Köppl, Y. Liu, A. W. Lloyd, R. A. Mata, A. J. May, S. J.  McNicholas, W. Meyer, M. E. Mura, A. Nicklass, D. P. O'Neill, P. Palmieri, D. Peng, K. Pflüger, R. Pitzer, M. Reiher, T. Shiozaki, H. Stoll, A. J. Stone, R. Tarroni, T. Thorsteinsson, and M. Wang,]: https://www.molpro.net/info/2015.1/doc/molpro.bib {#tex2html12} [MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.  Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, and others]: https://www.molpro.net/info/2015.1/doc/molpro.bib {#tex2html14}
+  [10.1002/wcms.82]: http://dx.doi.org/10.1002/wcms.82 {#tex2html11}
+  [MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.
+  Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, P. Celani,
+  W. Györffy, D. Kats, T. Korona, R. Lindh, A. Mitrushenkov, G. Rauhut,
+  K. R. Shamasundar, T. B. Adler, R. D. Amos, A. Bernhardsson,
+  A. Berning, D. L. Cooper, M. J. O. Deegan, A. J. Dobbyn, F. Eckert,
+  E. Goll, C. Hampel, A. Hesselmann, G. Hetzer, T. Hrenar, G. Jansen,
+  C. Köppl, Y. Liu, A. W. Lloyd, R. A. Mata, A. J. May, S. J.
+  McNicholas, W. Meyer, M. E. Mura, A. Nicklass, D. P. O'Neill,
+  P. Palmieri, D. Peng, K. Pflüger, R. Pitzer, M. Reiher, T. Shiozaki,
+  H. Stoll, A. J. Stone, R. Tarroni, T. Thorsteinsson, and M. Wang,]: https://www.molpro.net/info/2015.1/doc/molpro.bib
+  {#tex2html12}
+  [MOLPRO, version 2015.1, a package of *ab initio* programs, H.-J.
+  Werner, P. J. Knowles, G. Knizia, F. R. Manby, M. Schütz, and others]:
+    https://www.molpro.net/info/2015.1/doc/molpro.bib {#tex2html14}
   [1]: http://www.molpro.net/info/current/doc/manual/node3.html
   [Licence Agreement]: https://www.molpro.net/resources/licence_deliver.php?format=html&type=service&use=non-commercial&duration=indefinite
   [PDF format]: http://www.molpro.net/info/current/doc/manual.pdf

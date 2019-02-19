@@ -2,8 +2,8 @@
 
 ### Description
 
-SPAdes if a  short read assebler for small genomes.  SPAdes works with
-Illumina  or  IonTorrent reads  and  is  capable of  providing  hybrid
+SPAdes if a short read assebler for small genomes. SPAdes works with
+Illumina or IonTorrent reads and is capable of providing hybrid
 assemblies using PacBio, Oxford Nanopore and Sanger reads.
 
 ------------------------------------------------------------------------

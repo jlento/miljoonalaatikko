@@ -20,12 +20,11 @@ In Taito the velvet commands are initialized with command:
 
     module load biokit
 
-*Velveth* (and  the  corresponding  colorspace  version *velveth\_de*)
-helps    you    construct    the    dataset    for    the    following
-program,*velvetg.* Velveth  takes  in  a   number  of  sequence  ﬁles,
-produces a  hashtable, then outputs  two ﬁles in an  output directory,
-Sequences and  Roadmaps, which are necessary  to *velvetg*. The syntax
-is as follows:
+*Velveth* (and the corresponding colorspace version *velveth\_de*) helps
+you construct the dataset for the following program,*velvetg.* Velveth
+takes in a number of sequence ﬁles, produces a hashtable, then outputs
+two ﬁles in an output directory, Sequences and Roadmaps, which are
+necessary to *velvetg*. The syntax is as follows:
 
     velveth output_directory hash_length  [[-file_format][-read_type] filename]
 
@@ -33,9 +32,9 @@ For example
 
     velveth assembly_dir 21 -shortPaired data/reads.fa
 
-*Velvetg* (and the corresponding  colorspace version *velvetg\_de*) is
-the  core  of  Velvet  where  the   de  Bruijn  graph  is  built  then
-manipulated.  The syntax of velvetg is
+*Velvetg* (and the corresponding colorspace version *velvetg\_de*) is
+the core of Velvet where the de Bruijn graph is built then manipulated.
+The syntax of velvetg is
 
     velvetg output_directory -options parameters
 
@@ -45,42 +44,41 @@ A *velvetg* command could look like:
 
  
 
-When  velvet  is   compiled,  the  maximum  allowed   kmer  length  is
-defined. The  longer the maximum kmer  is the more memory  velvet will
-need (regardless of the kmer length that is actually used). Because of
-that  we provide  several  versions  of velvet,  listed  in the  table
-below. In Taito the default the maximum k-mer length, that can be used
-in the hash table, is 100 bases. However, it is recommended to use the
-version that  has the shortest  possible max kmer length.  For example
-for   kmer   length   40   you  should   use   *velveth\_maxk50*   and
-*velvetg\_maxk50.*
+When velvet is compiled, the maximum allowed kmer length is defined. The
+longer the maximum kmer is the more memory velvet will need (regardless
+of the kmer length that is actually used). Because of that we provide
+several versions of velvet, listed in the table below. In Taito the
+default the maximum k-mer length, that can be used in the hash table, is
+100 bases. However, it is recommended to use the version that has the
+shortest possible max kmer length. For example for kmer length 40 you
+should use *velveth\_maxk50* and *velvetg\_maxk50.*
 
   
 Table 2.  Velvet programs available in **Taito**
 
-|                     | | |
+|                     |                       |            |
 |---------------------|-----------------------|------------|
-| **Program** | **max. k-mer length** | ** type** |
-| velveth | 100 | normal |
-| velvetg | 100 | normal |
-| velveth\_maxk75 | 75 | normal |
-| velvetg\_maxk75 | 75 | normal |
-| velveth\_maxk50 | 50 | normal |
-| velvetg\_maxk50 | 50 | normal |
-| velveth\_maxk35 | 35 | normal |
-| velvetg\_maxk35 | 35 | normal |
-| velveth\_de | 100 | colorspace |
-| velvetg\_de | 100 | colorspace |
-| velveth\_de\_maxk75 | 75 | colorspace |
-| velvetg\_de\_maxk75 | 75 | colorspace |
-| velveth\_de\_maxk50 | 50 | colorspace |
-| velvetg\_de\_maxk50 | 50 | colorspace |
-| velveth\_de\_maxk35 | 35 | colorspace |
-| velvetg\_de\_maxk35 | 35 | colorspace |
+| **Program**         | **max. k-mer length** | ** type**  |
+| velveth             | 100                   | normal     |
+| velvetg             | 100                   | normal     |
+| velveth\_maxk75     | 75                    | normal     |
+| velvetg\_maxk75     | 75                    | normal     |
+| velveth\_maxk50     | 50                    | normal     |
+| velvetg\_maxk50     | 50                    | normal     |
+| velveth\_maxk35     | 35                    | normal     |
+| velvetg\_maxk35     | 35                    | normal     |
+| velveth\_de         | 100                   | colorspace |
+| velvetg\_de         | 100                   | colorspace |
+| velveth\_de\_maxk75 | 75                    | colorspace |
+| velvetg\_de\_maxk75 | 75                    | colorspace |
+| velveth\_de\_maxk50 | 50                    | colorspace |
+| velvetg\_de\_maxk50 | 50                    | colorspace |
+| velveth\_de\_maxk35 | 35                    | colorspace |
+| velvetg\_de\_maxk35 | 35                    | colorspace |
 
  
 
-In Taito,  the velvet jobs  should be  executed through the  batch job
+In Taito, the velvet jobs should be executed through the batch job
 system. Below is sample batch job file for velvet.
 
     #!/bin/bash
@@ -102,22 +100,22 @@ system. Below is sample batch job file for velvet.
     velveth_maxk50 assembly_folder 45 -shortPaired -fastq temp.fastq
     velvetg_maxk50 assembly_folder -ins_length 400
 
-In  the batch  job  file above,  the job  reserves  4 computing  cores
-(*--cpus-per-task=4*) and  64 GB of memory  ( 4\*16 GB) for  four days
-(*-t  4-00:00:00)*.   Velvet  can   utilize  threads   based  parallel
-computing. After a  set up command *module load  biokit* the number of
-cores  to be  used  in  the Velvet  run  is  defined with  environment
-variables:* OMP\_NUM\_THREADS* and *OMP\_THREAD\_LIMIT*.    In    this
-script  these  variables   are  set  by  using   the  the  environment
-variable* SLURM\_CPUS\_PER\_TASK*,  that  contains the  value  defined
-with the *--cpus-per-task*,( which in this example has value: 4).
+In the batch job file above, the job reserves 4 computing cores
+(*--cpus-per-task=4*) and 64 GB of memory ( 4\*16 GB) for four days (*-t
+4-00:00:00)*. Velvet can utilize threads based parallel computing. After
+a set up command *module load biokit* the number of cores to be used in
+the Velvet run is defined with environment
+variables:* OMP\_NUM\_THREADS* and *OMP\_THREAD\_LIMIT*. In this script
+these variables are set by using the the environment
+variable* SLURM\_CPUS\_PER\_TASK*, that contains the value defined with
+the *--cpus-per-task*,( which in this example has value: 4).
 
 The batch job can be launched with command
 
 sbatch *script\_file\_name*
 
-More information  about using  the batch  job system  of Taito  can be
-found from the[ Chapter 3. of the Taito user guide].
+More information about using the batch job system of Taito can be found
+from the[ Chapter 3. of the Taito user guide].
 
 ------------------------------------------------------------------------
 

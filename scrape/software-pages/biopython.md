@@ -2,16 +2,15 @@
 
 ### Description
 
-Biopython  is  a collection  of  python  modules that  facilitate  the
-development  of python  scripts  for  bioinformatics applications.  As
-such, it does not include ready to use programs in the sense that many
-commercial packages  and free  web-based interfaces  do. On  the other
-hand,  Biopython  provides  reusable python  modules  that  facilitate
-writing  scripts for  sequence  manipulation,  accessing of  databases
-using a range of data formats and execution and parsing of the results
-of various molecular biology programs. Consequently, Biopython enables
-developing scripts that can analyze  large quantities of sequence data
-in ways that
+Biopython is a collection of python modules that facilitate the
+development of python scripts for bioinformatics applications. As such,
+it does not include ready to use programs in the sense that many
+commercial packages and free web-based interfaces do. On the other hand,
+Biopython provides reusable python modules that facilitate writing
+scripts for sequence manipulation, accessing of databases using a range
+of data formats and execution and parsing of the results of various
+molecular biology programs. Consequently, Biopython enables developing
+scripts that can analyze large quantities of sequence data in ways that
 are typically difficult or impossible with web based systems.  
  
 
@@ -41,17 +40,17 @@ Alternatively you can run command:
 
     module load biopython-env
 
-This module  load command loads  older versions of python  (2.7.3) and
-biopython  (1.61).  These  biopython environments  use  user  specific
-virtual  python environment  which  allows users  own pythoin  library
-installations with *pip*.
+This module load command loads older versions of python (2.7.3) and
+biopython (1.61). These biopython environments use user specific virtual
+python environment which allows users own pythoin library installations
+with *pip*.
 
 After this you can launch a biopython program with command
 
     python my_biopython_code.py
 
-Alternatively you can  change the python definition in  the first line
-of your code to
+Alternatively you can change the python definition in the first line of
+your code to
 
     #!/bin/env python
 
@@ -77,7 +76,7 @@ Biosciences
 
 ### Manual
 
-More information  about biopython  can be found  form the  homepage of
+More information about biopython can be found form the homepage of
 biopython.
 
     [www.biopython.org]

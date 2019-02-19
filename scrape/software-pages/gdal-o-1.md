@@ -2,9 +2,9 @@
 
 ### Description
 
-GDAL/OGR library is  for accessing and transforming  raster and vector
-data.   Enables    for   example   format   and    coordinate   system
-changes. Includes also command-line binaries, no GUI.
+GDAL/OGR library is for accessing and transforming raster and vector
+data. Enables for example format and coordinate system changes. Includes
+also command-line binaries, no GUI.
 
 ------------------------------------------------------------------------
 
@@ -14,8 +14,8 @@ changes. Includes also command-line binaries, no GUI.
 
 Taito: 2.2.1, 2.0.1, 1.11.1, 1.10.1.
 
-Only 2.2.1  supports xx.py  tools and has  also wider  formats support
-than others.
+Only 2.2.1 supports xx.py tools and has also wider formats support than
+others.
 
 ------------------------------------------------------------------------
 
@@ -23,22 +23,20 @@ than others.
 
 First load appropriate module. There is three options for that:
 
-1) If you want  to use GDAL 2.2.1 stand-alone or  with Python, QGIS or
-LasTools, use [geo-env], which  includes **Python** with GIS packages,
-GDAL, QGIS  and LasTools. It does  not include Saga GIS  directly, but
-Saga can be easily added like this:
+1) If you want to use GDAL 2.2.1 stand-alone or with Python, QGIS or
+LasTools, use [geo-env], which includes **Python** with GIS packages,
+GDAL, QGIS and LasTools. It does not include Saga GIS directly, but Saga
+can be easily added like this:
 
 `module load geo-env`
 
-2) If  you want to use  rgdal (R), please see  [rspatial-env] page for
+2) If you want to use rgdal (R), please see [rspatial-env] page for
 details.
 
-3) If you  want to use plain  GDAL or some older version  of GDAL, you
+3) If you want to use plain GDAL or some older version of GDAL, you
 should load all the needed modules explicitly. For GDAL/2.2.1 these:
 
-`module   load  gcc/4.9.3   hdf5-serial/1.8.15  netcdf4-serial/4.3.3.1
-sqlite/3.19.3    proj4/4.9.3    geos/3.6.1   spatialite/4.3.0    mysql
-hdf4/4.2.13 gdal/2.2.1`
+`module load gcc/4.9.3 hdf5-serial/1.8.15 netcdf4-serial/4.3.3.1 sqlite/3.19.3 proj4/4.9.3 geos/3.6.1 spatialite/4.3.0 mysql hdf4/4.2.13 gdal/2.2.1`
 
 For GDAL/2.0.1:
 
@@ -58,9 +56,9 @@ For GDAL 1.10.1:
 module load gcc/4.7.2 gdal/1.10.1
 ~~~~
 
-Both of  the xx-env modules  unload all previously loaded  modules, so
-they  should be  loaded first,  if you  need to  load also  some other
-modules.  They also load only GDAL/2.2.1
+Both of the xx-env modules unload all previously loaded modules, so they
+should be loaded first, if you need to load also some other modules.
+They also load only GDAL/2.2.1
 
  
 
@@ -68,8 +66,8 @@ Then you can use the GDAL command-line utilities, for example
 
 `gdalinfo example.tif`
 
-For processing  a lot of files,  so that processing order  of files is
-not important, please use [array jobs].
+For processing a lot of files, so that processing order of files is not
+important, please use [array jobs].
 
 ------------------------------------------------------------------------
 
@@ -93,7 +91,7 @@ servicedesk@csc.fi
 
 -   [GDAL utilities] (raster data)
 -   [OGR utilities] (vector data)
--    <span  id="yui_patched_v3_11_0_1_1441351426219_790">[Examples  in
+-   <span id="yui_patched_v3_11_0_1_1441351426219_790">[Examples in
     Finnish] (CSC)</span>
 
 Main GDAL raster formats supported:

@@ -2,13 +2,13 @@
 
 ### Description
 
-ClustalO  and ClustalW  are multiple  sequence alignment  programs for
-nucleotide  and  protein  sequences.  Clustal  uses  a  method  called
-pairwise progressive  sequence alignment. This heuristic  method first
-does a  pairwise sequences alignment  for all the sequence  pairs that
-can be constructed from the sequence set. A dendrogram (guide tree) of
-the sequences is then done according to the pairwise similarity of the
-sequences. Finally a multiple sequence  alignment is is constructed by
+ClustalO and ClustalW are multiple sequence alignment programs for
+nucleotide and protein sequences. Clustal uses a method called pairwise
+progressive sequence alignment. This heuristic method first does a
+pairwise sequences alignment for all the sequence pairs that can be
+constructed from the sequence set. A dendrogram (guide tree) of the
+sequences is then done according to the pairwise similarity of the
+sequences. Finally a multiple sequence alignment is is constructed by
 aligning sequences in the order, defined by the guide tree.
 
 ------------------------------------------------------------------------

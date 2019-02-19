@@ -18,6 +18,6 @@ while read url; do
 done < "$1"
 
 
-# Justify paragraphs
+# Justify paragraphs (not quite there yet...)
 
-bash utils/fmt.sh ${d}/*.md
+# bash utils/fmt.sh ${d}/*.md
