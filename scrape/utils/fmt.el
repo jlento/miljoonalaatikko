@@ -1,23 +1,11 @@
 (defun markdown-justify-buffer ()
-  (goto-char (point-min))
-  (let ((empty-lines
-         (rx (* space) eol))
-        (link-definition
-         (rx (repeat 3 (opt " "))
-             "[" (+ (not (any "]"))) "]:" (+ blank) (+ (not space))
-             (or (opt (* space) "\"" (* (not (any "\""))) "\"")
-                 (opt (* space) "'" (* (not (any "'"))) "'")
-                 (opt (* space) "{" (* (not (any "'"))) "}")
-                 (opt (* space) "(" (* (not (any ")"))) ")"))
-             (* space) eol)))
+  "Justifies markdown buffer"
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
     (while (not (eobp))
-      (cond ((looking-at empty-lines)
-             (re-search-forward empty-lines)
-             (forward-line 1))
-            ((looking-at link-definition)
-             (re-search-forward link-definition)
-             (forward-line 1))
-            (t
-             (let ((current-prefix-arg 1))
-               (call-interactively 'markdown-fill-paragraph)
-               (forward-paragraph)))))))
+      (let ((current-prefix-arg 1)
+            (paragraph-start
+             (concat paragraph-start "\\| ? ? ?\\[[^]]+]:")))
+            (call-interactively 'markdown-fill-paragraph))
+          (markdown-forward-paragraph))))
