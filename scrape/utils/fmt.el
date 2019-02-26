@@ -1,3 +1,5 @@
+(require 'markdown-mode)
+
 (defun markdown-justify-buffer ()
   "Justifies markdown buffer"
   (interactive)

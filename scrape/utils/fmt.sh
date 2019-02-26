@@ -17,7 +17,7 @@ cdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Main
 for file in "$@"; do
-    emacs -batch -l $md -l ${cdir}/fmt.el "$file" \
+    emacs -batch -L $(dirname $md) -l ${cdir}/fmt.el "$file" \
           -f markdown-justify-buffer \
           -f save-buffer
 done
