@@ -4,8 +4,8 @@
   (save-excursion
     (goto-char (point-min))
     (while (not (eobp))
-      (let ((current-prefix-arg 1)
-            (paragraph-start
-             (concat paragraph-start "\\| ? ? ?\\[[^]]+]:")))
-            (call-interactively 'markdown-fill-paragraph))
-          (markdown-forward-paragraph))))
+      (let* ((current-prefix-arg 1)
+             (reference-link-start "\\| ? ? ?\\[[^]]+]:")
+             (paragraph-start (concat paragraph-start reference-link-start)))
+        (call-interactively 'markdown-fill-paragraph)
+        (markdown-forward-paragraph)))))
