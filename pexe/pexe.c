@@ -11,30 +11,45 @@
   them to MPI tasks. Each MPI task runs it's command lines one by one with
   system() call.
 
+  MPI implementation likely needs some encouragement to actually enable
+  passive RMA (requires spinning extra threads?). Setting
+
+      export I_MPI_ASYNC_PROGRESS=1
+
+  or
+
+      export MPICH_ASYNC_PROGRESS=1
+
+  seemed to do the trick.
+
   Build example:
 
       mpicc -o pexe -std=c11 -Wall pexe.c
 
-  Usage example:
+  Usage example (test work stealing):
 
-      for ((i = 0; i < 7; i++)); do
-          echo echo \"Line $i, Host \$\(hostname\), Rank \${SLURM_PROCID}.\"
-      done | srun -p test -t 1 -n 3 --tasks-per-node=2 pexe | sort -n -k 2
-
-  TODO:
-  - work stealing
+      for ((i = 0; i < 23; i++)); do
+          echo sleep $(( ((i+1)%3) * ((i+2)%3) ))'; echo "Rank ${SLURM_PROCID}, line '$i': $(date +%T)"'
+      done | srun -p test -t 1 -n 3 pexe
 
 */
 
 #define MAX_COMMANDS 10000  // ...per task
 #define MAX_COMMAND_LEN 256
 
+#ifdef NDEBUG
+#define debug(...) ((void)0)
+#else
+#define debug(...) printf(__VA_ARGS__); fflush(stdout);
+#endif
+
 int main(int argc, char *argv[]) {
-  MPI_Win table;
+  MPI_Win counter, table;
   char commands[MAX_COMMANDS][MAX_COMMAND_LEN] = {0};
-  int comm_rank, comm_size;
+  int comm_rank, comm_size, i;
 
   MPI_Init (&argc, &argv);
+
   MPI_Comm_rank (MPI_COMM_WORLD, &comm_rank);
   MPI_Comm_size (MPI_COMM_WORLD, &comm_size);
 
@@ -45,9 +60,9 @@ int main(int argc, char *argv[]) {
 
   // Distribute command lines to tasks, round-robin, start from task 1
 
+  i = 0;
   if (comm_rank == 0) {
     char line[MAX_COMMAND_LEN + 2];
-    int i = 0;
     MPI_Win_lock_all (MPI_MODE_NOCHECK, table);
     while (fgets (line, MAX_COMMAND_LEN + 2, stdin) != NULL) {
       if (i > MAX_COMMANDS * comm_size) {
@@ -71,11 +86,41 @@ int main(int argc, char *argv[]) {
 
   MPI_Win_fence (0, table);
 
+  int next_command;
+
+  MPI_Win_create (&next_command, sizeof(int), sizeof(int),
+                  MPI_INFO_NULL, MPI_COMM_WORLD, &counter);
+
+  for (i = MAX_COMMANDS - 1; i >= 0; i--) {
+    if (commands[i][0]) {
+      next_command = i;
+      break;
+    }
+  }
+
+  MPI_Barrier (MPI_COMM_WORLD);
+
   // Execute command lines
 
-  for (int i = 0; i < MAX_COMMANDS; i++) {
-    if (strlen (commands[i]) < 1) break;
-    system (commands[i]);
+  const int dec = -1;
+  int next = 0; // Read command list from own rank + next
+  int current_command;
+  while (next < comm_size) {
+    int current_rank = (comm_rank + next) % comm_size;
+    MPI_Win_lock (MPI_LOCK_SHARED, current_rank, 0, counter);
+    MPI_Fetch_and_op (&dec, &current_command, MPI_INT, current_rank,
+                      0, MPI_SUM, counter);
+    MPI_Win_unlock (current_rank, counter);
+    if (current_command < 0) {
+      next++;
+    } else {
+      char command[MAX_COMMAND_LEN] = {0};
+      MPI_Win_lock (MPI_LOCK_SHARED, current_rank, MPI_MODE_NOCHECK, table);
+      MPI_Get (&command, MAX_COMMAND_LEN, MPI_CHAR, current_rank,
+               current_command, MAX_COMMAND_LEN, MPI_CHAR, table);
+      MPI_Win_unlock (current_rank, table);
+      system (command);
+    }
   }
 
   MPI_Win_free (&table);
