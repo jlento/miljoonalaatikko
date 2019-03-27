@@ -12,11 +12,7 @@
   system() call.
 
   MPI implementation likely needs some encouragement to actually enable
-  passive RMA (requires spinning extra threads?). Setting
-
-      export I_MPI_ASYNC_PROGRESS=1
-
-  or
+  passive RMA (requires spinning extra threads, oversubscribes?). Setting
 
       export MPICH_ASYNC_PROGRESS=1
 
@@ -26,7 +22,7 @@
 
       mpicc -o pexe -std=c11 -Wall pexe.c
 
-  Usage example (test work stealing):
+  Usage example (tests work stealing):
 
       for ((i = 0; i < 23; i++)); do
           echo sleep $(( ((i+1)%3) * ((i+2)%3) ))'; echo "Rank ${SLURM_PROCID}, line '$i': $(date +%T)"'
@@ -46,11 +42,11 @@
 int main(int argc, char *argv[]) {
   MPI_Win counter, table;
   char commands[MAX_COMMANDS][MAX_COMMAND_LEN] = {0};
-  int comm_rank, comm_size, i;
+  int rank, comm_size, i;
 
   MPI_Init (&argc, &argv);
 
-  MPI_Comm_rank (MPI_COMM_WORLD, &comm_rank);
+  MPI_Comm_rank (MPI_COMM_WORLD, &rank);
   MPI_Comm_size (MPI_COMM_WORLD, &comm_size);
 
   MPI_Win_create (&commands, MAX_COMMANDS * MAX_COMMAND_LEN, MAX_COMMAND_LEN,
@@ -61,7 +57,7 @@ int main(int argc, char *argv[]) {
   // Distribute command lines to tasks, round-robin, start from task 1
 
   i = 0;
-  if (comm_rank == 0) {
+  if (rank == 0) {
     char line[MAX_COMMAND_LEN + 2];
     MPI_Win_lock_all (MPI_MODE_NOCHECK, table);
     while (fgets (line, MAX_COMMAND_LEN + 2, stdin) != NULL) {
@@ -86,6 +82,9 @@ int main(int argc, char *argv[]) {
 
   MPI_Win_fence (0, table);
 
+  // Initialize next_command counter/pointer to the top of the command
+  // line stack.
+
   int next_command;
 
   MPI_Win_create (&next_command, sizeof(int), sizeof(int),
@@ -101,18 +100,20 @@ int main(int argc, char *argv[]) {
   MPI_Barrier (MPI_COMM_WORLD);
 
   // Execute command lines
+  //
+  // Process commands from own rank + steal_increment
 
   const int dec = -1;
-  int next = 0; // Read command list from own rank + next
+  int steal_increment = 0;
   int current_command;
-  while (next < comm_size) {
-    int current_rank = (comm_rank + next) % comm_size;
+  while (steal_increment < comm_size) {
+    int current_rank = (rank + steal_increment) % comm_size;
     MPI_Win_lock (MPI_LOCK_SHARED, current_rank, 0, counter);
     MPI_Fetch_and_op (&dec, &current_command, MPI_INT, current_rank,
                       0, MPI_SUM, counter);
     MPI_Win_unlock (current_rank, counter);
     if (current_command < 0) {
-      next++;
+      steal_increment++;
     } else {
       char command[MAX_COMMAND_LEN] = {0};
       MPI_Win_lock (MPI_LOCK_SHARED, current_rank, MPI_MODE_NOCHECK, table);
@@ -126,5 +127,5 @@ int main(int argc, char *argv[]) {
   MPI_Win_free (&table);
   MPI_Barrier (MPI_COMM_WORLD);
   MPI_Finalize ();
-  exit (EXIT_SUCCESS);
+  exit (0);
 }
