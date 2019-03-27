@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
     char line[MAX_COMMAND_LEN + 2];
     MPI_Win_lock_all (MPI_MODE_NOCHECK, table);
     while (fgets (line, MAX_COMMAND_LEN + 2, stdin) != NULL) {
-      if (i > MAX_COMMANDS * comm_size) {
+      if (i >= MAX_COMMANDS * comm_size) {
         fprintf (stderr, "MAX_COMMANDS * comm_size (%d) exceeded.\n", i);
         MPI_Abort(MPI_COMM_WORLD, 1);
       }
