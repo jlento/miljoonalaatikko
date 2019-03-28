@@ -20,7 +20,7 @@
 
   Build example:
 
-      mpicc -o pexe -std=c11 -Wall pexe.c
+      mpicc -o pexe -std=c11 -Wall -Wl,--as-needed pexe.c
 
   Usage example (tests work stealing):
 
