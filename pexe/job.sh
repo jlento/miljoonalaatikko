@@ -4,7 +4,7 @@
 #SBATCH -n 3
 ##SBATCH --cpus-per-task=2
 
-export I_MPI_ASYNC_PROGRESS=1
+export MPICH_ASYNC_PROGRESS=1
 
 # Test async
 #
