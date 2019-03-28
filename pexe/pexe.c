@@ -42,10 +42,10 @@
 
 int main(int argc, char *argv[]) {
   MPI_Win counter, table;
-  char commands[MAX_COMMANDS][MAX_COMMAND_LEN] = {0};
+  char commands[MAX_COMMANDS][MAX_COMMAND_LEN] = {{0}};
   int rank, comm_size, i;
 
-  setenv ("MPICH_ASYNC_PROGRESS", "1", 0);
+  // setenv ("MPICH_ASYNC_PROGRESS", "1", 0);
   MPI_Init (&argc, &argv);
 
   MPI_Comm_rank (MPI_COMM_WORLD, &rank);
