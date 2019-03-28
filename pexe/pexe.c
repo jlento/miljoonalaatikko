@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +17,7 @@
 
       export MPICH_ASYNC_PROGRESS=1
 
-  seemed to do the trick.
+  seemed to do the trick (pexe sets it by default).
 
   Build example:
 
@@ -44,6 +45,7 @@ int main(int argc, char *argv[]) {
   char commands[MAX_COMMANDS][MAX_COMMAND_LEN] = {0};
   int rank, comm_size, i;
 
+  setenv ("MPICH_ASYNC_PROGRESS", "1", 0);
   MPI_Init (&argc, &argv);
 
   MPI_Comm_rank (MPI_COMM_WORLD, &rank);
