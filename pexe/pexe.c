@@ -124,6 +124,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  MPI_Win_free (&counter);
   MPI_Win_free (&table);
   MPI_Barrier (MPI_COMM_WORLD);
   MPI_Finalize ();
