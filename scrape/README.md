@@ -43,6 +43,10 @@ List of chapter urls in files [taito.txt] is collected using
 
     node utils/links.js '.no-print a' 'https://research.csc.fi/taito-user-guide' | sed -e 's|^/||' -e 's|.*|https://research.csc.fi/&|' > taito-guide/taito.txt
 
+List of chapter urls in files [pouta.txt] is collected using
+
+    node utils/links.js '.journal-content-article a' 'https://research.csc.fi/pouta-user-guide' | sort -u | sed -E 's|(^/)(.*)|https://research.csc.fi/\2|' > pouta-guide/pouta.txt
+
 ### Convert the pages
 
 Software pages:
@@ -73,5 +77,6 @@ Taito guide:
 [software.txt]: software-pages/urls.txt
 [environment.txt]: environment-guide/environment.txt
 [taito.txt]: taito-guide/taito.txt
+[pouta.txt]: pouta-guide/pouta.txt
 [Pandoc]: https://pandoc.org
 
