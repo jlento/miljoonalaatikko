@@ -45,7 +45,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   #config.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/home_vagrant", "1"]
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder ".", "/home/vagrant"
+  config.vm.synced_folder "spack", "/home/vagrant/spack"
+  config.vm.synced_folder "csc-spack-settings", "/home/vagrant/csc-spack-settings"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
