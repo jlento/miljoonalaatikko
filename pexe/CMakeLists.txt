@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.14)
+find_package(MPI REQUIRED)
+add_link_options(-Wl,--as-needed)
+add_executable(pexes pexes.c)
+target_include_directories(pexes PRIVATE ${MPI_CXX_INCLUDE_PATH})
+target_compile_options(pexes PRIVATE ${MPI_CXX_COMPILE_FLAGS} -std=c11)
+target_link_libraries(pexes ${MPI_CXX_LIBRARIES} ${MPI_CXX_LINK_FLAGS})
