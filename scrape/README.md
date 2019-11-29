@@ -72,13 +72,17 @@ Taito guide:
 
 Linux 101:
 
-    bash utils/convert.sh taito-guide/taito.txt
+    echo "https://research.csc.fi/csc-guide-linux-basics-for-csc" > linux-101/index.txt
+    bash utils/convert.sh linux-101/index.txt
+    bash utils/convert.sh linux-101/linux-101.txt
     for f in linux-101/*.md; do echo $f; sed -i -r 's|^#+ <a.*/a>|# |' $f; done
 
 FGCI:
 
+    echo "https://research.csc.fi/fgci-user-guide" > fgci/index.txt
+    bash utils/convert.sh fgci/index.txt
     bash utils/convert.sh taito-guide/taito.txt
-    for f in linux-fgci/*.md; do echo $f; sed -i -r 's|^#+ <a.*/a>|# |' $f; done
+    for f in fgci/*.md; do echo $f; sed -i -r 's|^#+ <a.*/a>|# |' $f; done
     
 
 [software-pages]: software-pages
