@@ -47,6 +47,15 @@ List of chapter urls in files [pouta.txt] is collected using
 
     node utils/links.js '.journal-content-article a' 'https://research.csc.fi/pouta-user-guide' | sort -u | sed -E 's|(^/)(.*)|https://research.csc.fi/\2|' > pouta-guide/pouta.txt
 
+List of page urls in [linux-101.txt] is collected using
+
+    node $utils/links.js '.no-print a' 'https://research.csc.fi/csc-guide-linux-basics-for-csc' | sed -n '/#/!s|/csc-guide-[^a][^p][^p].*|https://research.csc.fi&|p' > linux-101/linux-101.txt
+
+List of page urls in [fgci.txt] is collected using
+
+    node $utils/links.js '.journal-content-article a' 'https://research.csc.fi/fgci-user-guide' | sed -n -e 's|/fgci-[^a][^p][^p].*|https://research.csc.fi&|p' | sed 's|#.*||' | sort -u >fgci/fgci.txt
+
+
 ### Convert the pages
 
 Software pages:
@@ -61,7 +70,16 @@ Taito guide:
 
     bash utils/convert.sh taito-guide/taito.txt
 
+Linux 101:
 
+    bash utils/convert.sh taito-guide/taito.txt
+    for f in linux-101/*.md; do echo $f; sed -i -r 's|^#+ <a.*/a>|# |' $f; done
+
+FGCI:
+
+    bash utils/convert.sh taito-guide/taito.txt
+    for f in linux-fgci/*.md; do echo $f; sed -i -r 's|^#+ <a.*/a>|# |' $f; done
+    
 
 [software-pages]: software-pages
 [environment-guide]: environment-guide
