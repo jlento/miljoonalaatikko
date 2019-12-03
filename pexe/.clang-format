@@ -1,0 +1,25 @@
+---
+BasedOnStyle: LLVM
+AlignTrailingComments: true
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+BreakBeforeBraces: Allman
+ColumnLimit: 76
+IncludeBlocks: Merge
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: false
+Language: Cpp
+MaxEmptyLinesToKeep: 2
+PointerBindsToType: false
+ReflowComments: true
+SortIncludes: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: Always
+SpacesBeforeTrailingComments: 1
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+TabWidth: 8
+UseTab: Never
+...
+

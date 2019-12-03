@@ -2,6 +2,7 @@
 #SBATCH -p test
 #SBATCH -t 10
 #SBATCH -n 3
+#SBATCH -N 2-2
 ##SBATCH --cpus-per-task=2
 
 export MPICH_ASYNC_PROGRESS=1
