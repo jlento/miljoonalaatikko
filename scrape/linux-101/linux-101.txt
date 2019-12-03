@@ -1,0 +1,7 @@
+https://research.csc.fi/csc-guide-using-linux-in-command-line
+https://research.csc.fi/csc-guide-text-and-image-processing
+https://research.csc.fi/csc-guide-working-with-bash-shell
+https://research.csc.fi/csc-guide-more-commands-for-managing-files
+https://research.csc.fi/csc-guide-commands-for-data-processing
+https://research.csc.fi/csc-guide-packing-and-compression-tools
+https://research.csc.fi/csc-guide-linux-bash-scripts
