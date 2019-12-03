@@ -1,0 +1,39 @@
+---
+
+# Tested on Ubuntu-15.04
+
+- hosts: publishing-platform
+  remote_user: cloud-user
+  tasks:
+
+    - name: install packages
+      sudo: yes
+      apt: name={{ item }} state=latest update_cache=yes
+      with_items:
+        - texlive
+        - texlive-xetex
+        - firefox
+        - haskell-platform
+        - lmodern
+        - fonts-lmodern
+        - evince
+
+    - name: update cabal package list
+      command: cabal update
+
+    - name: install pandoc
+      command: env LC_ALL=en_US.UTF-8 cabal install pandoc
+      register: result
+      changed_when: "'All the requested packages are already installed' not in result.stdout"
+
+    - name: modify PATH
+      lineinfile:
+        line: PATH=${HOME}/.cabal/bin:${PATH}
+        dest: /home/cloud-user/.profile
+        insertafter: EOF
+        state: present
+
+    - name: clone CSC-Guides repository
+      git:
+        repo=https://github.com/jlento/CSC-Guides.git
+        dest=/home/cloud-user/github/CSC-Guides
