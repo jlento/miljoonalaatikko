@@ -1,0 +1,4 @@
+* Generic singly linked list data structure in Fortran
+
+Inspiration from the edX course "FP101x Introduction to Functional
+Programming", Jam session 8, and [[http://flibs.sourceforge.net/linked_list.html][flibs]].
