@@ -1,0 +1,13 @@
+BootStrap: library
+From: ubuntu:18.04
+
+%post
+    apt update
+    apt -y upgrade
+    apt install -y xorg python3
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    bash
