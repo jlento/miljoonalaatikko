@@ -1,4 +1,4 @@
-//usr/bin/clang "$0" && exec ./a.out "$@"
+//usr/bin/env cc "$0" && exec ./a.out "$@"
 
 #include <stdint.h>
 #include <inttypes.h>
@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   if (file == 0) {
     fprintf(stderr, "Missing input file %s\n", fname);
-    goto failure;
+    goto missing_input_file;
   }
 
   int64_t value;
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
       if (pos >= MAXBITTABLE) {
         fprintf(stderr, "Index pos = %zu exceeds MAXBITTABLE = %d\n",
                 pos, MAXBITTABLE);
-        goto failure;
+        goto array_overflow;
       }
       uint64_t entry = (uint64_t)1 << (63 - sum % 64);
       if (seen[pos] & entry) {
@@ -52,7 +52,10 @@ int main(int argc, char *argv[]) {
   fclose(file);
   return(0);
 
- failure:
-  fclose(file);
+ missing_input_file:
   return(1);
+
+ array_overflow:
+  fclose(file);
+  return(2);
 }
