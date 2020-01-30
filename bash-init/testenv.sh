@@ -15,7 +15,7 @@ shell_init_files=(
     "/etc/bashrc $HOME/etc/"
 )
 
-printf "%s\n" ""\
+printf "%s\n" "" \
     "Copying bash login shell initialization scripts (not over writing):" \
     "" \
     "${shell_init_files[@]}"
@@ -25,7 +25,7 @@ for args in "${shell_init_files[@]}"; do
     cp -n $args
 done
 
-printf "%s\n" ""\
+printf "%s\n" "" \
     "Fixing paths in the local copies of the scripts."
 
 sed -i -r "s|(\W)(/etc/profile.d)|\1${HOME}\2|g" $HOME/etc/profile
@@ -37,8 +37,10 @@ sed -i -r "s|(\W)(/etc/bashrc)|\1${HOME}\2|g" $HOME/home/.bashrc
 sed -i -r "s|(\W)(/etc/profile.d)|\1${HOME}\2|g" $HOME/etc/bashrc
 
 
-# Set before(?) shell initialization scripts
+# Set before shell initialization scripts
 # login: HOME, USER, SHELL, PATH, LOGNAME, MAIL
+# pam: XDG_* , SELINUX_*
+# sshd: DISPLAY, XTERM, LC_*, SSH_*
 login_env=(
     "HOME=\"$HOME\""
     "USER=\"$USER\""
@@ -54,8 +56,8 @@ login_env=(
     "SSH_TTY=\"$SSH_TTY\""
     "SELINUX_LEVEL_REQUESTED=\"$SELINUX_LEVEL_REQUESTED\""
     "SSH_CONNECTION=\"$SSH_CONNECTION\""
-    "XDG_RUNTIME_DIR=\"$XDG_RUNTIME_DIR\""
     "DISPLAY=\"$DISPLAY\""
+    "XDG_RUNTIME_DIR=\"$XDG_RUNTIME_DIR\""
 )
 
 printf "%s\n" "" "Test with:" \
