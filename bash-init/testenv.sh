@@ -33,8 +33,8 @@ sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/profile
 sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" \
     $envroot/etc/profile.d/zz-csc-env.sh
 sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" $envroot/appl/profile/zz-csc-env.sh
-sed -i -r "s|(\W~)(/.bashrc)|\1/home\2|g" $envroot/home/.bash_profile
-sed -i -r "s|(\W)(/etc/bashrc)|\1${envroot}\2|g" $envroot/home/.bashrc
+sed -i -r "s|(\W)(~)(/.bashrc)|\1/${envroot}/etc/skel\3|g" $envroot/etc/skel/.bash_profile
+sed -i -r "s|(\W)(/etc/bashrc)|\1${envroot}\2|g" $envroot/etc/skel/.bashrc
 sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/bashrc
 
 
