@@ -1,40 +1,41 @@
 #!/bin/bash
 
 # Recreating "user space" bash login initialization scripts for testing in
-# puhti.csc.fi
+# puhti.csc.fi.
+
+envroot=$HOME/testenv
 
 # In the order login shell sources them...
 shell_init_files=(
-    "/etc/profile $HOME/etc/"
-    "/etc/profile.d/*.sh $HOME/etc/profile.d/"
-    "/etc/profile.d/sh.local $HOME/etc/profile.d/"
-    "/appl/profile/zz-csc-env.sh $HOME/appl/profile/"
-    "/appl/profile/ssh-keygen.sh $HOME/appl/profile/"
-    "/etc/skel/.bash_profile $HOME/home/"
-    "/etc/skel/.bashrc $HOME/home/"
-    "/etc/bashrc $HOME/etc/"
+    "/etc/profile"
+    "/etc/profile.d/*.sh"
+    "/etc/profile.d/sh.local"
+    "/appl/profile/zz-csc-env.sh"
+    "/appl/profile/ssh-keygen.sh"
+    "/etc/skel/.bash_profile"
+    "/etc/skel/.bashrc"
+    "/etc/bashrc"
 )
 
 printf "%s\n" "" \
-    "Copying bash login shell initialization scripts (not over writing):" \
-    "" \
-    "${shell_init_files[@]}"
+    "Copying bash login shell initialization scripts (not over writing)" \
+    "under $envroot."
 
-mkdir -p $HOME/{etc/profile.d,appl/profile,home}
-for args in "${shell_init_files[@]}"; do
-    cp -n $args
+mkdir -p $envroot/{etc/profile.d,appl/profile,etc/skel}
+for f in "${shell_init_files[@]}"; do
+    cp -n $f ${envroot}/$(dirname "$f")
 done
 
 printf "%s\n" "" \
     "Fixing paths in the local copies of the scripts."
 
-sed -i -r "s|(\W)(/etc/profile.d)|\1${HOME}\2|g" $HOME/etc/profile
-sed -i -r "s|(\W)(/appl/profile)|\1${HOME}\2|g" \
-    $HOME/etc/profile.d/zz-csc-env.sh
-sed -i -r "s|(\W)(/appl/profile)|\1${HOME}\2|g" $HOME/appl/profile/zz-csc-env.sh
-sed -i -r "s|(\W~)(/.bashrc)|\1/home\2|g" $HOME/home/.bash_profile
-sed -i -r "s|(\W)(/etc/bashrc)|\1${HOME}\2|g" $HOME/home/.bashrc
-sed -i -r "s|(\W)(/etc/profile.d)|\1${HOME}\2|g" $HOME/etc/bashrc
+sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/profile
+sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" \
+    $envroot/etc/profile.d/zz-csc-env.sh
+sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" $envroot/appl/profile/zz-csc-env.sh
+sed -i -r "s|(\W~)(/.bashrc)|\1/home\2|g" $envroot/home/.bash_profile
+sed -i -r "s|(\W)(/etc/bashrc)|\1${envroot}\2|g" $envroot/home/.bashrc
+sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/bashrc
 
 
 # Set before shell initialization scripts
@@ -62,10 +63,10 @@ login_env=(
 
 printf "%s\n" "" "Test with:" \
     "" \
-    "    bash -i --rcfile $HOME/home/.bashrc"\
+    "    tree $testenv" \
     "" \
     "    /usr/bin/env -i ${login_env[*]} bash --login --noprofile" \
-    "        source $HOME/etc/profile" \
-    "        source $HOME/home/.bash_profile"\
-    "" \
-    "    BASH_ENV=$HOME/home/.bashrc bash -c 'env'"
+    "        source $envroot/etc/profile" \
+    "        source $envroot/etc/skel/.bash_profile"\
+    "        bash --rcfile $envroot/etc/skel/.bashrc"\
+    "        BASH_ENV=$envroot/etc/skel/.bashrc bash -c 'env'"
