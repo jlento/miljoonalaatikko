@@ -18,7 +18,7 @@ shell_init_files=(
 )
 
 printf "%s\n" "" \
-    "Copying bash login shell initialization scripts (not over writing)" \
+    "Copying bash login shell initialization scripts (not overwriting)" \
     "under $envroot."
 
 mkdir -p $envroot/{etc/profile.d,appl/profile,etc/skel}
@@ -33,7 +33,7 @@ sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/profile
 sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" \
     $envroot/etc/profile.d/zz-csc-env.sh
 sed -i -r "s|(\W)(/appl/profile)|\1${envroot}\2|g" $envroot/appl/profile/zz-csc-env.sh
-sed -i -r "s|(\W)(~)(/.bashrc)|\1/${envroot}/etc/skel\3|g" $envroot/etc/skel/.bash_profile
+sed -i -r "s|(\W)(~)(/.bashrc)|\1${envroot}/etc/skel\3|g" $envroot/etc/skel/.bash_profile
 sed -i -r "s|(\W)(/etc/bashrc)|\1${envroot}\2|g" $envroot/etc/skel/.bashrc
 sed -i -r "s|(\W)(/etc/profile.d)|\1${envroot}\2|g" $envroot/etc/bashrc
 
@@ -63,7 +63,7 @@ login_env=(
 
 printf "%s\n" "" "Test with:" \
     "" \
-    "    tree $testenv" \
+    "    tree -a $envroot" \
     "" \
     "    /usr/bin/env -i ${login_env[*]} bash --login --noprofile" \
     "        source $envroot/etc/profile" \
