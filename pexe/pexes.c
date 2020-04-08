@@ -14,17 +14,26 @@
 
   Build example:
 
-      mpicc -o pexes -std=c11 -Wall -Wl,--as-needed pexes.c
+      mpicc -o pexes -std=c11 -Wall -Wl,--as-needed pexes.cexes.c
   or
       bash rpath.sh mpicc -o pexes -std=c11 -Wall -Wl,--as-needed pexes.c
 
-  Usage example:
+  Usage example (puhti.csc.fi):
 
+      sbatch test.sh
+
+      where 'test.sh' is
+
+      #!/bin/bash
+      #SBATCH --account=<your account here>
+      #SBATCH --partition=test
+      #SBATCH --time=1
+      #SBATCH --ntasks=3
       for ((i = 0; i < 23; i++)); do
           echo "sleep $(( ((i+1)%3) * ((i+2)%3) ))"
-      done | salloc -n 3 srun -O -n 4 pexes
+      done | mpirun -n 4 --oversubscribe pexes
 
-  NOTE: The number of MPI tasks launched by srun should be one more than the
+  NOTE: The number of MPI tasks launched by mpirun can be one more than the
   number of cores reserved. See the usage example above.
 
 */
