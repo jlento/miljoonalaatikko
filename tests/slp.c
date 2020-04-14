@@ -1,4 +1,4 @@
-//usr/bin/env mpicc -o ${0%.c} -fopenmp $0 && exec srun -n 4 -t 10 --cpu-bind=verbose,none --export=ALL,OMP_NUM_THREADS=4 -A project_2002037 -p fmitest ${0%.c}
+//usr/bin/env mpicc -o ${0%.c} -fopenmp $0 && exec srun -n 40 -t 10 --cpu-bind=verbose,none --export=ALL,OMP_NUM_THREADS=40 -A project_2002037 -p fmitest ${0%.c}
 
 #include <stdio.h>
 #include <unistd.h>
@@ -6,10 +6,9 @@
 
 // Number of terms in Gregory-Leibnitz approximation for Pi
 
-// Runs long enough to have a good look with 'top'
-// size_t n = 1000000000000ull;
-
 // Runs under 2 min (single core/thread) for multiple-thread speedup testing
+// Increase n to get this run long enough to have a good look with 'top'
+// Good for about 9 decimals
 size_t n = 100000000000ull;
 
 
@@ -26,7 +25,7 @@ int main(int argc, char *argv[]) {
     for (size_t i = 1; i < n; i += 4) {
       pi += 4.0L / i - 4.0L / (i + 2);
     }
-    printf("The value of Pi is %0.30Lf\n", pi);
+    printf("The approximate value of Pi is %0.30Lf\n", pi);
   }
   MPI_Ibarrier(MPI_COMM_WORLD, &request);
   while(!flag) {
