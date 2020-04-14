@@ -5,10 +5,7 @@
 #include <mpi.h>
 
 // Number of terms in Gregory-Leibnitz approximation for Pi
-
-// Runs under 2 min (single core/thread) for multiple-thread speedup testing
-// Increase n to get this run long enough to have a good look with 'top'
-// Good for about 9 decimals
+// Use this to control the runtime
 size_t n = 100000000000ull;
 
 
@@ -32,7 +29,6 @@ int main(int argc, char *argv[]) {
     MPI_Test(&request, &flag, MPI_STATUS_IGNORE);
     sleep(1);
   }
-  printf("Task %d done!\n", comm_rank);
   MPI_Finalize();
   return 0;
 }
