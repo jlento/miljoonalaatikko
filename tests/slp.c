@@ -14,7 +14,7 @@
 const size_t n = 100000000000ull;
 
 
-void lazy_mpi_barrier() {
+void lazy_mpi_barrier(const unsigned int poll_interval) {
 
   // Lazy MPI barrier instead of busy looping normal MPI_Barrier
   // Allows other processes/threads to use the cores of the tasks that
@@ -25,7 +25,7 @@ void lazy_mpi_barrier() {
   MPI_Ibarrier(MPI_COMM_WORLD, &request);
   while(!flag) {
     MPI_Test(&request, &flag, MPI_STATUS_IGNORE);
-    sleep(1);
+    sleep(poll_interval);
   }
 }
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 	   Gregory_Leibnitz(n));
   }
 
-  lazy_mpi_barrier();
+  lazy_mpi_barrier(1);
 
   MPI_Finalize();
   return 0;
