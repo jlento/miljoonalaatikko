@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
   MPI_Comm_rank(MPI_COMM_WORLD, &comm_rank);
+
   if (comm_rank == 0) {
     long double pi = 0;
 #pragma omp parallel for shared(n) reduction(+:pi)
@@ -26,11 +27,18 @@ int main(int argc, char *argv[]) {
     }
     printf("The approximate value of Pi is %0.30Lf\n", pi);
   }
+
+  // Lazy MPI_Barrier instead of busy looping normal MPI_Barrier
+  //
+  // Allows other processes/threads to use the cores of the tasks that
+  // are waiting at the barrier
+
   MPI_Ibarrier(MPI_COMM_WORLD, &request);
   while(!flag) {
     MPI_Test(&request, &flag, MPI_STATUS_IGNORE);
     sleep(1);
   }
+
   MPI_Finalize();
   return 0;
 }
