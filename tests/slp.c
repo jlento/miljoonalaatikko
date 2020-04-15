@@ -1,8 +1,10 @@
-//usr/bin/env mpicc -o ${0%.c} -fopenmp $0 && exec srun -n 40 -t 10 --cpu-bind=verbose,none --export=ALL,OMP_NUM_THREADS=40 -A project_2002037 -p fmitest ${0%.c}
+//usr/bin/env mpicc -o ${0%.c} -fopenmp $0 && exec srun -N 1 -n 40 -t 10 --cpu-bind=verbose,none --export=ALL,OMP_NUM_THREADS=40 -A project_2002037 -p fmitest ${0%.c}
 
 #include <stdio.h>
 #include <unistd.h>
 #include <mpi.h>
+
+// How to utilize the cores of idling tasks with OpenMP from task 0
 
 // Number of terms in Gregory-Leibnitz approximation for Pi
 // Use this to control the runtime
