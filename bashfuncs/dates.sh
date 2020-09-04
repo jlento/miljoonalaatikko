@@ -8,7 +8,6 @@ is_ddmmyyyy () {
     local dd="${1:0:2}" mm="${1:2:2}" yyyy="${1:4:4}"
     local ds=(31 28 31 30 31 30 31 31 30 31 30 31)
     is_leap_year $yyyy && ds[1]=29
-    echo ${ds[1]}
     [[ "$1" =~ [0123][0-9][01][0-9][0-9]{4} ]] || return 1
     (( mm < 1 || mm > 12 || dd < 1 || dd > ds[mm - 1] )) && return 1
     return 0
