@@ -13,7 +13,7 @@ is_ddmmyyyy () {
 	&& (( mm > 0 && mm < 13 && dd > 0 && dd <= ds[mm - 1] ))
 }
 
-is_finnish_social_security_number () (
+is_finnish_id () (
     ddmm=${1:0:4} yy=${1:4:2} a=${1:6:1} n=${1:7:3} c=${1:10:1}
     checksum () {
 	local s='0123456789ABCDEFHJKLMNPRSTUVWXYZ'
