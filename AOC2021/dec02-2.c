@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[]) {
 
-  int64_t n, f = 0, d = 0;
+  int64_t n, f = 0, d = 0, a = 0;
   char line[MAXLEN];
   char *token;
   while (fgets(line, MAXLEN, stdin)) {
@@ -18,12 +18,13 @@ int main(int argc, char *argv[]) {
     switch (*token) {
     case 'f':
       f += n;
+      d += a * n;
       break;
     case 'u':
-      d -= n;
+      a -= n;
       break;
     case 'd':
-      d += n;
+      a += n;
       break;
     }
   }
