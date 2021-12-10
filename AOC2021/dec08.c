@@ -114,14 +114,5 @@ int main(int argc, char *argv[])
   init(patterns, outs);
   printf("%d\n", count1478(outs));
   printf("%d\n", sum(patterns, outs));
-
-  /*
-  for (int i = 0; i < NDISPS; i++)
-    {
-      for (int j = 0; j < NPATS; j++)
-        printf("%s %d ", patterns[i][j], seg2bits(patterns[i][j]));
-      printf("\n");
-    }
-  */
   return(0);
 }
