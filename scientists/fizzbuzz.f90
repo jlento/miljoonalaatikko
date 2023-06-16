@@ -3,7 +3,7 @@ program fizzbuzz
   integer :: i
 
   do i = 1, 21
-     write (*, '(2A10)') iffy(i), mathy(i)
+     write (*, '(3A10)') iffy(i), early(i), mathy(i)
   end do
 
 contains
@@ -26,7 +26,28 @@ contains
     end if
 
   end function iffy
+  
 
+  function early(i) result (str)
+
+    integer, intent(in) :: i
+    character (len = 10) :: str
+
+    if (mod(i, 5) == 0 .and. mod(i, 3) == 0) then
+       str = 'FizzBuzz'
+       return
+    end if
+    if (mod(i, 3) == 0) then
+       str = 'Fizz'
+       return
+    end if
+    if (mod(i, 5) == 0) then
+       str = 'Buzz'
+       return
+    end if
+    write (str, '(G0)') i
+
+  end function early
 
   function mathy(i) result (str)
 
