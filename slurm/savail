@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Prints available resources in interactive partition
+# 2023-11-23, juha.lento@csc.fi
+
+# Ugly fix for scontrol that does not support --json option
+scontrol-json() {
+    scontrol -o "$@" |
+        sed -E '
+        s/([ ^][^ =]+=)([^ =]+=[^ ]*)/\1{\2}/g      # a=b=1,c=2,d=3 -> a={b=1,c=2,d=3}
+        s/([ ^][^ =]+=)([^ ,{]+,[^ ]*)/\1[\2]/g     # a=1,2,3 -> a=[1,2,3]
+        s/( +[^ =]+=)/,\1/g                         # add commas between objects
+        s/( *)([^]=,{}[]+)([]=,{}[]|$)/\1"\2"\3/g   # quote with delimeters ^[]{},=$
+        s/"([0-9.]+)"/\1/g                          # remove quoting from numbers
+        s/=/ : /g                                   # = -> :
+        s/^/{/
+        s/$/}/
+        '
+}
+
+nodes=$(sinfo -r -h -o %N -p interactive)
+
+header="NodeName AvailCPU AvailMem AvailDisc"
+format="%10s %10s %10s %10s\n"
+jq_filter='
+  .NodeName,
+  .CPUTot - .CPUAlloc,
+  .RealMemory - .AllocMem,
+  (.CfgTRES."gres/nvme" // 0) - (.AllocTRES."gres/nvme" // 0)
+'
+
+printf "$format" $header $(scontrol-json show node $nodes | jq -r "$jq_filter")
