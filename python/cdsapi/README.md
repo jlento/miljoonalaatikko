@@ -27,5 +27,5 @@ the vanilla script from the portal.
 
 ```
 mkdir -p $SCRATCH/cdsapi/data
-nohup python era5.py $SCRATCH/cdsapi/data/2m-temperature-2025-03.nc  > $SCRATCH/cdsapi/data/log.txt
+nohup python era5.py $SCRATCH/cdsapi/data/2m-temperature-2025-03.nc  > $SCRATCH/cdsapi/data/log.txt &
 ```
