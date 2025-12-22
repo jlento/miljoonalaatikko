@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# MacOS version
+
 cert_is_valid() {
     test -s $1 || return 1
     local expiration_date=$(ssh-keygen -L -f $1 | awk '/^ *Valid:/{print $NF}')
